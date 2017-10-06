@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Training Page Title2017</title>
+
+        <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <h1>
+                {% for logo_image in logo_images %}
+                    <span>
+                        <img src="{{ logo_image.image.url }}" class="img-responsive">
+    {#                    <img src="{% static 'img/LogoRenew.png' %}" class="img-responsive">#}
+                    </span>
+    {#                <img src="{{ logo_image.image.url }}" alt="zdrowie, uroda, odchudzanie, ciąża" onclick="document.location.href='/';">#}
+                {% endfor %}
+            </h1>
+        </div>
+    </div>
+</div>
+
+    <h1 class="land"> НАЧАЛО И ПОШЛО ВСЕ НА......</h1>
+    <h2> just do it</h2>
+
+    <div class="general-container-background">
+        <div class="container top-container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1 class="title">Наш магазин скоро откроется!<br>
+                    Оставляйте Ваш имейл в форме ниже</h1>
+                    <div>
+                        <form action="" method="post" class="text-center col-lg-4 col-lg-offset-4">{% csrf_token %}
+                         <div class="form-group">
+{#                             <label>Ваш имейл: </label>#}
+                             <input type="email" name="{{ form.email.name }}" class="form-control" placeholder="Email Address">
+                         </div>
+                         <div class="form-group">
+{#                             <label>Ваше имя: </label>#}
+                             <input name="{{ form.name.name }}" class="form-control" placeholder="Name">
+                         </div>
+                         <div class="form-group">
+{#                             <label>Ваш город: </label>#}
+                             <input name="{{ form.city.name }}" class="form-control" placeholder="Your city">
+                         </div>
+                         <button type="submit" class="btn btn-primary btn-orange">Отправить</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
