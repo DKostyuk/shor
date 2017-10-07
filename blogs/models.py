@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class BlogCategory(models.Model):
     name = models.CharField(max_length=32, blank=True, null=True, default=None)
-    code = models.SlugField(max_length=32, unique=False, null=True)
+    code = models.SlugField(max_length=32, unique=True, null=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -17,7 +17,7 @@ class BlogCategory(models.Model):
 
 class Blog(models.Model):
     title_name = models.CharField(max_length=128, blank=True, null=True, default=None)
-    code = models.SlugField(max_length=128, unique=False, null=True)
+    code = models.SlugField(max_length=128, unique=True, null=True)
     h1 = models.CharField(max_length=128, blank=True, null=True, default=None)
     category = models.ForeignKey(BlogCategory, blank=True, null=True, default=None)
     content_text = models.TextField(blank=True, null=True, default=None)

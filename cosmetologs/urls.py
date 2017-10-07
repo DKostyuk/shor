@@ -14,7 +14,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from blogs import views
+from cosmetologs import views
 
 urlpatterns = [
    # url(r'^landing/', views.landing, name='landing'),

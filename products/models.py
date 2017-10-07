@@ -3,7 +3,7 @@ from django.db import models
 
 class ProductCategory(models.Model):
     name = models.CharField(max_length=16, blank=True, null=True, default=None)
-    code = models.SlugField(max_length=16, unique=False, null=True)
+    code = models.SlugField(max_length=16, unique=True, null=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -16,7 +16,7 @@ class ProductCategory(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=64, blank=True, null=True, default=None)
-    code = models.SlugField(max_length=64, unique=False, null=True)
+    code = models.SlugField(max_length=64, unique=True, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     discount = models.IntegerField(default=0)
     category = models.ForeignKey(ProductCategory, blank=True, null=True, default=None)
