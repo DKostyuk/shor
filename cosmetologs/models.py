@@ -1,10 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import pre_save
+# from django.utils import timezone
+from django.utils.text import slugify
+# from django.utils import unique_slug_generator
 
 
 class CategoryForCosmetolog(models.Model):
     name = models.CharField(max_length=32, blank=True, null=True, default=None)
-    code = models.SlugField(max_length=32, unique=False)
+    slug = models.SlugField(max_length=32, unique=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -17,7 +21,7 @@ class CategoryForCosmetolog(models.Model):
 
 class Cosmetolog(models.Model):
     name = models.CharField(max_length=128, blank=True, null=True, default=None)
-    code = models.SlugField(max_length=128, unique=False)
+    slug = models.SlugField(max_length=128, unique=True)
     order_email = models.EmailField()
     order_phone = models.CharField(max_length=10, blank=True, null=True, default=None)
     balance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
@@ -67,7 +71,7 @@ class CosmetologCategory(models.Model):
 
 class ServiceProduct(models.Model):
     name = models.CharField(max_length=64, blank=True, null=True, default=None)
-    code = models.SlugField(max_length=64, unique=False)
+    slug = models.SlugField(max_length=64, unique=True)
     price01 = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     price02 = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     price_avg = models.DecimalField(max_digits=10, decimal_places=2, default=0) #(price01+price02)/2
@@ -105,3 +109,26 @@ class ServiceProductImage(models.Model):
     class Meta:
         verbose_name = 'ServiceProductPhoto'
         verbose_name_plural = 'ServiceProductPhotos'
+
+
+def create_slug(instance, new_slug=None):
+    slug = slugify(instance.name)
+    if new_slug is not None:
+        slug = new_slug
+    qs = Cosmetolog.objects.filter(slug=slug).order_by("-id")
+    exists = qs.exists()
+    if exists:
+        new_slug = "%s-%s" % (slug, qs.first().id)
+        return create_slug(instance, new_slug=new_slug)
+    return slug
+
+
+def pre_save_post_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = create_slug(instance)
+        # instance.slug = unique_slug_generator(instance)
+
+
+# pre_save.connect(pre_save_post_receiver, sender=CategoryForCosmetolog)
+pre_save.connect(pre_save_post_receiver, sender=Cosmetolog)
+# pre_save.connect(pre_save_post_receiver, sender=ServiceProduct)

@@ -9,7 +9,7 @@ class CosmetologCategoryInline(admin.TabularInline):
 
 class CosmetologAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Cosmetolog._meta.fields]
-    prepopulated_fields = {'code': ('name',)}
+    prepopulated_fields = {'slug': ('name',)}
     inlines = [CosmetologCategoryInline]
 
     class Meta:
@@ -20,7 +20,7 @@ admin.site.register(Cosmetolog, CosmetologAdmin)
 
 class CategoryForCosmetologAdmin(admin.ModelAdmin):
     list_display = [field.name for field in CategoryForCosmetolog._meta.fields]
-    prepopulated_fields = {'code': ('name',)}
+    prepopulated_fields = {'slug': ('name',)}
 
     class Meta:
         model = CategoryForCosmetolog
@@ -33,18 +33,9 @@ class ServiceProductImageInline(admin.TabularInline):
     extra = 0
 
 
-class ServiceProductImageAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in ServiceProductImage._meta.fields]
-
-    class Meta:
-        model = ServiceProductImage
-
-admin.site.register(ServiceProductImage, ServiceProductImageAdmin)
-
-
 class ServiceProductAdmin(admin.ModelAdmin):
     list_display = [field.name for field in ServiceProduct._meta.fields]
-    prepopulated_fields = {'code': ('name',)}
+    prepopulated_fields = {'slug': ('name',)}
     inlines = [ServiceProductImageInline]
 
     class Meta:

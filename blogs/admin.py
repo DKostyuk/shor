@@ -9,7 +9,7 @@ class BlogImageInline(admin.TabularInline):
 
 class BlogCategoryAdmin (admin.ModelAdmin):
     list_display = [field.name for field in BlogCategory._meta.fields]
-    prepopulated_fields = {'code': ('name',)}
+    prepopulated_fields = {'slug': ('name',)}
 
     class Meta:
         model = BlogCategory
@@ -19,7 +19,7 @@ admin.site.register(BlogCategory, BlogCategoryAdmin)
 
 class BlogAdmin (admin.ModelAdmin):
     list_display = [field.name for field in Blog._meta.fields]
-    prepopulated_fields = {'code': ('title_name',)}
+    prepopulated_fields = {'slug': ('title_name',)}
     inlines = [BlogImageInline]
 
     class Meta:
