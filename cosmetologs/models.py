@@ -82,6 +82,7 @@ class ServiceProduct(models.Model):
     description = models.TextField(blank=True, null=True, default=None)
     short_description = models.TextField(blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
+    is_visible = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
     modified_by = models.ForeignKey(User, blank=True, null=True, default=None)

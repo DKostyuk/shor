@@ -14,11 +14,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from cosmetologs import views
+from addresses import views
 
 urlpatterns = [
     # url(r'^landing/', views.landing, name='landing'),
-    url(r'^cosmetolog/(?P<cosmetolog_id>\w+)/$', views.cosmetolog, name='cosmetolog'),
-    url(r'^service/(?P<service_product_id>\w+)/$', views.service, name='service'),
+    # url(r'^cosmetolog/(?P<cosmetolog_id>\w+)/$', views.cosmetolog, name='cosmetolog'),
+    # url(r'^service/(?P<service_product_id>\w+)/$', views.service, name='service'),
 
 ]

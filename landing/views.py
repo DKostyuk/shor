@@ -3,6 +3,7 @@ from .forms import SubscriberForm
 from products.models import *
 from landing.models import *
 from blogs.models import *
+from cosmetologs.models import *
 
 
 def landing(request):
@@ -22,6 +23,12 @@ def landing(request):
 
 
 def home(request):
+    service_products = ServiceProduct.objects.filter(is_active=True, is_visible=True)
+    service_products_images_all = ServiceProductImage.objects.filter(is_active=True, is_main=True,
+                                                                     service_product__is_active=True,
+                                                                     service_product__is_visible=True)
+    service_products_images = service_products_images_all[:4]
+    cosmetologs = Cosmetolog.objects.filter(is_active=True, is_visible=True)
     slider_mains = SliderMain.objects.filter(is_active=True)
     slider_mains_counts = range(slider_mains.count() - 1)
     logo_images = LogoImage.objects.filter(is_active=True, is_main=True)
@@ -31,5 +38,11 @@ def home(request):
     products_images = products_images_all[:4]
     products_images_new = products_images_all.filter(product__category__id=1)
     products_images_popular = products_images_all.filter(product__category__id=2)
+
+    # print(products_images_all)
+
+    # query = request.GET.get('q')
+    # if query:
+    #     queryset_list = queryset_list.filter
     return render(request, 'landing/home.html', locals())
 

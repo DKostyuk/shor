@@ -3,6 +3,13 @@
 
 
 {% block content %}
+    <div class="search-main-top">
+        <form method="GET" action="">
+            <input type="text" name="q" placeholder="Search in City"/>
+            <input type="text" name="q1" placeholder="Search What"/>
+            <input type="submit" value="Search" />
+        </form>
+    </div>
     <div class="advert-top">
         <div class="container">
             <div class="row">
@@ -59,6 +66,21 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="text-center">
+                            ALL Cosmetologs
+                        </h1>
+                    </div>
+                    {% for cosmetolog in cosmetologs %}
+                        {% include 'landing/cosmetolog_item.html' %}
+                    {% endfor %}
+
+                </div>
+        </div>
+    </div>
+    <div class="section section1 all">
+        <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="text-center">
                             ALL products
                         </h1>
                     </div>
@@ -97,11 +119,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="text-center">
-                            Popular products
+                            Popular Services
                         </h1>
                     </div>
-                    {% for product_image in products_images_popular %}
-                        {% include 'landing/product_item.html' %}
+                    {% for service_product_image in service_products_images %}
+                        {% include 'landing/service_product_item.html' %}
                     {% endfor %}
 
                 </div>
