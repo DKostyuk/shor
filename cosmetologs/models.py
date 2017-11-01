@@ -93,6 +93,7 @@ class Cosmetolog(models.Model):
 class CosmetologCategory(models.Model):
     cosmetolog = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None)
     category = models.ForeignKey(CategoryForCosmetolog, blank=True, null=True, default=None)
+    subcategory = models.ForeignKey(SubCategoryForCosmetolog, blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
     is_main = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
@@ -116,6 +117,7 @@ class ServiceProduct(models.Model):
     discount = models.IntegerField(default=0)
     cosmetolog = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None)
     category = models.ForeignKey(CategoryForCosmetolog, blank=True, null=True, default=None)
+    subcategory = models.ForeignKey(SubCategoryForCosmetolog, blank=True, null=True, default=None)
     description = models.TextField(blank=True, null=True, default=None)
     short_description = models.TextField(blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)

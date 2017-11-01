@@ -6,6 +6,10 @@ class CosmetologCategoryInline(admin.TabularInline):
     model = CosmetologCategory
     extra = 0
 
+# class SubCosmetologCategoryInline(admin.TabularInline):
+#     model = SubCosmetologCategory
+#     extra = 0
+
 
 class CosmetologAddressInline(admin.TabularInline):
     model = CosmetologAddress
