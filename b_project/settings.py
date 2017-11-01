@@ -12,6 +12,15 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+# for gmail or google apps
+from .email_info import *
+EMAIL_USE_TLS = EMAIL_USE_TLS
+EMAIL_HOST = EMAIL_HOST
+EMAIL_HOST_USER = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
+EMAIL_PORT = EMAIL_PORT
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,6 +33,8 @@ SECRET_KEY = 'nq0$5nvn!25ec&*i=s7mj#bkedj&&1r#jtd55n&k(*uq%4rc8e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+DEFAULT_CHARSET = 'utf-8'
 
 ALLOWED_HOSTS = []
 
@@ -115,6 +126,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'pl'
 
 TIME_ZONE = 'UTC'
 

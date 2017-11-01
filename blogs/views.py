@@ -2,8 +2,8 @@ from django.shortcuts import render
 from blogs.models import *
 
 
-def blog(request, blog_id):
-    blog = Blog.objects.get(id=blog_id)
+def blog(request, slug):
+    blog = Blog.objects.get(slug=slug)
     blogs_images_all = BlogImage.objects.filter(is_active=True, is_main=True)
     blogs_images = blogs_images_all[:2]
 

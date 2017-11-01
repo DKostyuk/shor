@@ -18,5 +18,5 @@ from blogs import views
 
 urlpatterns = [
    # url(r'^landing/', views.landing, name='landing'),
-    url(r'^blog/(?P<blog_id>\w+)/$', views.blog, name='blog'),
+    url(r'^blog/(?P<slug>[\w-]+)/$', views.blog, name='blog'),
 ]

@@ -2,7 +2,7 @@
     <div class="product-item">
         <div>
             <div class="center-block img-product">
-                 <a href="{% url 'service' service_product_image.service_product.id %}">
+                 <a href="{% url 'service' service_product_image.service_product.category.slug service_product_image.service_product.slug %}">
                     <img src="{{ service_product_image.image.url }}" class = "img-responsive">
                 </a>
             </div>

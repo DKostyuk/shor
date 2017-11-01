@@ -3,21 +3,45 @@
 
 
 {% block content %}
-    <div class="search-main-top">
-        <form method="GET" action="">
-            <input type="text" name="q" placeholder="Search in City"/>
-            <input type="text" name="q1" placeholder="Search What"/>
-            <input type="submit" value="Search" />
-        </form>
+    <div class="search-main-top-01">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 search-main-top clear">
+                    <form method="GET" action="/uslugi-kosmetyczne/">
+            {#            <input type="text" name="q" placeholder="Search in City"#}
+            {#                   value = '{{ request.GET.q }}'/>#}
+                        <select class="selectpicker" name="q" data-live-search="true">
+                            <option data-hidden="true" value="">miasto lub dzielnica</option>
+                            {% for active_address in active_addresses %}:
+                                <option value="{{ active_address.id }}">{{ active_address.display_address }}</option>
+                            {% endfor %}
+                        </select>
+            {#            <input type="text" name="q1" placeholder="Search What" value = '{{ request.GET.q1 }}'/>#}
+                        <select class="selectpicker" name="q1" data-live-search="true">
+                            <option data-hidden="true" value="">Choose one...</option>
+                            {% for service_category in service_categories %}:
+                                <option>{{ service_category.name }}</option>
+                            {% endfor %}
+                            {% for subservice_category in subservice_categories %}:
+                                <option value="{{ subservice_category.id }}">
+                                    {{ subservice_category.subcategory_category }}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" class="btn btn-primary find-icon" value="Szukaj" />
+
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="advert-top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <img src="{% static 'img/advert-left.png' %}" class="img-responsive advert-left">
+                    <img src="{% static 'img/advert-left_01.png' %}" class="img-responsive advert-left">
                 </div>
                 <div class="col-lg-6">
-                    <img src="{% static 'img/advert-right.png' %}" class="img-responsive advert-right">
+                    <img src="{% static 'img/advert-right_01.png' %}" class="img-responsive advert-right">
                 </div>
             </div>
         </div>
@@ -49,12 +73,12 @@
 {#                    <div class="col-lg-9 promo-slider">#}
 {#                        <img src="{% static 'img/slider0.png' %}" class="img-responsive slider-top">#}
 {#                    </div>#}
-                    <div class="col-lg-3">
-                        <div class="1234">
-                            <img src="{% static 'img/advert-right-up.png' %}" class="img-responsive advert-right-up">
+                    <div class="col-lg-3 advert-right-container">
+                        <div class="advert-right-up-container">
+                            <img src="{% static 'img/advert-right-up_01.png' %}" class="img-responsive advert-right-up">
                         </div>
-                        <div class="5678">
-                            <img src="{% static 'img/advert-right-down.png' %}" class="img-responsive advert-right-down">
+                        <div class="advert-right-down-container">
+                            <img src="{% static 'img/advert-right-down_01.png' %}" class="img-responsive advert-right-down">
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="section section3 popular">
+        <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="h3 text-center">
+                            We found at {{ q_address }} COSMOTOLOG
+                        </h1>
+{#                        {% for search_cosmetolog in search_cosmetologs %}#}
+{#                            {% include 'landing/search_service_product_item_list.html' %}#}
+{#                        {% endfor %}#}
+                        {% for search_cosmetolog in search_cosmetologs %}
+                            {{ search_cosmetolog.name }}
+
+                        {% endfor %}
+                    </div>
+                </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+<div class="col-lg-3">
+    <div class="logo-name">
+
+            <div class="col-lg-6 logo-img">
+                <a href=#>
+                    <img src="{{ search_service_products_image.service_product.cosmetolog.logo_image.url }}"
+                         class = "img-responsive img-cosmetolog-logo">
+                </a>
+            </div>
+            <div class="col-lg-6">
+                {{ search_service_products_image.service_product.cosmetolog.name }}
+            </div>
+
+    </div>
+    <div class="service-product-item">
+
+        <div class="center-block">
+             <a href=#>
+                <img src="{{ search_service_products_image.image.url }}"
+                     class = "col-lg-12 img-responsive img-service-product">
+            </a>
+        </div>
+        {% if search_service_products_image.service_product.discount %}
+            <div class="service-discount-container">
+                {{ search_service_products_image.service_product.discount }}%
+            </div>
+        {% endif %}
+
+
+        <div class="service-product-info">
+            <div class="col-lg-12 service-product-name">
+                <h4>{{ search_service_products_image.service_product.name }}</h4>
+            </div>
+            <div class="col-lg-12 service-product-s-description">
+                <p>
+                {{ search_service_products_image.service_product.description|truncatechars_html:70 }}
+                </p>
+            </div>
+
+            <div class="col-lg-12 service-product-price">
+                {{ search_service_products_image.service_product.price01 }} UAH
+            </div>
+
+            <div class="col-lg-12 add-to-cart-btn">
+                <button class="btn btn-success">
+                    Добавить в корзину
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

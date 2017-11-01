@@ -1,4 +1,5 @@
 from django.db import models
+from addresses.models import Address
 from django.contrib.auth.models import User
 from django.db.models.signals import pre_save
 # from django.utils import timezone
@@ -14,9 +15,45 @@ class CategoryForCosmetolog(models.Model):
     def __str__(self):
         return "%s" % self.name
 
+    def __unicode__(self):
+        return "%s" % self.name
+
     class Meta:
         verbose_name = 'CategoryForCosmetolog'
         verbose_name_plural = 'CategoriesForCosmetolog'
+
+
+def subcategory_category_creator(self,*args, **kwargs):
+    subcategory_category = self.name + ', ' + self.category.name
+    url = self.category.slug + '/' + self.slug
+
+    return subcategory_category, url
+
+
+class SubCategoryForCosmetolog(models.Model):
+    name = models.CharField(max_length=32, blank=True, null=True, default=None)
+    slug = models.SlugField(max_length=32, unique=True)
+    category = models.ForeignKey(CategoryForCosmetolog, blank=True, null=True, default=None)
+    subcategory_category = models.CharField(max_length=64, blank=True, null=True, default=None)
+    url = models.CharField(max_length=64, blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        # return "%s" % self.name
+        return "%s, %s" % (self.name, self.category)
+
+    def __unicode__(self):
+        # return "%s" % self.name
+        return "%s, %s, %s" % (self.name, self.category, self.url)
+
+    class Meta:
+        verbose_name = 'SubCategoryForCosmetolog'
+        verbose_name_plural = 'SubCategoriesForCosmetolog'
+
+    def save(self, *args, **kwargs):
+        self.subcategory_category, self.url = subcategory_category_creator(self)
+
+        super(SubCategoryForCosmetolog, self).save(*args, **kwargs)
 
 
 class Cosmetolog(models.Model):
@@ -133,3 +170,27 @@ def pre_save_post_receiver(sender, instance, *args, **kwargs):
 # pre_save.connect(pre_save_post_receiver, sender=CategoryForCosmetolog)
 pre_save.connect(pre_save_post_receiver, sender=Cosmetolog)
 # pre_save.connect(pre_save_post_receiver, sender=ServiceProduct)
+
+
+class CosmetologAddress(models.Model):
+    cosmetolog_name = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None)
+    cosmetolog_id = models.IntegerField(blank=True, null=True, default=None)
+    address_name = models.ForeignKey(Address, blank=True, null=True, default=None)
+    address_id = models.IntegerField(blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=True)
+    is_main = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __str__(self):
+        return "%s" % self.id
+
+    class Meta:
+        verbose_name = 'CosmetologAddress'
+        verbose_name_plural = 'CosmetologAddresses'
+
+    def save(self, *args, **kwargs):
+        self.cosmetolog_id = self.cosmetolog_name_id
+        self.address_id = self.address_name_id
+
+        super(CosmetologAddress, self).save(*args, **kwargs)

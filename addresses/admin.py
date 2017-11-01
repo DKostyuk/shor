@@ -19,7 +19,7 @@ admin.site.register(AddressType, AddressTypeAdmin)
 
 class AddressAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Address._meta.fields]
-    prepopulated_fields = {'slug': ('name',)}
+    # prepopulated_fields = {'slug': ('name',)}
 
     class Meta:
         model = Address
@@ -32,13 +32,10 @@ admin.site.register(Address, AddressAdmin)
 #     extra = 0
 #
 #
-# class ServiceProductAdmin(admin.ModelAdmin):
-#     list_display = [field.name for field in ServiceProduct._meta.fields]
-#     prepopulated_fields = {'slug': ('name',)}
-#     inlines = [ServiceProductImageInline]
-#
-#     class Meta:
-#         model = ServiceProduct
-#
-# admin.site.register(ServiceProduct, ServiceProductAdmin)
-#
+class AddressAddFileAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in AddressAddFile._meta.fields]
+
+    class Meta:
+        model = AddressAddFile
+
+admin.site.register(AddressAddFile, AddressAddFileAdmin)

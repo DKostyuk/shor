@@ -36,6 +36,7 @@ class SliderMain(models.Model):
     ad_title = models.CharField(max_length=128)
     ad_text = models.TextField(blank=True, null=True, default=None)
     image = models.ImageField(upload_to='advert_images/')
+    url = models.URLField(blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
     is_main = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)

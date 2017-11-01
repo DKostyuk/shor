@@ -1,0 +1,22 @@
+<li class="media">
+    <div class="media-left">
+        <div class="logo-name-list">
+            <div class="logo-img-list">
+                <a href="">
+                    <img src="{{ search_cosmetolog.logo_image.url }}"
+                         class = "img-responsive img-cosmetolog-logo-list">
+                </a>
+            </div>
+            <div class="">
+                {{ search_cosmetolog.name }}
+            </div>
+        </div>
+    </div>
+    <div class="media-body">
+        {% for search_service_products_image in search_service_products_images %}
+            {% if search_service_products_image.service_product.cosmetolog.id == search_cosmetolog.id  %}
+                {% include 'landing/search_service_product_item_list_info.html' %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</li>

@@ -7,10 +7,24 @@ class CosmetologCategoryInline(admin.TabularInline):
     extra = 0
 
 
+class CosmetologAddressInline(admin.TabularInline):
+    model = CosmetologAddress
+    extra = 0
+
+class CosmetologAddressAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in CosmetologAddress._meta.fields]
+
+    class Meta:
+        model = CosmetologAddress
+
+admin.site.register(CosmetologAddress, CosmetologAddressAdmin)
+
+
 class CosmetologAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Cosmetolog._meta.fields]
     prepopulated_fields = {'slug': ('name',)}
     inlines = [CosmetologCategoryInline]
+    inlines = [CosmetologAddressInline]
 
     class Meta:
         model = Cosmetolog
@@ -26,6 +40,16 @@ class CategoryForCosmetologAdmin(admin.ModelAdmin):
         model = CategoryForCosmetolog
 
 admin.site.register(CategoryForCosmetolog, CategoryForCosmetologAdmin)
+
+
+class SubCategoryForCosmetologAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in SubCategoryForCosmetolog._meta.fields]
+    prepopulated_fields = {'slug': ('name',)}
+
+    class Meta:
+        model = SubCategoryForCosmetolog
+
+admin.site.register(SubCategoryForCosmetolog, SubCategoryForCosmetologAdmin)
 
 
 class ServiceProductImageInline(admin.TabularInline):

@@ -7,7 +7,7 @@ from .forms import CheckoutContactForm
 def basket_adding(request):
     return_dict = dict()
     session_key = request.session.session_key
-    print (request.POST)
+    print(request.POST)
     data = request.POST
     product_id = data.get("product_id")
     nmb = data.get("nmb")

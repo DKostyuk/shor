@@ -1,5 +1,6 @@
 from django.db import models
 from products.models import Product
+from cosmetologs.models import ServiceProduct
 from django.db.models.signals import post_save
 
 
@@ -10,6 +11,9 @@ class Status(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
+        return "%s" % self.name
+
+    def __unicode__(self):
         return "%s" % self.name
 
     class Meta:
@@ -104,3 +108,34 @@ class ProductInBasket(models.Model):
         self.total_price = int(self.nmb) * price_per_item
 
         super(ProductInBasket, self).save(*args, **kwargs)
+
+
+# Order of Service
+# ___________________________________
+
+class ServiceOrder(models.Model):
+    session_key = models.CharField(max_length=128, blank=True, null=True, default=None)
+    service_product = models.CharField(max_length=64, blank=True, null=True, default=None)
+    service_id = models.ForeignKey(ServiceProduct, blank=True, null=True, default=None)
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0) #total price for all services in order
+    customer_name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    customer_email = models.EmailField(blank=True, null=True, default=None)
+    customer_phone = models.CharField(max_length=48, blank=True, null=True, default=None)
+    # customer_address = models.CharField(max_length=128, blank=True, null=True, default=None)
+    comments = models.TextField(blank=True, null=True, default=None)
+    status = models.ForeignKey(Status, blank=True, null=True, default=None)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __str__(self):
+        return "ServiceOrder %s" % self.id
+
+    class Meta:
+        verbose_name = 'ServiceOrder'
+        verbose_name_plural = 'ServiceOrders'
+
+    def save(self, *args, **kwargs):
+
+        super(ServiceOrder, self).save(*args, **kwargs)
+
+

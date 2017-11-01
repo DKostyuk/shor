@@ -1,0 +1,103 @@
+<div id="SendOrderService" class="modal fade" role="dialog">
+    <div class="col-lg-12">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal header</h4>
+                </div>
+                <div class="modal-body col-lg-12">
+                    <h3>
+                        Modal body
+                    </h3>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 service-product-description">
+                                <div class="logo-name">
+                                    <div class="col-lg-6 logo-img">
+                                        <img src="{{ service_product.cosmetolog.logo_image.url }}"
+                                             class = "img-responsive img-cosmetolog-logo">
+                                    </div>
+                                    <div class="col-lg-6 cosmetolog-name">
+                                        {{ service_product.cosmetolog.name }}
+                                    </div>
+                                </div>
+
+                                <div class="service-product-item-order">
+                                    <div class="col-lg-12 service-product-name">
+                                        <p>You have chosen the following service</p>
+                                        <h4>{{ service_product.name }}</h4>
+                                    </div>
+                                    <div class="col-lg-12 service-product-price">
+                                        <p>Price minimum {{ service_product.price01 }} PLN</p>
+                                        <p>Price maximum {{ service_product.price02 }} PLN</p>
+                                    </div>
+                                    {% if service_product.discount %}
+                                        <div class="col-lg-12 service-discount-text">
+                                            Discount {{ service_product.discount }}%
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                    <div class="col-lg-9 form-service-order">
+                        Hello
+                        <div class="container col-lg-12">
+                            <div class="row">
+                                <div class="">
+                                    <div>
+                                        <form action="" method="post" class="text-center">{% csrf_token %}
+                                            <input type="hidden" name="{{ form_service_order.session_key.name }}"
+                                                       value={{ session_key }}>
+                                            <input type="hidden" name="{{ form_service_order.service_product.name }}"
+                                                       value='{{ service_product.name }}'>
+                                            <input type="hidden" name="{{ form_service_order.service_id.name }}"
+                                                       value={{ service_product.id }}>
+                                            <input type="hidden" name="{{ form_service_order.total_price.name }}"
+                                                       value={{ service_product.price_avg }}>
+                                            <input type="hidden" name="{{ form_service_order.status.name }}"
+                                                       value=2>
+
+                                            <div class="form-group">
+                                                <input name="{{ form_service_order.customer_name.name }}"
+                                                       class="form-control" placeholder="Input Your Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" name="{{ form_service_order.customer_email.name }}"
+                                                       class="form-control" placeholder="Email Address">
+                                            </div>
+                                            <div class="form-group">
+                                                <input name="{{ form_service_order.customer_phone.name }}"
+                                                       class="form-control" placeholder="Input Your Phone Number">
+                                            </div>
+                                            <div class="form-group">
+                                                <input name="{{ form_service_order.comments.name }}"
+                                                       class="form-control" placeholder="Any Details">
+                                            </div>
+                                            <button type="submit"
+                                                    data-service_product_id = "{{ service_product.id }}"
+                                                    data-service_name = "{{ service_product.name }}"
+                                                    data-service_price_avg = "{{ service_product.price_avg }}"
+                                                    class="btn btn-primary btn-orange">
+                                                Send Order Service
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                        </div>
+
+                    </div>
+
+
+                <div class="modal-footer">Modal footer</div>
+            </div>
+        </div>
+    </div>
+</div>
+

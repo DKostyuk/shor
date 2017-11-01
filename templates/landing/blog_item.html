@@ -2,7 +2,7 @@
     <div class="blog-item">
         <div>
             <div class="center-block img-product">
-                 <a href="{% url 'blog' blog_image.blog.id %}">
+                 <a href="{% url 'blog' blog_image.blog.slug %}">
                     <img src="{{ blog_image.image.url }}" class = "img-responsive">
                 </a>
             </div>

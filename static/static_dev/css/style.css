@@ -7,6 +7,7 @@ html, body{
 
 .navbar{
     margin-bottom: 0;
+    height: 50px;
 }
 
 .wrapper{
@@ -26,6 +27,22 @@ html, body{
     background-color: white;
 }
 
+.advert-top{
+    margin-bottom: 5px;
+}
+
+.advert-right-up-container{
+    height: 145px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.advert-right-down-container{
+    height: 150px;
+    padding-top: 5px;
+    overflow: hidden;
+}
+
 .section-top{
     margin-bottom: 20px
 }
@@ -33,7 +50,7 @@ html, body{
 .promo-slider{
     height: 266px;
 }
-.slider-top, .advert-left, .advert-right, advert-right-up, advert-right-down{
+.slider-top, .advert-left, .advert-right, .advert-right-up, .advert-right-down{
     margin-left: auto;
     margin-right: auto;
 }
@@ -121,6 +138,26 @@ html, body{
     border-radius: 0;
 }
 
+.navbar-brand{
+    /*height: 50px;*/
+    background-color: #dc5129;
+    padding: 0;
+
+}
+
+.logo-logo{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+.logo{
+    height: 100%;
+    margin: 0;
+
+}
+
 .navbar-main{
     background-color: #55e073;
     border: none;
@@ -151,6 +188,181 @@ html, body{
     position: relative;
     margin-bottom: 10px;
     border: 1px solid #ddd;
-    background-color: red;
-    height: 30px;
+    /*background-color: red;*/
+    height: 54px;
+    text-align: center;
+    /*min-height: 10px;*/
+    /*height: 20px;*/
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
+
+.find-icon{
+    background-image: url('../img/searchIcon16x16.png');
+    background-repeat: no-repeat; /*Убираем повтор изображения*/
+    background-position: 4px; /*Позиционируем*/
+    outline: none;
+    width: 100px;
+}
+
+/*Service product item block*/
+.logo-name{
+    height: 90px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    position: relative;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    margin-bottom: 1px;
+    /*border-bottom: 1px solid #f4f4f4;*/
+}
+.logo-img{
+    margin-left: 0px;
+}
+
+.img-cosmetolog-logo{
+    /*width: 100%;*/
+    height: 70px;
+    float: left;
+    /*display: table-cell;*/
+    /*vertical-align: middle*/
+    border-radius: 5px;
+}
+
+.service-product-item{
+    height: 310px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    position: relative;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.service-product-item-img{
+    /*background-color: green;*/
+    /*position: relative;*/
+}
+
+.img-service-product{
+    /*filter: alpha(Opacity=50);*/
+    /*opacity: 0.5;*/
+    /*position: relative;*/
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.round{
+    border-radius: 100px; /* Радиус скругления */
+    box-shadow: 0 0 0 3px gray, 0 0 13px; /* Параметры теней */
+}
+
+.service-product-info{
+    /*position: absolute;*/
+    /*top: 250px;*/
+}
+
+.service-discount-container{
+    position: absolute;
+    top: 10%;
+    background: #55e073;
+    width: 30%;
+    color: white;
+    font-weight: 700;
+    padding: 3px;
+}
+
+.service-product-s-description{
+    height: 40px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.text-recommendation{
+    margin-left: 20px;
+}
+
+/*Modal ServiceOrder*/
+.modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+.service-product-item-order{
+    height: 200px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    position: relative;
+    padding: 10px 0 10px 0;
+    /*text-align: center;*/
+    margin-bottom: 10px;
+}
+
+/*List of Cosmetolog*/
+.all-service{
+    margin: 30px;
+}
+
+.title-block-list{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.49);
+    margin-bottom: 5px;
+}
+
+.low-price-title, .high-price-title{
+    padding:0;
+}
+
+.logo-name-list{
+    width: 95px;
+    /*background-color: white;*/
+    /*border: 1px solid lightgrey;*/
+    position: relative;
+    /*padding: 10px 0 10px 0;*/
+    text-align: center;
+}
+
+.img-cosmetolog-logo-list{
+    /*width: 100%;*/
+    height: 70px;
+    float: left;
+    /*display: table-cell;*/
+    /*vertical-align: middle*/
+    border-radius: 5px;
+    /*padding: 10px 0 10px 0;*/
+}
+
+.center-block-list{
+    height: 100px;
+}
+
+.service-discount-container-list, .service-product-price-list{
+    margin-left: 3px;
+    margin-right: 3px;
+    text-align: center;
+}
+
+.service-discount-container-list, .service-product-price-list > h4{
+    margin-bottom: 3px;
+}
+
+.add-to-cart-btn-list{
+    margin-top: 12px;
+    margin-left: 15px;
+}
+
+.service-product-item-container{
+    border-bottom: 1px solid #fcf8e3;
+    /*margin-bottom: 5px;*/
+    padding-bottom: 5px;
+}
+
