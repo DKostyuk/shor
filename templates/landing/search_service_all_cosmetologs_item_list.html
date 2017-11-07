@@ -15,7 +15,7 @@
     <div class="media-body">
         {% for search_service_products_image in search_service_products_images %}
             {% if search_service_products_image.service_product.cosmetolog.id == search_cosmetolog.id  %}
-                {% include 'landing/search_service_product_item_list_info.html' %}
+                {% include 'landing/search_service_all_cosmetologs_item_list_info.html' %}
             {% endif %}
         {% endfor %}
     </div>

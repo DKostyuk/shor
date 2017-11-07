@@ -23,13 +23,14 @@ urlpatterns = [
 
     url(r'^uslugi-kosmetyczne/$', views.salon, name='salon'),
 
-    url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/$', views.search_service_address, name='search_service_address'),
-    url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/$', views.search_service_address,
-        name='search_service_address'),
+    url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/$',
+        views.search_service_address, name='search_service_address'),
+    url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/$',
+        views.search_service_address, name='search_service_address'),
     url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/(?P<q_3>[\w-]+)/$',
-        views.search_service_address, name='search_search_service'),
+        views.search_service_address, name='search_service_address'),
     url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/(?P<q_3>[\w-]+)/(?P<q_4>[\w-]+)/$',
-        views.search_service_address, name='search_search_service'),
+        views.search_service_address, name='search_service_address'),
 
     url(r'^service-in-Poland/(?P<q_1>[\w-]+)/$', views.search_service, name='search_service'),
     url(r'^service-in-Poland/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/$', views.search_service, name='search_service'),

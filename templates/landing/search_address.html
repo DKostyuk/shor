@@ -4,22 +4,97 @@
 
 {% block content %}
 
-    <div class="section section3 popular">
+    <div class="search-main-top-01">
         <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="h3 text-center">
-                            We found at {{ cosmetolog_count }} COSMOTOLOG
-                        </h1>
-{#                        {% for search_cosmetolog in search_cosmetologs %}#}
-{#                            {% include 'landing/search_service_product_item_list.html' %}#}
-{#                        {% endfor %}#}
-                        {% for search_cosmetolog in search_cosmetologs %}
-                            {{ search_cosmetolog.name }}
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 search-main-top clear">
+                    <form method="GET" action="/uslugi-kosmetyczne/">
+            {#            <input type="text" name="q" placeholder="Search in City"#}
+            {#                   value = '{{ request.GET.q }}'/>#}
+                        <select class="selectpicker" name="q" data-live-search="true">
+                            <option data-hidden="true" value="{{ query_address }}">{{ query_address }}</option>
+                            {% for active_address in active_addresses %}:
+                                <option>{{ active_address.display_address }}</option>
+                            {% endfor %}
+                        </select>
+            {#            <input type="text" name="q1" placeholder="Search What" value = '{{ request.GET.q1 }}'/>#}
+                        <select class="selectpicker" name="q1" data-live-search="true">
+                            <option data-hidden="true" value="">CHOOSE</option>
+                            {% for service_category in service_categories %}:
+                                <option>{{ service_category.name }}</option>
+                            {% endfor %}
+                            {% for subservice_category in subservice_categories %}:
+                                <option>{{ subservice_category.subcategory_category }}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" class="btn btn-primary find-icon" value="Szukaj" />
 
-                        {% endfor %}
-                    </div>
+                    </form>
                 </div>
+            </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 choose-town">
+                <h3 class="h3 choose-town-title">
+                    Wybierz SERVICE
+                </h3>
+                <div class="town-simple-list">
+{#                    <a href="{% url 'product' product_image.product.slug %}">#}
+                    {% for active_address in active_addresses_towns %}
+                        <a class="town-simple-item" href="{% url 'search_service_address' q_1 q_2 active_address.slug %}">
+                            {{ active_address.display_address }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="h3 text-center we-found-title">
+                        We found {{ cosmetolog_count }} Cosmetologs with - {{ query_service }}  - Service
+                    </h1>
+                </div>
+            </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 title-block-list">
+                <div class="row">
+                    <div class="col-lg-5 text-center">
+                        Cosmetolog
+                    </div>
+                    <div class="col-lg-1">
+                        Discount
+                    </div>
+                    <div class="col-lg-2 text-center low-price-title">
+                        Najniższa
+                        <br>
+                        cena
+                    </div>
+                    <div class="col-lg-1 text-center high-price-title">
+                        Najwyższa
+                        <br>
+                        cena
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-xs-12">
+                <ul class="media-list">
+                    {% for search_cosmetolog in search_cosmetologs %}
+                        {% include 'landing/search_service_all_cosmetologs_item_list.html' %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

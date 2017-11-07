@@ -71,7 +71,7 @@ def salon(request):
             url_service = str()
             if q_full_address:
                 search_active_addresses = Address.objects.filter(is_active=True)
-                search_active_addresses_url = search_active_addresses.get(id=q_full_address)
+                search_active_addresses_url = search_active_addresses.get(display_address=q_full_address)
                 url_address = search_active_addresses_url.url
             if q_service:
                 service_set = set()
@@ -82,7 +82,7 @@ def salon(request):
                     url_service = slugify(q_service)
                 else:
                     subservice_categories = SubCategoryForCosmetolog.objects.filter(is_active=True)
-                    subservice_categories_url = subservice_categories.get(id=q_service)
+                    subservice_categories_url = subservice_categories.get(subcategory_category=q_service)
                     url_service = subservice_categories_url.url
 
             url_full = url_service + url_address + "/"
@@ -95,21 +95,6 @@ def salon(request):
                 return HttpResponseRedirect('/service-in-Poland/' + url_full)
             else:
                 return HttpResponseRedirect(url_full)
-            # if q_full_address and not q_service:
-            # # return HttpResponseRedirect(url_full) -
-            # # надо возвращать для разных вариантов разные реьд - с инфо + призыв ввести полный поисковый запос
-            # #надо вернуть список всех косметологов с активного адреса с любым сервисом - подумать о порядке сортировки
-            # elif not q_full_address and q_service:
-            #     # надо вернуть список всех косметологов с таким сервисом - подумать опордяке сортировки
-            # else:
-            #
-            # return HttpResponseRedirect(reverse(home))
-
-
-        # return HttpResponseRedirect(reverse(search, args=[query1, query]))
-        # return HttpResponseRedirect(url + "?%s" % params)
-        # return render(request, 'landing/search.html', locals())
-        # return HttpResponseRedirect(reverse('salon', args=(query1, query,)))
     else:
         return HttpResponseRedirect(reverse(home))
 
@@ -126,7 +111,7 @@ def get_city_id(q_city):
     for j in search_cosmetolog_addresses:
         cosmetolog_set.add(j.cosmetolog_id)
 
-    return cosmetolog_set
+    return city_id, cosmetolog_set
 
 
 def get_delnica_ulica_id(q_city, q_delnica_ulica):
@@ -192,7 +177,8 @@ def search_service_address(request, q_1, q_2=None, q_3=None, q_4=None):
             # выбираем всех косметологов у которых есть адресс q_3 и q_4 (на них фокус), или q_3
             cosmetolog_address_set = q_search_in_url(q_3, q_4)
             print('после вызова функции - только city and delnica/ulica q_3 q_4  ', cosmetolog_address_set)
-            cosmetolog_address_set.update(get_city_id(q_3))
+            city_id, cosmetolog_set = get_city_id(q_3)
+            cosmetolog_address_set.update(cosmetolog_set)
             print('после вызова функции - только city and delnica/ulica q_3 q_4 +++++ ', cosmetolog_address_set)
             query_address = q_3.capitalize() + ', ' + q_4.capitalize()
 
@@ -225,7 +211,8 @@ def search_service_address(request, q_1, q_2=None, q_3=None, q_4=None):
             # выбираем всех косметологов у которых есть адресс q_2 и q_3 (на них фокус), или q_2
             cosmetolog_address_set = q_search_in_url(q_2, q_3)
             print('после вызова функции - только city and delnica/ulica q_3 q_4  ', cosmetolog_address_set)
-            cosmetolog_address_set.update(get_city_id(q_2))
+            city_id, cosmetolog_set = get_city_id(q_2)
+            cosmetolog_address_set.update(cosmetolog_set)
             print('после вызова функции - только city and delnica/ulica q_3 q_4 +++++ ', cosmetolog_address_set)
             query_address = q_2.capitalize() + ', ' + q_3.capitalize()
         else:
@@ -256,13 +243,28 @@ def search_service_address(request, q_1, q_2=None, q_3=None, q_4=None):
     # service_products_images = service_products_images_all[:4]
     search_cosmetologs = Cosmetolog.objects.filter(is_active=True, is_visible=True, id__in=search_cosmetologs_set)
 
+    search_service_address_999 = 999
+
     if cosmetolog_count != 0:
-        return render(request, 'landing/search.html', locals())
+        return render(request, 'landing/search_results.html', locals())
     else:
         return render(request, 'landing/no_search_results.html', locals())
 
 
 def search_service(request, q_1, q_2=None, q_3=None):
+    logo_images = LogoImage.objects.filter(is_active=True, is_main=True)
+
+    search_active_addresses = Address.objects.filter(is_active=True)
+    active_addresses = search_active_addresses.filter(
+        Q(type_id=5) |
+        Q(type_id=4)
+    ).order_by('type_id')
+
+    active_addresses_towns = active_addresses.filter(type_id=4)
+    for i in active_addresses_towns:
+        i.slug = slugify(i.name)
+    subservice_categories = SubCategoryForCosmetolog.objects.filter(is_active=True)
+    service_categories = CategoryForCosmetolog.objects.filter(is_active=True)
     # Ввели сервис но нету адресу - выводим список косметологов с таким сервисом по всей стране
     # фокус на адресс - ВВЕДИТЕ поиск по адресу
     service_set = set()
@@ -273,7 +275,8 @@ def search_service(request, q_1, q_2=None, q_3=None):
         for i in service_products:
             service_set.add(i.cosmetolog_id)
         print('только для суб сервиса', service_set)
-        query_service = q_1.capitalize() + ', ' + q_2.capitalize()
+        query_service_item = subservice_categories.get(slug=q_2)
+        query_service = query_service_item.subcategory_category
 
         search_cosmetologs_set = service_set
         print('final search_cosmetologs_set    ', search_cosmetologs_set)
@@ -285,44 +288,68 @@ def search_service(request, q_1, q_2=None, q_3=None):
         for i in service_products:
             service_set.add(i.cosmetolog_id)
         print('только для суб сервиса', service_set)
-        query_service = q_1.capitalize()
+        query_service_item = service_categories.get(slug=q_1)
+        query_service = query_service_item.name
 
         search_cosmetologs_set = service_set
         print('final search_cosmetologs_set    ', search_cosmetologs_set)
         cosmetolog_count = len(search_cosmetologs_set)
 
-    return render(request, 'landing/search_service.html', locals())
+    search_cosmetologs = Cosmetolog.objects.filter(is_active=True, is_visible=True, id__in=search_cosmetologs_set)
+    search_service_products_images = ServiceProductImage.objects.filter(
+        is_active=True, is_main=True, service_product__is_active=True,
+        service_product__is_visible=True, service_product__cosmetolog__id__in=search_cosmetologs_set)
+    search_service_999 = 999
+    if cosmetolog_count != 0:
+        return render(request, 'landing/search_results.html', locals())
+    else:
+        return render(request, 'landing/no_search_results.html', locals())
 
 
 def search_address(request, q_1, q_2=None, q_3=None):
     # Ввели аддрес но нету сервиса - выводим список косметологов по этому адресу с любым сервисом
     # фокус на сервис - ВЫБЕРИТЕ СЕРВИС
     logo_images = LogoImage.objects.filter(is_active=True, is_main=True)
-    service_set = set()
+
+    search_active_addresses = Address.objects.filter(is_active=True)
+    active_addresses = search_active_addresses.filter(
+        Q(type_id=5) |
+        Q(type_id=4)
+    ).order_by('type_id')
+
+    # active_addresses_towns = active_addresses.filter(type_id=4)
+    # for i in active_addresses_towns:
+    #     i.slug = slugify(i.name)
+    subservice_categories = SubCategoryForCosmetolog.objects.filter(is_active=True)
+    service_categories = CategoryForCosmetolog.objects.filter(is_active=True)
     if q_2:
-        service_products = ServiceProduct.objects.filter(is_active=True, is_visible=True,
-                                                         subcategory__slug__icontains=q_2)
-        print(service_products)
-        for i in service_products:
-            service_set.add(i.cosmetolog_id)
-        print('только для суб сервиса', service_set)
-        query_service = q_1.capitalize() + ', ' + q_2.capitalize()
-
-        search_cosmetologs_set = service_set
-        print('final search_cosmetologs_set    ', search_cosmetologs_set)
-        cosmetolog_count = len(search_cosmetologs_set)
+        # пишем код для q_1 и q_2
+        # выбираем всех косметологов у которых есть адресс q_2 и q_3 (на них фокус), или q_2
+        cosmetolog_address_set = q_search_in_url(q_1, q_2)
+        print('после вызова функции - только city and delnica/ulica q_1 q_2  ', cosmetolog_address_set)
+        city_id, cosmetolog_set = get_city_id(q_1)
+        cosmetolog_address_set.update(cosmetolog_set)
+        print('после вызова функции - только city and delnica/ulica q_1 q_2 +++++ ', cosmetolog_address_set)
+        query_address_id, w2, w3 = get_delnica_ulica_id(q_1, q_2)
+        query_address = Address.objects.get(id=query_address_id).display_address
     else:
-        service_products = ServiceProduct.objects.filter(is_active=True, is_visible=True,
-                                                         category__slug__icontains=q_1)
-        print(service_products)
-        for i in service_products:
-            service_set.add(i.cosmetolog_id)
-        print('только для суб сервиса', service_set)
-        query_service = q_1.capitalize()
+        # пишем код для q_1 (вызываем функцию с параметром q_1, в которой
+        # выбираем всех косметологов у которых есть адрес q1 включая вглубь
+        cosmetolog_address_set = q_search_in_url(q_1, q_1)
+        print('после вызова функции - только city q_1  ', cosmetolog_address_set)
+        query_address_id, w2_set = get_city_id(q_1)
+        query_address = Address.objects.get(id=query_address_id).display_address
+    search_cosmetologs_set = cosmetolog_address_set
+    print('final search_cosmetologs_set    ', search_cosmetologs_set)
+    cosmetolog_count = len(search_cosmetologs_set)
 
-        search_cosmetologs_set = service_set
-        print('final search_cosmetologs_set    ', search_cosmetologs_set)
-        cosmetolog_count = len(search_cosmetologs_set)
+    search_cosmetologs = Cosmetolog.objects.filter(is_active=True, is_visible=True, id__in=search_cosmetologs_set)
+    search_service_products_images = ServiceProductImage.objects.filter(
+        is_active=True, is_main=True, service_product__is_active=True,
+        service_product__is_visible=True, service_product__cosmetolog__id__in=search_cosmetologs_set)
+    search_address_999 = 999
 
-
-    return render(request, 'landing/search_address.html', locals())
+    if cosmetolog_count != 0:
+        return render(request, 'landing/search_results.html', locals())
+    else:
+        return render(request, 'landing/no_search_results.html', locals())

@@ -1,0 +1,17 @@
+<div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="h3 text-warning text-recommendation">
+                    Recommended services from the best Cosmetologs
+                </h2>
+            </div>
+            <div class="col-lg-12">
+                {% for search_service_products_image in search_service_products_images %}
+                    {% include 'landing/search_item.html' %}
+                {% endfor %}
+            </div>
+        </div>
+</div>
+<h2 class="h3 text-center xs-hidden all-service">
+        All {{ query_service }} service on {{ query_address }} address
+</h2>

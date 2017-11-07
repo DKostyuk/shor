@@ -1,0 +1,38 @@
+<div class="media service-product-item-container">
+    <div class="media-left col-lg-2">
+        <div class="center-block-list">
+            <a href=#>
+                <img src="{{ search_service_products_image.image.url }}"
+                     class = "img-responsive img-service-product-list">
+            </a>
+        </div>
+    </div>
+    <div class="media-body">
+        <div class="col-lg-2 service-product-name-list">
+            <h4>{{ search_service_products_image.service_product.name }}</h4>
+        </div>
+            <div class="col-lg-2 service-discount-container-list">
+            <h4>{{ search_service_products_image.service_product.discount }}%</h4>
+        </div>
+        <div class="col-lg-2 service-product-price-list">
+            <h4>{{ search_service_products_image.service_product.price01 }}</h4> PLN
+        </div>
+        <div class="col-lg-2 service-product-price-list">
+            <h4>{{ search_service_products_image.service_product.price02 }}</h4> PLN
+        </div>
+        <div class="col-lg-2 add-to-cart-btn-list">
+            {% if not search_service_address_999 %}
+                <div class="description-region">
+                    {% if search_service_999 %}
+                        {{ search_service_products_image.service_product.cosmetolog.description_region }}
+                    {% elif search_address_999%}
+                        {{ search_service_products_image.service_product.cosmetolog.description |truncatechars_html:40 }}
+                    {% endif %}
+                </div>
+            {% endif %}
+            <button class="btn btn-success">
+                SEND ORDER not yet
+            </button>
+        </div>
+    </div>
+</div>

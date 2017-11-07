@@ -1,0 +1,37 @@
+<div class="search-main-top-01">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 search-main-top clear">
+                <form method="GET" action="/uslugi-kosmetyczne/">
+        {#            <input type="text" name="q" placeholder="Search in City"#}
+        {#                   value = '{{ request.GET.q }}'/>#}
+                    <select class="selectpicker" name="q" data-live-search="true">
+                        {% if search_address_999 %}
+                            <option data-hidden="true" value="{{ query_address }}">{{ query_address }}</option>
+                        {% else %}
+                            <option data-hidden="true" value="">miasto lub dzielnica</option>
+                        {% endif %}
+                        {% for active_address in active_addresses %}:
+                            <option>{{ active_address.display_address }}</option>
+                        {% endfor %}
+                    </select>
+        {#            <input type="text" name="q1" placeholder="Search What" value = '{{ request.GET.q1 }}'/>#}
+                    <select class="selectpicker" name="q1" data-live-search="true">
+                        {% if search_service_999 %}
+                            <option data-hidden="true" value="{{ query_service }}">{{ query_service }}</option>
+                        {% else %}
+                            <option data-hidden="true" value="">Choose one...</option>
+                        {% endif %}
+                        {% for service_category in service_categories %}:
+                            <option>{{ service_category.name }}</option>
+                        {% endfor %}
+                        {% for subservice_category in subservice_categories %}:
+                            <option>{{ subservice_category.subcategory_category }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" class="btn btn-primary find-icon" value="Szukaj" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

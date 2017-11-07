@@ -1,0 +1,11 @@
+<div class="container search-cosmetolog-list">
+    <div class="row">
+        <div class="col-lg-9 col-xs-12">
+            <ul class="media-list">
+                {% for search_cosmetolog in search_cosmetologs %}
+                    {% include 'landing/search_service_all_cosmetologs_item_list.html' %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

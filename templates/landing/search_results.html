@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    {% include 'landing/search_fields.html' %}
+
+    {% if not search_service_address_999 %}
+        {% include 'landing/search_choose towns.html' %}
+    {% endif %}
+
+    {% include 'landing/search_we_found_title.html' %}
+
+    {% if search_service_address_999 %}
+        {% include 'landing/search_recommend.html' %}
+    {% endif %}
+
+    {% include 'landing/search_title_block_list.html' %}
+
+    {% include 'landing/search_cosmetolog_list.html' %}
+
+{% endblock %}
