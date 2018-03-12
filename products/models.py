@@ -1,9 +1,11 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 class ProductCategory(models.Model):
     name = models.CharField(max_length=16, blank=True, null=True, default=None)
     slug = models.SlugField(max_length=16, unique=True)
+    description = RichTextField(blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -16,11 +18,24 @@ class ProductCategory(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    name_pl = models.CharField(max_length=64, blank=True, null=True, default=None)
     slug = models.SlugField(max_length=64, unique=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     discount = models.IntegerField(default=0)
     category = models.ForeignKey(ProductCategory, blank=True, null=True, default=None)
+    name_description = models.CharField(max_length=64, blank=True, null=True, default=None)
+    # description = RichTextField()
     description = models.TextField(blank=True, null=True, default=None)
+    name_description_1 = models.CharField(max_length=64, blank=True, null=True, default=None)
+    description_1 = RichTextField()
+    name_description_2 = models.CharField(max_length=64, blank=True, null=True, default=None)
+    description_2 = models.TextField(blank=True, null=True, default=None)
+    name_description_3 = models.CharField(max_length=64, blank=True, null=True, default=None)
+    description_3 = models.TextField(blank=True, null=True, default=None)
+    name_description_4 = models.CharField(max_length=64, blank=True, null=True, default=None)
+    description_4 = models.TextField(blank=True, null=True, default=None)
+    name_description_5 = models.CharField(max_length=64, blank=True, null=True, default=None)
+    description_5 = models.TextField(blank=True, null=True, default=None)
     short_description = models.TextField(blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)

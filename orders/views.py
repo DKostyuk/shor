@@ -1,13 +1,13 @@
 from django.http import JsonResponse
-from .models import ProductInBasket
+from .models import *
 from django.shortcuts import render
 from .forms import CheckoutContactForm
+from django.contrib import auth
 
 
 def basket_adding(request):
     return_dict = dict()
     session_key = request.session.session_key
-    print(request.POST)
     data = request.POST
     product_id = data.get("product_id")
     nmb = data.get("nmb")
@@ -46,4 +46,26 @@ def checkout(request):
     form = CheckoutContactForm(request.POST or None)
     if request.POST:
         print(request.POST)
+    #     возможно для не авторизированныхъ надо ввести проверку валидации формы
+        data = request.POST
+
+        order = Order.objects.create(user=username, status_id=1)
+
+        for name, value in data.items():
+            if name.startswith('product_in_basket_'):
+                product_in_basket_id = name.split('product_in_basket_')[1]
+                product_in_basket = ProductInBasket.objects.get(id=product_in_basket_id)
+                product_in_basket.nmb = value
+
+                product_in_basket.save(force_update=True)
+
+                ProductInOrder.objects.create(product=product_in_basket.product, nmb=product_in_basket.nmb,
+                                              price_per_item=product_in_basket.price_per_item,
+                                              total_price=product_in_basket.total_price,
+                                              order=order)
+
+                product_in_basket.order = order
+                product_in_basket.is_active = False
+                product_in_basket.save(force_update=True)
+
     return render(request, 'orders/checkout.html', locals())

@@ -66,15 +66,27 @@ $(document).ready(function(){
        $('.basket-items').removeClass('hidden');
     }
 
-    $('.basket-container').on('click', function(e){
-        e.preventDefault();
-        showingBasket();
-    });
+    // $('.basket-container').on('click', function(e){
+    //     e.preventDefault();
+    //     showingBasket();
+    // });
 
     $('.basket-container').on('mouseover', function(e){
         e.preventDefault();
         showingBasket();
     });
+
+    // $('.basket-container').on('mouseover', function(e){
+    //     e.preventDefault();
+    //     $('.basket-items').removeClass('hidden');
+    // });
+
+    $('.basket-container').on('mouseout', function(e){
+        e.preventDefault();
+        $('.basket-items').addClass('hidden');
+    });
+
+
     // $('.basket-container').on('mouseout', function(e){
     //     e.preventDefault();
     //     showingBasket();
@@ -90,7 +102,7 @@ $(document).ready(function(){
     function calculatingBasketAmount(){
         //console.log(123);
         var total_order_amount = 0;
-        // проходим по каждому элементу с таким ИД
+        // проходим по каждому элементу с таким class (ИД может быть только у одного элемента на странице !!!!)
         $('.total-product-in-basket-amount').each(function(){
             // прибавляем с переменной то что взяли при проходе элемента
             total_order_amount +=parseFloat($(this).text()); //преобразовывает текст в число parseFloat
@@ -103,6 +115,7 @@ $(document).ready(function(){
     $(document).on('change','.product-in-basket-nmb', function () { //отслеживаем изменения на классе
         var current_nmb = $(this).val(); // считыаем текущее кол-во и получаем значение в переменную
         var current_tr = $(this).closest('tr');//находим строку-ячейку где произошли изменения - ближайшая tr
+        // console.log('current_tr   ', current_tr);
         var current_price = parseFloat(current_tr.find('.product-price').text()); // из этого ряда находим span
                                                                                   // с нужным классом.
                                                 // из него берем текст и переводим с помощью ParseFloat в число

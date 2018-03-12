@@ -1,0 +1,29 @@
+<div class="section-top">
+    <div class="advert-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 promo-slider">
+                    <div id="slider">
+                        <div class="slides">
+                            {% for slider_main in slider_mains %}
+                                {% include 'landing/sliderCSS_02.html' %}
+                            {% endfor %}
+                        </div>
+                        <div class="switch">
+                            <ul>
+                                <li>
+                                    <div class="on"></div>
+                                </li>
+                                {% for i in slider_mains_counts %}
+                                    <li></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {% include 'landing/advert_right.html' %}
+            </div>
+        </div>
+    </div>
+</div>

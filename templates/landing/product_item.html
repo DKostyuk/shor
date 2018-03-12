@@ -17,7 +17,8 @@
         </div>
         <div class="product-s-description">
             <p>
-            {{ product_image.product.description|truncatechars_html:70 }}
+{#            {{ product_image.product.description|truncatechars_html:70 }}#}
+            {{ product_image.product.name_pl|truncatechars_html:50 }}
             </p>
         </div>
 
@@ -25,10 +26,10 @@
             {{ product_image.product.price }} UAH
         </div>
 
-        <div class="add-to-cart-btn">
-            <button class="btn btn-success">
-                Добавить в корзину
-            </button>
-        </div>
+{#        <div class="add-to-cart-btn">#}
+{#            <button class="btn btn-success">#}
+{#                Добавить в корзину#}
+{#            </button>#}
+{#        </div>#}
     </div>
 </div>

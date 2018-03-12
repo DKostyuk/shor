@@ -5,14 +5,14 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 {% for image_item in product.productimage_set.all %}
                     <div class="product-image-item">
                         <img src="{{ image_item.image.url }}" class="img-responsive">
                     </div>
                 {% endfor %}
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-8">
                 <h1 class="text-center">
                     {{ product.name }}
                 </h1>
@@ -41,7 +41,22 @@
                       <!-- Tab panes -->
                       <div class="tab-content product-description-tabs">
                         <div role="tabpanel" class="tab-pane active" id="description">
-                            {{ product.description }}
+                            <div class="product_description">
+                                <span class="name_description"> {{ product.name_description }}</span>
+                                {% autoescape off %} {{ product.description }} {% endautoescape %}
+                            </div>
+                            <div class="product_description">
+                                <span class="name_description"> {{ product.name_description_1 }}</span>
+                                {% autoescape off %} {{ product.description_1 }} {% endautoescape %}
+                            </div>
+                            <div class="product_description">
+                                <span class="name_description"> {{ product.name_description_2 }}</span>
+                                {{ product.description_2 }}
+                            </div>
+                            <div class="product_description">
+                                <span class="name_description"> {{ product.name_description_3 }}</span>
+                                {{ product.description_3 }}
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="delivery">
                             <h3>Как мы делаем доставку</h3>

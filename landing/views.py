@@ -1,20 +1,31 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.db.models import Q
-from .forms import SubscriberForm
+from .forms import *
 from products.models import *
 from landing.models import *
 from blogs.models import *
 from cosmetologs.models import *
 from addresses.models import *
+from django.contrib import auth
+from django.contrib.auth.forms import UserCreationForm, PasswordResetForm
+from django.contrib.sites.shortcuts import get_current_site
+from django.template.loader import render_to_string
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_text
+from .tokens import account_activation_token
+from django.core.mail import EmailMessage
+from django.http import HttpResponse
+import datetime
 
 
 def landing(request):
-    logo_images = LogoImage.objects.filter(is_active=True, is_main=True)
+    # logo_images = LogoImage.objects.filter(is_active=True, is_main=True)
     name = "DimaKostyuk"
     current_day = "31.05.2017"
     form = SubscriberForm(request.POST or None)
+    # username = auth.get_user(request).username
 
     if request.method == "POST" and form.is_valid():
         # print (request.POST)
@@ -26,7 +37,188 @@ def landing(request):
     return render(request, 'landing/landing.html', locals())
 
 
+def validate_save_user_send_email(request, newuser_form, email_1, username_original):
+    # if newuser_form.is_valid():
+    args_1 = {}
+    newuser = newuser_form.save(commit=False)
+    newuser.is_active = False
+    newuser.save()
+    # subscriber_current = Subscriber.objects.get(email=email_1)
+    subscriber_current = Subscriber.objects.get(user__username=email_1)
+    subscriber_current.email = email_1
+    subscriber_current.name = username_original
+    subscriber_current.save()
+    # Email sending code:
+    current_site = get_current_site(request)
+    mail_subject = 'Activate your blog account on Site RENEW for example.'
+    message = render_to_string('landing/acc_confirmation_email.html', {
+        'user': newuser,
+        'domain': current_site.domain,
+        'uid': urlsafe_base64_encode(force_bytes(newuser.pk)),
+        'token': account_activation_token.make_token(newuser),
+    })
+    to_email = newuser_form.cleaned_data.get('email')
+    email = EmailMessage(mail_subject, message, to=[to_email])
+    email.send()
+    args_1['registration_success'] = \
+        '999999999 Please confirm your email address to complete the registration'
+    # return render(request, 'landing/registration_profile.html', locals())
+    print(999999999999999999999999)
+    # return redirect('registration_profile', email_1=email_1)
+    return args_1
+
+
+def registration(request):
+    args = {}
+    # form1 = UserCreationForm()
+    form = UserRegistrationForm()
+    if request.POST:
+        username_original = request.POST.get('username', '')
+        email_1 = request.POST.get('email', '')
+        password_11 = request.POST.get('password1', '')
+        request.POST = request.POST.copy()
+        request.POST['username'] = email_1
+        request.POST['password2'] = password_11
+        newuser_form = UserRegistrationForm(request.POST)
+
+        # Check email is the same or not
+        user_old = User.objects.filter(username=email_1).first()
+        if user_old:
+            if user_old.is_active:
+                args['registration_error'] =\
+                    'THE SAME E-MAIL and Account is active Please, use option FORGET THE PASSWORD'
+                return render(request, 'landing/registration.html', args)
+            else:
+                now_again = '_AGAIN_'+'-'.join(('_'.join(str(datetime.datetime.now()).split(sep=' '))).split(sep=':'))
+                user_old.username = str(user_old.username)+now_again
+                user_old.email = str(user_old.email)+now_again
+                user_old.save()
+                validate_save_user_send_email(request, newuser_form, email_1, username_original)
+                return redirect('registration_profile')
+        else:
+        # users = User.objects.filter(is_active=True)
+        # email_set = set()
+        # for i in users:
+        #     email_set.add(i.email)
+        # if email_1 in email_set:
+        #     args['registration_error'] = 'THE SAME E-MAIL and Account is active Please, use option FORGET THE PASSWORD'
+        #     return render(request, 'landing/registration.html', args)
+        # else:
+            if newuser_form.is_valid():
+                validate_save_user_send_email(request, newuser_form, email_1, username_original)
+                # newuser = newuser_form.save(commit=False)
+                # newuser.is_active = False
+                # newuser.save()
+                # subscriber_current = Subscriber.objects.get(email=email_1)
+                # subscriber_current.name = username_original
+                # subscriber_current.save()
+                # # Email sending code:
+                # current_site = get_current_site(request)
+                # mail_subject = 'Activate your blog account on Site RENEW for example.'
+                # message = render_to_string('landing/acc_confirmation_email.html', {
+                #     'user': newuser,
+                #     'domain': current_site.domain,
+                #     'uid': urlsafe_base64_encode(force_bytes(newuser.pk)),
+                #     'token': account_activation_token.make_token(newuser),
+                # })
+                # to_email = newuser_form.cleaned_data.get('email')
+                # email = EmailMessage(mail_subject, message, to=[to_email])
+                # email.send()
+                # args['registration_success'] = \
+                #     '999999999 Please confirm your email address to complete the registration'
+                # # return render(request, 'landing/registration_profile.html', locals())
+                return redirect('registration_profile')
+            else:
+                form = newuser_form
+                print(form.error_messages)
+    return render(request, 'landing/registration.html', locals())
+
+
+def registration_profile(request):
+    aswer = "wefewrfergrtgrtgersd"
+    return render(request, 'landing/registration_profile.html', locals())
+
+
+def activate(request, uidb64, token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+    if user is not None and account_activation_token.check_token(user, token):
+        user.is_active = True
+        user.save()
+        auth.login(request, user)
+        profile = Subscriber.objects.get(email=user.email)
+        profile.email_confirm = True
+        profile.save()
+        # return render(request, 'landing/profile.html', locals())
+        return redirect('profile')
+        # return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
+    else:
+        return HttpResponse('Activation link is invalid!')
+
+
+def profile(request):
+    form = SubscriberForm()
+    if request.POST:
+        # subscriber_id = request.POST.get('user_id', '')
+        user_profile = Subscriber.objects.filter(pk=request.POST.get('user_id', '')).first()
+        user_profile_form = SubscriberForm(request.POST, instance=user_profile)
+        # user_profile.index = request.POST.get('index', '')
+        # user_profile.save()
+        if user_profile_form.is_valid():
+            user_profile_form.save()
+        else:
+            form = user_profile_form
+            print(99999999999999)
+    return render(request, 'landing/profile.html', locals())
+
+
+def login(request):
+    args = {}
+    # args.update(csrf(request))
+    if request.POST:
+        username = request.POST.get('username', '')
+        password = request.POST.get('password', '')
+        user = auth.authenticate(username=username, password=password)
+        if user is not None:
+            auth.login(request, user)
+            return HttpResponseRedirect(reverse(home))
+        else:
+            login_error = "NO NO NO NO NO NO NO"
+            return render(request, 'landing/login.html')
+            # return render_to_response('login.html', args)
+    else:
+        return render(request, 'landing/login.html', locals())
+        # return render_to_response('login.html', args)
+
+
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect(reverse(home))
+    # return redirect("/")
+
+
+# def reset(request):
+#     args = {}
+#     if request.POST:
+#         email_1 = request.POST.get('email', '')
+#         users = User.objects.filter(is_active=True)
+#         email_set = set()
+#         for i in users:
+#             email_set.add(i.email)
+#         if email_1 in email_set:
+#             print('999999999')
+#         else:
+#             args['reset_error'] = 'NO SUCH E-MAIL'
+#             return render(request, 'landing/reset.html', args)
+#     form = PasswordResetForm()
+#     return render(request, 'landing/reset.html', locals())
+
+
 def home(request):
+    # username = auth.get_user(request).username
     subservice_categories = SubCategoryForCosmetolog.objects.filter(is_active=True)
     address_cosmetologs = Cosmetolog.objects.filter(is_active=True)
     cosmetolog_addresses = CosmetologAddress.objects.filter(is_active=True)
@@ -42,9 +234,13 @@ def home(request):
                                                                      service_product__is_visible=True)
     service_products_images = service_products_images_all[:4]
     cosmetologs = Cosmetolog.objects.filter(is_active=True, is_visible=True)
-    slider_mains = SliderMain.objects.filter(is_active=True)
+    slider_mains = SliderMain.objects.filter(is_active=True, is_main=True)
     slider_mains_counts = range(slider_mains.count() - 1)
-    logo_images = LogoImage.objects.filter(is_active=True, is_main=True)
+    advert_all = SliderMain.objects.filter(is_active=True, is_main=False)
+    advert_left = advert_all.get(position=1)
+    advert_right = advert_all.get(position=2)
+    advert_right_up = advert_all.get(position=3)
+    advert_right_down = advert_all.get(position=4)
     blogs_images_all = BlogImage.objects.filter(is_active=True, is_main=True)
     blogs_images = blogs_images_all[:4]
     products_images_all = ProductImage.objects.filter(is_active=True, is_main=True, product__is_active=True)
@@ -353,3 +549,8 @@ def search_address(request, q_1, q_2=None, q_3=None):
         return render(request, 'landing/search_results.html', locals())
     else:
         return render(request, 'landing/no_search_results.html', locals())
+
+
+def navbar_01(request):
+
+    return render(request, 'landing/navbar_01.html', locals())

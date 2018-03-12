@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>QWERTY Profile </h1>
+{{ aswer }}
+{#    {% if registration_success %}#}
+{#        <div class="general-container-background">#}
+{#            <div class="container top-container">#}
+{#                <div class="row">#}
+{#                    <div class="col-lg-8 col-lg-offset-2">#}
+{#                        <h1 class="success"> {{ registration_success }} </h1>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    {% else %}#}
+
+        <div class="general-container-background">
+            <div class="container top-container">
+                <div class="row">
+                    <h1 class="title">Please, fill your profile {{ username }}</h1>
+                        <form action="/profile/" method="post" class="text-center">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="col-lg-8 col-lg-offset-2">
+
+                                        <div>
+                                            <input name="user_id" class="form-control" value="{{ user_id }}" type="hidden">
+                                        </div>
+
+    {#                                    <div class="form-group">#}
+    {#                                        <div type="text" name="{{ form.name.name }}" value="{{ username }}"#}
+    {#                                             class="form-control" placeholder="{{ username }}">{{ username }}</div>#}
+    {#                                    </div>#}
+
+    {#                                    <div class="form-group">#}
+    {#                                        <div type="email" name="{{ form.email.name }}" value="{{ user_email }}"#}
+    {#                                             class="form-control" placeholder="Email">{{ user_email }}</div>#}
+    {#                                    </div>#}
+
+                                        {% if registration_error %}
+                                            <label class="error">{{ registration_error }}</label>
+                                        {% endif %}
+
+                                        <div class="form-group">
+                                            <label class="title_input_01">Company</label>
+                                            <input name="{{ form.company_name.name }}" class="form-control"
+                                                   placeholder="Company Name" value="{{ user_company_name }}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="title_input_01">NIP</label>
+                                            <input name="{{ form.nip.name }}" class="form-control" placeholder="NIP"
+                                                   value="{{ user_nip }}">
+                                        </div>
+
+
+                                        <div class="col-lg-12 title_input_02">
+                                            <label class="title_input_01">Telephone Number</label>
+                                        </div>
+
+                                        <div class="form-group tel-index col-lg-2">
+                                            <div name="tel_index" class="form-control">+48</div>
+                                        </div>
+                                        <div class="form-group tel-number col-lg-10">
+                                            <input name="{{ form.tel_number.name }}" class="form-control"
+                                                   type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+                                                   placeholder="Telephone Number" value="{{ user_tel_number }}">
+                                        </div>
+                                        <div class="col-lg-12 recommendation">
+                                            <p>Введите телефон в формате xxx-xxx-xxx, где вместо x должна быть цифра:</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="col-lg-8 col-lg-offset-2">
+                                        <div class="form-group">
+                                            <label class="title_input_01">Index</label>
+                                            <input name="{{ form.index.name }}" type="text" class="form-control"
+                                                   placeholder="Index" pattern="[0-9]{2}-[0-9]{3}"
+                                                   value="{{ user_index }}">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="title_input_01">Miasto</label>
+                                            <input type="text" name="{{ form.city.name }}" class="form-control"
+                                                   placeholder="Miasto" value="{{ user_city }}" >
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="title_input_01">Ulica</label>
+                                            <input name="{{ form.street.name }}" class="form-control"
+                                                   placeholder="Ulica" value="{{ user_street }}">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="title_input_01">Lokal</label>
+                                            <input name="{{ form.locality.name }}" type="text" class="form-control"
+                                                   placeholder="Lokal" value="{{ user_locality }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-orange">Save</button>
+                        </form>
+                </div>
+            </div>
+        </div>
+
+{#    {% endif %}#}
+{% endblock %}

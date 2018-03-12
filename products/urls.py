@@ -18,5 +18,6 @@ from products import views
 
 urlpatterns = [
     url(r'^product/(?P<slug>[\w-]+)/$', views.product, name='product'),
+    url(r'^product_line/(?P<slug>[\w-]+)/$', views.product_line, name='product_line'),
 ]
 # url(r'^landing/', views.landing, name='landing'),

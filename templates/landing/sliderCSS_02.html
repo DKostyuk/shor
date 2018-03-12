@@ -1,16 +1,20 @@
 <!-- Slider -->
 <div class="slider">
-  <div class="legend"></div>
-      <div class="content">
-        <div class="content-txt">
-            <h1> {{ slider_main.ad_title }} </h1>
-            <h2> {{ slider_main.ad_text }} </h2>
-        </div>
-      </div>
-      <div class="image">
-          <a href="">
-              <img src="{{ slider_main.image.url }}" class = "img-responsive">
-          </a>
-      </div>
+    <div class="legend">
+    </div>
+    <div>
+        <a href="{{ slider_main.url }}">
+            <div class="content">
+                <div class="content-txt">
+                    <h1> {{ slider_main.ad_title }} </h1>
+                    <h2> {{ slider_main.ad_text }} </h2>
+                </div>
+            </div>
+            <div class="image">
+                <a href="">
+                    <img src="{{ slider_main.image.url }}" class = "img-responsive">
+                </a>
+            </div>
+        </a>
+    </div>
 </div>
-

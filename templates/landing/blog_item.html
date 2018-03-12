@@ -1,13 +1,13 @@
 <div class="col-lg-3">
     <div class="blog-item">
         <div>
-            <div class="center-block img-product">
+            <div class="center-block img-blog">
                  <a href="{% url 'blog' blog_image.blog.slug %}">
                     <img src="{{ blog_image.image.url }}" class = "img-responsive">
                 </a>
             </div>
         </div>
-        <div class="product-name">
+        <div class="blog-name">
             <h4>{{ blog_image.blog.title_name }}</h4>
         </div>
         <div class="product-s-description">

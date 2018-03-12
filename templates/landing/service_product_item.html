@@ -15,20 +15,20 @@
         <div class="product-name">
             <h4>{{ service_product_image.service_product.name }}</h4>
         </div>
-        <div class="product-s-description">
+        <div class="service-product-s-description">
             <p>
             {{ service_product_image.service_product.description|truncatechars_html:70 }}
             </p>
         </div>
 
         <div class="product-price">
-            {{ service_product_image.service_product.price01 }} UAH
+            {{ service_product_image.service_product.price01 }} - {{ service_product_image.service_product.price02 }} PLN
         </div>
 
-        <div class="add-to-cart-btn">
-            <button class="btn btn-success">
-                Добавить в корзину
-            </button>
-        </div>
+{#        <div class="add-to-cart-btn">#}
+{#            <button class="btn btn-success">#}
+{#                Добавить в корзину#}
+{#            </button>#}
+{#        </div>#}
     </div>
 </div>

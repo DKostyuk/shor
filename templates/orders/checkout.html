@@ -5,14 +5,14 @@
 {% block content %}
     <div class="container">
         <div class="row">
-{#            {% if products_in_basket %}#}
+            {% if products_in_basket %}
                 <div class="col-lg-8 col-lg-offset-2">
                     <h3 class="text-center">Товары в корзине</h3>
 {#                    <h5 class="text-center">Общая стоимость: {{ request.session.basket.total_amount }} грн </h5>#}
 {#                            {{ request.session.basket.products }}#}
 {##}
                     <form class="form-horizontal" method="post">{% csrf_token %}
-
+                        {% if not username %}
                             <div class="form-group">
                                 <div class="col-lg-4">
                                     <label>Имя</label>
@@ -32,6 +32,7 @@
                                     >
                                 </div>
                             </div>
+                        {% endif %}
 
 
                         <table class="table text-center">
@@ -77,14 +78,14 @@
                         <div class="text-right">
                             <button type="submit" class="btn btn-primary btn-lg">Заказать</button>
                         </div>
-{##}
+
                     </form>
-{##}
+
                 </div>
-{#             {% else %}#}
-{#                <h3 class="text-center">В Вашей корзине нет товаров</h3>#}
-{#            {% endif %}#}
-{##}
+             {% else %}
+                <h3 class="text-center">В Вашей корзине нет товаров</h3>
+            {% endif %}
+
         </div>
     </div>
 {% endblock %}

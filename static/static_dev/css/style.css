@@ -1,14 +1,15 @@
 html, body{
     height: 100%;
     max-height: 100%;
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: Verdana, Geneva, sans-serif;
     background-color: #edeef0;
 }
 
-.navbar{
-    margin-bottom: 0;
-    height: 50px;
-}
+/*.navbar{*/
+    /*margin-bottom: 0;*/
+    /*height: 50px;*/
+/*}*/
 
 .wrapper{
     min-height: 100%;
@@ -68,7 +69,7 @@ html, body{
 }
 
 .product-item{
-    height: 360px;
+    height: 325px;
     background-color: white;
     border: 1px solid lightgrey;
     position: relative;
@@ -85,6 +86,15 @@ html, body{
 .product-name{
     height: 40px;
 }
+
+.name_description{
+    font-weight: bold;
+}
+
+.product_description{
+    margin-bottom: 10px;
+}
+
 .add-to-card-btn{
     position: absolute;
     bottom: 15px;
@@ -102,8 +112,9 @@ html, body{
     padding: 3px;
 }
 
+/*Blog item box*/
 .blog-item{
-    height: 360px;
+    height: 305px;
     background-color: white;
     border: 1px solid lightgrey;
     position: relative;
@@ -111,11 +122,27 @@ html, body{
     text-align: center;
     margin-bottom: 0px;
 }
+
+.img-blog{
+    width: 190px;
+    height: 135px;
+}
+
+.blog-name{
+    height: 55px;
+}
+
 .read-all{
-    background-color: #e8643e;
+    background-color: #975a4e;
     height: 40px;
+    line-height: 40px;
     text-align: center;
-    margin-top: 0;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.read-all-text{
+    color: #ffffff;
 }
 
 .section-delivery{
@@ -136,26 +163,49 @@ html, body{
     background-color: green;
     border: none;
     border-radius: 0;
+    margin: 0;
+    /*float: right;*/
+    position: relative;
+    overflow: hide;
 }
 
 .navbar-brand{
-    /*height: 50px;*/
+    height: 90px;
     background-color: #dc5129;
     padding: 0;
+    position:absolute;
+    z-index: 2;
+    top: 0;
+    overflow: visible;
 
+}
+
+.nav-logout, .nav-logout-a, .nav-login, .nav-login-a{
+    padding-top: 0;
+    padding-bottom: 0;
+    color: #FFFFFF;
+    display: inline;
+    margin-right: 10px;
+}
+
+.fa-home:before {
+    content: "\f015";
+    font-family: FontAwesome;
+}
+
+.navbar-default .navbar-home12{
+    margin-left: 90px;
 }
 
 .logo-logo{
     height: 100%;
     margin: 0;
     padding: 0;
-
 }
 
 .logo{
     height: 100%;
     margin: 0;
-
 }
 
 .navbar-main{
@@ -395,4 +445,58 @@ html, body{
 .description-region{
     width: 155px;
     height: 54px;
+}
+
+/*Cosmetolog item*/
+.cosmetolog-item{
+    height: 260px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    position: relative;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.img-cosmetolog{
+    width: 190px;
+    height: 150px;
+}
+
+/*profile*/
+.title_input_01{
+    margin-bottom: 0px;
+    font-weight: normal;
+    float: left;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.title_input_02{
+    padding-left: 0px;
+}
+
+.recommendation{
+    font-size: 10px;
+    text-align: left;
+    padding-left: 0px;
+}
+
+.tel-index{
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+.tel-number{
+    padding-right: 0px;
+    margin-bottom: 0px;
+}
+
+/*Product Line Page*/
+.product-line-name {
+    border-top: 1px solid #3338ee;
+    border-bottom: 1px solid #3338ee;
+    text-align: center;
+    padding: 12px;
 }

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{#    <div class="large-offset-3 large-6 columns">#}
+{#        <form action="/registration/" method="post">#}
+{#            {% csrf_token %}#}
+{##}
+{#            {{ form }}#}
+{##}
+{#            <input class="button" type="submit" value="Зарегистрироваться">#}
+{#        </form>#}
+{#    </div>#}
+
+    {% if registration_success %}
+        <div class="general-container-background">
+            <div class="container top-container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h1 class="success"> {{ registration_success }} </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+
+        <div class="general-container-background">
+            <div class="container top-container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h1 class="title">Наш магазин скоро откроется!<br>
+                        Оставляйте Ваш имейл в форме ниже</h1>
+                        <div>
+                            <form action="/registration/" method="post" class="text-center col-lg-4 col-lg-offset-4">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input type="email" name="{{ form.email.name }}"
+                                           class="form-control" placeholder="Email" required>
+                                </div>
+
+                                {% if registration_error %}
+                                    <label class="error">{{ registration_error }}</label>
+                                {% endif %}
+
+                                <div class="form-group">
+                                    <input name="{{ form.username.name }}"
+                                           class="form-control" placeholder="Imię lub nickname" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <input name="{{ form.password1.name }}" type="password"
+                                           class="form-control" placeholder="Hasło" required>
+                                </div>
+
+                                <div class="form-group">
+                                <input name="{{ form.password2.name }}" type="hidden" class="form-control"
+                                       placeholder="Powtórz Hasło">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-orange">Отправить</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+{% endblock %}
