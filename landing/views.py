@@ -18,6 +18,8 @@ from .tokens import account_activation_token
 from django.core.mail import EmailMessage
 from django.http import HttpResponse
 import datetime
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 def landing(request):
@@ -554,3 +556,70 @@ def search_address(request, q_1, q_2=None, q_3=None):
 def navbar_01(request):
 
     return render(request, 'landing/navbar_01.html', locals())
+
+
+def contact(request):
+    session_key = request.session.session_key
+    args = {}
+    form = LetterForm()
+    print(request.POST)
+
+    if request.POST:
+        new_letter_form = LetterForm(request.POST)
+        if new_letter_form.is_valid():
+            username = auth.get_user(request).username
+            if username:
+                user_current = Subscriber.objects.filter(email=username).first()
+                new_letter = new_letter_form.save(commit=False)
+                new_letter.user_name = user_current.name
+                new_letter.user_email = user_current.email
+                data = new_letter_form.cleaned_data
+                new_letter.save()
+            else:
+                data = new_letter_form.cleaned_data
+                new_letter = new_letter_form.save()
+
+            subject = 'message from site renew-polska.pl/contact' + request.POST.get('subject', '')
+            message = request.POST.get('message', '')
+            from_email = settings.EMAIL_HOST_USER
+            to_list = ['biuro@renew-polska.pl', settings.EMAIL_HOST_USER]
+            send_mail(subject, message, from_email, to_list, fail_silently=True)
+
+            letter_success = "success"
+#           return redirect('registration_profile')
+            print(letter_success, letter_success)
+        else:
+            form = new_letter_form
+            # print(form.error_messages)
+
+    return render(request, 'landing/contact.html', locals())
+
+
+def about(request):
+    session_key = request.session.session_key
+    args = {}
+    about_text_object = Page.objects.get(is_active=True, page_name="About")
+    print(about_text_object)
+    # about_text = about_text_object.page_text
+
+    return render(request, 'landing/about.html', locals())
+
+
+def training(request):
+    session_key = request.session.session_key
+    args = {}
+    trainings_all = Training.objects.filter(is_active=True)
+
+    return render(request, 'landing/warsztaty.html', locals())
+
+
+def training_item(request, slug):
+    # product = Product.objects.get(slug=slug)
+    training = Training.objects.get(slug=slug, is_active=True)
+    session_key = request.session.session_key
+    if not session_key:
+        request.session.cycle_key()
+
+    # print(request.session.session_key)
+
+    return render(request, 'landing/training_item_full.html', locals())

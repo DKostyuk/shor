@@ -68,5 +68,11 @@ urlpatterns = [
     url(r'^cosmetolog-in/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/(?P<q_3>[\w-]+)/$',views.search_address,
         name='search_address'),
 
+    url(r'^contact/$', views.contact, name='contact'),
+    url(r'^about/$', views.about, name='about'),
+    url(r'^warsztaty/$', views.training, name='training'),
+    url(r'^warsztaty/(?P<slug>[\w-]+)/$', views.training_item, name='training_item'),
+
+
     url(r'^navbar_01/$', views.navbar_01, name=' navbar_01'),
 ]

@@ -166,7 +166,7 @@ html, body{
     margin: 0;
     /*float: right;*/
     position: relative;
-    overflow: hide;
+    /*overflow: hide;*/
 }
 
 .navbar-brand{
@@ -499,4 +499,110 @@ html, body{
     border-bottom: 1px solid #3338ee;
     text-align: center;
     padding: 12px;
+}
+
+/*Contact Page*/
+/*.map-box{*/
+    /*background-color: #333333;*/
+/*}*/
+
+.letter-box{
+    background-color: #fff043;
+    background: url('../img/bg_image.png') no-repeat;
+    background-size: cover;
+    padding: 15px;
+}
+
+textarea.form-control.text-message{
+    height: 150px;
+}
+
+#map {
+    weight: 200px;
+    height: 400px;
+    background-color: grey;
+}
+
+.explanation-map-text{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+.success-message-notification{
+    background-color: #ec00ff;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+/*######################################*/
+/*Training-item*/
+
+.training-item{
+    height: 200px;
+    border: 1px solid lightgrey;
+    position: relative;
+    padding: 10px 0 10px 0;
+    margin-bottom: 10px;
+    background-color: #1eba45;
+    background: url('../img/bg_image.png') no-repeat;
+    background-size: cover;
+    display: block;
+    overflow: hidden;
+    min-width: 300px;
+    min-height: 200px;
+}
+
+a.training-item:hover{
+    text-decoration: none;
+    color: red;
+}
+
+.training-name{
+    color: #FFFFFF;
+    padding: 20px 20px 5px;
+}
+
+.training-description{
+    color: #FFFFFF;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.training-footer {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.23);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 40px;
+    padding: 0 20px;
+}
+
+.training-icon{
+    font-size: 14px;
+    font-weight: initial;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: none;
+    max-height: none;
+}
+
+.training-add-info{
+    background-color: #337ab7;
+}
+
+.training-name-full{
+    font-weight: bold;
+}
+
+.training-list{
+    margin-bottom: 25px;
 }

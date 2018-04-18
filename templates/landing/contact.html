@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            {% if  letter_success %}
+                <div class="col-lg-12 success-message-notification">Wiadomość wysłana</div>
+            {% endif %}
+            <div class="col-lg-6 map-box">
+                <div id="map"></div>
+                <div class="explanation-map-text">800 metrów pieszo od m. Słodowiec <br>
+                    450 metrów pieszo od autob. № 205 (p. Hłaski 02)<br>
+                    750 metrów pieszo od tramw. № 17 (p. Podleśna-IMiGW 04)</div>
+            </div>
+            <div class="col-lg-6 letter-box">
+                <h1 class="text-center">
+                    Napisz do nas
+                </h1>
+                <div>
+                    <form action="" method="post" class="text-center col-lg-10 col-lg-offset-1">{% csrf_token %}
+                        <div class="form-group">
+                            <input name="{{ form.subject.name }}" class="form-control" placeholder="Temat">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="{{ form.message.name }}" class="text-message form-control" placeholder="Treść"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="{{ form.email_sender.name }}" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input name="{{ form.from_name.name }}" class="form-control" placeholder="Imię Nazwisko">
+                        </div>
+                        <div class="form-group">
+                            <input name="{{ form.city_sender.name }}" class="form-control" placeholder="Miasto">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-orange">Wyślij</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="container">
+        <h3 class="text-center">Trainings</h3>
+        {% if trainings_all %}
+            {% for training in trainings_all %}
+                {% include 'landing/training_item.html' %}
+            {% endfor %}
+        {% else %}
+            <div>There is no trainings scheduled</div>
+        {% endif %}
+    </div>
+{% endblock %}

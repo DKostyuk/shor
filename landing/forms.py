@@ -17,3 +17,10 @@ class UserRegistrationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ("username", "email", "password1", "password2")
+
+
+class LetterForm(forms.ModelForm):
+
+    class Meta:
+        model = Letter
+        fields = ["subject", "from_name", "email_sender", "city_sender", "message"]

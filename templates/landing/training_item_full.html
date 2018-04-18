@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="training-list training-name-full">
+                    <h3>{{ training.name }}</h3>
+                </div>
+                <div class="training-list training-audience-full">
+                    <h4>Audience:</h4>
+                    <h5>{{ training.audience }}</h5>
+                </div>
+                <div class="training-list training-goal-full">
+                    <h4>Training Goal:</h4>
+                    <h5>{{ training.goal }}</h5>
+                </div>
+                <div class="training-list training-description-full">
+                    <h4>Decription:</h4>
+                    {% autoescape off %} {{ training.description }} {% endautoescape %}
+                </div>
+                <div class="training-list training-description-full">
+                    <h4>Training Agenda:</h4>
+                    {% autoescape off %} {{ training.agenda }} {% endautoescape %}
+                </div>
+
+                <div class="">
+                    <span class="training-icon">
+{#                        <i class="icon fas fa-clock"></i>#}
+                        <span class="text">
+                            {{ training.start_date }}
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-4 training-add-info">
+                Something usefull
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

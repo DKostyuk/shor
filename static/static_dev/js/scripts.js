@@ -128,3 +128,30 @@ $(document).ready(function(){
     calculatingBasketAmount();
 
 });
+
+function initMapMy() {
+    var element = document.getElementById('map');
+    var options = {
+        zoom: 17,
+        center: {lat: 52.280973, lng: 20.967678}
+    };
+
+    var myMap = new google.maps.Map(element, options);
+
+    var marker = new google.maps.Marker({
+       position: {lat: 52.280973, lng: 20.967678},
+       map: myMap
+    });
+
+    var infoWindow = new google.maps.InfoWindow({
+        content: '<h4>Renew-Polska</h4>' +
+        '<p>Biuro RENEW-POLSKA Sp. z o. o.' + '<br>Oficjalny dystrybutor TM RENEW oraz TM Alvi-Prague' +
+        '<br>Warszawa, ul. Lektykarska 26 (wejście z ul. Cząstkowska)</br>'
+    });
+
+    infoWindow.open(myMap, marker);
+
+    marker.addListener('mouseover',function () {
+        infoWindow.open(myMap, marker);
+    })
+}
