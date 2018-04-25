@@ -21,6 +21,7 @@ from django.contrib.auth.views import password_reset, password_reset_confirm,\
 urlpatterns = [
 
     url(r'^another/$', views.another, name='another'),
+    url(r'^another/(?P<slug>[\w-]+)/$', views.trick_item, name='trick_item'),
     # url(r'^registration/$', views.registration, name='registration'),
     # url(r'^registration_profile/$', views.registration_profile, name='registration_profile'),
     # url(r'^registration_profile/(?P<email_1>[.@0-9A-Za-z_\-]+)/$', views.registration_profile, name='registration_profile'),

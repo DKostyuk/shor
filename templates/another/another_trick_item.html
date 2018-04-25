@@ -1,0 +1,20 @@
+<div class="col-lg-3">
+    <div class="">
+        <a class="training-item" href="{% url 'trick_item' trick.slug %}">
+            <div class="training-name">
+                <h4>{{ trick.name }}</h4>
+            </div>
+{#            <div class="training-description">#}
+{#                {% autoescape off %} {{ training.description|truncatechars_html:50 }} {% endautoescape %}#}
+{#            </div>#}
+            <div class="training-footer">
+                <span class="training-icon">
+                    <i class="icon fas fa-clock"></i>
+{#                    <span class="text">#}
+{#                        {{ training.start_date }}#}
+{#                    </span>#}
+                </span>
+            </div>
+        </a>
+    </div>
+</div>

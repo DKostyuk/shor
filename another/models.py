@@ -157,21 +157,32 @@ from ckeditor_uploader.fields import RichTextUploadingField
 #
 class ProductFileCSV(models.Model):
     file_name = models.CharField(max_length=64)
-#     trainee_email = models.EmailField()
-#     is_active = models.BooleanField(default=False)
-#     trainee_tel_number = models.CharField(max_length=11, blank=True, null=True, default=None)
-#     tel_number_confirm = models.BooleanField(default=False)
-#     training = models.ForeignKey(Training, blank=True, null=True, default=None)
-#     registration_confirmed = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=False)
     comments = models.TextField(blank=True, null=True, default=None)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-#     user_name = models.CharField(max_length=32)
-#     user_email = models.EmailField()
-#
-#     def __str__(self):
-#         return "%s" % self.id
-#
-#     class Meta:
-#         verbose_name = 'ProductFileCSV'
-#         verbose_name_plural = 'ProductFileCSVs'
+
+    def __str__(self):
+        return "%s" % self.id
+
+    class Meta:
+        verbose_name = 'ProductFileCSV'
+        verbose_name_plural = 'ProductFileCSVs'
+
+
+class AnotherTrick(models.Model):
+    name = models.CharField(max_length=64)
+    slug = models.SlugField(max_length=64, unique=True)
+    is_active = models.BooleanField(default=False)
+    comments = models.TextField(blank=True, null=True, default=None)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __str__(self):
+        return "%s" % self.id
+
+    class Meta:
+        verbose_name = 'AnotherTrick'
+        verbose_name_plural = 'AnotherTrick'
+
+

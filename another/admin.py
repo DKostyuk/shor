@@ -73,10 +73,11 @@ from .models import *
 # admin.site.register(Training, TrainingAdmin)
 #
 #
-# class TrainingUserAdmin (admin.ModelAdmin):
-#     list_display = [field.name for field in TrainingUser._meta.fields]
-#
-#     class Meta:
-#         model = TrainingUser
-#
-# admin.site.register(TrainingUser, TrainingUserAdmin)
+class AnotherTrickAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in AnotherTrick._meta.fields]
+    prepopulated_fields = {'slug': ('name',)}
+
+    class Meta:
+        model = AnotherTrick
+
+admin.site.register(AnotherTrick, AnotherTrickAdmin)

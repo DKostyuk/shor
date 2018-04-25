@@ -3,12 +3,14 @@
 
 
 {% block content %}
-    <h1>
-        TEST ANOTHER BRANCH
-    {{ name }}
-    {{ current_day }}
-    </h1>
-
-
-
+    <div class="container">
+        <h3 class="text-center">Another Tricks</h3>
+        {% if tricks_all %}
+            {% for trick in tricks_all %}
+                {% include 'another/another_trick_item.html' %}
+            {% endfor %}
+        {% else %}
+            <div>There is no Tricks yet</div>
+        {% endif %}
+    </div>
 {% endblock %}

@@ -23,18 +23,9 @@ from django.conf import settings
 
 
 def another(request):
-    # logo_images = LogoImage.objects.filter(is_active=True, is_main=True)
+    tricks_all = AnotherTrick.objects.filter(is_active=True)
     name = "DimaKostyuk"
     current_day = "24.04.2018"
-    # form = SubscriberForm(request.POST or None)
-    # username = auth.get_user(request).username
-
-    # if request.method == "POST" and form.is_valid():
-        # print (request.POST)
-        # print (form.cleaned_data)
-        # data = form.cleaned_data
-        # print (data["name"])
-        # new_form = form.save()
 
     return render(request, 'another/another.html', locals())
 #
@@ -630,12 +621,13 @@ def another(request):
 #     email.send()
 #     print(999999999999999999999999)
 #     return 999
-#
-#
-# def training_item(request, slug):
-#     # registration_success = 1
-#     # product = Product.objects.get(slug=slug)
-#     training = Training.objects.get(slug=slug, is_active=True)
+
+
+def trick_item(request, slug):
+    trick = AnotherTrick.objects.get(slug=slug, is_active=True)
+    url_name = slug.replace('-', '_')
+    if slug == "file-upload-regular-user":
+        asas = 123
 #     left_place = training.left_place
 #     print('left place', left_place)
 #     session_key = request.session.session_key
@@ -706,7 +698,7 @@ def another(request):
 #     if registered_user:
 #         registered_message = "already"
 #
-#     return render(request, 'landing/training_item_full.html', locals())
+    return render(request, 'another/' + url_name + '.html', locals())
 #
 #
 # def activate_training(request, uidb64, token):
