@@ -55,9 +55,12 @@ INSTALLED_APPS = [
     'blogs',
     'cosmetologs',
     'addresses',
+    'another',
 
     'ckeditor',
     'ckeditor_uploader',
+
+    'django_dbshell_plus',
 
 ]
 

@@ -1,0 +1,81 @@
+<div id="SendRequestTraining" class="modal fade" role="dialog">
+    <div class="col-lg-12">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">You going to make registration for the following training</h4>
+                </div>
+                <div class="modal-body col-lg-12">
+                    <h3>
+                        Renew-Polska Training classes
+                    </h3>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="">
+                                    <div class="">
+                                        <img src="{{ training.image.url }}"
+                                             class = "img-responsive">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="">
+                                    <div class="col-lg-12">
+                                        <h4>{{ training.name }}</h4>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <p>{{ training.location }}</p>
+                                        <p>{{ training.start_date }}</p>
+                                        <p>{{ training.duration }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 form-service-order">
+                                <div class="container col-lg-12">
+                                    <div class="row">
+                                        <div class="">
+                                            <form action="" method="post" class="text-center">{% csrf_token %}
+                                                <input type="hidden" name="{{ form.session_key.name }}"
+                                                           value={{ session_key }}>
+                                                <input type="hidden" name="{{ form.training.name }}"
+                                                           value={{ training.id }}>
+                                                <div class="form-group">
+                                                    <input name="{{ form.trainee_name.name }}"
+                                                           class="form-control" placeholder="Input Your Name"
+                                                           value="{{ username }}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="email" name="{{ form.trainee_email.name }}"
+                                                           class="form-control" placeholder="Email Address"
+                                                           value="{{ user_email }}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input name="{{ form.trainee_tel_number.name }}"
+                                                           class="form-control" placeholder="Input Your Phone Number"
+                                                           value="{{ user_tel_number }}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input name="{{ form.comments.name }}"
+                                                           class="form-control" placeholder="Any Details">
+                                                </div>
+                                                <button type="submit"
+                                                        data-training = "{{ training.id }}"
+                                                        class="btn btn-primary btn-orange">
+                                                    Submit Registration
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">Modal footer</div>
+            </div>
+        </div>
+    </div>
+</div>
+

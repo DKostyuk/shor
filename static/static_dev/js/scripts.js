@@ -127,6 +127,8 @@ $(document).ready(function(){
 
     calculatingBasketAmount();
 
+    // $("#show-hide").hide("drop", 9000);
+    setTimeout(function() { $("#show-hide").hide("bounce", 'slow'); }, 1000);
 });
 
 function initMapMy() {

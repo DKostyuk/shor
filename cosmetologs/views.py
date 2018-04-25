@@ -60,10 +60,5 @@ def service(request, slug1, slug):
         # print(from_email)
         # print(to_list)
         # return render(request, 'cosmetologs/thanks.html', locals())
-    # session_key = request.session.session_key
-    # if not session_key:
-    #     request.session.cycle_key()
-    #
-    # print(request.session.session_key)
 
     return render(request, 'cosmetologs/service.html', locals())

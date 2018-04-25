@@ -127,6 +127,7 @@ class Training(models.Model):
     slug = models.SlugField(max_length=64, unique=True)
     type = models.CharField(max_length=16)
     description = RichTextUploadingField(blank=True, null=True, default=None)
+    image = models.ImageField(upload_to='training/', default='../img/bg_image.png')
     start_date = models.DateTimeField(default=None)
     duration = models.CharField(max_length=8)
     location = models.CharField(max_length=64)
@@ -134,16 +135,44 @@ class Training(models.Model):
     goal = models.CharField(max_length=128)
     agenda = RichTextField(blank=True, null=True, default=None)
     trainer = models.CharField(max_length=32)
-    total_place = models.IntegerField(blank=True, null=True, default=None)
+    total_place = models.IntegerField(blank=True, null=True, default=20)
     registered_place = models.IntegerField(blank=True, null=True, default=None)
     left_place = models.IntegerField(blank=True, null=True, default=None)
+    left_place_shown = models.IntegerField(blank=True, null=True, default=None)
     is_active = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "%s" % self.id
+        return "%s" % self.name
 
     class Meta:
         verbose_name = 'Training'
         verbose_name_plural = 'Trainings'
+
+    def save(self, *args, **kwargs):
+        self.left_place = int(self.total_place) - self.registered_place
+
+        super(Training, self).save(*args, **kwargs)
+
+
+class TrainingUser(models.Model):
+    trainee_name = models.CharField(max_length=64)
+    trainee_email = models.EmailField()
+    is_active = models.BooleanField(default=False)
+    trainee_tel_number = models.CharField(max_length=11, blank=True, null=True, default=None)
+    tel_number_confirm = models.BooleanField(default=False)
+    training = models.ForeignKey(Training, blank=True, null=True, default=None)
+    registration_confirmed = models.BooleanField(default=False)
+    comments = models.TextField(blank=True, null=True, default=None)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    user_name = models.CharField(max_length=32)
+    user_email = models.EmailField()
+
+    def __str__(self):
+        return "%s" % self.id
+
+    class Meta:
+        verbose_name = 'TrainingUser'
+        verbose_name_plural = 'TrainingUsers'

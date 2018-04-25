@@ -3,41 +3,100 @@
 
 
 {% block content %}
-
+    <h1>{{ date_now }}</h1>
+    {{ day_left }}
+    {{ left_place_shown }}
     <div class="container">
         <div class="row">
+            {% if  registration_success %}
+                <div class="col-lg-12 success-message-notification" id="show-hide">Wiadomość wysłana Success</div>
+            {% endif %}
+            {% if registered_message %}
+                <div class="col-lg-12 success-message-notification">You are already</div>
+            {% endif %}
+            {% if  registration_error %}
+                <div class="col-lg-12 success-message-notification">Error</div>
+            {% endif %}
             <div class="col-lg-8">
-                <div class="training-list training-name-full">
-                    <h3>{{ training.name }}</h3>
-                </div>
-                <div class="training-list training-audience-full">
-                    <h4>Audience:</h4>
-                    <h5>{{ training.audience }}</h5>
-                </div>
-                <div class="training-list training-goal-full">
-                    <h4>Training Goal:</h4>
-                    <h5>{{ training.goal }}</h5>
-                </div>
-                <div class="training-list training-description-full">
-                    <h4>Decription:</h4>
-                    {% autoescape off %} {{ training.description }} {% endautoescape %}
-                </div>
-                <div class="training-list training-description-full">
-                    <h4>Training Agenda:</h4>
-                    {% autoescape off %} {{ training.agenda }} {% endautoescape %}
-                </div>
-
-                <div class="">
-                    <span class="training-icon">
-{#                        <i class="icon fas fa-clock"></i>#}
-                        <span class="text">
-                            {{ training.start_date }}
-                        </span>
-                    </span>
+                <div class="training-item-full">
+                    <div class="training-list training-name-full">
+                        <h3>{{ training.name }}</h3>
+                    </div>
+                    <div class="training-list training-audience-full">
+                        <h4>Audience:</h4>
+                        <h5>{{ training.audience }}</h5>
+                    </div>
+                    <div class="training-list training-goal-full">
+                        <h4>Training Goal:</h4>
+                        <h5>{{ training.goal }}</h5>
+                    </div>
+                    <div class="training-list training-description-full">
+                        <h4>Decription:</h4>
+                        {% autoescape off %} {{ training.description }} {% endautoescape %}
+                    </div>
+                    <div class="training-list training-description-full">
+                        <h4>Training Agenda:</h4>
+                        {% autoescape off %} {{ training.agenda }} {% endautoescape %}
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-4 training-add-info">
-                Something usefull
+            <div class="col-lg-4">
+                <div class="training-add-info">
+                    <div class="">
+                        <h4>Date:</h4>
+                        {{ training.start_date }}, ({{ training.duration }})
+                    </div>
+                    <div class="">
+                        <h4>Trainer:</h4>
+                        {{ training.trainer }}
+                    </div>
+                    <div class="">
+                        <h4>Where:</h4>
+                        {{ training.location }}
+                    </div>
+                    <div class="center-block img-training">
+                        <img src="{{ training.image.url }}" class = "img-responsive">
+                    </div>
+                    <div class="">
+                        <h4>Place info:</h4>
+                        {{ training.left_place_shown }} places of {{ training.total_place }} left
+                    </div>
+                </div>
+                <div class=" col-lg-12 training-add-info">
+                    {% if registered_message %}
+                        <div class="">
+                            You are already registered on this Training
+                        </div>
+                    {% else %}
+                    <!-- Modal request btn Send Request for registration -->
+                    <div class="form-group btn-box-training">
+                        <button type="submit" id="submit_request_btn" class="btn btn-success btn-order"
+                                data-toggle="modal" data-target="#SendRequestTraining">
+                            Send Request
+                        </button>
+                    </div>
+                    <!-- Modal request btn Send Interest for training -->
+                    <div class="form-group">
+                        <div class="training-interest-explanation">
+                            If You are from another city and/or <br>You are not able to participate in the Training
+                        <br>for any reason but You a still interesting in it <br>please, Leave your contact and
+                        we get back to you with Special proposal
+                        </div>
+                        <button type="submit" id="submit_interest_btn" class="btn btn-success btn-order"
+                                data-toggle="modal" data-target="#SendInterestTraining">
+                            Interest
+                        </button>
+                    </div>
+                        <!-- Modal form html Request for Registration-->
+                    <div class="col-lg-12">
+                        {% include 'landing/form_send-registration-training_item.html' %}
+                    </div>
+                    <!-- Modal form html Interest for training-->
+                    <div class="col-lg-12">
+                        {% include 'landing/form_send-interest-training_item.html' %}
+                    </div>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>

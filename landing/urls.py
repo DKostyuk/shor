@@ -73,6 +73,8 @@ urlpatterns = [
     url(r'^warsztaty/$', views.training, name='training'),
     url(r'^warsztaty/(?P<slug>[\w-]+)/$', views.training_item, name='training_item'),
 
+    url(r'^activate_training/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        views.activate_training, name='activate_training'),
 
     url(r'^navbar_01/$', views.navbar_01, name=' navbar_01'),
 ]

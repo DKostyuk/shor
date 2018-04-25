@@ -20,6 +20,11 @@
         <div class="general-container-background">
             <div class="container top-container">
                 <div class="row">
+                    {% if  profile_success %}
+                        <div class="col-lg-12 success-message-notification">
+                            Profile was updated<br>You can make any change here
+                        </div>
+                    {% endif %}
                     <h1 class="title">Please, fill your profile {{ username }}</h1>
                         <form action="/profile/" method="post" class="text-center">
                             {% csrf_token %}

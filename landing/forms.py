@@ -24,3 +24,10 @@ class LetterForm(forms.ModelForm):
     class Meta:
         model = Letter
         fields = ["subject", "from_name", "email_sender", "city_sender", "message"]
+
+
+class TrainingUserForm(forms.ModelForm):
+
+    class Meta:
+        model = TrainingUser
+        fields = ["trainee_name", "trainee_email", "trainee_tel_number", "training", "comments"]

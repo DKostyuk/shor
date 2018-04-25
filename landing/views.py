@@ -171,6 +171,7 @@ def profile(request):
         # user_profile.save()
         if user_profile_form.is_valid():
             user_profile_form.save()
+            profile_success = "success"
         else:
             form = user_profile_form
             print(99999999999999)
@@ -613,13 +614,118 @@ def training(request):
     return render(request, 'landing/warsztaty.html', locals())
 
 
+def validate_training_send_email(request, trainee_name, trainee_email, email_message):
+    # Email sending code:
+    new_trainee = TrainingUser.objects.filter(trainee_email=trainee_email).first()
+    current_site = get_current_site(request)
+    mail_subject = 'Confirm Your Registration for' + trainee_name + 'at Renew-Polska.pl'
+    message = render_to_string(email_message, {
+        'user': trainee_name,
+        'domain': current_site.domain,
+        'uid': urlsafe_base64_encode(force_bytes(new_trainee.pk)),
+        'token': account_activation_token.make_token(new_trainee),
+    })
+    to_email = trainee_email
+    email = EmailMessage(mail_subject, message, to=[to_email])
+    email.send()
+    print(999999999999999999999999)
+    return 999
+
+
 def training_item(request, slug):
+    # registration_success = 1
     # product = Product.objects.get(slug=slug)
+
     training = Training.objects.get(slug=slug, is_active=True)
+    date_now = datetime.datetime.now(datetime.timezone.utc)
+    day_left = (training.start_date - date_now).days
+    if day_left >= 7:
+        left_place_shown = training.total_place * 0.5
+    else:
+        left_place_shown = int(training.total_place * 0.5)
+    print(day_left)
+    left_place = training.left_place
+    print('left place', left_place)
     session_key = request.session.session_key
     if not session_key:
         request.session.cycle_key()
+    form = TrainingUserForm()
+    username = auth.get_user(request).username  # This is EMAIL in fact
+    if username:
+        user_current = Subscriber.objects.filter(email=username).first()
+        username = user_current.name # this is NAME in fact (not EMAIL)
+        registered_user = TrainingUser.objects.filter(trainee_email=user_current.email).first()
+        if registered_user:
+            registered_message = "already"
+    if request.POST:
+        print(form.errors)
+        new_registration_form = TrainingUserForm(request.POST)
+        print(new_registration_form.errors)
+        if new_registration_form.is_valid():
+            trainee_email = request.POST.get('trainee_email', '')
+            training_id = request.POST.get('training', '')
+            print(training_id)
+            training_users = TrainingUser.objects.filter(training=training_id)
+            print(training_users)
+            if training_users:
+                training_user_set = set()
+                for i in training_users:
+                    training_user_set.add(i.trainee_email)
+                if trainee_email in training_user_set:
+                    registered_message = "already"
+                    return render(request, 'landing/training_item_full.html', locals())
+                print('training_user_set', training_user_set)
+                print('trainee_email', trainee_email)
+            if username:
+                new_registration = new_registration_form.save(commit=False)
+                new_registration.user_name = user_current.name
+                new_registration.user_email = user_current.email
+                data = new_registration_form.cleaned_data
+                new_registration.save()
+                email_message = 'landing/training_confirmation_email_acc.html'
+                validate_training_send_email(request, request.POST.get('trainee_name', ''),
+                                             trainee_email, email_message)
+            else:
+                user_yes = Subscriber.objects.filter(email=trainee_email).first()
+                if user_yes:
+                    login_message = 'please_register'
+                    return render(request, 'landing/login.html', locals())
+                else:
+                    data = new_registration_form.cleaned_data
+                    new_letter = new_registration_form.save()
+                    email_message = 'landing/training_confirmation_email_not_user.html'
+                    validate_training_send_email(request, request.POST.get('trainee_name', ''),
+                                                 trainee_email, email_message)
+            registration_success = "success"
+            training.registered_place += 1
+            training.save()
 
-    # print(request.session.session_key)
+            # subject = 'Somebody has registered on your training' + training.name
+            # message = username + '\n' + trainee_email + '\n' + request.POST.get('trainee_tel_number', '') + '\n'\
+            #           + training.name + '\n' + request.POST.get('comments', '')
+            # from_email = settings.EMAIL_HOST_USER
+            # to_list = ['biuro@renew-polska.pl', settings.EMAIL_HOST_USER]
+            # send_mail(subject, message, from_email, to_list, fail_silently=True)
+
+        else:
+            form = new_registration_form
+            registration_error = "error"
+    registered_user = TrainingUser.objects.filter(user_name=username, id=training.id).first()
+    if registered_user:
+        registered_message = "already"
 
     return render(request, 'landing/training_item_full.html', locals())
+
+
+def activate_training(request, uidb64, token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        user = TrainingUser.objects.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, TrainingUser.DoesNotExist):
+        user = None
+    if user is not None and account_activation_token.check_token(user, token):
+        user.is_active = True
+        user.save()
+        return redirect('training')
+    else:
+        return HttpResponse('Activation link is invalid!')

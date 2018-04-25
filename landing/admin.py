@@ -71,3 +71,12 @@ class TrainingAdmin (admin.ModelAdmin):
         model = Training
 
 admin.site.register(Training, TrainingAdmin)
+
+
+class TrainingUserAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in TrainingUser._meta.fields]
+
+    class Meta:
+        model = TrainingUser
+
+admin.site.register(TrainingUser, TrainingUserAdmin)
