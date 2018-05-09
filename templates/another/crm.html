@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<a href="product/"><div>PRODUCT</div></a>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 about-box">
+                <h1>{{ trick.name }}</h1>
+                <table class="table text-center">
+                            <thead>
+                                <tr>
+                                    <th>Название товара</th>
+                                    <th>Цена за еденицу</th>
+                                    <th>Скидка</th>
+                                    <th>Литраж</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for product in products_all %}
+                                    {% include 'another/crm_product_list.html' %}
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

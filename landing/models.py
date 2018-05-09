@@ -162,7 +162,7 @@ class TrainingUser(models.Model):
     is_active = models.BooleanField(default=False)
     trainee_tel_number = models.CharField(max_length=11, blank=True, null=True, default=None)
     tel_number_confirm = models.BooleanField(default=False)
-    training = models.ForeignKey(Training, blank=True, null=True, default=None)
+    training = models.ForeignKey(Training, blank=True, null=True, default=None, on_delete=models.CASCADE)
     registration_confirmed = models.BooleanField(default=False)
     comments = models.TextField(blank=True, null=True, default=None)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)

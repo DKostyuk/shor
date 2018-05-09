@@ -31,3 +31,10 @@ from django.contrib.auth.models import User
 #     class Meta:
 #         model = TrainingUser
 #         fields = ["trainee_name", "trainee_email", "trainee_tel_number", "training", "comments"]
+
+
+class ProductFileCSVForm(forms.ModelForm):
+
+    class Meta:
+        model = ProductFileCSV
+        fields = ["file_name", "document", "is_active", "comments"]

@@ -157,6 +157,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 #
 class ProductFileCSV(models.Model):
     file_name = models.CharField(max_length=64)
+    document = models.FileField(upload_to='another_documents/')
     is_active = models.BooleanField(default=False)
     comments = models.TextField(blank=True, null=True, default=None)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)

@@ -33,7 +33,7 @@ def subcategory_category_creator(self,*args, **kwargs):
 class SubCategoryForCosmetolog(models.Model):
     name = models.CharField(max_length=32, blank=True, null=True, default=None)
     slug = models.SlugField(max_length=32, unique=True)
-    category = models.ForeignKey(CategoryForCosmetolog, blank=True, null=True, default=None)
+    category = models.ForeignKey(CategoryForCosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
     subcategory_category = models.CharField(max_length=64, blank=True, null=True, default=None)
     url = models.CharField(max_length=64, blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
@@ -79,7 +79,7 @@ class Cosmetolog(models.Model):
     site_url = models.URLField()
     active_until = models.DateTimeField(auto_now_add=True, auto_now=False)
     is_paid = models.BooleanField(default=False)
-    modified_by = models.ForeignKey(User, blank=True, null=True, default=None)
+    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.CASCADE)
 
     def __str__(self):
         return "%s" % self.name
@@ -91,9 +91,9 @@ class Cosmetolog(models.Model):
 
 
 class CosmetologCategory(models.Model):
-    cosmetolog = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None)
-    category = models.ForeignKey(CategoryForCosmetolog, blank=True, null=True, default=None)
-    subcategory = models.ForeignKey(SubCategoryForCosmetolog, blank=True, null=True, default=None)
+    cosmetolog = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    category = models.ForeignKey(CategoryForCosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategoryForCosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
     is_main = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
@@ -115,16 +115,16 @@ class ServiceProduct(models.Model):
     price_avg = models.DecimalField(max_digits=10, decimal_places=2, default=0) #(price01+price02)/2
     price_action = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     discount = models.IntegerField(default=0)
-    cosmetolog = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None)
-    category = models.ForeignKey(CategoryForCosmetolog, blank=True, null=True, default=None)
-    subcategory = models.ForeignKey(SubCategoryForCosmetolog, blank=True, null=True, default=None)
+    cosmetolog = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    category = models.ForeignKey(CategoryForCosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategoryForCosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
     description = models.TextField(blank=True, null=True, default=None)
     short_description = models.TextField(blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
     is_visible = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-    modified_by = models.ForeignKey(User, blank=True, null=True, default=None)
+    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.CASCADE)
 
     def __str__(self):
         # return "%s" % self.name
@@ -136,7 +136,7 @@ class ServiceProduct(models.Model):
 
 
 class ServiceProductImage(models.Model):
-    service_product = models.ForeignKey(ServiceProduct, blank=True, null=True, default=None)
+    service_product = models.ForeignKey(ServiceProduct, blank=True, null=True, default=None, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='products_images/')
     is_active = models.BooleanField(default=True)
     is_main = models.BooleanField(default=False)
@@ -175,9 +175,9 @@ pre_save.connect(pre_save_post_receiver, sender=Cosmetolog)
 
 
 class CosmetologAddress(models.Model):
-    cosmetolog_name = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None)
+    cosmetolog_name = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
     cosmetolog_id = models.IntegerField(blank=True, null=True, default=None)
-    address_name = models.ForeignKey(Address, blank=True, null=True, default=None)
+    address_name = models.ForeignKey(Address, blank=True, null=True, default=None, on_delete=models.CASCADE)
     address_id = models.IntegerField(blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
     is_main = models.BooleanField(default=False)

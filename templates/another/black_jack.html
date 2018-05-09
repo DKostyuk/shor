@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<a href="product/"><div>PRODUCT</div></a>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 about-box">
+                <h1>{{ trick.name }}  {{black_jack}}</h1>
+                    <form action="" method="post" class="text-center col-lg-10 col-lg-offset-1">{% csrf_token %}
+                        <button type="submit" name="start" value="start" class="btn btn-primary btn-orange">Start Game</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

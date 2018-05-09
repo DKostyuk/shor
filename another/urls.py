@@ -22,6 +22,8 @@ urlpatterns = [
 
     url(r'^another/$', views.another, name='another'),
     url(r'^another/(?P<slug>[\w-]+)/$', views.trick_item, name='trick_item'),
+    url(r'^another/crm/product/$', views.crm_product_item, name='crm_product_item'),
+    url(r'^another/crm/product/(?P<slug>[\w-]+)/$', views.crm_product_item, name='crm_product_item'),
     # url(r'^registration/$', views.registration, name='registration'),
     # url(r'^registration_profile/$', views.registration_profile, name='registration_profile'),
     # url(r'^registration_profile/(?P<email_1>[.@0-9A-Za-z_\-]+)/$', views.registration_profile, name='registration_profile'),

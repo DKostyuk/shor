@@ -93,9 +93,9 @@ class Address(models.Model):
     full_address = models.CharField(max_length=256, blank=True, null=True, default=None)
     display_address = models.CharField(max_length=128, blank=True, null=True, default=None)
     url = models.CharField(max_length=128, blank=True, null=True, default=None)
-    parent_id = models.ForeignKey('self', null=True, blank=True)
+    parent_id = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
     type_id = models.IntegerField(blank=True, null=True, default=None)
-    type_level = models.ForeignKey(AddressType, blank=True, null=True, default=None)
+    type_level = models.ForeignKey(AddressType, blank=True, null=True, default=None, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=False)
 
     def __str__(self):
@@ -125,7 +125,7 @@ class AddressAddFile(models.Model):
     start_import = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-    modified_by = models.ForeignKey(User, blank=True, null=True, default=None)
+    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.CASCADE)
 
     def __str__(self):
         return "%s" % self.id
@@ -155,7 +155,7 @@ class AddressAddFile(models.Model):
 
 #
 # class ServiceProductImage(models.Model):
-#     service_product = models.ForeignKey(ServiceProduct, blank=True, null=True, default=None)
+#     service_product = models.ForeignKey(ServiceProduct, blank=True, null=True, default=None, on_delete=models.CASCADE)
 #     image = models.ImageField(upload_to='products_images/')
 #     is_active = models.BooleanField(default=True)
 #     is_main = models.BooleanField(default=False)

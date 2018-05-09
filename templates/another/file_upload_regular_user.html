@@ -10,6 +10,15 @@
             <div class="col-lg-8 col-lg-offset-2 about-box">
                 <h1>{{ trick.name }}</h1>
                 {{ asas }}
+
+                <form method="post" enctype="multipart/form-data">
+                    form
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Upload</button>
+                </form>
+
+
                 {% if about_text_object.page_text %}
                     {% autoescape off %} {{ about_text_object.page_text }} {% endautoescape %}
                 {% endif %}

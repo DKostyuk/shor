@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.db.models import Q
 from .forms import *
@@ -20,6 +20,7 @@ from django.http import HttpResponse
 import datetime
 from django.core.mail import send_mail
 from django.conf import settings
+import random
 
 
 def another(request):
@@ -623,84 +624,100 @@ def another(request):
 #     return 999
 
 
-def trick_item(request, slug):
+def card_decks():
+    cards = {
+        "2_1": 2, "2_2": 2, "2_3": 2, "2_4": 2,
+        "3_1": 3, "3_2": 3, "3_3": 2, "3_4": 3,
+        "4_1": 4, "4_2": 4, "4_3": 4, "4_4": 4,
+        "5_1": 5, "5_2": 5, "5_3": 5, "5_4": 5,
+        "6_1": 6, "6_2": 6, "6_3": 6, "6_4": 6,
+        "7_1": 7, "7_2": 7, "7_3": 7, "7_4": 7,
+        "8_1": 8, "8_2": 8, "8_3": 8, "8_4": 8,
+        "9_1": 9, "9_2": 9, "9_3": 9, "9_4": 9,
+        "10_1": 10, "10_2": 10, "10_3": 10, "10_4": 10,
+        "B_1": 10, "B_2": 10, "B_3": 10, "B_4": 10,
+        "D_1": 10, "D_2": 10, "D_3": 10, "D_4": 10,
+        "K_1": 10, "K_2": 10, "K_3": 10, "K_4": 10,
+        "A_1": 11, "A_2": 11, "A_3": 11, "A_4": 11
+    }
+    deck = 7
+    cards_full = {}
+    for key, value in cards.items():
+        for i in range(1, deck+1):
+            new_key = str(i)+'_'+key
+            cards_full[new_key] = value
+    #         print(cards_full)
+    # len(cards_full)
+    return cards_full
+
+# Initial deal
+def first_deal(cards):
+    p1_list = []
+    dealer_list = []
+    for i in range(2):
+        p1 = random.choice(list(cards.keys()))
+        p1_list.append(cards[p1])
+        del cards[p1]
+        dealer = random.choice(list(cards.keys()))
+        dealer_list.append(cards[dealer])
+        del cards[dealer]
+    return cards, p1_list, dealer_list
+
+
+def trick_item(request, slug=None):
     trick = AnotherTrick.objects.get(slug=slug, is_active=True)
     url_name = slug.replace('-', '_')
     if slug == "file-upload-regular-user":
-        asas = 123
-#     left_place = training.left_place
-#     print('left place', left_place)
-#     session_key = request.session.session_key
-#     if not session_key:
-#         request.session.cycle_key()
-#     form = TrainingUserForm()
-#     username = auth.get_user(request).username  # This is EMAIL in fact
-#     if username:
-#         user_current = Subscriber.objects.filter(email=username).first()
-#         username = user_current.name # this is NAME in fact (not EMAIL)
-#         registered_user = TrainingUser.objects.filter(trainee_email=user_current.email).first()
-#         if registered_user:
-#             registered_message = "already"
-#     if request.POST:
-#         print(form.errors)
-#         new_registration_form = TrainingUserForm(request.POST)
-#         print(new_registration_form.errors)
-#         if new_registration_form.is_valid():
-#             trainee_email = request.POST.get('trainee_email', '')
-#             training_id = request.POST.get('training', '')
-#             print(training_id)
-#             training_users = TrainingUser.objects.filter(training=training_id)
-#             print(training_users)
-#             if training_users:
-#                 training_user_set = set()
-#                 for i in training_users:
-#                     training_user_set.add(i.trainee_email)
-#                 if trainee_email in training_user_set:
-#                     registered_message = "already"
-#                     return render(request, 'landing/training_item_full.html', locals())
-#                 print('training_user_set', training_user_set)
-#                 print('trainee_email', trainee_email)
-#             if username:
-#                 new_registration = new_registration_form.save(commit=False)
-#                 new_registration.user_name = user_current.name
-#                 new_registration.user_email = user_current.email
-#                 data = new_registration_form.cleaned_data
-#                 new_registration.save()
-#                 email_message = 'landing/training_confirmation_email_acc.html'
-#                 validate_training_send_email(request, request.POST.get('trainee_name', ''),
-#                                              trainee_email, email_message)
-#             else:
-#                 user_yes = Subscriber.objects.filter(email=trainee_email).first()
-#                 if user_yes:
-#                     login_message = 'please_register'
-#                     return render(request, 'landing/login.html', locals())
-#                 else:
-#                     data = new_registration_form.cleaned_data
-#                     new_letter = new_registration_form.save()
-#                     email_message = 'landing/training_confirmation_email_not_user.html'
-#                     validate_training_send_email(request, request.POST.get('trainee_name', ''),
-#                                                  trainee_email, email_message)
-#             registration_success = "success"
-#             training.registered_place += 1
-#             training.save()
-#
-#             # subject = 'Somebody has registered on your training' + training.name
-#             # message = username + '\n' + trainee_email + '\n' + request.POST.get('trainee_tel_number', '') + '\n'\
-#             #           + training.name + '\n' + request.POST.get('comments', '')
-#             # from_email = settings.EMAIL_HOST_USER
-#             # to_list = ['biuro@renew-polska.pl', settings.EMAIL_HOST_USER]
-#             # send_mail(subject, message, from_email, to_list, fail_silently=True)
-#
-#         else:
-#             form = new_registration_form
-#             registration_error = "error"
-#     registered_user = TrainingUser.objects.filter(user_name=username, id=training.id).first()
-#     if registered_user:
-#         registered_message = "already"
-#
+        form = ProductFileCSVForm()
+        print('9999', form)
+        if request.method == 'POST':
+            form = ProductFileCSVForm(request.POST, request.FILES)
+            print(form)
+            if form.is_valid():
+                form.save()
+                return redirect('another')
+        else:
+            form = ProductFileCSVForm()
+    if slug == "crm":
+        print()
+        products_all = Product.objects.filter(is_active=True)
+    if slug == "black-jack":
+        black_jack = 21
+        if request.method == 'POST':
+            if request.POST.get('start', '') == "start":
+            # form = ProductFileCSVForm(request.POST, request.FILES)
+                ccc = card_decks().copy()
+                a, b, c = first_deal(ccc)
+                print(a)
+                print(b)
+                print(c)
+        # products_all = Product.objects.filter(is_active=True)
+    # return render(request, 'another/file_upload_regular_user.html', {'form': form})
     return render(request, 'another/' + url_name + '.html', locals())
-#
-#
+
+
+def crm_product_item(request, slug=None):
+    products_all = Product.objects.filter(is_active=True)
+    # trick = AnotherTrick.objects.get(slug=slug, is_active=True)
+    # url_name = slug2.replace('-', '_')
+    if slug:
+        product = Product.objects.get(slug=slug)
+    #     form = ProductFileCSVForm()
+    #     print('9999', form)
+        if request.method == 'POST':
+    #         form = ProductFileCSVForm(request.POST, request.FILES)
+            print(9999999)
+        if request.method == 'GET':
+            print(3333333)
+    #         if form.is_valid():
+    #             form.save()
+    #             return redirect('another')
+    #     else:
+    #         form = ProductFileCSVForm()
+        return render(request, 'another/crm_product_item.html', locals())
+    return render(request, 'another/crm_product.html', locals())
+
+
 # def activate_training(request, uidb64, token):
 #     try:
 #         uid = force_text(urlsafe_base64_decode(uidb64))

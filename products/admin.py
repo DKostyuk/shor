@@ -14,7 +14,39 @@ class ProductCategoryAdmin (admin.ModelAdmin):
     class Meta:
         model = ProductCategory
 
+
 admin.site.register(ProductCategory, ProductCategoryAdmin)
+
+
+class ProductTypeAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in ProductType._meta.fields]
+    prepopulated_fields = {'slug': ('name',)}
+
+    class Meta:
+        model = ProductType
+
+
+admin.site.register(ProductType, ProductTypeAdmin)
+
+
+class ProductVolumeAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in ProductVolume._meta.fields]
+
+    class Meta:
+        model = ProductVolume
+
+
+admin.site.register(ProductVolume, ProductVolumeAdmin)
+
+
+class ProductVolumeTypeAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in ProductVolumeType._meta.fields]
+
+    class Meta:
+        model = ProductVolumeType
+
+
+admin.site.register(ProductVolumeType, ProductVolumeTypeAdmin)
 
 
 class ProductAdmin (admin.ModelAdmin):
@@ -25,6 +57,7 @@ class ProductAdmin (admin.ModelAdmin):
     class Meta:
         model = Product
 
+
 admin.site.register(Product, ProductAdmin)
 
 
@@ -33,5 +66,6 @@ class ProductImageAdmin (admin.ModelAdmin):
 
     class Meta:
         model = ProductImage
+
 
 admin.site.register(ProductImage, ProductImageAdmin)
