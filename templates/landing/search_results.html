@@ -6,18 +6,23 @@
 
     {% include 'landing/search_fields.html' %}
 
-    {% if not search_service_address_999 %}
-        {% include 'landing/search_choose towns.html' %}
+    {% if q_1 == 'vse' %}
+        {% include 'landing/search_choose_services.html' %}
+    {% elif q_3 == 'vse-goroga' %}
+        сервис-да и город-нет, надо показать Этот сервис для всех активных косметологов во всех городах
+        {% include 'landing/search_choose_cities.html' %}
+    {% else %}
+        сервис-да и город-да, надо показать Этот сервис по Этому адресу
+        {% if q_4 == 'vse-rajony' %}
+            сервис-да и город-да, район -нет, улица-нет - надо показать Этот сервис по Этому Городу
+            {% include 'landing/search_choose_districts.html' %}
+        {% elif q_5 == 'vse-ulicy' %}
+            сервис-да и город-да, район -да, улица-нет - надо показать Этот сервис по Этому Району, потом по Городу
+            {% include 'landing/search_choose_streets.html' %}
+        {% else %}
+            сервис-да и город-да, район -да, улица-да - надо показать Этот сервис по Этой улице, потом Району, потом по Городу
+            {% include 'landing/search_recommend.html' %}
+        {% endif %}
     {% endif %}
-
-    {% include 'landing/search_we_found_title.html' %}
-
-    {% if search_service_address_999 %}
-        {% include 'landing/search_recommend.html' %}
-    {% endif %}
-
-    {% include 'landing/search_title_block_list.html' %}
-
-    {% include 'landing/search_cosmetolog_list.html' %}
 
 {% endblock %}

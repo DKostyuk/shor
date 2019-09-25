@@ -1,0 +1,29 @@
+<div class="col-lg-3 col-md-6 col-sm-6">
+    <a href="{% url 'service' service_district_image.service_product.cosmetolog.slug service_district_image.service_product.category.slug service_district_image.service_product.slug %}"
+    class="link-decoration">
+        <div class="product-item shadow-item-box">
+            <div>
+                <div class="d-block mx-auto img-product">
+                        <img src="{{ service_district_image.image.url }}" class = "img-fluid img-product-inside">
+                </div>
+                {% if service_district_image.service_product.discount %}
+                    <div class="discount-container">
+                        {{ service_district_image.service_product.discount }}%
+                    </div>
+                {% endif %}
+            </div>
+            <div class="product-name">
+                <h4>{{ service_district_image.service_product.name }}</h4>
+            </div>
+            <div class="service-product-s-description">
+                <p>
+                {{ service_district_image.service_product.short_description|truncatechars_html:70 }}
+                </p>
+            </div>
+
+            <div class="product-price">
+                {{ service_district_image.service_product.price01 }} - {{ service_district_image.service_product.price02 }} грн.
+            </div>
+        </div>
+    </a>
+</div>

@@ -187,3 +187,13 @@ class AnotherTrick(models.Model):
         verbose_name_plural = 'AnotherTrick'
 
 
+class TestEditor(models.Model):
+    comments = RichTextField(blank=True, null=True, default=None)
+
+    def __str__(self):
+        return "%s" % self.id
+
+    class Meta:
+        verbose_name = 'TestEditor'
+        verbose_name_plural = 'TestEditors'
+

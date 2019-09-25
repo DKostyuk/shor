@@ -5,70 +5,102 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-{#                {% for image_item in product.productimage_set.all %}#}
-{#                    <div class="product-image-item">#}
-{#                        <img src="{{ image_item.image.url }}" class="img-responsive">#}
-{#                    </div>#}
-{#                {% endfor %}#}
-                <h1>TEST TEST </h1>
-            </div>
-            <div class="col-lg-6">
-                <h1 class="text-center">
-                    {{ cosmetolog.name }}
-                </h1>
-                <div>
-                      <!-- Nav tabs -->
-                      <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active">
-                            <a href="#description" aria-controls="home" role="tab" data-toggle="tab">
-                                Описание
-                            </a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#delivery" aria-controls="profile" role="tab" data-toggle="tab">
-                                Доставка
-                            </a>
-                        </li>
-                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-                      </ul>
-
-                      <!-- Tab panes -->
-                      <div class="tab-content product-description-tabs">
-                        <div role="tabpanel" class="tab-pane active" id="description">
-                            {{ cosmetolog.description }}
-                            <li>
-                                <span class="btn btn-success">
-                                    15:00
-                                </span>
-                            </li>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="delivery">
-
-                            <h3>Как мы делаем доставку</h3>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="messages">...</div>
-                        <div role="tabpanel" class="tab-pane" id="settings">...</div>
-                      </div>
+            <div class="col-lg-4">
+                <div class="cosmetolog-page-logo">
+                    <img src="{{ cosmetolog.logo_image.url }}" class="img-fluid">
                 </div>
-{#                <div>#}
-{#                    <form id ="form_buying_product" class="form-inline" action="{% url 'basket_adding' %}">{% csrf_token %}#}
-{#                        <div class="form-group">#}
-{#                            <input type="number" class="form-control" name="number" id="number">#}
-{#                        </div>#}
-{#                        <div class="form-group">#}
-{#                            <button type="submit" id="submit_btn" class="btn btn-success btn-buy"#}
-{#                                    data-product_id = "{{ product.id }}"#}
-{#                                    data-name = "{{ product.name }}"#}
-{#                                    data-price = "{{ product.price }}"#}
-{#                            >#}
-{#                                Купить#}
-{#                            </button>#}
-{#                        </div>#}
-{#                    </form>#}
-{#                </div>#}
+            </div>
+            <div class="col-lg-8">
+                <div class="cosmetolog-page-details">
+                    <h1 class="text-center cosmetolog-page-name">{{ cosmetolog.name }}</h1>
+                    <div class="text-center cosmetolog-page-type">{{ cosmetolog.type }}</div>
+                    <div class="row">
+                        <div class=" col-lg-12 text-center cosmetolog-headline">{{ cosmetolog.headline }}</div>
+                    </div>
+                    <div class="row">
+                         {% if cosmetolog.city_cosmetolog %}
+                             <div class="col-lg-12 text-center cosmetolog-address">
+                             {{ cosmetolog.street_cosmetolog.display_address }}, {{ cosmetolog.house_cosmetolog }}
+                             </div>
+                         {% else %}
+                             <div  class="col-lg-12 text-center no-info">
+                                 <i class="fas fa-map-marker-alt"></i>
+                                 Пожалуйста, используйте телефон или email для связи
+                             </div>
+                         {% endif %}
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 cosmetolog-page-working-hours">
+                            <span style="font-weight: 700">ЧАСЫ РАБОТЫ: </span>{{ cosmetolog.working_hours }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <button type="submit" id="open_map_btn" class="btn btn-see-info"
+                                        data-toggle="modal" data-target="#map_modal"
+                                        data-cosmetolog_address = "{{ cosmetolog_address }}">
+                                    Посмотреть адресс на карте
+                            </button>
+                        </div>
+                        <div class="col-lg-4">
+                            <a class="btn toggle-text btn-see-info" data-toggle="collapse" href="">
+                                <span>Посмотреть сайт</span>
+                                <span class="hidden hidden-info">{{ cosmetolog.site_url }}</span>
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a class="btn toggle-text btn-see-info" data-toggle="collapse" href="">
+                                <span>Посмотреть телефон</span>
+                                <span class="hidden hidden-info">+38 {{ cosmetolog.order_phone }}</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                                <!-- Modal request btn Send Order -->
+                            <div class="form-group">
+                                <button type="submit" id="submit_order_btn" class="btn btn-success btn-request"
+                                        data-toggle="modal" data-target="#SendOrderService">
+                                    Отправить запрос
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="nav nav-tabs profile-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="about-tab" data-toggle="tab" href="#about" role="tab"
+                           aria-controls="about" aria-selected="true">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="service-tab" data-toggle="tab" href="#service" role="tab"
+                           aria-controls="service" aria-selected="false">Услуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="product-tab" data-toggle="tab" href="#product" role="tab"
+                           aria-controls="product" aria-selected="false">Товары</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+
+                    {% include 'cosmetologs/cosmetolog_about.html' %}
+                    {% include 'cosmetologs/cosmetolog_service.html' %}
+                    {% include 'cosmetologs/cosmetolog_product.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal form html -->
+    <div class="col-lg-12">
+        {% include 'cosmetologs/form_map_modal.html' %}
+    </div>
+    <!-- Modal form html -->
+    <div class="col-lg-12">
+        {% include 'cosmetologs/form_send-cosmetolog-request.html' %}
     </div>
 {% endblock %}

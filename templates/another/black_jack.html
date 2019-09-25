@@ -12,7 +12,17 @@
                     <form action="" method="post" class="text-center col-lg-10 col-lg-offset-1">{% csrf_token %}
                         <button type="submit" name="start" value="start" class="btn btn-primary btn-orange">Start Game</button>
                     </form>
+                    <form action="" method="post" class="text-center col-lg-10 col-lg-offset-1">{% csrf_token %}
+                        <button type="submit" name="hit" value="hit" class="btn btn-primary btn-orange">Hit</button>
+                    </form>
+                    <form action="" method="post" class="text-center col-lg-10 col-lg-offset-1">{% csrf_token %}
+                        <button type="submit" name="stop" value="stop" class="btn btn-primary btn-orange">Stop</button>
+                    </form>
             </div>
+            <div class="col-lg-8 col-lg-offset-2 about-box">
+                <div class="col-lg-6">{{ player_list }}</div>
+            </div>
+
         </div>
     </div>
 </div>

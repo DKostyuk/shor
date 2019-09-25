@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text_center we-found-title">Мы подобрали для Вас все косметологические услуги по адресу</br>
+            город {{ display_address }}</h1>
+        </div>
+        <div class="col col-lg-8 offset-lg-2 choose-town">
+            <h3 class="h3 choose-town-title">
+                    Выберите Услугу
+            </h3>
+            <div class="">
+                <ul class="town-simple-list">
+                    {% for subservice_category in subservice_categories %}
+                        <a class=""
+                           href="{% url 'search_service_address' subservice_category.category.slug subservice_category.slug q_3 q_4 q_5 q_6 %}">
+                            <li class="town-simple-item">{{ subservice_category.name }}</li>
+                        </a>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        {% if service_street_images %}
+            <div class="col-lg-12">
+                <h2 class="h3 best-cosmetologs-grid">
+                        Популярные услуги от лучших косметологов по {{ street_name }}
+                </h2>
+            </div>
+            {% for service_street_image in service_street_images %}
+                {% include 'landing/service_product_item_street.html' %}
+            {% endfor %}
+        {% endif %}
+        {% if service_district_images %}
+            <div class="col-lg-12">
+                <h2 class="h3 best-cosmetologs-grid">
+                        Популярные услуги от лучших косметологов в {{ district_name }}
+                </h2>
+            </div>
+            {% for service_district_image in service_district_images %}
+                {% include 'landing/service_product_item_district.html' %}
+            {% endfor %}
+        {% endif %}
+        {% if service_city_images %}
+            <div class="col-lg-12">
+                <h2 class="h3 best-cosmetologs-grid">
+                        Популярные услуги от лучших косметологов в городе {{ city_name }}
+                </h2>
+            </div>
+            {% for service_city_image in service_city_images %}
+                {% include 'landing/service_product_item_city.html' %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

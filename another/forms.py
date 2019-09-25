@@ -4,13 +4,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
-# class SubscriberForm(forms.ModelForm):
-#
-#     class Meta:
-#         model = Subscriber
-#         fields = ["tel_number", "nip", "company_name", "index", "city", "street", "locality"]
-#
-#
+class TestEditorForm(forms.ModelForm):
+
+    class Meta:
+        model = TestEditor
+        fields = ["comments"]
+
+
 # class UserRegistrationForm(UserCreationForm):
 #     email = forms.EmailField(required=True)
 #

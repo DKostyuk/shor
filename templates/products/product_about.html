@@ -1,0 +1,22 @@
+<div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="product_description">
+                <span class="name_description"> {{ product.name_description }}</span>
+                {% autoescape off %} {{ product.description }} {% endautoescape %}
+            </div>
+            <div class="product_description">
+                <span class="name_description"> {{ product.name_description_1 }}</span>
+                {% autoescape off %} {{ product.description_1 }} {% endautoescape %}
+            </div>
+            <div class="product_description">
+                <span class="name_description"> {{ product.name_description_2 }}</span>
+                {{ product.description_2 }}
+            </div>
+            <div class="product_description">
+                <span class="name_description"> {{ product.name_description_3 }}</span>
+                {{ product.description_3 }}
+            </div>
+        </div>
+    </div>
+</div>

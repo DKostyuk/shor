@@ -1,17 +1,40 @@
 <div class="container">
-        <div class="row">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text_center we-found-title">Мы подобрали для Вас косметологическую услугу
+                {{ search_active_subservice.name }} </br> по адресу {{ display_address }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        {% if service_street_images %}
             <div class="col-lg-12">
-                <h2 class="h3 text-warning text-recommendation">
-                    Recommended services from the best Cosmetologs
+                <h2 class="h3 best-cosmetologs-grid">
+                    Популярные услуги {{ search_active_subservice.name }} от лучших косметологов по {{ street_name }}
                 </h2>
             </div>
+            {% for service_street_image in service_street_images %}
+                {% include 'landing/service_product_item_street.html' %}
+            {% endfor %}
+        {% endif %}
+        {% if service_district_images %}
             <div class="col-lg-12">
-                {% for search_service_products_image in search_service_products_images %}
-                    {% include 'landing/search_item.html' %}
-                {% endfor %}
+                <h2 class="h3 best-cosmetologs-grid">
+                    Популярные услуги {{ search_active_subservice.name }} от лучших косметологов в {{ district_name }}
+                </h2>
             </div>
-        </div>
+            {% for service_district_image in service_district_images %}
+                {% include 'landing/service_product_item_district.html' %}
+            {% endfor %}
+        {% endif %}
+        {% if service_city_images %}
+            <div class="col-lg-12">
+                <h2 class="h3 best-cosmetologs-grid">
+                    Популярные услуги {{ search_active_subservice.name }} от лучших косметологов в городе {{ city_name }}
+                </h2>
+            </div>
+            {% for service_city_image in service_city_images %}
+                {% include 'landing/service_product_item_city.html' %}
+            {% endfor %}
+        {% endif %}
+    </div>
 </div>
-<h2 class="h3 text-center xs-hidden all-service">
-        All {{ query_service }} service on {{ query_address }} address
-</h2>

@@ -15,8 +15,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from another import views
-from django.contrib.auth.views import password_reset, password_reset_confirm,\
-    password_reset_done, password_reset_complete
+
 
 urlpatterns = [
 
@@ -49,26 +48,7 @@ urlpatterns = [
     #     {'template_name': 'landing/password_reset_done.html'},
     #     name='password_reset_done'),
     #
-    # url(r'^uslugi-kosmetyczne/$', views.salon, name='salon'),
-    #
-    # url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/$',
-    #     views.search_service_address, name='search_service_address'),
-    # url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/$',
-    #     views.search_service_address, name='search_service_address'),
-    # url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/(?P<q_3>[\w-]+)/$',
-    #     views.search_service_address, name='search_service_address'),
-    # url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/(?P<q_3>[\w-]+)/(?P<q_4>[\w-]+)/$',
-    #     views.search_service_address, name='search_service_address'),
-    #
-    # url(r'^service-in-Poland/(?P<q_1>[\w-]+)/$', views.search_service, name='search_service'),
-    # url(r'^service-in-Poland/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/$', views.search_service, name='search_service'),
-    # url(r'^service-in-Poland/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/(?P<q_3>[\w-]+)/$', views.search_service,
-    #     name='search_service'),
-    #
-    # url(r'^cosmetolog-in/(?P<q_1>[\w-]+)/$', views.search_address, name='search_address'),
-    # url(r'^cosmetolog-in/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/$', views.search_address, name='search_address'),
-    # url(r'^cosmetolog-in/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/(?P<q_3>[\w-]+)/$',views.search_address,
-    #     name='search_address'),
+
     #
     # url(r'^contact/$', views.contact, name='contact'),
     # url(r'^about/$', views.about, name='about'),
@@ -77,6 +57,5 @@ urlpatterns = [
     #
     # url(r'^activate_training/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
     #     views.activate_training, name='activate_training'),
-    #
-    # url(r'^navbar_01/$', views.navbar_01, name=' navbar_01'),
+
 ]

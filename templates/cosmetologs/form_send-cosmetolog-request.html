@@ -1,0 +1,92 @@
+<div id="SendOrderService" class="modal fade" role="dialog">
+    <div class="col-lg-12">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-10">
+                                <h4 class="modal-title text-center">Выслать запрос</h4>
+                            </div>
+                            <div class="col-2">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body col-lg-12 text-center ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 service-product-description logo-name">
+                                <div class="row">
+                                    <div class="col-lg-12 logo-img">
+                                        <img src="{{ cosmetolog.logo_image.url }}"
+                                             class = "img-fluid img-cosmetolog-logo">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 cosmetolog-name">
+                                        {{ cosmetolog.name }}
+                                    </div>
+                                    <div class="col-lg-12 info-text">
+                                        <p>С помощью этой формы Вы можете направить Ваш email-запрос напрямую к нам.</p>
+                                        <p>Я отвечу Вам в течении 1 часа (рабочее время).</p>
+                                        <p style="font-style: italic">Поля отмеченные * являются обязательными к заполнению.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 form-service-order">
+                                <div class="container col-lg-12">
+                                    <div class="row">
+                                        <form action="" method="post"
+                                              class="text-center col-lg-10 offset-lg-1">{% csrf_token %}
+                                            <input type="hidden" name="{{ form_service_order.session_key.name }}"
+                                                       value={{ session_key }}>
+                                            <div class="form-group">
+                                                <input name="{{ form.subject.name }}" class="form-control"
+                                                       placeholder="*Тема" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea name="{{ form.message.name }}"
+                                                          class="text-message form-control" required
+                                                          placeholder="*Напишите Ваш вопрос"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" name="{{ form.email_sender.name }}"
+                                                       class="form-control" placeholder="*Ваш email" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input name="{{ form.from_name.name }}"
+                                                       class="form-control" placeholder="*Ваше имя" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input name="{{ form.city_sender.name }}"
+                                                       class="form-control" placeholder="Город">
+                                            </div>
+                                            <div class="row tel">
+{#                                                <div class="col-lg-12">#}
+                                                    <div class="form-group tel-index col-lg-2">
+                                                        <div name="tel_index" class="form-control">+38</div>
+                                                    </div>
+                                                    <div class="form-group tel-number col-lg-10">
+                                                        <input name="{{ form.phone_sender.name }}"
+                                                               class="form-control" placeholder="Ваш телефон">
+                                                    </div>
+{#                                                </div>#}
+                                            </div>
+                                            <button type="submit" class="btn btn-primary btn-orange">
+                                                Выслать
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+

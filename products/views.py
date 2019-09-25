@@ -1,9 +1,22 @@
 from django.shortcuts import render
 from products.models import *
+from cosmetologs.models import ServiceProductImage
 
 
-def product(request, slug):
+def product(request, slug1, slug):
     product = Product.objects.get(slug=slug)
+    cosmetolog = Cosmetolog.objects.get(slug=slug1)
+    cosmetolog_address = str(cosmetolog.street_cosmetolog.display_address) + ', ' + cosmetolog.house_cosmetolog
+
+
+    service_products_images = ServiceProductImage.objects.filter(is_active=True, is_main=True,
+                                                                 service_product__is_active=True,
+                                                                 service_product__is_visible=True,
+                                                                 service_product__cosmetolog=cosmetolog.id)
+    products_images = ProductImage.objects.filter(is_active=True, is_main=True,
+                                                  product__is_active=True,
+                                                  product__cosmetolog=cosmetolog.id).exclude(product=product)
+
 
     session_key = request.session.session_key
     if not session_key:

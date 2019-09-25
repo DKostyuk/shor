@@ -1,19 +1,20 @@
-<div class="col-lg-3">
-    <div class="cosmetolog-item">
-        <div>
-            <div class="center-block img-cosmetolog">
-                 <a href="{% url 'cosmetolog' cosmetolog.slug %}">
-                    <img src="{{ cosmetolog.logo_image.url }}" class = "img-responsive">
-                </a>
+<div class="col-lg-3 col-md-6 col-sm-6">
+    <a href="{% url 'cosmetolog' cosmetolog.slug %}" class="link-decoration">
+        <div class="cosmetolog-item shadow-item-box">
+            <div>
+                <div class="d-block mx-auto img-cosmetolog">
+                        <img src="{{ cosmetolog.logo_image.url }}" class = "img-fluid img-cosmetolog-inside">
+                </div>
+            </div>
+            <div class="product-name">
+                <p>{{ cosmetolog.type }}</p>
+                <h4>{{ cosmetolog.name }}</h4>
+            </div>
+            <div class="product-s-description">
+                <p>
+                    {{ cosmetolog.headline|truncatechars_html:70 }}
+                </p>
             </div>
         </div>
-        <div class="product-name">
-            <h4>{{ cosmetolog.name }}</h4>
-        </div>
-        <div class="product-s-description">
-            <p>
-            {{ cosmetolog.description|truncatechars_html:70 }}
-            </p>
-        </div>
-    </div>
+    </a>
 </div>

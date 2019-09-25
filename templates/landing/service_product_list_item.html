@@ -1,0 +1,22 @@
+
+<tr>
+    <td>{{ service.name }}</td>
+    <td>{{ service.price01 }} - {{ service.price02 }}</td>
+    <td>{{ service.price02 }}</td>
+    <td>{{ service.name }}</td>
+    <td>
+        {% if service.is_active == True %}
+            123
+        {% endif %}
+    </td>
+    <td>
+        <div class="btn-group">
+{#            <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>#}
+{#            <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>#}
+{#            <a class="btn btn-edit" href="{% url 'service' service_product_image.service_product.category.slug service_product_image.service_product.slug %}"><i class="icon_pencil-edit_alt"></i></a>#}
+            <a class="btn btn-edit" href="{% url 'profile_cosmetolog_edit_service' cosmetolog_object.slug service.slug %}">
+                <i class="icon_pencil-edit_alt"></i></a>
+
+        </div>
+    </td>
+</tr>

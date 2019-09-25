@@ -15,6 +15,7 @@ class CosmetologAddressInline(admin.TabularInline):
     model = CosmetologAddress
     extra = 0
 
+
 class CosmetologAddressAdmin(admin.ModelAdmin):
     list_display = [field.name for field in CosmetologAddress._meta.fields]
 
@@ -22,6 +23,24 @@ class CosmetologAddressAdmin(admin.ModelAdmin):
         model = CosmetologAddress
 
 admin.site.register(CosmetologAddress, CosmetologAddressAdmin)
+
+
+class CosmetologEmailAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in CosmetologEmail._meta.fields]
+
+    class Meta:
+        model = CosmetologEmail
+
+admin.site.register(CosmetologEmail, CosmetologEmailAdmin)
+
+
+class CosmetologPhoneAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in CosmetologPhone._meta.fields]
+
+    class Meta:
+        model = CosmetologPhone
+
+admin.site.register(CosmetologPhone, CosmetologPhoneAdmin)
 
 
 class CosmetologAdmin(admin.ModelAdmin):
@@ -34,6 +53,17 @@ class CosmetologAdmin(admin.ModelAdmin):
         model = Cosmetolog
 
 admin.site.register(Cosmetolog, CosmetologAdmin)
+
+
+class CosmetologTypeAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in CosmetologType._meta.fields]
+    prepopulated_fields = {'slug': ('name',)}
+
+    class Meta:
+        model = CosmetologType
+
+
+admin.site.register(CosmetologType, CosmetologTypeAdmin)
 
 
 class CategoryForCosmetologAdmin(admin.ModelAdmin):
@@ -72,4 +102,10 @@ class ServiceProductAdmin(admin.ModelAdmin):
 admin.site.register(ServiceProduct, ServiceProductAdmin)
 
 
-
+# class SubscriberCosmetologAdmin (admin.ModelAdmin):
+#     list_display = [field.name for field in SubscriberCosmetolog._meta.fields]
+#
+#     class Meta:
+#         model = SubscriberCosmetolog
+#
+# admin.site.register(SubscriberCosmetolog, SubscriberCosmetologAdmin)

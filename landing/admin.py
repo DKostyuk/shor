@@ -52,6 +52,21 @@ class LetterAdmin (admin.ModelAdmin):
 admin.site.register(Letter, LetterAdmin)
 
 
+class LetterEnailInline(admin.TabularInline):
+    model = LetterEmail
+    extra = 0
+
+
+class LetterTemplateAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in LetterTemplate._meta.fields]
+    inlines = [LetterEnailInline]
+
+    class Meta:
+        model = LetterTemplate
+
+admin.site.register(LetterTemplate, LetterTemplateAdmin)
+
+
 class PageAdmin (admin.ModelAdmin):
     list_display = [field.name for field in Page._meta.fields]
     # fields = ['activation_date', 'deactivation_date', 'ad_name',
@@ -80,3 +95,12 @@ class TrainingUserAdmin (admin.ModelAdmin):
         model = TrainingUser
 
 admin.site.register(TrainingUser, TrainingUserAdmin)
+
+
+class SubscriberCosmetologAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in SubscriberCosmetolog._meta.fields]
+
+    class Meta:
+        model = SubscriberCosmetolog
+
+admin.site.register(SubscriberCosmetolog, SubscriberCosmetologAdmin)

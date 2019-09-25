@@ -1,23 +1,21 @@
 <div class="col-lg-3">
     <div class="logo-name">
-
-            <div class="col-lg-6 logo-img">
-                <a href=#>
-                    <img src="{{ search_service_products_image.service_product.cosmetolog.logo_image.url }}"
-                         class = "img-responsive img-cosmetolog-logo">
-                </a>
-            </div>
-            <div class="col-lg-6">
-                {{ search_service_products_image.service_product.cosmetolog.name }}
-            </div>
-
+        <div class="col logo-img">
+            <a href=#>
+                <img src="{{ search_service_products_image.service_product.cosmetolog.logo_image.url }}"
+                     class = "img-fluid img-cosmetolog-logo">
+            </a>
+        </div>
+        <div class="col">
+            {{ search_service_products_image.service_product.cosmetolog.name }}
+        </div>
     </div>
     <div class="service-product-item">
 
-        <div class="center-block">
+        <div class="d-block mx-auto">
              <a href=#>
                 <img src="{{ search_service_products_image.image.url }}"
-                     class = "col-lg-12 img-responsive img-service-product">
+                     class = "col-lg-12 img-fluid img-service-product">
             </a>
         </div>
         {% if search_service_products_image.service_product.discount %}

@@ -2,44 +2,152 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/another/black_jack.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/another/crm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/another/crm_product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/another/crm_product_item.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/another/crm_product_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/b_project/current_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/documents.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/templates/search/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/15573.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/ElegantIcons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/ElegantIcons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/ElegantIcons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/ElegantIcons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/ajax-loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/config.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/fonts/slick.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/fonts/slick.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/fonts/slick.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/fonts/slick.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick-theme.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick-theme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/js/slick.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog_about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog_product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog_service.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/email_request_to_cosmetolog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/email_service_order_to_cosmetolog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/form_map_modal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/form_send-cosmetolog-request.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/product_item_cosmetolog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/service_about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/service_cosmetolog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/service_product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/service_product_item_cosmetolog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/service_service.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/modal_form-add-service.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/profile_additional.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/profile_main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/profile_service.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/search_choose_districts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/search_choose_services.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/search_choose_streets.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/service_product_item_city.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/service_product_item_district.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/service_product_item_street.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/service_product_list_item.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/service_product_slider.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/products/product_about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/products/product_product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/products/product_service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/b_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/b_project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addresses/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/addresses/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addresses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/addresses/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/another/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/another/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/another/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/another/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/another/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/b_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/b_project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cosmetologs/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cosmetologs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cosmetologs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cosmetologs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landing/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landing/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/another/file_upload_regular_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/another/file_upload_regular_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/static_dev/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/static_dev/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/another/another.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/another/another.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/another/black_jack.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/another/black_jack.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cosmetologs/form_send-service-order_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cosmetologs/form_send-service-order_item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cosmetologs/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cosmetologs/service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/advert_right.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/advert_right.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/advert_top.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/advert_top.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/blog_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/blog_item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/cosmetolog_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/cosmetolog_item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/navbar_01.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/no_search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/no_search_results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/password_reset.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/password_reset_complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/password_reset_complete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/password_reset_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/password_reset_confirm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/password_reset_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/password_reset_done.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/password_reset_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/password_reset_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/product_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/product_item.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/landing/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/registration_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/registration_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/reset.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/search_address.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_address.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/search_choose towns.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_choose_cities.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/search_fields.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_fields.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/search_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/search_recommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_recommend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/search_service_all_cosmetologs_item_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_service_all_cosmetologs_item_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/search_service_all_cosmetologs_item_list_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_service_all_cosmetologs_item_list_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/search_title_block_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_title_block_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/search_we_found_title.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/service_product_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/service_product_item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/b_project$models.coverage" NAME="models Coverage Results" MODIFIED="1507463944765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/addresses" />
     <SUITE FILE_PATH="coverage/b_project$urls.coverage" NAME="urls Coverage Results" MODIFIED="1517249025774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/landing" />
     <SUITE FILE_PATH="coverage/b_project$Test__landing.coverage" NAME="Test: landing Coverage Results" MODIFIED="1499944796133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/b_project$models.coverage" NAME="models Coverage Results" MODIFIED="1507463944765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/addresses" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
   </component>
   <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_SCHEMA" value="true" />
     <option name="GROUP_CONTENTS" value="false" />
     <option name="SORT_POSITIONED" value="false" />
@@ -55,50 +163,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/another/views.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/static_dev/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="691" column="24" selection-start-line="691" selection-start-column="24" selection-end-line="691" selection-end-column="24" />
+              <caret line="271" lean-forward="true" selection-start-line="271" selection-end-line="271" />
               <folding>
-                <element signature="e#0#45#0" expanded="true" />
+                <element signature="e#253#411#0" />
+                <element signature="e#441#608#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contact.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/landing/contact.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" selection-start-line="23" selection-end-line="40" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/orders/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="13" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/products/product.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="68" selection-start-line="68" selection-end-line="81" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="black_jack.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/another/black_jack.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="71" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -109,45 +182,51 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>search_cosmetologs</find>
-      <find>slugi</find>
       <find>get_city_id</find>
-      <find>dis</find>
-      <find>product-item</find>
-      <find>img-product</find>
-      <find>img-c</find>
-      <find>service</find>
-      <find>product-s-description</find>
-      <find>blog</find>
-      <find>read</find>
-      <find>colu</find>
-      <find>disc</find>
-      <find>nav</find>
-      <find>product</find>
-      <find>username</find>
-      <find>inte</find>
-      <find>Rich</find>
-      <find>item</find>
-      <find>OSError</find>
+      <find>sear</find>
+      <find>profi</find>
+      <find>search_ajax</find>
+      <find>profil</find>
+      <find>ela</find>
+      <find>address_set</find>
+      <find>active_addresses_towns</find>
+      <find>app</find>
       <find>set</find>
-      <find>emailm</find>
-      <find>mess</find>
-      <find>dateti</find>
-      <find>url</find>
-      <find>on_delete=models.CASCADE</find>
-      <find>Forei</find>
-      <find>urlresolvers</find>
-      <find>core.urls</find>
-      <find>usl</find>
+      <find>slugif</find>
+      <find>town-simple</find>
+      <find>tow</find>
+      <find>town</find>
+      <find>hover</find>
+      <find>cosmetolog_address</find>
+      <find>cosmetolog-page-name</find>
+      <find>search</find>
+      <find>distr</find>
+      <find>background-color</find>
+      <find>get_sub</find>
+      <find>footer</find>
+      <find>we-found-title</find>
+      <find>search_address</find>
+      <find>navbar_01</find>
+      <find>search_service</find>
+      <find>tags_city_48</find>
+      <find>test</find>
+      <find>font-family:</find>
+      <find>render_to_string</find>
     </findStrings>
     <dirStrings>
-      <dir>C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project</dir>
       <dir>C:\Users\Dmytro_Kostiuk\PycharmProjects\b_project</dir>
+      <dir>C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\landing</dir>
+      <dir>C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\orders</dir>
+      <dir>C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\b_project</dir>
+      <dir>C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\cosmetologs</dir>
+      <dir>C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates</dir>
+      <dir>C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -156,70 +235,64 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/landing/acc_confirmation_email.html" />
+        <option value="$PROJECT_DIR$/templates/landing/service_product_item.html" />
+        <option value="$PROJECT_DIR$/templates/landing/blog_item.html" />
+        <option value="$PROJECT_DIR$/templates/cosmetologs/service_service.html" />
+        <option value="$PROJECT_DIR$/templates/cosmetologs/form_send-cosmetolog-request.html" />
         <option value="$PROJECT_DIR$/orders/models.py" />
-        <option value="$PROJECT_DIR$/templates/landing/registration.html" />
-        <option value="$PROJECT_DIR$/templates/landing/registration_profile.html" />
-        <option value="$PROJECT_DIR$/landing/migrations/0008_auto_20180307_2129.py" />
-        <option value="$PROJECT_DIR$/orders/views.py" />
-        <option value="$PROJECT_DIR$/orders/context_processors.py" />
-        <option value="$PROJECT_DIR$/products/urls.py" />
-        <option value="$PROJECT_DIR$/products/views.py" />
-        <option value="$PROJECT_DIR$/templates/products/product_line.html" />
-        <option value="$PROJECT_DIR$/templates/landing/product_item.html" />
-        <option value="$PROJECT_DIR$/templates/landing/contact.html" />
-        <option value="$PROJECT_DIR$/templates/landing/about.html" />
-        <option value="$PROJECT_DIR$/templates/landing/warsztaty.html" />
-        <option value="$PROJECT_DIR$/landing/migrations/0015_auto_20180419_0705.py" />
-        <option value="C:/Python36/Lib/site-packages/django_dbshell_plus/management/commands/dbshell_plus.py" />
-        <option value="$PROJECT_DIR$/cosmetologs/views.py" />
-        <option value="$PROJECT_DIR$/landing/admin.py" />
-        <option value="$PROJECT_DIR$/landing/forms.py" />
-        <option value="$PROJECT_DIR$/templates/landing/login.html" />
-        <option value="$PROJECT_DIR$/templates/landing/training_confirmation_email.html" />
-        <option value="$PROJECT_DIR$/landing/urls.py" />
-        <option value="$PROJECT_DIR$/templates/landing/form_send-registration-training_item.html" />
-        <option value="$PROJECT_DIR$/templates/landing/form_send-interest-training_item.html" />
-        <option value="$PROJECT_DIR$/static/static_dev/css/style.css" />
-        <option value="$PROJECT_DIR$/templates/landing/training_confirmation_email_acc.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/static/static_dev/js/scripts.js" />
-        <option value="$PROJECT_DIR$/b_project/settings.py" />
-        <option value="$PROJECT_DIR$/b_project/urls.py" />
-        <option value="$PROJECT_DIR$/templates/another/blog.html" />
-        <option value="$PROJECT_DIR$/templates/navbar.html" />
-        <option value="$PROJECT_DIR$/templates/landing/training_item_full.html" />
-        <option value="$PROJECT_DIR$/landing/views.py" />
-        <option value="$PROJECT_DIR$/templates/another/another.html" />
-        <option value="$PROJECT_DIR$/templates/another/another_trick_item.html" />
-        <option value="$PROJECT_DIR$/landing/models.py" />
-        <option value="$PROJECT_DIR$/another/models.py" />
-        <option value="$PROJECT_DIR$/another/forms.py" />
-        <option value="$PROJECT_DIR$/another/admin.py" />
-        <option value="$PROJECT_DIR$/templates/another/file_upload_regular_user.html" />
+        <option value="$PROJECT_DIR$/templates/cosmetologs/form_send-service-order_item.html" />
+        <option value="$PROJECT_DIR$/orders/forms.py" />
+        <option value="$PROJECT_DIR$/templates/cosmetologs/service.html" />
+        <option value="$PROJECT_DIR$/templates/products/product_about.html" />
+        <option value="$PROJECT_DIR$/templates/footer.html" />
+        <option value="$PROJECT_DIR$/templates/landing/profile_home.html" />
         <option value="$PROJECT_DIR$/templates/landing/profile.html" />
-        <option value="$PROJECT_DIR$/templates/landing/training_item.html" />
-        <option value="$PROJECT_DIR$/templates/another/crm.html" />
-        <option value="$PROJECT_DIR$/templates/another/crm_product_list.html" />
-        <option value="$PROJECT_DIR$/another/urls.py" />
-        <option value="$PROJECT_DIR$/templates/another/crm_product_item.html" />
-        <option value="$PROJECT_DIR$/products/models.py" />
-        <option value="$PROJECT_DIR$/products/admin.py" />
-        <option value="$PROJECT_DIR$/templates/another/black_jack.html" />
+        <option value="$PROJECT_DIR$/templates/landing/reset.html" />
         <option value="$PROJECT_DIR$/another/views.py" />
+        <option value="$PROJECT_DIR$/templates/landing/password_reset.html" />
+        <option value="$PROJECT_DIR$/templates/landing/password_reset_done.html" />
+        <option value="$PROJECT_DIR$/templates/landing/password_reset_email.html" />
+        <option value="$PROJECT_DIR$/templates/landing/password_reset_complete.html" />
+        <option value="$PROJECT_DIR$/templates/landing/password_reset_confirm.html" />
+        <option value="$PROJECT_DIR$/templates/landing/login.html" />
+        <option value="$PROJECT_DIR$/orders/views.py" />
+        <option value="$PROJECT_DIR$/templates/products/product.html" />
+        <option value="$PROJECT_DIR$/landing/models.py" />
+        <option value="$PROJECT_DIR$/templates/landing/search_address.html" />
+        <option value="$PROJECT_DIR$/templates/landing/search_fields.html" />
+        <option value="$PROJECT_DIR$/landing/forms.py" />
+        <option value="$PROJECT_DIR$/b_project/settings.py" />
+        <option value="$PROJECT_DIR$/addresses/models.py" />
+        <option value="$PROJECT_DIR$/cosmetologs/models.py" />
+        <option value="$PROJECT_DIR$/templates/cosmetologs/cosmetolog.html" />
+        <option value="$PROJECT_DIR$/templates/landing/search_we_found_title.html" />
+        <option value="$PROJECT_DIR$/templates/landing/service_product_item_street.html" />
+        <option value="$PROJECT_DIR$/templates/landing/service_product_item_district.html" />
+        <option value="$PROJECT_DIR$/templates/landing/service_product_item_city.html" />
+        <option value="$PROJECT_DIR$/templates/landing/search_choose_services.html" />
+        <option value="$PROJECT_DIR$/templates/landing/search_choose_districts.html" />
+        <option value="$PROJECT_DIR$/templates/landing/search_choose_cities.html" />
+        <option value="$PROJECT_DIR$/templates/landing/search_choose_streets.html" />
+        <option value="$PROJECT_DIR$/templates/landing/search_recommend.html" />
+        <option value="$PROJECT_DIR$/templates/landing/search_results.html" />
+        <option value="$PROJECT_DIR$/another/urls.py" />
+        <option value="$PROJECT_DIR$/landing/urls.py" />
+        <option value="$PROJECT_DIR$/templates/landing/profile_main.html" />
+        <option value="$PROJECT_DIR$/static/static_dev/js/scripts.js" />
+        <option value="$PROJECT_DIR$/products/views.py" />
+        <option value="$PROJECT_DIR$/cosmetologs/views.py" />
+        <option value="$PROJECT_DIR$/templates/cosmetologs/service_cosmetolog.html" />
+        <option value="$PROJECT_DIR$/addresses/admin.py" />
+        <option value="$PROJECT_DIR$/templates/navbar.html" />
+        <option value="$PROJECT_DIR$/static/static_dev/css/style.css" />
+        <option value="$PROJECT_DIR$/landing/views.py" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1383" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -238,24 +311,7 @@
             <path>
               <item name="b_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="b_project" type="462c0819:PsiDirectoryNode" />
-              <item name="orders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="b_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="b_project" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="b_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="b_project" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="orders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="b_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="b_project" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="products" type="462c0819:PsiDirectoryNode" />
+              <item name="addresses" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -266,22 +322,25 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/my-app" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Dmytro_Kostiuk\PycharmProjects\b_project\templates\another" />
-      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\another" />
-      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates" />
-      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\blogs" />
-      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\another" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\cosmetologs" />
       <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\landing" />
       <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates" />
       <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\landing\main" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\static\static_dev\css\fonts" />
+      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\landing" />
+      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\products" />
+      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\cosmetologs" />
+      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\static\static_dev\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -296,8 +355,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.urls">
-    <configuration default="false" name="Test: landing" type="DjangoTestsConfigurationType" factoryName="Django tests" temporary="true">
+  <component name="RunManager" selected="Django server.b_project">
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="b_project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration name="Test: landing" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="b_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -308,33 +388,13 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="b_project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="TARGET" value="landing" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="b_project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+      <method v="2" />
     </configuration>
     <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="b_project" />
@@ -348,12 +408,15 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/addresses/models.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <configuration name="urls" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="b_project" />
@@ -367,14 +430,18 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/landing/urls.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
-    <configuration default="false" name="b_project" type="Python.DjangoServer" factoryName="Django server">
+    <configuration name="b_project" type="Python.DjangoServer" factoryName="Django server">
+      <module name="b_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -386,7 +453,6 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="b_project" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
       <option name="host" value="" />
@@ -396,155 +462,20 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
-      <method />
+      <method v="2" />
     </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="b_project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-    </configuration>
-    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="b_project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
-      <node-interpreter value="project" />
-      <working-dir value="" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="b_project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="b_project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="b_project" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+    <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
       <arguments />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="b_project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <module name="b_project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;.&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Django server.b_project" />
+      <item itemvalue="Django tests.Test: landing" />
       <item itemvalue="Python.models" />
       <item itemvalue="Python.urls" />
     </list>
@@ -552,6 +483,7 @@
       <list>
         <item itemvalue="Python.urls" />
         <item itemvalue="Python.models" />
+        <item itemvalue="Django tests.Test: landing" />
       </list>
     </recent_temporary>
   </component>
@@ -565,6 +497,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1499941391771</updated>
+      <workItem from="1557598335796" duration="938000" />
+      <workItem from="1563871065183" duration="631000" />
+      <workItem from="1569348398529" duration="1338000" />
     </task>
     <servers />
   </component>
@@ -572,6 +507,9 @@
     <history-entry file="Test__landing - 2017.07.13 at 14h 20m 02s.xml">
       <configuration name="Test: landing" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2907000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -583,416 +521,393 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8348214" visible="true" weight="0.26709062" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32993197" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5030211" side_tool="true" weight="0.2755102" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32993197" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.4829932" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.20175439" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.24961714" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49697885" visible="true" weight="0.23792486" />
-      <window_info id="Favorites" order="2" sideWeight="0.16517857" side_tool="true" weight="0.2734139" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.63265306" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29817906" />
+      <window_info id="Structure" order="1" weight="0.24962178" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.4248366" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32843137" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32843137" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49707174" visible="true" weight="0.37091503" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50292826" weight="0.37254903" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Data View" order="4" weight="0.32873562" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32930514" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.5136054" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Data View" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3290469" />
+      <window_info anchor="right" id="SciView" order="5" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8348214" visible="true" weight="0.22280967" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.20175439" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31316188" />
+      <window_info id="Structure" order="1" weight="0.24962178" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.24673203" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Data View" order="4" weight="0.32873562" />
-      <window_info id="Structure" order="1" weight="0.24961714" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32843137" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32843137" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49707174" weight="0.31535947" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50292826" weight="0.37254903" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32993197" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.4829932" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.5136054" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32930514" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49697885" visible="true" weight="0.3282313" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5030211" side_tool="true" weight="0.2755102" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32993197" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.63265306" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Favorites" order="2" sideWeight="0.16517857" side_tool="true" weight="0.2734139" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3290469" />
+      <window_info anchor="right" id="Data View" order="4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/orders/context_processors.py</url>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="8" />
-    </breakpoint-manager>
+    <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/landing/contact.html">
+    <entry file="file://$PROJECT_DIR$/landing/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="40" selection-end-column="27" />
+        <state relative-caret-position="102">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/orders/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/landing/search_address.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="13" selection-end-column="37" />
+        <state relative-caret-position="187">
+          <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/products/product.html">
+    <entry file="file://C:/Python371/Lib/site-packages/django/db/models/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" selection-start-line="68" selection-end-line="81" selection-end-column="27" />
+        <state relative-caret-position="130">
+          <caret line="504" column="8" selection-start-line="504" selection-start-column="8" selection-end-line="504" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/another/black_jack.html">
+    <entry file="file://$USER_HOME$/.PyCharm2016.3/system/python_stubs/1661405622/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="71" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
+        <state relative-caret-position="13855">
+          <caret line="815" column="8" selection-start-line="815" selection-start-column="8" selection-end-line="815" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cosmetologs/form_send-service-order_item.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/landing/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/orders/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="9" selection-start-line="9" selection-end-line="16" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/orders/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-544">
-          <caret line="90" column="4" lean-forward="true" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cosmetologs/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/form_send-registration-training_item.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/form_send-interest-training_item.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="76" selection-start-line="6" selection-start-column="76" selection-end-line="6" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/training_confirmation_email_not_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/training_confirmation_email_acc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/cosmetologs/forms.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/landing/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="70" />
+        <state relative-caret-position="85">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/orders/context_processors.py">
+    <entry file="file://$PROJECT_DIR$/templates/landing/search_fields.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="20" selection-end-column="39" />
+        <state relative-caret-position="85">
+          <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/static_dev/css/style.css">
+    <entry file="file://$PROJECT_DIR$/elasticsearch-5.6.12/config/jvm.options">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="629" column="1" selection-start-line="629" selection-start-column="1" selection-end-line="629" selection-end-column="1" />
-        </state>
+        <state relative-caret-position="-1613" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticsearch-5.6.12/config/elasticsearch.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1241" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticsearch-5.6.12/config/log4j2.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1025" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticsearch-5.6.12/README.textile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3506" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/b_project/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="56" column="16" lean-forward="true" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
+        <state relative-caret-position="1122">
+          <caret line="69" selection-start-line="69" selection-start-column="2" selection-end-line="73" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/another/blog.html" />
-    <entry file="file://$PROJECT_DIR$/b_project/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/landing/cosmetolog_item.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cosmetologs/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+        <state relative-caret-position="1190">
+          <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/landing/service_product_item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="28" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/landing/service_product_item_district.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="96" selection-start-line="24" selection-start-column="96" selection-end-line="24" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/landing/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="82" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="15" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+        <state relative-caret-position="68">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1184">
-          <caret line="74" column="33" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/training_item_full.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/warsztaty.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/another/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/another/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/landing/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/landing/service_product_item_street.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="159" column="16" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
+          <caret line="1" column="50" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/another/file_upload_regular_user.html">
+    <entry file="file://$PROJECT_DIR$/templates/landing/service_product_item_city.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="51">
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/another/another.html">
+    <entry file="file://$PROJECT_DIR$/templates/landing/search_choose_services.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="53" column="10" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="53" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/landing/search_choose_streets.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="10" selection-end-column="24" />
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/profile.html">
+    <entry file="file://$PROJECT_DIR$/templates/landing/search_recommend.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="195">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cosmetologs/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/landing/search_choose_cities.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="174" selection-start-line="174" selection-end-line="174" />
+        <state relative-caret-position="136">
+          <caret line="26" column="42" lean-forward="true" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/orders/checkout.html">
+    <entry file="file://$PROJECT_DIR$/templates/landing/search_choose_districts.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="69" column="32" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="69" selection-end-column="32" />
+        <state relative-caret-position="-68">
+          <caret line="2" selection-start-line="2" selection-end-line="5" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/training_item.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="80" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/templates/landing/search_we_found_title.html" />
+    <entry file="file://$PROJECT_DIR$/templates/landing/search_title_block_list.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/another/crm_product_list.html">
+    <entry file="file://$PROJECT_DIR$/templates/landing/search_results.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/another/crm_product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="442">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/another/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="24" column="57" lean-forward="true" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+        <state relative-caret-position="290">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/products/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/landing/navbar_01.html" />
+    <entry file="file://$PROJECT_DIR$/templates/landing/search_service_all_cosmetologs_item_list_info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1383">
-          <caret line="89" column="42" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
-        </state>
+        <state relative-caret-position="-190" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/another/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/static_dev/js/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/another/crm_product_item.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/another/another_trick_item.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/another/crm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/addresses/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/landing/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="75" column="56" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
+        <state relative-caret-position="581">
+          <caret line="60" column="32" lean-forward="true" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/landing/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/landing/profile_service.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="651" column="21" selection-start-line="651" selection-start-column="21" selection-end-line="651" selection-end-column="21" />
+        <state relative-caret-position="-102" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/landing/modal_form-add-service.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/landing/profile_main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="52" column="88" lean-forward="true" selection-start-line="52" selection-start-column="88" selection-end-line="52" selection-end-column="88" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/orders/views.py">
+    <entry file="file://$PROJECT_DIR$/cosmetologs/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="13" selection-end-column="37" />
+        <state relative-caret-position="1156">
+          <caret line="79" column="111" selection-start-line="79" selection-start-column="111" selection-end-line="79" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/landing/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="34" selection-start-line="34" selection-end-line="36" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cosmetologs/cosmetolog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cosmetologs/service_cosmetolog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="109" selection-start-line="13" selection-start-column="109" selection-end-line="13" selection-end-column="109" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/products/product.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" selection-start-line="68" selection-end-line="81" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="40" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/another/black_jack.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="71" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/another/views.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="691" column="24" selection-start-line="691" selection-start-column="24" selection-end-line="691" selection-end-column="24" />
+          <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="80" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/landing/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="68" column="30" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="30" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#12004#14010#0" />
+            <element signature="e#15069#15972#0" />
+            <element signature="e#16010#16933#0" />
+            <element signature="e#17498#18183#0" />
+            <element signature="e#18225#18355#0" />
+            <element signature="e#18382#19390#0" />
+            <element signature="e#19460#21382#0" />
+            <element signature="e#21437#21763#0" />
+            <element signature="e#21843#23354#0" />
+            <element signature="e#23462#24447#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addresses/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addresses/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/static_dev/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addresses/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/static_dev/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="271" lean-forward="true" selection-start-line="271" selection-end-line="271" />
+          <folding>
+            <element signature="e#253#411#0" />
+            <element signature="e#441#608#0" />
           </folding>
         </state>
       </provider>

@@ -15,17 +15,24 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from landing import views
-from django.contrib.auth.views import password_reset, password_reset_confirm,\
-    password_reset_done, password_reset_complete
+from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView, \
+    PasswordResetDoneView, PasswordResetCompleteView
+
 
 urlpatterns = [
 
     url(r'^$', views.home, name='home'),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^landing/$', views.landing, name='landing'),
     url(r'^registration/$', views.registration, name='registration'),
     url(r'^registration_profile/$', views.registration_profile, name='registration_profile'),
     url(r'^registration_profile/(?P<email_1>[.@0-9A-Za-z_\-]+)/$', views.registration_profile, name='registration_profile'),
+
     url(r'^profile/$', views.profile, name='profile'),
+    url(r'^profile/(?P<cosmetolog_url>[\w-]+)/$', views.profile_cosmetolog, name='profile_cosmetolog'),
+    url(r'^profile_service_edit/(?P<cosmetolog_url>[\w-]+)/(?P<service_slug>[\w-]+)/$', views.profile_cosmetolog_edit_service, name='profile_cosmetolog_edit_service'),
+    # url(r'^service/(?P<slug1>[\w-]+)/(?P<slug>[\w-]+)/$', views.service, name='service'),
+    # url(r'^profile/(?P<cosmetolog_url>[\w-]+)/(?P<q_2>[\w-]+)/$', views.profile, name='profile'),
 
     url(r'^login/$', views.login, name='login'),
     url(r'^logout/$', views.logout, name='logout'),
@@ -33,40 +40,28 @@ urlpatterns = [
     url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         views.activate, name='activate'),
 
-    url(r'^password_reset/$', password_reset,
-        {'template_name': 'landing/password_reset.html', 'email_template_name': 'landing/password_reset_email.html',
-         'from_email': 'reset_password@ukr.net'},
-        name='password-reset'),
-    url(r'^password_reset_confirm/(?P<uidb64>[-\w]+)/(?P<token>[-\w]+)/$', password_reset_confirm,
-        {'template_name': 'landing/password_reset_confirm.html'},
+    url(r'^password_reset/$', PasswordResetView.as_view(template_name='landing/password_reset.html',
+                                                        email_template_name='landing/password_reset_email.html',
+                                                        from_email='kostiukkosta@gmail.com'), name='password_reset'),
+    url(r'^password_reset_confirm/(?P<uidb64>[-\w]+)/(?P<token>[-\w]+)/$',
+        PasswordResetConfirmView.as_view(template_name='landing/password_reset_confirm.html'),
         name='password_reset_confirm'),
-    url(r'^password_reset_complete/$', password_reset_complete,
-        {'template_name': 'landing/password_reset_complete.html'},
+    url(r'^password_reset_complete/$',
+        PasswordResetCompleteView.as_view(template_name='landing/password_reset_complete.html'),
         name='password_reset_complete'),
-    url(r'^password_reset_done/$', password_reset_done,
-        {'template_name': 'landing/password_reset_done.html'},
+    url(r'^password_reset_done/$',
+        PasswordResetDoneView.as_view(template_name='landing/password_reset_done.html'),
         name='password_reset_done'),
 
-    url(r'^uslugi-kosmetyczne/$', views.salon, name='salon'),
+    url(r'^search_ajax/$', views.search_ajax),
+    url(r'^search_ajax_service/$', views.search_ajax_service),
+    url(r'^search_ajax_city/$', views.search_ajax_city),
+    url(r'^search_ajax_street/$', views.search_ajax_street),
 
-    url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/$',
-        views.search_service_address, name='search_service_address'),
-    url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/$',
-        views.search_service_address, name='search_service_address'),
-    url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/(?P<q_3>[\w-]+)/$',
-        views.search_service_address, name='search_service_address'),
-    url(r'^uslugi-kosmetyczne/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/(?P<q_3>[\w-]+)/(?P<q_4>[\w-]+)/$',
-        views.search_service_address, name='search_service_address'),
+    url(r'^uslugi-kosmetologicheskie/$', views.salon, name='salon'),
 
-    url(r'^service-in-Poland/(?P<q_1>[\w-]+)/$', views.search_service, name='search_service'),
-    url(r'^service-in-Poland/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/$', views.search_service, name='search_service'),
-    url(r'^service-in-Poland/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/(?P<q_3>[\w-]+)/$', views.search_service,
-        name='search_service'),
-
-    url(r'^cosmetolog-in/(?P<q_1>[\w-]+)/$', views.search_address, name='search_address'),
-    url(r'^cosmetolog-in/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/$', views.search_address, name='search_address'),
-    url(r'^cosmetolog-in/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/(?P<q_3>[\w-]+)/$',views.search_address,
-        name='search_address'),
+    url(r'^uslugi-kosmetologicheskie/(?P<q_1>[\w-]+)/(?P<q_2>[\w-]+)/(?P<q_3>[\w-]+)/(?P<q_4>[\w-]+)/(?P<q_5>[\w-]+)/(?P<q_6>[\w-]+)/$',
+        views.search_service_address, name='search_service_address'),
 
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^about/$', views.about, name='about'),
@@ -76,5 +71,5 @@ urlpatterns = [
     url(r'^activate_training/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         views.activate_training, name='activate_training'),
 
-    url(r'^navbar_01/$', views.navbar_01, name=' navbar_01'),
+    url(r'^test_ajax/$', views.test_ajax, name='test_ajax'),
 ]

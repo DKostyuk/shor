@@ -8,80 +8,146 @@
             <div class="col-lg-4">
                 {% for image_item in product.productimage_set.all %}
                     <div class="product-image-item">
-                        <img src="{{ image_item.image.url }}" class="img-responsive">
+                        <img src="{{ image_item.image.url }}" class="img-fluid">
                     </div>
                 {% endfor %}
             </div>
             <div class="col-lg-8">
-                <h1 class="text-center">
-                    {{ product.name }}
-                </h1>
                 <div class="">
                     <p>
-                        Price: {{ product.price }}
+{#                        Price: {{ product.price }}#}
                     </p>
                 </div>
-                <div>
-                      <!-- Nav tabs -->
-                      <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active">
-                            <a href="#description" aria-controls="home" role="tab" data-toggle="tab">
-                                Описание
-                            </a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#delivery" aria-controls="profile" role="tab" data-toggle="tab">
-                                Доставка
-                            </a>
-                        </li>
-                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-                      </ul>
-
-                      <!-- Tab panes -->
-                      <div class="tab-content product-description-tabs">
-                        <div role="tabpanel" class="tab-pane active" id="description">
-                            <div class="product_description">
-                                <span class="name_description"> {{ product.name_description }}</span>
-                                {% autoescape off %} {{ product.description }} {% endautoescape %}
-                            </div>
-                            <div class="product_description">
-                                <span class="name_description"> {{ product.name_description_1 }}</span>
-                                {% autoescape off %} {{ product.description_1 }} {% endautoescape %}
-                            </div>
-                            <div class="product_description">
-                                <span class="name_description"> {{ product.name_description_2 }}</span>
-                                {{ product.description_2 }}
-                            </div>
-                            <div class="product_description">
-                                <span class="name_description"> {{ product.name_description_3 }}</span>
-                                {{ product.description_3 }}
+                <div class="service-page-details">
+                    <h1 class="text-center service-page-name">{{ product.name }}</h1>
+                    <div class="text-center cosmetolog-page-type">
+                        <span>Производитель: <span class="producer-name">{{ product.producer }}</span></span>
+                        <span>Категория товара: <span class="product-category">{{ product.category }}</span></span>
+                        <span>Вид: <span class="product-type">{{ product.type }}</span></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group service-page-price">
+                                <p> <span style="font-weight: 700">Стоимость</span>
+                                     {{ product.price }} грн.
+                                    {% if product.discount %}
+                                        <button type="submit" id="submit_order_btn" class="btn btn-success service-page-discount-box"
+                                                data-toggle="modal" data-target="#SendOrderService">
+                                            <div style="font-size: 10px;margin-top: -10px;">скидка</div>
+                                            <div>{{ product.discount }}%</div>
+                                        </button>
+                                    {% endif %}
+                                </p>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="delivery">
-                            <h3>Как мы делаем доставку</h3>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="messages">...</div>
-                        <div role="tabpanel" class="tab-pane" id="settings">...</div>
-                      </div>
-                </div>
-                <div>
-                    <form id ="form_buying_product" class="form-inline" action="{% url 'basket_adding' %}">{% csrf_token %}
-                        <div class="form-group">
-                            <input type="number" class="form-control" name="number" id="number">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" id="submit_btn" class="btn btn-success btn-buy"
-                                    data-product_id = "{{ product.id }}"
-                                    data-name = "{{ product.name }}"
-                                    data-price = "{{ product.price }}"
-                            >
-                                Купить
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 product-short-description">{{ product.short_description }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <!-- Modal request btn See on Map -->
+                            <button type="submit" id="open_map_btn" class="btn btn-see-info"
+                                    data-toggle="modal" data-target="#map_modal"
+                                    data-cosmetolog_address = "{{ cosmetolog_address }}">
+                                Посмотреть адресс на карте
                             </button>
                         </div>
-                    </form>
+                        <div class="col-lg-4">
+                            <a class="btn toggle-text btn-see-info" data-toggle="collapse" href="">
+                                <span>Посмотреть сайт</span>
+                                <span class="hidden hidden-info">{{ cosmetolog.site_url }}</span>
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a class="btn toggle-text btn-see-info" data-toggle="collapse" href="">
+                                <span>Посмотреть телефон</span>
+                                <span class="hidden hidden-info">+38 {{ cosmetolog.order_phone }}</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div>
+                                <form id ="form_buying_product" class="form-inline"
+                                      action="{% url 'basket_adding' %}">{% csrf_token %}
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" name="number" id="number">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" id="submit_btn" class="btn btn-success btn-buy"
+                                                data-product_id = "{{ product.id }}"
+                                                data-name = "{{ product.name }}"
+                                                data-price = "{{ product.price }}"
+                                        >
+                                            Оформить заказ
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- Modal request btn Send Request -->
+{#                            <div class="form-group">#}
+{#                                <button type="submit" id="submit_order_btn" class="btn btn-success btn-order"#}
+{#                                        data-toggle="modal" data-target="#SendOrderService">#}
+{#                                    Отправить запрос#}
+{#                                </button>#}
+{#                            </div>#}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="nav nav-tabs profile-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="about-tab" data-toggle="tab" href="#about" role="tab"
+                           aria-controls="about" aria-selected="true">Описание товара</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="product-tab" data-toggle="tab" href="#product" role="tab"
+                           aria-controls="product" aria-selected="false">Другие товары</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="service-tab" data-toggle="tab" href="#service" role="tab"
+                           aria-controls="service" aria-selected="false">Услуги</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="cosmetolog-tab" data-toggle="tab" href="#cosmetolog" role="tab"
+                           aria-controls="cosmetolog" aria-selected="false">Кто продает товары</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+
+                    {% include 'products/product_about.html' %}
+                    {% include 'products/product_product.html' %}
+                    {% include 'products/product_service.html' %}
+                    {% include 'cosmetologs/service_cosmetolog.html' %}
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal request btn Send Order -->
+{#        <div class="row">#}
+{#            <div class="col-lg-12">#}
+{#                <div class="form-group">#}
+{#                    <button type="submit" id="submit_order_btn" class="btn btn-success btn-order"#}
+{#                            data-toggle="modal" data-target="#SendOrderService">#}
+{#                        Отправить запрос#}
+{#                    </button>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+    </div>
+
+
+
+        <!-- Modal form html -->
+    <div class="col-lg-12">
+        {% include 'cosmetologs/form_map_modal.html' %}
     </div>
 {% endblock %}

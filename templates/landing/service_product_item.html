@@ -1,34 +1,29 @@
-<div class="col-lg-3">
-    <div class="product-item">
-        <div>
-            <div class="center-block img-product">
-                 <a href="{% url 'service' service_product_image.service_product.category.slug service_product_image.service_product.slug %}">
-                    <img src="{{ service_product_image.image.url }}" class = "img-responsive">
-                </a>
-            </div>
-            {% if service_product_image.service_product.discount %}
-                <div class="discount-container">
-                    {{ service_product_image.service_product.discount }}%
+<div class="col-lg-3 col-md-6 col-sm-6">
+    <a href="{% url 'service' service_product_image.service_product.cosmetolog.slug service_product_image.service_product.category.slug service_product_image.service_product.slug %}"
+    class="link-decoration">
+        <div class="product-item shadow-item-box">
+            <div>
+                <div class="d-block mx-auto img-product">
+                        <img src="{{ service_product_image.image.url }}" class = "img-fluid img-product-inside">
                 </div>
-            {% endif %}
-        </div>
-        <div class="product-name">
-            <h4>{{ service_product_image.service_product.name }}</h4>
-        </div>
-        <div class="service-product-s-description">
-            <p>
-            {{ service_product_image.service_product.description|truncatechars_html:70 }}
-            </p>
-        </div>
+                {% if service_product_image.service_product.discount %}
+                    <div class="discount-container">
+                        {{ service_product_image.service_product.discount }}%
+                    </div>
+                {% endif %}
+            </div>
+            <div class="product-name">
+                <h4>{{ service_product_image.service_product.name }}</h4>
+            </div>
+            <div class="service-product-s-description">
+                <p>
+                {{ service_product_image.service_product.short_description|truncatechars_html:70 }}
+                </p>
+            </div>
 
-        <div class="product-price">
-            {{ service_product_image.service_product.price01 }} - {{ service_product_image.service_product.price02 }} PLN
+            <div class="product-price">
+                {{ service_product_image.service_product.price01 }} - {{ service_product_image.service_product.price02 }} грн.
+            </div>
         </div>
-
-{#        <div class="add-to-cart-btn">#}
-{#            <button class="btn btn-success">#}
-{#                Добавить в корзину#}
-{#            </button>#}
-{#        </div>#}
-    </div>
+    </a>
 </div>

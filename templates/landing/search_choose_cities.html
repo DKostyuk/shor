@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text_center we-found-title">Мы подобрали для Вас косметологическую услугу
+                {{ search_active_subservice.name }} по всем городам</h1>
+        </div>
+        <div class="col col-lg-8 offset-lg-2 choose-town">
+            <h3 class="h3 choose-town-title">
+                    Выберите Ваш город
+            </h3>
+            <div class="">
+                <ul class="town-simple-list">
+                    {% for active_address in active_addresses_towns %}
+                        <a
+                           href="{% url 'search_service_address' q_1 q_2 active_address.slug q_4 q_5 q_6 %}">
+                            <li class="town-simple-item">{{ active_address.display_address }}</li>
+                        </a>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        {% if service_city_images %}
+            <div class="col-lg-12">
+                <h2 class="h3 best-cosmetologs-grid">
+                        Популярные услуги {{ search_active_subservice.name  }} от лучших косметологов во всех городах
+                </h2>
+            </div>
+            {% for service_city_image in service_city_images %}
+                {% include 'landing/service_product_item_city.html' %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

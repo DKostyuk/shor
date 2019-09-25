@@ -1,0 +1,9 @@
+<div class="tab-pane fade" id="product" role="tabpanel" aria-labelledby="product-tab">
+    <div class="container">
+        <div class="row">
+            {% for product_image in products_images %}
+                {% include 'cosmetologs/product_item_cosmetolog.html' %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

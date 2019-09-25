@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.db.models.signals import pre_save
 # from django.utils import timezone
 from django.utils.text import slugify
 # from django.utils import unique_slug_generator
@@ -29,61 +27,82 @@ class AddressType(models.Model):
         verbose_name_plural = 'AddressTypes'
 
 
-def full_address_creator(self,*args, **kwargs):
+def full_address_creator(self):
     s = list()
-    s.append(self.name)
     parent_id = self.parent_id.id
-    while parent_id is not None:
-        address_set = Address.objects.filter(id=parent_id)
-        for i in address_set:
-            s.append(i.name)
-        if i.parent_id is None:
-            parent_id = None
+    if self.type_level:
+        if self.type_level.level in (0, 4):
+            s.append(self.name)
         else:
-            parent_id = i.parent_id.id
-    s = list(reversed(s))
-    full = ''
-    for j in range(len(s)):
-        d = s[j]
-        if j != len(s) - 1:
-            full += d + ', '
-        else:
-            full += d
+            s.append(self.name + ' ' + self.type_level.name)
+        while parent_id is not None:
+            address_set = Address.objects.filter(id=parent_id)
+            for i in address_set:
+                if i.type_level.level in (0, 4):
+                    s.append(i.name)
+                else:
+                    s.append(i.name + ' ' + i.type_level.name)
+            if i.parent_id is None:
+                parent_id = None
+            else:
+                parent_id = i.parent_id.id
+        s = list(reversed(s))
+        full = ''
+        for j in range(len(s)):
+            d = s[j]
+            if j != len(s) - 1:
+                full += d + ', '
+            else:
+                full += d
+    else:
+        address_obj = Address.objects.get(id=parent_id)
+        full = address_obj.full_address + ', ' + self.name
     return full
 
 
-def display_address_creator(self,*args, **kwargs):
-    s = list()
-    s.append(self.name)
+def display_address_creator(self):
     parent_id = self.parent_id.id
     type_id = self.type_id
-    while parent_id is not None:
-        address_set = Address.objects.filter(id=parent_id)
-        for i in address_set:
-            if type_id in (10, 5) and i.type_id == 4:
-                s.append(i.name)
-                break
-            elif type_id in (10, 5) and i.type_id != 4:
-                continue
-            if type_id in (0, 1, 2, 3, 4):
-                break
+    s = list()
+    if type_id:
+        if type_id in (1, 5, 10):
+            s.append(self.name + ' ' + self.type_level.name)
+        else:
+            s.append(self.name)
+        while parent_id is not None:
+            address_set = Address.objects.filter(id=parent_id)
+            for i in address_set:
+                if type_id in (10, 5) and i.type_id == 4:
+                    s.append(i.name)
+                    break
+                elif type_id in (10, 5) and i.type_id == 5:
+                    s.append(i.name + ' ' + i.type_level.name)
+                    break
+                elif type_id in (10, 5) and i.type_id != 4:
+                    continue
+                if type_id in (0, 1, 2, 3, 4):
+                    break
+                else:
+                    s.append(i.name)
+            if i.parent_id is None:
+                parent_id = None
             else:
-                s.append(i.name)
-        if i.parent_id is None:
-            parent_id = None
-        else:
-            parent_id = i.parent_id.id
-    s = list(reversed(s))
-    display = ''
-    url_display = ''
-    for j in range(len(s)):
-        d = s[j]
-        u = slugify(unidecode(d))
-        url_display += '/' + u
-        if j != len(s) - 1:
-            display += d + ', '
-        else:
-            display += d
+                parent_id = i.parent_id.id
+        s = list(reversed(s))
+        display = ''
+        url_display = ''
+        for j in range(len(s)):
+            d = s[j]
+            u = slugify(unidecode(d))
+            url_display += '/' + u
+            if j != len(s) - 1:
+                display += d + ', '
+            else:
+                display += d
+    else:
+        address_obj = Address.objects.get(id=parent_id)
+        display = address_obj.display_address + ', ' + self.name
+        url_display = address_obj.url + "/" + slugify(unidecode(self.name))
     return display, url_display
 
 
@@ -99,8 +118,8 @@ class Address(models.Model):
     is_active = models.BooleanField(default=False)
 
     def __str__(self):
-        # return "%s" % self.id
-        return "%s, %s, %s" % (self.id, self.name, self.url)
+        return "%s" % self.name
+        # return "%s, %s, %s" % (self.id, self.name, self.url)
 
     def __unicode__(self):
         # return "%s" % self.name
@@ -111,7 +130,8 @@ class Address(models.Model):
         verbose_name_plural = 'Address'
 
     def save(self, *args, **kwargs):
-        self.type_id = self.type_level.level
+        if self.type_level:
+            self.type_id = self.type_level.level
         self.full_address = full_address_creator(self)
         self.display_address, self.url = display_address_creator(self)
 
@@ -152,43 +172,3 @@ class AddressAddFile(models.Model):
             p.save()
 
         super(AddressAddFile, self).save(*args, **kwargs)
-
-#
-# class ServiceProductImage(models.Model):
-#     service_product = models.ForeignKey(ServiceProduct, blank=True, null=True, default=None, on_delete=models.CASCADE)
-#     image = models.ImageField(upload_to='products_images/')
-#     is_active = models.BooleanField(default=True)
-#     is_main = models.BooleanField(default=False)
-#     created = models.DateTimeField(auto_now_add=True, auto_now=False)
-#     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-#
-#     def __str__(self):
-#         return "%s" % self.id
-#
-#     class Meta:
-#         verbose_name = 'ServiceProductPhoto'
-#         verbose_name_plural = 'ServiceProductPhotos'
-
-#####################################################################
-
-# def create_slug(instance, new_slug=None):
-#     slug = slugify(instance.name)
-#     if new_slug is not None:
-#         slug = new_slug
-#     qs = Cosmetolog.objects.filter(slug=slug).order_by("-id")
-#     exists = qs.exists()
-#     if exists:
-#         new_slug = "%s-%s" % (slug, qs.first().id)
-#         return create_slug(instance, new_slug=new_slug)
-#     return slug
-#
-#
-# def pre_save_post_receiver(sender, instance, *args, **kwargs):
-#     if not instance.slug:
-#         instance.slug = create_slug(instance)
-#         # instance.slug = unique_slug_generator(instance)
-#
-#
-# # pre_save.connect(pre_save_post_receiver, sender=CategoryForCosmetolog)
-# pre_save.connect(pre_save_post_receiver, sender=Cosmetolog)
-# # pre_save.connect(pre_save_post_receiver, sender=ServiceProduct)

@@ -9,6 +9,7 @@ def basket_adding(request):
     return_dict = dict()
     session_key = request.session.session_key
     data = request.POST
+
     product_id = data.get("product_id")
     nmb = data.get("nmb")
     is_delete = data.get("is_delete")
@@ -16,8 +17,7 @@ def basket_adding(request):
     if is_delete == 'true':
         ProductInBasket.objects.filter(id=product_id).update(is_active=False)
     else:
-        new_product, created = ProductInBasket.objects.get_or_create(session_key=session_key, product_id=product_id,
-                                                                     is_active=True, defaults={"nmb": nmb})
+        new_product, created = ProductInBasket.objects.get_or_create(session_key=session_key, product_id=product_id, is_active=True, defaults={"nmb": nmb})
         if not created:
             new_product.nmb += int(nmb)
             new_product.save(force_update=True)
@@ -36,7 +36,7 @@ def basket_adding(request):
         product_dict["price_per_item"] = item.price_per_item
         product_dict["nmb"] = item.nmb
         return_dict["products"].append(product_dict)
-
+    print(return_dict)
     return JsonResponse(return_dict)
 
 
@@ -60,9 +60,10 @@ def checkout(request):
                 product_in_basket.save(force_update=True)
 
                 ProductInOrder.objects.create(product=product_in_basket.product, nmb=product_in_basket.nmb,
-                                              price_per_item=product_in_basket.price_per_item,
-                                              total_price=product_in_basket.total_price,
                                               order=order)
+                # price_per_item = product_in_basket.price_per_item,
+                # total_price = product_in_basket.total_price,
+
 
                 product_in_basket.order = order
                 product_in_basket.is_active = False

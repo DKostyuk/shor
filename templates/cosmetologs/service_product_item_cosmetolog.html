@@ -1,0 +1,12 @@
+<div class="col-lg-3">
+    <a href="{% url 'service' service_product_image.service_product.cosmetolog.slug service_product_image.service_product.category.slug service_product_image.service_product.slug %}">
+        <div class="d-block mx-auto img-service-product-box service-small-item shadow-item-box">
+                <img src="{{ service_product_image.image.url }}" class = "img-fluid img-service-product-box">
+                <div class="service-product-box-footer">
+                    <div class="text service-text-icon">
+                        {{ service_product_image.service_product.name }}
+                    </div>
+                </div>
+        </div>
+    </a>
+</div>

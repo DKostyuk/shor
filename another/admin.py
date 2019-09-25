@@ -21,3 +21,14 @@ class ProductFileCSVAdmin (admin.ModelAdmin):
 
 
 admin.site.register(ProductFileCSV, ProductFileCSVAdmin)
+
+
+class TestEditorAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in TestEditor._meta.fields]
+
+    class Meta:
+        model = TestEditor
+
+
+admin.site.register(TestEditor, TestEditorAdmin)
+

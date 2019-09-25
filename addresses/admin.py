@@ -19,6 +19,7 @@ admin.site.register(AddressType, AddressTypeAdmin)
 
 class AddressAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Address._meta.fields]
+    search_fields = ('type_id', )
     # prepopulated_fields = {'slug': ('name',)}
 
     class Meta:

@@ -62,7 +62,16 @@ INSTALLED_APPS = [
 
     'django_dbshell_plus',
 
+    'search',
+    # 'django_elasticsearch_dsl',
+
 ]
+
+# ELASTICSEARCH_DSL = {
+#     'default': {
+#         'hosts': 'localhost:9200'
+#     },
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -72,6 +81,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'b_project.current_user.CurrentUserMiddleware',
 ]
 
 ROOT_URLCONF = 'b_project.urls'
@@ -165,5 +175,7 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'None',
     },
 }
-CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+# CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+
 CKEDITOR_IMAGE_BACKEND = 'pillow'

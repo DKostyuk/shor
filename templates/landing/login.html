@@ -2,42 +2,42 @@
 {% load static %}
 
 {% block content %}
-
+    {% if authorization_error %}
+        <div class="col-lg-8 offset-lg-2 error text-center">
+            {{ authorization_error }}
+        </div>
+    {% endif %}
     <div class="general-container-background">
         <div class="container top-container">
             <div class="row">
                 {% if login_message %}
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="col-lg-8 offset-lg-2">
                         the USER with such email has already the account <br>
                         Please, sign in and make registration for Training
                     </div>
                 {% endif %}
-                <div class="col-lg-8 col-lg-offset-2">
-                    <form action="/login/" method="post" class="text-center col-lg-4 col-lg-offset-4">{% csrf_token %}
-{#                        <div class="form-group">#}
-    {#                           <label>Ваш имейл: </label>#}
-{#                            <input type="email" name="email" class="form-control" placeholder="Email Address">#}
-{#                        </div>#}
+                <div class="col-lg-8 offset-lg-2 login-page">
+                    <form action="/login/" method="post" class="text-center col-lg-4 offset-lg-4">{% csrf_token %}
                         <div class="form-group">
-    {#                            <label>Ваше имя: </label>#}
-                            <input class="form-control" type="text" name="username" id="username" placeholder="Name">
-{#                            <input name="{{ form.name.name }}" class="form-control" placeholder="Name">#}
+                            <input class="form-control" type="text" name="username" id="username" placeholder="Логин email">
                         </div>
                         <div class="form-group">
-    {#                            <label>Ваш город: </label>#}
-                            <input class="form-control" type="password" name="password" id="password" placeholder="Hasło">
-{#                            <input name="{{ form.city.name }}" class="form-control" placeholder="Your city">#}
+                            <input class="form-control" type="password" name="password" id="password" placeholder="Пароль">
                         </div>
 
                         {% if login_error %}
                             <label class="error">{{ login_error }}</label>
                         {% endif %}
 
-                        <button type="submit" class="btn btn-primary btn-orange">Отправить</button>
-
-{#                        <div class="label round secondary"><a href="/registration/">Регистрация</a></div>#}
-
-                        <div class="label round secondary"><a href="/password_reset/">I forgot Password</a></div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-login">Войти</button>
+                        </div>
+                        <div class="form-group">
+                        <a href="/password_reset/"><div class="label round secondary">Забыли пароль?</div></a>
+                        </div>
+                        <div class="form-group">
+                            <a href="/registration/"><div class="label round secondary">Регистрация</div></a>
+                        </div>
                     </form>
                 </div>
             </div>

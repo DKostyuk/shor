@@ -1,13 +1,90 @@
 $(document).ready(function(){
-   var form = $('#form_buying_product')
-    console.log(form);
+    // console.log(1);
 
+    $('.hidden-info').removeClass('hidden').hide();
+    $('.btn-see-info').click(function() {
+        $(this).find('span').each(function() { $(this).toggle(); });
+    });
+
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav',
+        autoplay: true
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true
+    });
+
+    $("#category_name").change(function(){//подписываемся на событие
+        var csrf_token = $('input[name="csrfmiddlewaretoken"]').val();
+        var category_name = $("#category_name").val();
+        var data = {};
+        data["csrfmiddlewaretoken"] = csrf_token;
+        data.category_name = category_name;
+        console.log(data.category_name);
+        console.log(data);
+        console.log(77777777777);
+        // console.log(url);
+        console.log(category_name);
+        $.ajax({
+            url: '/test_ajax/',
+            type: 'POST',
+            data: data,
+            cache: true,
+            success: function(data) {
+                console.log("OK");
+                // console.log(data);
+                // var xxx = data.category_name;
+                console.log(data);
+                console.log(Object.keys(data).length);
+                console.log(4444444444444);
+                $('#test_test').text("УСПЕХ");
+
+
+                $('#subcategory_names').html("");
+                for(var i=1;i < Object.keys(data).length+1;i++){
+                    console.log(data[i]);
+                    $('#subcategory_names').append('<input name="subcategory_name" type="radio" ' +
+                        'required="required" value="' + data[i] +'">' + data[i]);
+                }
+            },
+            error: function(){
+               console.log("ERROR");
+            }
+        });
+    });
+
+    $(".navbar-home12").css("background-color","yellow");
+
+    $('.navbar-nav a').each(function () {      // проходим по нужным нам ссылками
+        var location = window.location.href; // переменная с адресом страницы
+        var link = this.href;                // переменная с url ссылки
+        var result = location.match(link);  // результат возвращает объект если совпадение найдено и null при обратном
+
+        if(result != null) {                // если НЕ равно null
+            // console.log(0000000);
+            // console.log(location);
+            // console.log(3333333);
+            // console.log(link);
+            // console.log(this);
+            $(this).addClass('current');    // добавляем класс
+            }
+    });
 
    function basketUpdating(product_id, nmb, is_delete) {
        // ajax()
        var data ={};
        data.product_id = product_id;
        data.nmb = nmb;
+       // data.price = price;
        var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
        data["csrfmiddlewaretoken"] = csrf_token;
 
@@ -16,7 +93,7 @@ $(document).ready(function(){
         }
 
        var url = form.attr("action");
-
+       console.log("DATA_DATA_DATA");
        console.log(data);
 
        $.ajax({
@@ -26,37 +103,42 @@ $(document).ready(function(){
            cache: true,
            success: function (data) {
                console.log("OK");
-               console.log(data.products_total_nmb)
+               console.log(url);
+               console.log(data);
+               console.log(987);
+               console.log(data.products_total_nmb);
+               console.log(789);
 
                if (data.products_total_nmb || data.products_total_nmb == 0){
                    $('#basket_total_nmb').text("("+data.products_total_nmb+")");
                     console.log(data.products);
-                   $('.basket-items ul').html("")
+                   $('.basket-items ul').html("");
                    $.each(data.products, function(k, v){
-                       $('.basket-items ul').append('<li>'+ v.name +', '+ v.nmb +' штук по '+ v.price_per_item +' грн.          ' +
+                       $('.basket-items ul').append('<li>'+ v.name +', '+ v.nmb +' штук по ' + v.price_per_item + ' грн.          ' +
                             '<a class="delete-item" href="" data-product_id="'+v.id+'">X</a>'+
                             '</li>');
+                       // $('.basket-items ul').append('<li>'+ v.name +', '+ v.nmb +' штук по '+ v.price_per_item +' грн.          ' +
+                       //      '<a class="delete-item" href="" data-product_id="'+v.id+'">X</a>'+
+                       //      '</li>');
                    })
                }
            },
-           error: function(){
+           error: function(error){
                console.log("ERROR");
+               console.log(JSON.stringify(error));
            }
        })
    }
+
+   var form = $('#form_buying_product');
 
    form.on('submit', function (e) {
        e.preventDefault();
        console.log('258');
        var nmb = $('#number').val();
-       console.log(nmb);
-       var  submit_btn = $('#submit_btn');
+       var submit_btn = $('#submit_btn');
        var product_id = submit_btn.data("product_id");
        var product_name = submit_btn.data("name");
-       var product_price = submit_btn.data("price");
-       console.log(product_id);
-       console.log(product_name);
-       console.log(product_price);
 
        basketUpdating(product_id, nmb, is_delete=false)
 
@@ -66,31 +148,15 @@ $(document).ready(function(){
        $('.basket-items').removeClass('hidden');
     }
 
-    // $('.basket-container').on('click', function(e){
-    //     e.preventDefault();
-    //     showingBasket();
-    // });
-
     $('.basket-container').on('mouseover', function(e){
         e.preventDefault();
         showingBasket();
     });
 
-    // $('.basket-container').on('mouseover', function(e){
-    //     e.preventDefault();
-    //     $('.basket-items').removeClass('hidden');
-    // });
-
     $('.basket-container').on('mouseout', function(e){
         e.preventDefault();
         $('.basket-items').addClass('hidden');
     });
-
-
-    // $('.basket-container').on('mouseout', function(e){
-    //     e.preventDefault();
-    //     showingBasket();
-    // })
 
     $(document).on('click','.delete-item', function(e){
         e.preventDefault();
@@ -129,31 +195,142 @@ $(document).ready(function(){
 
     // $("#show-hide").hide("drop", 9000);
     setTimeout(function() { $("#show-hide").hide("bounce", 'slow'); }, 1000);
+
+
+    $('.service-slider').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1
+    });
+
 });
 
+$(document).ready(function(){
+    // console.log(4055151);
+    CKEDITOR.replace( 'id_description', {
+        toolbar: [
+            { name: 'document', groups: [ 'mode' ], items: [ 'Preview' ] },
+            { name: 'clipboard', groups: [ 'undo' ], items: [ '-', 'Undo', 'Redo' ] },
+            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Subscript', 'Superscript', '-' ] },
+            { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-'] },
+            { name: 'tools', items: [ 'Maximize'] }
+            ]
+    });
+});
+
+
+// Function for Google Map - Start
 function initMapMy() {
-    var element = document.getElementById('map');
-    var options = {
-        zoom: 17,
-        center: {lat: 52.280973, lng: 20.967678}
+    // console.log(2741913);
+    var geo;
+    var geoElement = document.getElementById('geoMap');
+    var geoOptions = {
+        zoom: 17
+        // center: {lat: 52.280973, lng: 20.967678}
     };
 
-    var myMap = new google.maps.Map(element, options);
+    // console.log(geoElement);
 
-    var marker = new google.maps.Marker({
-       position: {lat: 52.280973, lng: 20.967678},
-       map: myMap
+    geo  = new google.maps.Geocoder();
+
+    var geoMap  = new google.maps.Map(geoElement, geoOptions);
+
+
+    var  open_map_btn = $('#open_map_btn');
+    var cosmetolog_address = open_map_btn.data("cosmetolog_address");
+    // console.log(cosmetolog_address);
+
+    geo.geocode({'address': cosmetolog_address}, function (results, status){
+        if(status == google.maps.GeocoderStatus.OK) {
+            geoMap.setCenter(results[0].geometry.location);
+            // var qwerty = results[0].geometry.location.lat();
+            // console.log('qwerty', qwerty);
+            var marker = new google.maps.Marker({
+                map: geoMap,
+                position: results[0].geometry.location
+            });
+        }
+        else {
+            alert('Адресс не найден');
+        }
     });
-
-    var infoWindow = new google.maps.InfoWindow({
-        content: '<h4>Renew-Polska</h4>' +
-        '<p>Biuro RENEW-POLSKA Sp. z o. o.' + '<br>Oficjalny dystrybutor TM RENEW oraz TM Alvi-Prague' +
-        '<br>Warszawa, ul. Lektykarska 26 (wejście z ul. Cząstkowska)</br>'
-    });
-
-    infoWindow.open(myMap, marker);
-
-    marker.addListener('mouseover',function () {
-        infoWindow.open(myMap, marker);
-    })
 }
+// Function for Google Map - End
+
+//autoComplete - Start
+function Search() {
+    $.fn.selectpicker.Constructor.BootstrapVersion = '4';
+    $("#tags").autocomplete({
+        minlength: 3,
+        source: "/search_ajax/",
+        select: function (event, ui) {
+            var hiddenInput = document.getElementById("tags_48");
+            hiddenInput.value = ui.item.id;
+            // log( "Selected: " + ui.item.value + " aka " + ui.item.id );
+        }
+    });
+
+    $("#tags_1").autocomplete({
+        minlength: 3,
+        source: "/search_ajax_service/",
+        select: function (event, ui) {
+            var hiddenInput = document.getElementById("tags_148");
+            hiddenInput.value = ui.item.id;
+        }
+    });
+
+    $("#tags_city").autocomplete({
+        autoFocus: true,
+        minlength: 3,
+        source: "/search_ajax_city/",
+        select: function (event, ui) {
+            var hiddenInput = document.getElementById("tags_city_48");
+            hiddenInput.value = ui.item.id;
+            var city_id = ui.item.id;
+            console.log('Popepostr');
+            console.log(city_id);
+            var csrf_token = $('input[name="csrfmiddlewaretoken"]').val();
+            console.log(123456789);
+            var data = {};
+            data["csrfmiddlewaretoken"] = csrf_token;
+            data.city_id = city_id;
+            console.log(1);
+            console.log(data.city_id);
+            console.log(2);
+            console.log(data);
+            $.ajax({
+                url: '/search_ajax_street/',
+                type: 'POST',
+                data: data,
+                cache: true,
+                success: function (data) {
+                    console.log("OK");
+                    console.log(data);
+                    $("#tags_street").autocomplete({
+                        minlength: 3,
+                        source: data,
+                        select: function (event, ui) {
+                            var hiddenInput = document.getElementById("tags_street_48");
+                            hiddenInput.value = ui.item.id;
+                        }
+                    });
+                },
+                error: function () {
+                    console.log("ERROR");
+                }
+            });
+        }
+    });
+}
+Search();
+
+
+
+// form.on('submit', function (e) {
+   //     e.preventDefault();
+   //     var address123 = $('#tags').val();
+   //     console.log(address123);
+   //
+   // });
+
+//autoComplete - End

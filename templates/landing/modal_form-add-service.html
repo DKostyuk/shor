@@ -1,0 +1,123 @@
+<!-- Modal Form Add Service by Cosmetolog-->
+<div class="modal fade show" id="save_single_service" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Добавьте услугу</h5>
+{#                <button type="button" name="_modal_close" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                    <span aria-hidden="true">&times;</span>#}
+{#                </button>#}
+            </div>
+            <form action="" method="post" class="text-center" enctype="multipart/form-data" id="form_service_add">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="container">
+
+
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                {% csrf_token %}
+                                Левая половина
+                                <div class="form-group logo-input-file-box">
+                                    <label class="title_input_01">Фото услуги</label>
+                                    <input type="file" name="{{ form2.image.name }}" class="logo-input-file form-control-sm">
+                                </div>
+                                <select class="selectpicker" name="category_name" data-live-search="true" id="category_name">
+                                    {% for service_type in service_types %}:
+                                        <option>{{ service_type.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <p>ТЕСТ </p><span id="test_test"></span>
+{#                                <div>#}
+{#                                    {% for service_type in service_types %}#}
+{#                                        <input name="category_name" type="radio" required="required" id="category_name"#}
+{#                                               value="{{ service_type }}"> {{ service_type }}#}
+{#                                    <input name="cosmetolog_type" type="radio" value="dzen"> Дзен#}
+{#                                    <input name="cosmetolog_type" type="radio" value="pdzen" checked> Полный дзен#}
+{#                                    {% endfor %}#}
+{#                                </div>#}
+                                <div id="subcategory_names">
+{#                                    {% for subservice_type in subservice_types %}#}
+{#                                        <input name="subcategory_name" type="radio" required="required"#}
+{#                                               value="{{ subservice_type.name }}"> {{ subservice_type.name }}#}
+{#                                    {% endfor %}#}
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                Правая половина
+                                <div>
+                                    <input name="cosmetolog_id" class="form-control" value="{{ cosmetolog_object.id }}"
+                                           type="hidden">
+                                </div>
+{#                                <div>#}
+{#                                    <input name="modified_by" class="form-control" value="{{ user_email }}"#}
+{#                                           type="hidden">#}
+{#                                </div>#}
+                                <div class="row justify-content-center">
+                                    <div class="form-group col-lg-12">
+                                        <label class="title_input_01">Наименование услуги</label>
+                                        <input name="{{ form1.name.name }}" class="form-control form-control-sm"
+                                               placeholder="Введите наименование услуги" type="text">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="form-group col-lg-4">
+                                        <label class="title_input_01">Минимальная цена</label>
+                                        <input name="{{ form1.price01.name }}" class="form-control form-control-sm"
+                                               placeholder="Введите минимальную цену услуги" type="text">
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <label class="title_input_01">Максимальная цена</label>
+                                        <input name="{{ form1.price02.name }}" class="form-control form-control-sm"
+                                               placeholder="Введите максимальную цену услуги" type="text">
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <label class="title_input_01">Скидка</label>
+                                        <input name="{{ form1.discount.name }}" class="form-control form-control-sm"
+                                               placeholder="Введите скидку" type="text">
+                                    </div>
+                                </div>
+{#                                <div class="row justify-content-center">#}
+{#                                    <div class="form-group">#}
+{#                                        <label class="title_input_01">Максимальная цена</label>#}
+{#                                        <input name="{{ form1.price02.name }}" class="form-control form-control-sm"#}
+{#                                               placeholder="Введите максимальную цену услуги" type="text">#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="row justify-content-center">#}
+{#                                    <div class="form-group row">#}
+{#                                        <label class="title_input_01">Скидка</label>#}
+{#                                        <input name="{{ form1.discount.name }}" class="form-control form-control-sm"#}
+{#                                               placeholder="Введите скидку" type="text">#}
+{#                                    </div>#}
+{#                                </div>#}
+                                <div class="row justify-content-center">
+                                    <div class="form-group col-lg-12">
+                                        <label class="title_input_01">Краткое описание</label>
+                                        <input name="{{ form1.short_description.name }}" class="form-control form-control-sm"
+                                               placeholder="Введите краткое описание услуги" type="text">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="form-group col-lg-12">
+                                        <label class="title_input_01">Описание</label>
+{#                                        <input name="{{ form1.description.name }}" class="form-control form-control-sm"#}
+{#                                               placeholder="Введите описание услуги" type="text">#}
+                                        <textarea rows="7" name="{{ form1.description.name }}" class="form-control form-control-sm"
+                                                  placeholder="Введите описание услуги"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" name="_modal_close_btn">
+                        Закрыть</button>
+                    <button type="submit" class="btn btn-primary" name="_add_service">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

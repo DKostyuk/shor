@@ -9,7 +9,6 @@ from blogs.models import *
 from cosmetologs.models import *
 from addresses.models import *
 from django.contrib import auth
-from django.contrib.auth.forms import UserCreationForm, PasswordResetForm
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -18,8 +17,13 @@ from .tokens import account_activation_token
 from django.core.mail import EmailMessage
 from django.http import HttpResponse
 import datetime
+from django.utils import timezone
 from django.core.mail import send_mail
 from django.conf import settings
+import json
+from django.http import JsonResponse
+import random
+import googlemaps
 
 
 def landing(request):
@@ -39,24 +43,33 @@ def landing(request):
     return render(request, 'landing/landing.html', locals())
 
 
-def validate_save_user_send_email(request, newuser_form, email_1, username_original):
-    # if newuser_form.is_valid():
+def validate_save_user_send_email(request, newuser_form, email_1, username_original, cosmetolog_name, cosmetolog_type):
     args_1 = {}
     newuser = newuser_form.save(commit=False)
     newuser.is_active = False
     newuser.save()
-    # subscriber_current = Subscriber.objects.get(email=email_1)
     subscriber_current = Subscriber.objects.get(user__username=email_1)
     subscriber_current.email = email_1
     subscriber_current.name = username_original
     subscriber_current.save()
+    new_cosmetolog_type = CosmetologType.objects.get(name=cosmetolog_type)
+    new_cosmetolog = Cosmetolog(name=cosmetolog_name, type=new_cosmetolog_type,
+                                registration_time=timezone.now(), order_email=email_1)
+    new_cosmetolog.save()
+
+
+    new_subscriber_cosmetolog = SubscriberCosmetolog(cosmetolog_name=new_cosmetolog, cosmetolog_id=new_cosmetolog.id,
+                                                     subscriber_name=subscriber_current,
+                                                     subscriber_id=subscriber_current.id)
+    new_subscriber_cosmetolog.save()
+
     # Email sending code:
     current_site = get_current_site(request)
     mail_subject = 'Activate your blog account on Site RENEW for example.'
     message = render_to_string('landing/acc_confirmation_email.html', {
         'user': newuser,
         'domain': current_site.domain,
-        'uid': urlsafe_base64_encode(force_bytes(newuser.pk)),
+        'uid': urlsafe_base64_encode(force_bytes(newuser.pk)).decode(),
         'token': account_activation_token.make_token(newuser),
     })
     to_email = newuser_form.cleaned_data.get('email')
@@ -64,16 +77,13 @@ def validate_save_user_send_email(request, newuser_form, email_1, username_origi
     email.send()
     args_1['registration_success'] = \
         '999999999 Please confirm your email address to complete the registration'
-    # return render(request, 'landing/registration_profile.html', locals())
-    print(999999999999999999999999)
-    # return redirect('registration_profile', email_1=email_1)
     return args_1
 
 
 def registration(request):
     args = {}
-    # form1 = UserCreationForm()
     form = UserRegistrationForm()
+    cosmetolog_types = CosmetologType.objects.filter(is_active=True)
     if request.POST:
         username_original = request.POST.get('username', '')
         email_1 = request.POST.get('email', '')
@@ -82,6 +92,8 @@ def registration(request):
         request.POST['username'] = email_1
         request.POST['password2'] = password_11
         newuser_form = UserRegistrationForm(request.POST)
+        cosmetolog_name = request.POST.get('cosmetolog_name', '')
+        cosmetolog_type = request.POST.get('cosmetolog_type', '')
 
         # Check email is the same or not
         user_old = User.objects.filter(username=email_1).first()
@@ -94,41 +106,23 @@ def registration(request):
                 now_again = '_AGAIN_'+'-'.join(('_'.join(str(datetime.datetime.now()).split(sep=' '))).split(sep=':'))
                 user_old.username = str(user_old.username)+now_again
                 user_old.email = str(user_old.email)+now_again
+                # we have to change also emial in MySubscriber table - everywhere Uniq enail must be (one time)
+                subs_old = Subscriber.objects.filter(email=email_1).first()
+                subs_old.email = str(subs_old.email) + now_again
                 user_old.save()
-                validate_save_user_send_email(request, newuser_form, email_1, username_original)
+                subs_old.save()
+                cosmetolog_old = Cosmetolog.objects.filter(name=cosmetolog_name).first()
+                if cosmetolog_old:
+                    cosmetolog_old.name = str(cosmetolog_name)+now_again
+                    cosmetolog_old.order_email = str(email_1)+now_again
+                    cosmetolog_old.save()
+                validate_save_user_send_email(request, newuser_form, email_1,
+                                              username_original, cosmetolog_name, cosmetolog_type)
                 return redirect('registration_profile')
         else:
-        # users = User.objects.filter(is_active=True)
-        # email_set = set()
-        # for i in users:
-        #     email_set.add(i.email)
-        # if email_1 in email_set:
-        #     args['registration_error'] = 'THE SAME E-MAIL and Account is active Please, use option FORGET THE PASSWORD'
-        #     return render(request, 'landing/registration.html', args)
-        # else:
             if newuser_form.is_valid():
-                validate_save_user_send_email(request, newuser_form, email_1, username_original)
-                # newuser = newuser_form.save(commit=False)
-                # newuser.is_active = False
-                # newuser.save()
-                # subscriber_current = Subscriber.objects.get(email=email_1)
-                # subscriber_current.name = username_original
-                # subscriber_current.save()
-                # # Email sending code:
-                # current_site = get_current_site(request)
-                # mail_subject = 'Activate your blog account on Site RENEW for example.'
-                # message = render_to_string('landing/acc_confirmation_email.html', {
-                #     'user': newuser,
-                #     'domain': current_site.domain,
-                #     'uid': urlsafe_base64_encode(force_bytes(newuser.pk)),
-                #     'token': account_activation_token.make_token(newuser),
-                # })
-                # to_email = newuser_form.cleaned_data.get('email')
-                # email = EmailMessage(mail_subject, message, to=[to_email])
-                # email.send()
-                # args['registration_success'] = \
-                #     '999999999 Please confirm your email address to complete the registration'
-                # # return render(request, 'landing/registration_profile.html', locals())
+                validate_save_user_send_email(request, newuser_form, email_1,
+                                              username_original, cosmetolog_name, cosmetolog_type)
                 return redirect('registration_profile')
             else:
                 form = newuser_form
@@ -162,21 +156,100 @@ def activate(request, uidb64, token):
 
 
 def profile(request):
-    form = SubscriberForm()
-    if request.POST:
-        # subscriber_id = request.POST.get('user_id', '')
-        user_profile = Subscriber.objects.filter(pk=request.POST.get('user_id', '')).first()
-        user_profile_form = SubscriberForm(request.POST, instance=user_profile)
-        # user_profile.index = request.POST.get('index', '')
-        # user_profile.save()
-        if user_profile_form.is_valid():
-            user_profile_form.save()
-            profile_success = "success"
-        else:
-            form = user_profile_form
-            print(99999999999999)
+    username_now = auth.get_user(request).username
+    form = CosmetologForm(request.POST or None)
+    if username_now:
+        subscriber_current = Subscriber.objects.filter(email=username_now).first()
+
+        cosmetolog_first_id = SubscriberCosmetolog.objects.filter(
+            subscriber_id=subscriber_current.id).first().cosmetolog_id
+        cosmetolog_url = Cosmetolog.objects.get(pk=cosmetolog_first_id).slug
+        return HttpResponseRedirect('/profile/' + cosmetolog_url, locals())
+    else:
+        authorization_error = "Просмотр профиля только для зарегистрированного менеджера."\
+                              + '\n' + "Ввойдите в систему, пожалуйста."
+        print(authorization_error)
+        return render(request, 'landing/login.html', locals())
+
+
+def do_save_profile(request, cosmetolog_url):
+    user_profile = Cosmetolog.objects.filter(pk=request.POST.get('cosmetolog_id', '')).first()
+    form = CosmetologForm(request.POST, request.FILES, instance=user_profile)
+    if form.is_valid():
+        form_save = form.save(commit=False)
+        form_save.city_cosmetolog = Address.objects.get(pk=request.POST.get('city_cosmetolog',''))
+        # form1_save.category = service_category
+        form_save.save()
+        profile_success = "success"
+        print(profile_success)
+        return locals()
+    else:
+        form = CosmetologForm()
+    return locals()
+    # return render(request, 'landing/profile.html', locals())
+
+
+def do_add_service(request, cosmetolog_url):
+    user_profile = Cosmetolog.objects.filter(pk=request.POST.get('cosmetolog_id', '')).first()
+    service_category = CategoryForCosmetolog.objects.filter(name=request.POST.get('category_name', '')).first()
+    service_subcategory = SubCategoryForCosmetolog.objects.filter(name=request.POST.get('subcategory_name', '')).first()
+    form1 = AddServiceForm(request.POST or None)
+    form2 = AddServiceImageForm(request.POST, request.FILES or None)
+    if form1.is_valid() and form2.is_valid():
+        form1_save = form1.save(commit=False)
+        form1_save.cosmetolog = user_profile
+        form1_save.category = service_category
+        form1_save.subcategory = service_subcategory
+        form1_save.save()
+        form2_save = form2.save(commit=False)
+        form2_save.is_main = True
+        form2_save.is_active = True
+        form2_save.service_product = form1_save
+        form2_save.save()
+        profile_success = "success"
+        return HttpResponseRedirect('/profile/' + cosmetolog_url, locals())
+    else:
+        print(form1.errors)
+        form1 = AddServiceForm()
     return render(request, 'landing/profile.html', locals())
 
+def test_ajax(request):
+    return_dict = dict()
+    session_key = request.session.session_key
+    data = request.POST
+    service_category = data.get("category_name")
+    service_category_object = CategoryForCosmetolog.objects.get(name=service_category, is_active=True)
+    service_subcategory_set = SubCategoryForCosmetolog.objects.filter(category=service_category_object, is_active=True)
+    i = 1
+    for item in service_subcategory_set:
+        return_dict[i] = item.name
+        i +=1
+    return JsonResponse(return_dict)
+
+
+def profile_cosmetolog(request, cosmetolog_url=None):
+    cosmetolog_object = Cosmetolog.objects.get(slug=cosmetolog_url)
+    form = CosmetologForm(request.POST or None, instance=cosmetolog_object)
+    form1 = AddServiceForm()
+    form2 = AddServiceImageForm()
+    service_types = CategoryForCosmetolog.objects.filter(is_active=True)
+    subservice_types = SubCategoryForCosmetolog.objects.filter(is_active=True)
+    service_set = ServiceProduct.objects.filter(cosmetolog = cosmetolog_object)
+    # @property
+    # def logo_image(self):
+    #     if self.image and hasattr(self.image, 'url'):
+    #         return self.image.url
+    if request.POST:
+        if '_save_profile' in request.POST:
+            do_save_profile(request, cosmetolog_url)
+            return HttpResponseRedirect('/profile/' + cosmetolog_url, locals())
+        elif '_add_service' in request.POST:
+            do_add_service(request, cosmetolog_url)
+    return render(request, 'landing/profile.html', locals())
+
+
+def profile_cosmetolog_edit_service(request, cosmetolog_url, service_slug):
+    return render(request, 'landing/profile.html', locals())
 
 def login(request):
     args = {}
@@ -187,7 +260,9 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return HttpResponseRedirect(reverse(home))
+            # print("user_login", user)
+            return HttpResponseRedirect(reverse(profile))
+            # return HttpResponseRedirect('/profile' + url_full)
         else:
             login_error = "NO NO NO NO NO NO NO"
             return render(request, 'landing/login.html')
@@ -203,26 +278,9 @@ def logout(request):
     # return redirect("/")
 
 
-# def reset(request):
-#     args = {}
-#     if request.POST:
-#         email_1 = request.POST.get('email', '')
-#         users = User.objects.filter(is_active=True)
-#         email_set = set()
-#         for i in users:
-#             email_set.add(i.email)
-#         if email_1 in email_set:
-#             print('999999999')
-#         else:
-#             args['reset_error'] = 'NO SUCH E-MAIL'
-#             return render(request, 'landing/reset.html', args)
-#     form = PasswordResetForm()
-#     return render(request, 'landing/reset.html', locals())
-
-
 def home(request):
     # username = auth.get_user(request).username
-    subservice_categories = SubCategoryForCosmetolog.objects.filter(is_active=True)
+
     address_cosmetologs = Cosmetolog.objects.filter(is_active=True)
     cosmetolog_addresses = CosmetologAddress.objects.filter(is_active=True)
     search_active_addresses = Address.objects.filter(is_active=True)
@@ -231,12 +289,14 @@ def home(request):
         Q(type_id=4)
     ).order_by('type_id')
     service_categories = CategoryForCosmetolog.objects.filter(is_active=True)
+    subservice_categories = SubCategoryForCosmetolog.objects.filter(is_active=True)
     service_products = ServiceProduct.objects.filter(is_active=True, is_visible=True)
     service_products_images_all = ServiceProductImage.objects.filter(is_active=True, is_main=True,
                                                                      service_product__is_active=True,
                                                                      service_product__is_visible=True)
     service_products_images = service_products_images_all[:4]
-    cosmetologs = Cosmetolog.objects.filter(is_active=True, is_visible=True)
+    cosmetologs_all = Cosmetolog.objects.filter(is_active=True, is_visible=True)
+    cosmetologs = cosmetologs_all[:4]
     slider_mains = SliderMain.objects.filter(is_active=True, is_main=True)
     slider_mains_counts = range(slider_mains.count() - 1)
     advert_all = SliderMain.objects.filter(is_active=True, is_main=False)
@@ -254,316 +314,344 @@ def home(request):
     return render(request, 'landing/home.html', locals())
 
 
+def search_ajax(request):
+    if request.is_ajax:
+        q_address = request.GET.get('term','').capitalize()
+        q_99 = q_address.replace(',','').split()
+
+        q_address_set = Address.objects.filter(full_address__icontains=q_99[0])
+
+        if len(q_99) > 1:
+            i = 1
+            for i in range(1,len(q_99)):
+                q_100 = q_99[i].capitalize()
+                q_address_set = q_address_set.filter(full_address__icontains=q_100)
+                i += 1
+
+        # q_address_set = Address.objects.filter(full_address__icontains=q_address)
+
+        q_results = []
+
+        for i in q_address_set:
+            i_json = {}
+            i_json['label'] = i.display_address
+            i_json['value'] = i.display_address
+            i_json['id'] = i.id
+            q_results.append(i_json)
+
+        # print('q_results', q_results)
+        q_data_json = json.dumps(q_results)
+
+    else:
+        q_data_json = 'fail'
+
+    mimetype = 'application/json'
+    return HttpResponse(q_data_json, mimetype)
+
+
+def search_ajax_service(request):
+    if request.is_ajax:
+        q_service = request.GET.get('term','').capitalize()
+        q_99 = q_service.replace(',','').split()
+
+        q_service_set = SubCategoryForCosmetolog.objects.filter(subcategory_category__icontains=q_99[0])
+
+        if len(q_99) > 1:
+            i = 1
+            for i in range(1,len(q_99)):
+                q_100 = q_99[i].capitalize()
+                q_service_set = q_service_set.filter(subcategory_category__icontains=q_100)
+                i += 1
+
+        q_results = []
+
+        for i in q_service_set:
+            i_json = {}
+            i_json['label'] = i.subcategory_category
+            i_json['value'] = i.subcategory_category
+            i_json['id'] = i.id
+            q_results.append(i_json)
+
+        q_data_json = json.dumps(q_results)
+
+    else:
+        q_data_json = 'fail'
+
+    mimetype = 'application/json'
+    return HttpResponse(q_data_json, mimetype)
+
+
+def search_ajax_city(request):
+    if request.is_ajax:
+        # print()
+        q_city = request.GET.get('term','').capitalize()
+        q_99 = q_city.replace(',','').split()
+
+        q_address_set = Address.objects.filter(full_address__icontains=q_99[0], type_id=4)
+
+        if len(q_99) > 1:
+            i = 1
+            for i in range(1,len(q_99)):
+                q_100 = q_99[i].capitalize()
+                q_address_set = q_address_set.filter(full_address__icontains=q_100)
+                i += 1
+
+        q_results = []
+
+        for i in q_address_set:
+            i_json = {}
+            i_json['label'] = i.display_address
+            i_json['value'] = i.display_address
+            i_json['id'] = i.id
+            q_results.append(i_json)
+
+        # print('q_results', q_results)
+        q_data_json = json.dumps(q_results)
+
+    else:
+        q_data_json = 'fail'
+
+    mimetype = 'application/json'
+    return HttpResponse(q_data_json, mimetype)
+
+
+def search_ajax_street(request):
+    data = request.POST
+    city_id = data.get("city_id")
+    city_street_set = Address.objects.filter(type_id=10, parent_id__parent_id=city_id)
+
+    q_results = []
+
+    for i in city_street_set:
+        i_json = {}
+        i_json['label'] = i.display_address
+        i_json['value'] = i.display_address
+        i_json['id'] = i.id
+        q_results.append(i_json)
+
+    q_data_json = json.dumps(q_results)
+
+    mimetype = 'application/json'
+    return HttpResponse(q_data_json, mimetype)
+
+
+def get_address_url(q_address_id):
+    address_object = Address.objects.get(pk=q_address_id)
+    print('address_object', address_object)
+    address_url = address_object.url
+    if address_object.type_id == 4:
+        print('city')
+        address_url = address_url + '/' + 'vse-rajony/' + 'vse-ulicy/' + 'vse-doma'
+        print('address_url', address_url)
+    elif address_object.type_id == 5:
+        print('rajon')
+        address_url = address_url + '/' + 'vse-ulicy/' + 'vse-doma'
+        print('address_url', address_url)
+    else:
+        print('ulica')
+        house = random.randrange( 1, 100, 1)
+        address_url = address_url + '/' + str(house)
+        print('address_url', address_url)
+    return address_url
+
+
+def get_service_url(q_service_id):
+    service_object = SubCategoryForCosmetolog.objects.get(pk=q_service_id)
+    service_url = service_object.url
+    return service_url
+
+
 def salon(request):
-    if 'q' in request.GET:
-        q_full_address = request.GET.get('q')
-        q_service = request.GET.get('q1')
-        print('salon - q_full_address:', q_full_address)
-        print(type(q_full_address))
-        print('salon - q_service:', q_service)
-
-        if not q_full_address and not q_service:
-            error = True
-            return HttpResponseRedirect(reverse(home), {'error': error})
-        else:
-            url_address = str()
-            url_service = str()
-            if q_full_address:
-                search_active_addresses = Address.objects.filter(is_active=True)
-                search_active_addresses_url = search_active_addresses.get(display_address=q_full_address)
-                url_address = search_active_addresses_url.url
-            if q_service:
-                service_set = set()
-                service_categories = CategoryForCosmetolog.objects.filter(is_active=True)
-                for i in service_categories:
-                    service_set.add(i.name)
-                if q_service in service_set:
-                    url_service = slugify(q_service)
-                else:
-                    subservice_categories = SubCategoryForCosmetolog.objects.filter(is_active=True)
-                    subservice_categories_url = subservice_categories.get(subcategory_category=q_service)
-                    url_service = subservice_categories_url.url
-
-            url_full = url_service + url_address + "/"
-            print('url_address  ', url_address)
-            print('url_service  ', url_service)
-            print('url_full', url_full)
-            if q_full_address and not q_service:
-                return HttpResponseRedirect('/cosmetolog-in' + url_full)
-            elif not q_full_address and q_service:
-                return HttpResponseRedirect('/service-in-Poland/' + url_full)
-            else:
-                return HttpResponseRedirect(url_full)
+    q_address_id = request.GET.get('q_48')
+    q_service_id = request.GET.get('q_148')
+    if q_address_id != '' and q_service_id != '':
+        print('both')
+        address_url = get_address_url(q_address_id)
+        service_url = get_service_url(q_service_id)
+        url_full = service_url + address_url +  '/'
+        return HttpResponseRedirect(url_full)
+    elif q_address_id != '' and q_service_id == '':
+        print('address')
+        address_url = get_address_url(q_address_id)
+        url_full = 'vse/uslugi' + address_url + '/'
+        print('address', address_url)
+        return HttpResponseRedirect(url_full)
+    elif q_address_id == '' and q_service_id != '':
+        print('service')
+        service_url = get_service_url(q_service_id)
+        url_full = service_url + '/vse-goroga/vse-rajony/vse-ulicy/vse-doma' + '/'
+        return HttpResponseRedirect(url_full)
     else:
-        return HttpResponseRedirect(reverse(home))
-
-
-def get_city_id(q_city):
-    q_address_url = '/' + q_city
-    search_active_addresses = Address.objects.filter(is_active=True)
-    search_city_active_addresses = search_active_addresses.get(url__exact=q_address_url)
-    city_id = search_city_active_addresses.id
-
-    cosmetolog_addresses = CosmetologAddress.objects.filter(is_active=True)
-    search_cosmetolog_addresses = cosmetolog_addresses.filter(address_id=city_id)
-    cosmetolog_set = set()
-    for j in search_cosmetolog_addresses:
-        cosmetolog_set.add(j.cosmetolog_id)
-
-    return city_id, cosmetolog_set
-
-
-def get_delnica_ulica_id(q_city, q_delnica_ulica):
-    q_address_url = '/' + q_city + '/' + q_delnica_ulica
-    search_active_addresses = Address.objects.filter(is_active=True)
-    search_city_active_addresses = search_active_addresses.get(url__exact=q_address_url)
-    delnica_ulica_id = search_city_active_addresses.id
-    delnica_ulica_type_id = search_city_active_addresses.type_id
-    delnica_ulica_parent_id = search_city_active_addresses.parent_id
-
-    return delnica_ulica_id, delnica_ulica_type_id, delnica_ulica_parent_id
-
-
-def q_search_in_url(q_city, q_delnica_ulica):
-    cosmetolog_set = set()
-    cosmetolog_addresses = CosmetologAddress.objects.filter(is_active=True,
-                                                            address_name__url__icontains=q_city and q_delnica_ulica)
-    for i in cosmetolog_addresses:
-        cosmetolog_set.add(i.cosmetolog_id)
-
-    if q_delnica_ulica != q_city:
-        delnica_ulica_id, delnica_ulica_type_id, delnica_ulica_parent_id = get_delnica_ulica_id(q_city, q_delnica_ulica)
-        if delnica_ulica_type_id == 10:
-            print('Это улица   ', delnica_ulica_type_id)
-            cosmetolog_addresses = CosmetologAddress.objects.filter(is_active=True,
-                                                                    cosmetolog_id__exact=delnica_ulica_parent_id)
-            for j in cosmetolog_addresses:
-                cosmetolog_set.add(j.cosmetolog_id)
-        elif delnica_ulica_type_id == 5:
-            print('Это дельница   ', delnica_ulica_type_id)
-
-    return cosmetolog_set
-
-
-def search_service_address(request, q_1, q_2=None, q_3=None, q_4=None):
-
-    print('search - q1:', q_1)
-    print('search - q2', q_2)
-    print('search - q3', q_3)
-    print('search - q4', q_4)
-    logo_images = LogoImage.objects.filter(is_active=True, is_main=True)
-
-    #проверка - является ли q2 субсервисом
-    subservice_set = set()
-    subservice_categories = SubCategoryForCosmetolog.objects.filter(is_active=True)
-    for i in subservice_categories:
-        subservice_set.add(i.slug)
-    service_set = set()
-    if q_2 in subservice_set:
-        # надо выбрать всех косметологов у которых установлен этот СУБ_сервис q_2
-        print('YES YES YES YES')
-        service_products = ServiceProduct.objects.filter(is_active=True, is_visible=True,
-                                                         subcategory__slug__icontains=q_2)
-        print(service_products)
-        for i in service_products:
-            service_set.add(i.cosmetolog_id)
-        print('только для суб сервиса', service_set)
-        query_service = q_1.capitalize() + ', ' + q_2.capitalize()
-        # соответсвенно q_3 является городом
-        # проверяем наличие q_4
-        if q_4:
-            # пишем код для q_3 и q_4
-            # выбираем всех косметологов у которых есть адресс q_3 и q_4 (на них фокус), или q_3
-            cosmetolog_address_set = q_search_in_url(q_3, q_4)
-            print('после вызова функции - только city and delnica/ulica q_3 q_4  ', cosmetolog_address_set)
-            city_id, cosmetolog_set = get_city_id(q_3)
-            cosmetolog_address_set.update(cosmetolog_set)
-            print('после вызова функции - только city and delnica/ulica q_3 q_4 +++++ ', cosmetolog_address_set)
-            query_address = q_3.capitalize() + ', ' + q_4.capitalize()
-
-        else:
-            # пишем код для q_3 (вызываем функцию с параметром q_3, в которой
-            # выбираем всех косметологов у которых есть адрес q3 включая вглубь
-            cosmetolog_address_set = q_search_in_url(q_3, q_3)
-            print('после вызова функции - только city q_3  ', cosmetolog_address_set)
-            query_address = q_3.capitalize()
-
-        # пересекаем множества сервиса и косметологов
-        search_cosmetologs_set = service_set & cosmetolog_address_set
-        print('final search_cosmetologs_set    ', search_cosmetologs_set)
-        cosmetolog_count = len(search_cosmetologs_set)
-    else:
-        # q_2 не является субсервисом
-        # надо выбрать всех косметолголов у которых установлен этот Сервис q_1
         print('NO NO NO NO')
-        service_products = ServiceProduct.objects.filter(is_active=True, is_visible=True,
-                                                         category__slug__icontains=q_1)
-        print(service_products)
-        for i in service_products:
-            service_set.add(i.cosmetolog_id)
-        print('только для суб сервиса', service_set)
-        query_service = q_1.capitalize()
-        # соответсвенно q_2 является городом
-        # проверяем наличие q_3
-        if q_3:
-            # пишем код для q_2 и q_3
-            # выбираем всех косметологов у которых есть адресс q_2 и q_3 (на них фокус), или q_2
-            cosmetolog_address_set = q_search_in_url(q_2, q_3)
-            print('после вызова функции - только city and delnica/ulica q_3 q_4  ', cosmetolog_address_set)
-            city_id, cosmetolog_set = get_city_id(q_2)
-            cosmetolog_address_set.update(cosmetolog_set)
-            print('после вызова функции - только city and delnica/ulica q_3 q_4 +++++ ', cosmetolog_address_set)
-            query_address = q_2.capitalize() + ', ' + q_3.capitalize()
-        else:
-            # пишем код для q_2 (вызываем функцию с параметром q_2, в которой
-            # выбираем всех косметологов у которых есть адрес q2 включая вглубь
-            cosmetolog_address_set = q_search_in_url(q_2, q_2)
-            print('после вызова функции - только city q_2  ', cosmetolog_address_set)
-            query_address = q_2.capitalize()
-        search_cosmetologs_set = service_set & cosmetolog_address_set
-        print('final search_cosmetologs_set    ', search_cosmetologs_set)
-        cosmetolog_count = len(search_cosmetologs_set)
-
-    # address_cosmetologs = Cosmetolog.objects.filter(is_active=True)
-    # cosmetolog_addresses = CosmetologAddress.objects.filter(is_active=True)
-    # search_active_addresses = Address.objects.filter(is_active=True)
-    # service_categories = CategoryForCosmetolog.objects.filter(is_active=True)
-    # service_products = ServiceProduct.objects.filter(is_active=True, is_visible=True)
+        error = True
+        return HttpResponseRedirect(reverse(home), {'error': error})
 
 
-    cosmetologs = Cosmetolog.objects.filter(is_active=True, is_visible=True)
-
-    search_service_products_images = ServiceProductImage.objects.filter(
-        is_active=True, is_main=True, service_product__is_active=True,
-        service_product__is_visible=True, service_product__cosmetolog__id__in=search_cosmetologs_set)
-    # search_service_products_images = service_products_images_all.filter(
-    #     Q(service_product__in=d)
-    # )
-    # service_products_images = service_products_images_all[:4]
-    search_cosmetologs = Cosmetolog.objects.filter(is_active=True, is_visible=True, id__in=search_cosmetologs_set)
-
-    search_service_address_999 = 999
-
-    if cosmetolog_count != 0:
-        return render(request, 'landing/search_results.html', locals())
+def get_city_district_street_id(q_city, q_district, q_street):
+    if q_street != 'vse-ulicy':
+        q_address_url = '/' + q_city + '/' + q_district + '/' + q_street
+        search_city_active_addresses = Address.objects.get(is_active=True, url__exact=q_address_url)
+        street_id = search_city_active_addresses.id
+        district_id = search_city_active_addresses.parent_id.id
+        city_id = search_city_active_addresses.parent_id.parent_id.id
+        type_id = search_city_active_addresses.type_id
+        print(987654321, street_id, district_id, city_id, type_id)
+    elif q_district !='vse-rajony':
+        q_address_url = '/' + q_city + '/' + q_district
+        search_city_active_addresses = Address.objects.get(is_active=True, url__exact=q_address_url)
+        district_id = search_city_active_addresses.id
+        city_id = search_city_active_addresses.parent_id.id
+        type_id = search_city_active_addresses.type_id
+        street_id = 0
+        print(987654321, street_id, district_id, city_id, type_id)
     else:
-        return render(request, 'landing/no_search_results.html', locals())
+        q_address_url = '/' + q_city
+        search_city_active_addresses = Address.objects.get(is_active=True, url__exact=q_address_url)
+        city_id = search_city_active_addresses.id
+        type_id = search_city_active_addresses.type_id
+        street_id = 0
+        district_id = 0
+        print(987654321, street_id, district_id, city_id, type_id)
+    display_address = search_city_active_addresses.display_address
+    city_name = Address.objects.get(pk=city_id).name
+    if district_id:
+        district_name = str(Address.objects.get(pk=district_id).name) + ' ' + str(Address.objects.get(pk=district_id).type_level)
+    else:
+        district_name = None
+    if street_id:
+        street_name = str(Address.objects.get(pk=street_id).name) + ' ' + str(Address.objects.get(pk=street_id).type_level)
+    else:
+        street_name = None
+    return street_name, district_name, city_name, display_address, street_id, district_id, city_id, type_id
 
 
-def search_service(request, q_1, q_2=None, q_3=None):
+def get_subservice_id(q_service, q_subservice):
+    q_subservice_url = q_service + '/' + q_subservice
+    search_active_subservice = SubCategoryForCosmetolog.objects.get(is_active=True, url__exact=q_subservice_url)
+    subservice_id = search_active_subservice.id
+    # print('subservice_id', subservice_id, type(subservice_id))
+    return search_active_subservice, subservice_id
+
+
+def get_cosmetolog_address_set(address_id, type_id, subservice_id=None):
+    cosmetolog_address_set = set()
+    # print(9876543321, type(subservice_id), 9999999)
+    if subservice_id:
+        if type_id == 10:
+            cosmetolog_address_object_set = CosmetologAddress.objects.filter(is_active=True, street_id=address_id,
+                                                                             service_name__subcategory_id = subservice_id)
+        elif type_id == 5:
+            cosmetolog_address_object_set = CosmetologAddress.objects.filter(is_active=True, district_id=address_id,
+                                                                             service_name__subcategory_id = subservice_id)
+        elif type_id == 4:
+            cosmetolog_address_object_set = CosmetologAddress.objects.filter(is_active=True, city_id=address_id,
+                                                                             service_name__subcategory_id = subservice_id)
+    else:
+        if type_id == 10:
+            cosmetolog_address_object_set = CosmetologAddress.objects.filter(is_active=True, street_id=address_id)
+        elif type_id == 5:
+            cosmetolog_address_object_set = CosmetologAddress.objects.filter(is_active=True, district_id=address_id)
+        elif type_id == 4:
+            cosmetolog_address_object_set = CosmetologAddress.objects.filter(is_active=True, city_id=address_id)
+    if cosmetolog_address_object_set:
+        for j in cosmetolog_address_object_set:
+            cosmetolog_address_set.add(j.cosmetolog_id)
+    return cosmetolog_address_set
+
+
+def get_service_images_address(cosmetolog_street_set, cosmetolog_district_set, cosmetolog_city_set):
+    service_street_images = ServiceProductImage.objects.filter(
+        is_active=True, is_main=True, service_product__is_active=True,
+        service_product__is_visible=True, service_product__cosmetolog__id__in=cosmetolog_street_set)
+    service_district_images = ServiceProductImage.objects.filter(
+        is_active=True, is_main=True, service_product__is_active=True, service_product__is_visible=True,
+        service_product__cosmetolog__id__in=cosmetolog_district_set).exclude(service_product__cosmetolog__id__in=cosmetolog_street_set)
+    service_city_images = ServiceProductImage.objects.filter(
+        is_active=True, is_main=True, service_product__is_active=True, service_product__is_visible=True,
+        service_product__cosmetolog__id__in=cosmetolog_city_set).exclude(service_product__cosmetolog__id__in=cosmetolog_street_set).exclude(service_product__cosmetolog__id__in=cosmetolog_district_set)
+    return service_street_images, service_district_images, service_city_images
+
+
+def search_service_address(request, q_1, q_2, q_3, q_4, q_5, q_6):
+    print('search - q1:', q_1) #категория услуги - проверка на vse
+    print('search - q2', q_2) #субкатегория услуги
+    print('search - q3', q_3) #город - проверка на vse-goroga
+    print('search - q4', q_4) #район
+    print('search - q5', q_5) #улица
+    print('search - q6', q_6) #дом (рандомный), вне анализа
     logo_images = LogoImage.objects.filter(is_active=True, is_main=True)
 
-    search_active_addresses = Address.objects.filter(is_active=True)
-    active_addresses = search_active_addresses.filter(
-        Q(type_id=5) |
-        Q(type_id=4)
-    ).order_by('type_id')
-
-    active_addresses_towns = active_addresses.filter(type_id=4)
-    for i in active_addresses_towns:
-        i.slug = slugify(i.name)
-    subservice_categories = SubCategoryForCosmetolog.objects.filter(is_active=True)
-    service_categories = CategoryForCosmetolog.objects.filter(is_active=True)
-    # Ввели сервис но нету адресу - выводим список косметологов с таким сервисом по всей стране
-    # фокус на адресс - ВВЕДИТЕ поиск по адресу
-    service_set = set()
-    if q_2:
-        service_products = ServiceProduct.objects.filter(is_active=True, is_visible=True,
-                                                         subcategory__slug__icontains=q_2)
-        print(service_products)
-        for i in service_products:
-            service_set.add(i.cosmetolog_id)
-        print('только для суб сервиса', service_set)
-        query_service_item = subservice_categories.get(slug=q_2)
-        query_service = query_service_item.subcategory_category
-
-        search_cosmetologs_set = service_set
-        print('final search_cosmetologs_set    ', search_cosmetologs_set)
-        cosmetolog_count = len(search_cosmetologs_set)
-    else:
-        service_products = ServiceProduct.objects.filter(is_active=True, is_visible=True,
-                                                         category__slug__icontains=q_1)
-        print(service_products)
-        for i in service_products:
-            service_set.add(i.cosmetolog_id)
-        print('только для суб сервиса', service_set)
-        query_service_item = service_categories.get(slug=q_1)
-        query_service = query_service_item.name
-
-        search_cosmetologs_set = service_set
-        print('final search_cosmetologs_set    ', search_cosmetologs_set)
-        cosmetolog_count = len(search_cosmetologs_set)
-
-    search_cosmetologs = Cosmetolog.objects.filter(is_active=True, is_visible=True, id__in=search_cosmetologs_set)
-    search_service_products_images = ServiceProductImage.objects.filter(
-        is_active=True, is_main=True, service_product__is_active=True,
-        service_product__is_visible=True, service_product__cosmetolog__id__in=search_cosmetologs_set)
-    search_service_999 = 999
-    if cosmetolog_count != 0:
+    if q_1 == 'vse':          #сервис-нет и город-да, надо показать все активные сервисы на Этом адрессе и Уточните Сервис
+        print("service-NO and city-YES")
+        street_name, district_name, city_name, display_address, street_id, district_id, city_id, type_id = \
+            get_city_district_street_id(q_3, q_4, q_5)
+        # получаем сэт ид косметологов у кого есть любые услуги по этой улице
+        cosmetolog_street_set = get_cosmetolog_address_set(street_id, 10)
+        # получаем сэт ид косметологов у кого есть любые услуги по этому району
+        cosmetolog_district_set = get_cosmetolog_address_set(district_id, 5)
+        # получаем сэт ид косметологов у кого есть любые услуги по этому городу
+        cosmetolog_city_set = get_cosmetolog_address_set(city_id, 4)
+        service_street_images, service_district_images, service_city_images =\
+            get_service_images_address(cosmetolog_street_set, cosmetolog_district_set, cosmetolog_city_set)
+        subservice_categories = SubCategoryForCosmetolog.objects.filter(is_active=True)
+        print('set for street', cosmetolog_street_set)
+        print('service images for street', service_street_images)
+        print('set for district', cosmetolog_district_set)
+        print('service images for district', service_district_images)
+        print('set for city', cosmetolog_city_set)
+        print('service images for city', service_city_images)
+    elif q_3 == 'vse-goroga': #сервис-да и город-нет, надо показать Этот сервис для всех активных косметологов во всех городах
+        print("service-YES and city-NO")
+        service_street_images = None
+        service_district_images = None
+        search_active_subservice, subservice_id = get_subservice_id(q_1, q_2)
+        service_city_images = ServiceProductImage.objects.filter(
+            is_active=True, is_main=True, service_product__is_active=True,
+            service_product__is_visible=True, service_product__subcategory__category_id=subservice_id)
+        active_addresses_towns = Address.objects.filter(is_active=True, type_id=4)
+        # city_list = set()
+        for i in active_addresses_towns:
+            oldstr = i.url
+            i.slug = oldstr.replace("/", "")
+            # city_list.add(newstr)
+            # i.slug = slugify(i.name)
+    else:                     # сервис-да и город-да, надо показать Этот сервис по Этому адресу
+        print('service-YES and city-YES')
+        street_name, district_name, city_name, display_address, street_id, district_id, city_id, type_id = \
+            get_city_district_street_id(q_3, q_4, q_5)
+        search_active_subservice, subservice_id = get_subservice_id(q_1, q_2)
+        # получаем сэт ид косметологов у кого есть Эта услуги по Этой улице
+        cosmetolog_street_set = get_cosmetolog_address_set(street_id, 10, subservice_id)
+        # получаем сэт ид косметологов у кого есть Эта услуга по Этому району
+        cosmetolog_district_set = get_cosmetolog_address_set(district_id, 5, subservice_id)
+        # получаем сэт ид косметологов у кого есть Эта услуга по Этому городу
+        cosmetolog_city_set = get_cosmetolog_address_set(city_id, 4, subservice_id)
+        service_street_images, service_district_images, service_city_images = \
+            get_service_images_address(cosmetolog_street_set, cosmetolog_district_set, cosmetolog_city_set)
+        if city_id:
+            active_addresses_town_districts = Address.objects.filter(parent_id=city_id)
+            for i in active_addresses_town_districts:
+                oldstr = i.url
+                search_index = oldstr.rfind('/')
+                i.slug = oldstr[search_index+1:]
+        if district_id:
+            active_addresses_town_district_streets = Address.objects.filter(parent_id=district_id)
+            for i in active_addresses_town_district_streets:
+                oldstr = i.url
+                search_index = oldstr.rfind('/')
+                i.slug = oldstr[search_index+1:]
+    if service_street_images or service_district_images or service_city_images:
+        print('yes_yesy_yesy 2019 2019 2019')
         return render(request, 'landing/search_results.html', locals())
     else:
+        print('NO NO NO No NO 2019 2019 2019')
         return render(request, 'landing/no_search_results.html', locals())
-
-
-def search_address(request, q_1, q_2=None, q_3=None):
-    # Ввели аддрес но нету сервиса - выводим список косметологов по этому адресу с любым сервисом
-    # фокус на сервис - ВЫБЕРИТЕ СЕРВИС
-    logo_images = LogoImage.objects.filter(is_active=True, is_main=True)
-
-    search_active_addresses = Address.objects.filter(is_active=True)
-    active_addresses = search_active_addresses.filter(
-        Q(type_id=5) |
-        Q(type_id=4)
-    ).order_by('type_id')
-
-    # active_addresses_towns = active_addresses.filter(type_id=4)
-    # for i in active_addresses_towns:
-    #     i.slug = slugify(i.name)
-    subservice_categories = SubCategoryForCosmetolog.objects.filter(is_active=True)
-    service_categories = CategoryForCosmetolog.objects.filter(is_active=True)
-    if q_2:
-        # пишем код для q_1 и q_2
-        # выбираем всех косметологов у которых есть адресс q_2 и q_3 (на них фокус), или q_2
-        cosmetolog_address_set = q_search_in_url(q_1, q_2)
-        print('после вызова функции - только city and delnica/ulica q_1 q_2  ', cosmetolog_address_set)
-        city_id, cosmetolog_set = get_city_id(q_1)
-        cosmetolog_address_set.update(cosmetolog_set)
-        print('после вызова функции - только city and delnica/ulica q_1 q_2 +++++ ', cosmetolog_address_set)
-        query_address_id, w2, w3 = get_delnica_ulica_id(q_1, q_2)
-        query_address = Address.objects.get(id=query_address_id).display_address
-    else:
-        # пишем код для q_1 (вызываем функцию с параметром q_1, в которой
-        # выбираем всех косметологов у которых есть адрес q1 включая вглубь
-        cosmetolog_address_set = q_search_in_url(q_1, q_1)
-        print('после вызова функции - только city q_1  ', cosmetolog_address_set)
-        query_address_id, w2_set = get_city_id(q_1)
-        query_address = Address.objects.get(id=query_address_id).display_address
-    search_cosmetologs_set = cosmetolog_address_set
-    print('final search_cosmetologs_set    ', search_cosmetologs_set)
-    cosmetolog_count = len(search_cosmetologs_set)
-
-    search_cosmetologs = Cosmetolog.objects.filter(is_active=True, is_visible=True, id__in=search_cosmetologs_set)
-    search_service_products_images = ServiceProductImage.objects.filter(
-        is_active=True, is_main=True, service_product__is_active=True,
-        service_product__is_visible=True, service_product__cosmetolog__id__in=search_cosmetologs_set)
-    search_address_999 = 999
-
-    if cosmetolog_count != 0:
-        return render(request, 'landing/search_results.html', locals())
-    else:
-        return render(request, 'landing/no_search_results.html', locals())
-
-
-def navbar_01(request):
-
-    return render(request, 'landing/navbar_01.html', locals())
 
 
 def contact(request):
     session_key = request.session.session_key
     args = {}
     form = LetterForm()
-    print(request.POST)
 
     if request.POST:
         new_letter_form = LetterForm(request.POST)
@@ -587,8 +675,6 @@ def contact(request):
             send_mail(subject, message, from_email, to_list, fail_silently=True)
 
             letter_success = "success"
-#           return redirect('registration_profile')
-            print(letter_success, letter_success)
         else:
             form = new_letter_form
             # print(form.error_messages)

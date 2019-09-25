@@ -1,26 +1,26 @@
-<div class="media service-product-item-container">
-    <div class="media-left col-lg-2">
+<div class="row media service-product-item-container">
+    <div class="media-left col-2">
         <div class="center-block-list">
             <a href=#>
                 <img src="{{ search_service_products_image.image.url }}"
-                     class = "img-responsive img-service-product-list">
+                     class = "img-fluid img-service-product-list">
             </a>
         </div>
     </div>
-    <div class="media-body">
-        <div class="col-lg-2 service-product-name-list">
+    <div class="row media-body">
+        <div class="col-3 service-product-name-list">
             <h4>{{ search_service_products_image.service_product.name }}</h4>
         </div>
-            <div class="col-lg-2 service-discount-container-list">
+            <div class="col-2 service-discount-container-list">
             <h4>{{ search_service_products_image.service_product.discount }}%</h4>
         </div>
-        <div class="col-lg-2 service-product-price-list">
-            <h4>{{ search_service_products_image.service_product.price01 }}</h4> PLN
+        <div class="col-2 service-product-price-list">
+            <h4>{{ search_service_products_image.service_product.price01 }}</h4> грн
         </div>
-        <div class="col-lg-2 service-product-price-list">
-            <h4>{{ search_service_products_image.service_product.price02 }}</h4> PLN
+        <div class="col-2 service-product-price-list">
+            <h4>{{ search_service_products_image.service_product.price02 }}</h4> грн
         </div>
-        <div class="col-lg-2 add-to-cart-btn-list">
+        <div class="col-2 add-to-cart-btn-list">
             {% if not search_service_address_999 %}
                 <div class="description-region">
                     {% if search_service_999 %}

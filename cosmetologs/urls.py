@@ -19,5 +19,6 @@ from cosmetologs import views
 urlpatterns = [
     # url(r'^landing/', views.landing, name='landing'),
     url(r'^cosmetolog/(?P<slug>[\w-]+)/$', views.cosmetolog, name='cosmetolog'),
-    url(r'^service/(?P<slug1>[\w-]+)/(?P<slug>[\w-]+)/$', views.service, name='service'),
+    # url(r'^service/(?P<slug1>[\w-]+)/(?P<slug>[\w-]+)/$', views.service, name='service'),
+    url(r'^service/(?P<slug2>[\w-]+)/(?P<slug1>[\w-]+)/(?P<slug>[\w-]+)/$', views.service, name='service'),
 ]

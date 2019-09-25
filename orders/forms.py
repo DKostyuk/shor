@@ -11,7 +11,5 @@ class ServiceOrderForm(forms.ModelForm):
 
     class Meta:
         model = ServiceOrder
-        # exclude = [""]
-        exclude = ["created", "updated"]
-        # exclude = ["total_price", "customer_address", "status", "created", "updated"]
-# fields = ["customer_name", "customer_email", "customer_phone", "comments"]
+        fields = ["session_key", "status", "customer_name", "customer_phone", "customer_email",
+                  "customer_city", "comments"]

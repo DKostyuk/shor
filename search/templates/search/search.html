@@ -1,0 +1,17 @@
+<form method="get">
+
+  <input id="q" name="q" type="text" placeholder="your search...">
+
+</form>
+
+{% for item in addresses %}
+
+  {{ item.full_address }}
+  {{ item.display_address }}
+  {{ item.url }}
+    _________________________
+  {{ item.name }}
+
+  <br>
+
+{% endfor %}

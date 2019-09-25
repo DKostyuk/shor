@@ -1,4 +1,5 @@
 from django.db import models
+from cosmetologs.models import Cosmetolog
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -46,6 +47,22 @@ class Subscriber(models.Model):
         verbose_name_plural = 'A lot of Subscribers'
 
 
+class SubscriberCosmetolog(models.Model):
+    subscriber_name = models.ForeignKey(Subscriber, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    subscriber_id = models.IntegerField(blank=True, null=True, default=None)
+    cosmetolog_name = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    cosmetolog_id = models.IntegerField(blank=True, null=True, default=None)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+
+    def __str__(self):
+        return "%s" % self.id
+        # return "%s, %s" % (self.price_avg, self.name)
+
+    class Meta:
+        verbose_name = 'SubscriberCosmetolog'
+        verbose_name_plural = 'SubscriberCosmetologs'
+
+
 class LogoImage(models.Model):
     image = models.ImageField(upload_to='logo_images/')
     is_active = models.BooleanField(default=True)
@@ -88,11 +105,14 @@ class SliderMain(models.Model):
 class Letter(models.Model):
     subject = models.CharField(max_length=64)
     from_name = models.CharField(max_length=32)
-    email_sender = models.EmailField()
+    email_sender = models.EmailField(blank=True, null=True, default=None)
+    phone_sender = models.CharField(max_length=13, blank=True, null=True, default=None)
     city_sender = models.CharField(max_length=32)
     message = models.TextField(blank=True, null=True, default=None)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    cosmetolog = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    cosmetolog_email = models.EmailField(blank=True, null=True, default=None)
     user_name = models.CharField(max_length=32)
     user_email = models.EmailField()
     who_answer = models.CharField(max_length=64)
@@ -103,6 +123,38 @@ class Letter(models.Model):
     class Meta:
         verbose_name = 'Letter'
         verbose_name_plural = 'Letters'
+
+
+class LetterTemplate(models.Model):
+    name = models.CharField(max_length=64)
+    subject = models.CharField(max_length=64)
+    name_sender = models.CharField(max_length=32)
+    email_sender = models.EmailField(blank=True, null=True, default=None)
+    message = models.TextField(blank=True, null=True, default=None)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    is_active = models.BooleanField(default=True)
+
+
+    def __str__(self):
+        return "%s" % self.name
+
+    class Meta:
+        verbose_name = 'LetterTemplate'
+        verbose_name_plural = 'LetterTemplates'
+
+
+class LetterEmail(models.Model):
+    letter_template_name = models.ForeignKey(LetterTemplate, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    email_receiver = models.EmailField(blank=True, null=True, default=None)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+
+    def __str__(self):
+        return "%s" % self.id
+        # return "%s, %s" % (self.price_avg, self.name)
+
+    class Meta:
+        verbose_name = 'LetterEmail'
+        verbose_name_plural = 'LetterEmails'
 
 
 class Page(models.Model):
