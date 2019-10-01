@@ -2,136 +2,352 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/b_project/current_user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/documents.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/templates/search/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/15573.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/ElegantIcons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/ElegantIcons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/ElegantIcons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/ElegantIcons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/ajax-loader.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/config.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/fonts/slick.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/fonts/slick.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/fonts/slick.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/fonts/slick.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick-theme.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick-theme.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/css/slick/slick.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/js/slick.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog_about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog_product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog_service.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/email_request_to_cosmetolog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/email_service_order_to_cosmetolog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/form_map_modal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/form_send-cosmetolog-request.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/product_item_cosmetolog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/service_about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/service_cosmetolog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/service_product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/service_product_item_cosmetolog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/service_service.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/modal_form-add-service.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/profile_additional.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/profile_main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/profile_service.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/search_choose_districts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/search_choose_services.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/search_choose_streets.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/service_product_item_city.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/service_product_item_district.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/service_product_item_street.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/service_product_list_item.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/service_product_slider.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/products/product_about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/products/product_product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/products/product_service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/b_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/b_project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/addresses/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/addresses/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/b_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/b_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/b_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/b_project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/context_processors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/js/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/another/another.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/another/another.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/another/black_jack.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/another/black_jack.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cosmetologs/form_send-service-order_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cosmetologs/form_send-service-order_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cosmetologs/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cosmetologs/service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/advert_right.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/advert_right.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/advert_top.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/advert_top.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/blog_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/blog_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/cosmetolog_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/cosmetolog_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/navbar_01.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/no_search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/no_search_results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/password_reset.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/password_reset_complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/password_reset_complete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/password_reset_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/password_reset_confirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/password_reset_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/password_reset_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/password_reset_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/password_reset_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/product_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/product_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/registration_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/registration_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/reset.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/search_address.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_address.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/search_choose towns.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_choose_cities.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/search_fields.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_fields.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/search_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/search_recommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_recommend.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/search_service_all_cosmetologs_item_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_service_all_cosmetologs_item_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/search_service_all_cosmetologs_item_list_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_service_all_cosmetologs_item_list_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/search_title_block_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/search_title_block_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/search_we_found_title.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/service_product_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/service_product_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addresses/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addresses/migrations/0002_address.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addresses/migrations/0003_auto_20171008_1303.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addresses/migrations/0004_address_parent_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addresses/migrations/0005_auto_20171008_1823.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addresses/migrations/0006_address_type_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addresses/migrations/0007_cosmetologaddress.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addresses/migrations/0008_auto_20171009_1155.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addresses/migrations/0009_addressaddfile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addresses/migrations/0010_auto_20171012_1843.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addresses/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/migrations/0002_auto_20180425_1929.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/migrations/0003_productfilecsv_document.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/migrations/0004_testeditor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blogs/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blogs/migrations/0002_auto_20171101_1303.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0002_serviceproduct_is_visible.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0003_cosmetologaddress.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0004_auto_20171021_1853.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0005_subcategoryforcosmetolog.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0006_auto_20171101_1319.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0007_cosmetologcategory_subcategory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0008_serviceproduct_subcategory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0009_auto_20180519_0841.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0010_auto_20180519_0847.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0011_auto_20180529_2047.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0012_auto_20180529_2053.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0013_auto_20180531_1756.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0014_auto_20180621_1008.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0015_subscribercosmetolog.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0016_auto_20181026_0936.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0017_auto_20181026_0946.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0018_auto_20181214_1425.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0019_auto_20181215_2036.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0020_auto_20181221_1216.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0021_auto_20190118_1822.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0022_auto_20190125_2218.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0023_cosmetolog_working_hours.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0024_auto_20190221_1925.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0025_auto_20190302_1352.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0026_auto_20190302_1358.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0027_auto_20190304_1033.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0028_auto_20190304_1253.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0029_cosmetologaddress_address_type_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/NOTICE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/README.textile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-keystore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-keystore.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-plugin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-plugin.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-service-mgr.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-service-x64.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-service-x86.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-service.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-systemd-pre-exec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-translog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-translog.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch.in.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch.in.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/config/elasticsearch.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/config/jvm.options" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/config/log4j2.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/_state/global-1.st" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/_state/node-1.st" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/_state/state-0.st" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/_0.cfe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/_0.cfs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/_0.si" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/_1.cfe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/_1.cfs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/_1.si" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/segments_3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/write.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/translog/translog-2.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/translog/translog.ckp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/_state/state-0.st" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/index/_0.cfe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/index/_0.cfs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/index/_0.si" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/index/segments_3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/index/write.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/translog/translog-2.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/translog/translog.ckp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/_state/state-0.st" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/index/_0.cfe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/index/_0.cfs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/index/_0.si" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/index/segments_3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/index/write.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/translog/translog-2.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/translog/translog.ckp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/_state/state-0.st" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/index/_0.cfe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/index/_0.cfs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/index/_0.si" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/index/segments_3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/index/write.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/translog/translog-2.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/translog/translog.ckp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/_state/state-0.st" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/index/_0.cfe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/index/_0.cfs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/index/_0.si" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/index/segments_3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/index/write.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/translog/translog-2.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/translog/translog.ckp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/_state/state-3.st" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/node.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/HdrHistogram-2.1.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/elasticsearch-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/hppc-0.7.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jackson-core-2.8.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jackson-dataformat-cbor-2.8.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jackson-dataformat-smile-2.8.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jackson-dataformat-yaml-2.8.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/java-version-checker-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jna-4.4.0-1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/joda-time-2.9.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jopt-simple-5.0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jts-1.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/log4j-1.2-api-2.11.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/log4j-api-2.11.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/log4j-core-2.11.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-analyzers-common-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-backward-codecs-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-core-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-grouping-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-highlighter-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-join-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-memory-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-misc-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-queries-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-queryparser-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-sandbox-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-spatial-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-spatial-extras-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-spatial3d-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-suggest-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/plugin-cli-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/securesm-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/snakeyaml-1.15.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/spatial4j-0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/t-digest-3.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/logs/elasticsearch-2018-11-06.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/logs/elasticsearch-2018-11-07.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/logs/elasticsearch.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/logs/elasticsearch_deprecation.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/logs/elasticsearch_index_indexing_slowlog.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/logs/elasticsearch_index_search_slowlog.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/aggs-matrix-stats/aggs-matrix-stats-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/aggs-matrix-stats/plugin-descriptor.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/ingest-common/ingest-common-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/ingest-common/jcodings-1.0.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/ingest-common/joni-2.1.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/ingest-common/plugin-descriptor.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/antlr4-runtime-4.5.1-1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/asm-5.0.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/asm-commons-5.0.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/asm-tree-5.0.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/lang-expression-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/lucene-expressions-6.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/plugin-descriptor.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/plugin-security.policy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-groovy/groovy-2.4.6-indy.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-groovy/lang-groovy-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-groovy/plugin-descriptor.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-groovy/plugin-security.policy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-mustache/compiler-0.9.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-mustache/lang-mustache-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-mustache/plugin-descriptor.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-mustache/plugin-security.policy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-painless/antlr4-runtime-4.5.1-1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-painless/asm-debug-all-5.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-painless/lang-painless-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-painless/plugin-descriptor.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-painless/plugin-security.policy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/parent-join/parent-join-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/parent-join/plugin-descriptor.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/percolator/percolator-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/percolator/plugin-descriptor.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/commons-codec-1.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/commons-logging-1.1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/elasticsearch-rest-client-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/httpasyncclient-4.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/httpclient-4.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/httpcore-4.4.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/httpcore-nio-4.4.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/plugin-descriptor.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/plugin-security.policy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/reindex-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty3/netty-3.10.6.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty3/plugin-descriptor.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty3/plugin-security.policy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty3/transport-netty3-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-buffer-4.1.13.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-codec-4.1.13.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-codec-http-4.1.13.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-common-4.1.13.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-handler-4.1.13.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-resolver-4.1.13.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-transport-4.1.13.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/plugin-descriptor.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/plugin-security.policy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/transport-netty4-5.6.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0002_auto_20171023_1632.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0003_slidermain_position.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0004_auto_20180303_1709.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0005_auto_20180307_2138.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0006_auto_20180307_2147.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0007_auto_20180311_0013.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0008_auto_20180311_1200.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0009_auto_20180311_1230.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0010_auto_20180311_1359.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0011_auto_20180311_1544.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0012_subscriber_company_confirm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0013_letter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0014_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0015_auto_20180419_0705.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0016_training_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0017_remove_training_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0018_training_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0019_traininguser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0020_auto_20180422_2200.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0021_auto_20180422_2232.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0022_letter_phone_sender.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0023_auto_20190221_1925.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0024_auto_20190222_1119.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0002_serviceorder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0003_auto_20171021_1101.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0004_serviceorder_session_key.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0005_auto_20171021_1853.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0006_remove_serviceorder_customer_address.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0007_auto_20171021_2004.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0008_auto_20171101_1303.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0009_order_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0010_auto_20190226_0932.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0011_auto_20190226_1256.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0002_auto_20171101_1303.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0003_auto_20180206_1831.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0004_auto_20180226_1852.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0005_productcategory_description.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0006_product_name_pl.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0007_auto_20180519_0723.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0008_productaddfile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0009_auto_20180529_0810.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0010_auto_20190219_1559.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20181102_add_ukrKievRaion.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20181102_add_ukrOblast.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20181102_add_ukrOblastCenter.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_01.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Darnitskiy_raion_03.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Desnyanskiy_raion_11.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Dneprovskiy_raion_06.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Goloseevskiy_raion_02.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Micro_Raion_11.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Obolonsliy_raion_04.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Pecherskiy_raion_10.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Podolskiy_raion_05.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Shevchenkovskiy_raion_07.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Solomenskiy_raion_08.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Svyatoshinskiy_raion_09.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/add_ukrOblast.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/address_add_01.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/address_add_02.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/address_add_03.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/address_add_04.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/address_add_05_KrakowDelnica.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/advert_images/Slider_0201_35IC6dH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/advert_images/Slider_0202_X9Jrk5X.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/advert_images/Slider_0204_d79A8TZ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/advert_images/Slider_0204_j1w4bcC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/advert_images/advert-left_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/advert_images/advert-right-down_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/advert_images/advert-right-up_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/advert_images/advert-right_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/blogs_images/blog_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/blogs_images/blog_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/blogs_images/blog_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/blogs_images/blog_04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/blogs_images/blog_05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/20181018_check.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/20181018_check_KwRndIc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/20181018_check_jPF26MW.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/DK_logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Desert.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/HWScan00047.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/HWScan00047_LZnbRgz.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Logo_Tetiana.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Penguins.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/acdc-logo-vector-wallpaper.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/projectName.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/03_Hydration_Gel_250_ml_WebSite_534x558.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/04_Dermo_Control_Mask_group_2_WebSite_534x558.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/06_Moisturizing_Cream_for_Oily__Combined_Skin_oil-free_group_WebSite_534_558.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/07_Phyto_Complex_group_2_box_WebSite_534x558.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/08_09_Drying_Treatment_group_2_WebSite_534x558.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_2XRePZ6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_FYU4wYA.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_GZTcjFc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_MhQWeAf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_Ngjksw3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_oaTPoCH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Chrysanthemum.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/DK_nails_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/DK_nails_01_sMknq3A.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/DK_nails_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/DK_nails_02_URE1MxB.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/DK_nails_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Extra_Moisturez_250_ml.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Koala.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Lighthouse.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/TK_nails_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/TK_nails_01_ahd7cu6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/TK_nails_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/TK_nails_02_NmSqrap.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/WWDK_nails_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/WWDK_nails_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/WWDK_nails_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/training/Sunscreen_Cream_Demi_Make-up_SPF-30_WebSite_534x558.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/uploads/2018/04/11/img-bc7f8fb3d644f78f5ca8ce367dae3109-v.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/uploads/2018/04/11/img-bc7f8fb3d644f78f5ca8ce367dae3109-v_thumb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_dev/img/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/password_reset.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +383,7 @@
         <entry file="file://$PROJECT_DIR$/static/static_dev/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="271" lean-forward="true" selection-start-line="271" selection-end-line="271" />
+              <caret line="271" selection-start-line="271" selection-end-line="271" />
               <folding>
                 <element signature="e#253#411#0" />
                 <element signature="e#441#608#0" />
@@ -321,12 +537,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.eslint.eslintPackage" value="" />
     <property name="last_opened_file_path" value="$USER_HOME$/my-app" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="js.eslint.eslintPackage" value="" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -500,6 +716,7 @@
       <workItem from="1557598335796" duration="938000" />
       <workItem from="1563871065183" duration="631000" />
       <workItem from="1569348398529" duration="1338000" />
+      <workItem from="1569908530139" duration="1979000" />
     </task>
     <servers />
   </component>
@@ -509,7 +726,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2907000" />
+    <option name="totallyTimeSpent" value="4886000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -522,9 +739,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29817906" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30273142" />
       <window_info id="Structure" order="1" weight="0.24962178" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -904,7 +1120,7 @@
     <entry file="file://$PROJECT_DIR$/static/static_dev/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="271" lean-forward="true" selection-start-line="271" selection-end-line="271" />
+          <caret line="271" selection-start-line="271" selection-end-line="271" />
           <folding>
             <element signature="e#253#411#0" />
             <element signature="e#441#608#0" />
