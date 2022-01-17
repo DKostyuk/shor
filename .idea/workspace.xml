@@ -1,294 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/another/migrations/0005_calendartraining.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0030_cosmetologaddfile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0031_auto_20191031_1130.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0032_auto_20191031_1252.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0033_cosmetolog_type_text.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0034_auto_20191108_1732.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0035_auto_20191112_1155.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0011_product_price_old.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0012_productcategory_product_category_logo_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Alexandra Brow master Kiev.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Alexandra_Brow_master_Kiev.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Kate Demish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/O. lya lya.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/make_up_ by_di___.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/your_beauty_agent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Алина Бондарь.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Анна Корниенко.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Анна Савченко.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Валентина Землянская.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Елена Григор.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Елизавета Корж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Есения Или.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Марианна Марусич.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Марина Булах.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Ольга Бондарь.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Рина Смирнова.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Светлана Лескова.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Татьяна Добряк.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Яна Каминська.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_cosmo_file.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_cosmo_file_1.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_cosmo_file_BZ5DcWY.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_cosmo_file_WDjD0lZ.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_BDsNhiI.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_CTC0MNz.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_F01TT2m.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_IIRXZJo.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_KwXb3d4.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_LLJJLsE.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_LNWQtrR.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_QLBMpU6.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_RpNgD7X.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_V4m5eAV.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_W9C6IZZ.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_oEJpUEZ.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_ubEfkdV.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_wgE6VYP.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_ybOzsxU.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_Ngjksw3_ZX5y9g7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Alexandra Brow master Kiev.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Alexandra Brow master Kiev_Дневной Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Alexandra Brow master Kiev_Коррекция и Окрашивание Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Alexandra Brow master Kiev_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish_Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish_Дневной Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish_Коррекция и Окрашивание Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish_Макияж для Фотосессии.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish_Моделирование Бровей Пинцетом.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/O. lya lya.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/O. lya lya_Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/O. lya lya_Дневной Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/O. lya lya_Коррекция и Окрашивание Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/O. lya lya_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/O. lya lya_Укладка Волос Обычная.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/icon-make-up.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/make_up_ by_di___.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/make_up_ by_di____Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/make_up_ by_di____Коррекция и Окрашивание Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/make_up_ by_di____Укладка Волос Обычная.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/your_beauty_agent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/your_beauty_agent_Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/your_beauty_agent_Консультация по Макияжу.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/your_beauty_agent_Макияж для Фотосессии.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/your_beauty_agent_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Nude-макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Аквагрим.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Детский Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Дневной Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Макияж для Особых Случаев.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Макияж для Фотосессии.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Nude-макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Коррекция Бровей Нитью (Тридинг).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Коррекция Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Коррекция и Окрашивание Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Ламинирование Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Ламинирование Ресниц.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Мужская Коррекция Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Окрашивание Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Окрашивание Ресниц.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Аквагрим.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Вечерняя и Свадебная Прическа.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Детский Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Дневной Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Макияж для Фотосессии.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Мужской Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Валентина Землянская.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Валентина Землянская_Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Валентина Землянская_Коррекция и Окрашивание Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Елена Григор.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Елена Григор_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Елизавета Корж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Елизавета Корж_Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Елизавета Корж_Моделирование Бровей Пинцетом.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Елизавета Корж_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_3D Татуаж Губ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Волосковый Татуаж Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Дарсонваль-терапия.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Дневной Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Камуфляж Шрамов.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Комбинированный Татуаж Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Компрессионное Обертывание.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Консультация по Макияжу.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Контур Губ с Растушевкой.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Коррекция Перманентного Макияжа.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Лечение Акне.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Макияж для Особых Случаев.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Макияж для Фотосессии.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Мануальная (Механическая) Чистка Лица.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Межресничный Татуаж Век.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Мужской Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Процедуры для Подростковой Кожи.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Пудровый Татуаж Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Татуаж Губ Растушевка.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Татуаж Контура Губ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Балаяж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Вечерняя и Свадебная Прическа.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Горячее Капсульное Наращивание.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Дневной Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Женская Стрижка - Короткие Волосы.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Кератиновое Выпрямление Волос.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Мужские Стрижки.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марианна Марусич.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марианна Марусич_Дневной Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марианна Марусич_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марина Булах.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марина Булах_Вечерняя и Свадебная Прическа.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марина Булах_Женская Стрижка - Волосы Средней Длины.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марина Булах_Женская Стрижка - Короткие Волосы.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марина Булах_Женская Стрижка.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марина Булах_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Рина Смирнова.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Рина Смирнова_Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Рина Смирнова_Вечерняя и Свадебная Прическа.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Рина Смирнова_Дневной Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Рина Смирнова_Женская Стрижка - Волосы Средней Длины.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Рина Смирнова_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Алмазная Микродермабразия.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Альгинатная Маска.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Антистрессовый Массаж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Антицеллюлитный Массаж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Вакуумный Массаж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Дневной Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Классический Массаж Спины.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Комбинированная Чистка Лица.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Косметический Массаж Лица.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Креольский Массаж Бамбуковыми Палочками.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Лимфодренажный Массаж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Лифтинг-макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Макияж для Особых Случаев.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Массаж Шейно-воротниковой Зоны.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Пластический Массаж Лица.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Процедура Глубокого Увлажнения Кожи Лица.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Расслабляющий Массаж Лица.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Салициловый Пилинг.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Устранение Темных Кругов под Глазами.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Фруктовый Пилинг.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Химический Пилинг Гликолевой Кислотой.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Электропорация.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Энзимный Пилинг.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Дневной Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Консультация по Макияжу.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Коррекция Перманентного Макияжа.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Макияж для Особых Случаев.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Макияж для Фотосессии.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Межресничный Татуаж Век.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Микроблейдинг.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Мужской Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Мушка.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Окрашивание Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Пудровый Татуаж Бровей.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Создание Образа.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Блондирование.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Брондирование.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Вечерний Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Вечерняя и Свадебная Прическа.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Детская Стрижка.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Детский Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Дневной Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Женская Стрижка - Волосы Средней Длины.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Женская Стрижка.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Колорирование.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Макияж для Фотосессии.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Плетение Косы.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Пробная Свадебная Прическа.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Свадебный Макияж.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Создание Образа.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Укладка Волос Обычная.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/another/calendar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/another/scheduler.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/modal_form_send-product-to-basket.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/service_product_item_image.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/activation_link_request.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/button_send_service_request.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/buttons_see.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/cabinet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/product_line.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/navbar_MegaMenu_train_myself.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/navbar_dropdown_product_lines.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/navbar_mega_menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_delivery section.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_order_table.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_payment section.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_sidebar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_user_contact_section.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/orders/order_receiver_contact_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/b_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/b_project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/addresses/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/b_project/email_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/b_project/email_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/b_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/b_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/b_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/b_project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/tokens.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/tokens.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/context_processors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search/documents.py" beforeDir="false" afterPath="$PROJECT_DIR$/search/documents.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/search/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/js/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/another/another.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/another/another.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/another/another_trick_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/another/another_trick_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cosmetologs/form_map_modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cosmetologs/form_map_modal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cosmetologs/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cosmetologs/service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/cosmetolog_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/cosmetolog_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/service_product_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/service_product_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orders/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product.html" afterDir="false" />
-    </list>
+    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="shor project - started" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -556,6 +269,21 @@
       <workItem from="1593937419291" duration="1305000" />
       <workItem from="1594792414288" duration="637000" />
     </task>
+    <task id="LOCAL-00001" summary="shor project - started">
+      <created>1642431837842</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642431837842</updated>
+    </task>
+    <task id="LOCAL-00002" summary="shor project - started">
+      <created>1642431933636</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1642431933637</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -579,6 +307,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="shor project - started" />
+    <option name="LAST_COMMIT_MESSAGE" value="shor project - started" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
