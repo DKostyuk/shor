@@ -1,0 +1,46 @@
+<div class="row">
+    {% if cosmetolog_address and cosmetolog_site %}
+        <div class="col-lg-4">
+            <button type="submit" id="open_map_btn" class="btn btn-see-info"
+                        data-toggle="modal" data-target="#map_modal"
+                        data-cosmetolog_address = "{{ cosmetolog_address }}">
+                    Посмотреть адресс на карте
+            </button>
+        </div>
+        <div class="col-lg-4">
+            <a class="btn toggle-text btn-see-info" data-toggle="collapse" href="">
+                <span>Посмотреть сайт</span>
+                <span class="hidden hidden-info">{{ cosmetolog.site_url }}</span>
+            </a>
+        </div>
+        <div class="col-lg-4">
+            <a class="btn toggle-text btn-see-info" data-toggle="collapse" href="">
+                <span>Посмотреть телефон</span>
+                <span class="hidden hidden-info">+38 {{ cosmetolog.order_phone }}</span>
+            </a>
+        </div>
+    {% endif %}
+    {% if cosmetolog_address and not cosmetolog_site %}
+        <div class="col-lg-6">
+            <button type="submit" id="open_map_btn" class="btn btn-see-info"
+                        data-toggle="modal" data-target="#map_modal"
+                        data-cosmetolog_address = "{{ cosmetolog_address }}">
+                    Посмотреть адресс на карте
+            </button>
+        </div>
+        <div class="col-lg-6">
+            <a class="btn toggle-text btn-see-info" data-toggle="collapse" href="">
+                <span>Посмотреть телефон</span>
+                <span class="hidden hidden-info">+38 {{ cosmetolog.order_phone }}</span>
+            </a>
+        </div>
+    {% endif %}
+    {% if not cosmetolog_address and not cosmetolog_site %}
+        <div class="col-lg-12">
+            <a class="btn toggle-text btn-see-info" data-toggle="collapse" href="">
+                <span>Посмотреть телефон</span>
+                <span class="hidden hidden-info">+38 {{ cosmetolog.order_phone }}</span>
+            </a>
+        </div>
+    {% endif %}
+</div>

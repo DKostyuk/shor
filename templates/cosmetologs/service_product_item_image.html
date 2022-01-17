@@ -1,0 +1,28 @@
+<div class="col-lg-4">
+    {% if k > 1  %}
+        <div class="slider-for">
+            {% for image_item in service_product.serviceproductimage_set.all %}
+                <div class="item">
+                    <img src="{{ image_item.image.url }}" alt="image" draggable="false"/>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="slider-nav">
+            {% for image_item in service_product.serviceproductimage_set.all %}
+                <div class="item">
+                    <img src="{{ image_item.image.url }}" alt="image" draggable="false"/>
+                </div>
+            {% endfor %}
+        </div>
+    {% elif k == 1 %}
+        <div class="slider-for">
+            {% for image_item in service_product.serviceproductimage_set.all %}
+                <div class="item">
+                    <img src="{{ image_item.image.url }}" alt="image" draggable="false"/>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+</div>

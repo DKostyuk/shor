@@ -7,13 +7,21 @@
                 </div>
             </div>
             <div class="product-name">
-                <p>{{ cosmetolog.type }}</p>
+                <p style="font-size: 12px;">{{ cosmetolog.type_text }}</p>
+            </div>
+            <div class="product-name">
                 <h4>{{ cosmetolog.name }}</h4>
             </div>
             <div class="product-s-description">
-                <p>
-                    {{ cosmetolog.headline|truncatechars_html:70 }}
-                </p>
+                {% if cosmetolog.headline %}
+
+                        {{ cosmetolog.headline|truncatechars_html:50 }}
+
+                {% else %}
+
+                        {{ cosmetolog.description|truncatechars_html:50 }}
+
+                {% endif %}
             </div>
         </div>
     </a>

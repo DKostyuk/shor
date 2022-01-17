@@ -14,6 +14,7 @@ import os
 
 # for gmail or google apps
 from .email_info import *
+EMAIL_BACKEND = EMAIL_BACKEND
 EMAIL_USE_TLS = EMAIL_USE_TLS
 EMAIL_HOST = EMAIL_HOST
 EMAIL_HOST_USER = EMAIL_HOST_USER
@@ -63,6 +64,9 @@ INSTALLED_APPS = [
     'django_dbshell_plus',
 
     'search',
+    'bootstrap4',
+    'bootstrap_datepicker_plus',
+    'schedule',
     # 'django_elasticsearch_dsl',
 
 ]
@@ -175,7 +179,15 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'None',
     },
 }
+
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 # CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 
 CKEDITOR_IMAGE_BACKEND = 'pillow'
+
+# Use BOOTSTRAP3 if you are using Bootstrap 3
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

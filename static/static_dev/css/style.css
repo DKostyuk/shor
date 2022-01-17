@@ -20,7 +20,7 @@ html, body{
 }
 
 .wrapper-content{
-    overflow: auto;
+    /*overflow: auto;*/
     padding-bottom: 180px; /* must be same height as the footer */
 }
 
@@ -73,6 +73,24 @@ html, body{
 .login-page a div:hover{
     background-color: #007bff;
     color: white;
+}
+
+.login-page{
+    width: 100%;
+}
+
+.link-login{
+    text-align: center;
+}
+
+.btn-registration{
+    margin-bottom: 20px;
+}
+
+.email--error{
+    font-weight: bold;
+    font-size: 16px;
+    color: red;
 }
 
 .shadow-item-box{
@@ -138,7 +156,7 @@ html, body{
 }
 
 .product-item{
-    height: 325px;
+    height: 285px;
     background-color: white;
     border: 1px solid lightgrey;
     position: relative;
@@ -148,8 +166,8 @@ html, body{
 }
 
 .img-product{
-    width: 180px;
-    height: 188px;
+    width: 223px;
+    height: 140px;
 }
 
 .img-product-inside, .img-cosmetolog-inside {
@@ -158,22 +176,58 @@ html, body{
 }
 
 .product-name{
-    height: 50px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-name > p{
     margin-bottom: 0;
     font-size: 14px;
+    /*text-align: center;*/
 }
 .product-name > h4{
-    margin-top: 0;
+    /*margin-top: 0;*/
     font-size: 20px;
     font-weight: bold;
+    margin: auto;
 }
 
 .producer-name, .product-category, .product-type{
     font-weight: 700;
     margin-right: 20px;
+}
+
+.product-page-price-old{
+    position: absolute;
+    left: 20px;
+    display: inline-block;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+    transform: translateY(-65%);
+    font-size: 26px;
+    color: #aeb1b5;
+    text-decoration: line-through;
+    text-decoration: red  line-through;
+}
+
+.product-page-price-discounted{
+    color: #f84147;
+    font-size: 36px;
+    margin-right: 10px;
+}
+
+.product-page-price-standard{
+    font-size: 36px;
+    margin-right: 10px;
+}
+
+.btn-buy-page-product{
+    font-size: 18px;
+    padding: 10px;
 }
 
 .product-short-description{
@@ -183,7 +237,7 @@ html, body{
 .product-s-description{
     font-style: italic;
     font-size: 12px;
-    height: 50px;
+    height: 40px;
 }
 
 .name_description{
@@ -334,17 +388,13 @@ html, body{
     color: black!Important;
 }
 
-.navbar-nav li:hover{
+/*.navbar-nav li:hover{
     background-color: #dc5129;
-}
+}*/
 
 .current{
-    background-color: black;
+    background-color: white;
 }
-
-/*.nav-tabs{*/
-    /*border:none*/
-/*}*/
 
 .top-bar-section .navbar-right{
     margin-bottom: 0;
@@ -494,6 +544,88 @@ html, body{
     margin-bottom: 10px;
 }
 
+/*Modal Product item - Product in Basket*/
+.modal-product-item-line{
+    overflow-y: scroll;
+}
+
+.modal-product-image-item{
+    width: auto;
+    height: 96px;
+}
+
+.modal-basket-items, .modal-basket-one-item{
+    margin: 0 0 0 0;
+    vertical-align: middle;
+}
+
+.modal-basket-items > ul{
+    list-style-type: none;
+}
+
+#number{
+}
+
+.button-minus{
+    margin: 0 10px 0 10px;
+    width: 56px;
+}
+
+#submit_btn_minus{
+    margin: 0 10px 0 10px;
+    width: 56px;
+}
+
+.button-plus{
+    margin: 0 10px 0 10px;
+    width: 56px;
+}
+
+#submit_btn_plus{
+    margin: 0 10px 0 10px;
+    width: 56px;
+}
+
+.number_input_field input{
+    width: 56px;
+}
+
+#number_input_field{
+    width: 56px;
+}
+
+.btn-basket-close{
+    display: block;
+    background: #f5f5f5;
+    color: #3e77aa;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 15px;
+    border-style: unset;
+    cursor: pointer;
+}
+
+.basket-total-price-btn{
+    text-align: right;
+}
+
+.total_order_price{
+    display: inline-block;
+    font-size: 36px;
+    margin-right: 10px;
+}
+
+.btn-order-page {
+    display: inline-block; /* Строчно-блочный элемент */
+    background: #00a046;
+    color: #fff; /* Белый цвет текста */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 3px; /* Скругляем уголки */
+    font-size: 18px;
+}
+
 /*List of Cosmetolog*/
 .all-service{
     margin: 30px;
@@ -534,6 +666,7 @@ html, body{
 .service-product-name-list > h4{
     font-size: 20px;
 }
+
 .service-discount-container-list, .service-product-price-list{
     margin-left: 3px;
     margin-right: 3px;
@@ -615,13 +748,13 @@ div > ul > a:hover {
 
 /*Cosmetolog item*/
 .cosmetolog-item{
-    height: 260px;
+    height: 280px;
     background-color: white;
     border: 1px solid lightgrey;
     position: relative;
     padding: 10px 0 10px 0;
     text-align: center;
-    margin-bottom: 10px;
+   /* margin-bottom: 10px;*/
 }
 
 .img-cosmetolog{
@@ -838,6 +971,7 @@ a.training-item:hover{
 
 .img-service-product-box{
     height: 145px;
+    width: auto;
     position: relative;
     padding: 0;
     overflow: hidden;
@@ -919,22 +1053,91 @@ a.training-item:hover{
     border-color: #1b04ff;
 }
 
+/*CheckOut Product Page*/
+.checkout-page-title{
+    padding: 20px;
+    font-weight: bold;
+}
+
+.checkout-page-contact-data, .checkout-page-order-title{
+    display: flex;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.checkout-page-list-number{
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 30%;
+    margin-right: 16px;
+    background-color: #e9e9e9;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.btn-order-users{
+    margin-bottom: 20px;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #48487f;
+    border-color: #c38c38;
+}
+
+.checkout-page-order-title{
+    margin-top: 30px;
+
+}
+
+/*CheckOut Sidebar*/
+.checkout-promo, .checkout-total-order{
+    margin-bottom: 8px;
+    padding: 16px;
+    background-color: #ced4da;
+    border-radius: 4px;
+    border: 1px solid #6c757d;
+}
+
+.checkout-sidebar-focus{
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+}
+
+.checkout-total-items, checkout-total-delivery{
+    margin-bottom: 8px;
+}
+
+.checkout-user-agreement{
+    font-size: 12px;
+}
+
 /*Cosmetolog Individual Page*/
 .cosmetolog-page-logo{
     padding: 5px;
     margin-bottom: 5px;
     margin-top: 5px;
-    height: 255px;
-    width: 100%;
+    /*height: 100%;*/
+    /*width: 100%;*/
     /*max-width: auto;*/
     /*max-height: auto;*/
+}
+.cosmetolog-page-img{
+    display: block;
+    margin: 0 auto;
+    width: 70%;
 }
 
 .cosmetolog-page-details, .service-page-details{
     /*height: 255px;*/
     width: auto;
     margin-top: 10px;
-
 }
 
 .cosmetolog-page-name, .service-page-name{
@@ -992,6 +1195,8 @@ a.training-item:hover{
     margin-bottom: 20px;
     line-height: 18px;
     text-align: center;
+    font-size: 11px;
+
     /*height: 60px;*/
 }
 
@@ -1062,3 +1267,43 @@ img{
 }
 
 /*SLIDER END -------------------------------------------------------------*/
+
+
+/*NAVBAR MEGA TRAINING*/
+
+.nav-list { border-bottom: 1px solid #eee; }
+.nav-list > li {
+ padding: 20px 15px 15px;
+ border-left: 1px solid #eee;
+}
+.nav-list > li:last-child { border-right: 1px solid #eee; }
+.nav-list > li > a:hover { text-decoration: none; }
+.nav-list > li > a > span {
+ display: block;
+ font-weight: bold;
+ text-transform: uppercase;
+}
+
+.mega-dropdown {
+    position: static !important;
+}
+
+.mega-dropdown-menu {
+    padding: 20px 15px 15px;
+    text-align: center;
+    width: auto;
+    /*width: 100%;*/
+    transform: translateX(-50%);
+    left: 50%;
+    margin-top: -20px;
+}
+.tab-pane ul li img { max-width: 120px }
+
+.nav-mega-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/*END of MEGA MENU*/

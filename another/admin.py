@@ -32,3 +32,12 @@ class TestEditorAdmin (admin.ModelAdmin):
 
 admin.site.register(TestEditor, TestEditorAdmin)
 
+
+class CalendarTrainingAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in CalendarTraining._meta.fields]
+
+    class Meta:
+        model = CalendarTraining
+
+
+admin.site.register(CalendarTraining, CalendarTrainingAdmin)

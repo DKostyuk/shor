@@ -27,17 +27,48 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="form-group service-page-price">
-                                <p> <span style="font-weight: 700">Стоимость</span>
-                                     {{ product.price }} грн.
-                                    {% if product.discount %}
-                                        <button type="submit" id="submit_order_btn" class="btn btn-success service-page-discount-box"
-                                                data-toggle="modal" data-target="#SendOrderService">
-                                            <div style="font-size: 10px;margin-top: -10px;">скидка</div>
-                                            <div>{{ product.discount }}%</div>
-                                        </button>
+                            <div>
+                                <form id ="form_buying_product" class="form-inline"
+                                      action="{% url 'basket_adding' %}">{% csrf_token %}
+                                    <div class="form-group service-page-price">
+<!--                                <p> <span style="font-weight: 700">Стоимость</span>-->
+                                    {% if product.price_old  > 0 %}
+                                        <div class="product-page-price-old">
+                                            {{ product.price_old }} грн.
+                                        </div>
+                                        <div class="product-page-price-discounted">
+                                            {{ product.price }} грн.
+                                        </div>
+                                    {% else %}
+                                        <div class="product-page-price-standard">
+                                            {{ product.price }} грн.
+                                        </div>
                                     {% endif %}
-                                </p>
+<!--                                    {% if product.discount %}-->
+<!--                                        <button type="submit" id="submit_order_btn" class="btn btn-success service-page-discount-box"-->
+<!--                                                data-toggle="modal" data-target="#SendOrderService">-->
+<!--                                            <div style="font-size: 10px;margin-top: -10px;">скидка</div>-->
+<!--                                            <div>{{ product.discount }}%</div>-->
+<!--                                        </button>-->
+<!--                                    {% endif %}-->
+<!--                                </p>-->
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden" class="form-control" name="number" id="number"
+                                               value="1" min="0" max="10" step="1" pattern="\d+">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" id="submit_btn" class="btn btn-success btn-buy btn-buy-page-product" data-backdrop="static" data-keyboard="false"
+                                                data-toggle="modal" data-target="#SendProductToBasket"
+                                                data-product_id = "{{ product.id }}"
+                                                data-name = "{{ product.name }}"
+                                                data-price = "{{ product.price }}"
+                                        >
+                                            Купить
+                                            <i class="fas fa-shopping-cart buy-cart"></i>
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -64,34 +95,6 @@
                                 <span>Посмотреть телефон</span>
                                 <span class="hidden hidden-info">+38 {{ cosmetolog.order_phone }}</span>
                             </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div>
-                                <form id ="form_buying_product" class="form-inline"
-                                      action="{% url 'basket_adding' %}">{% csrf_token %}
-                                    <div class="form-group">
-                                        <input type="number" class="form-control" name="number" id="number">
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" id="submit_btn" class="btn btn-success btn-buy"
-                                                data-product_id = "{{ product.id }}"
-                                                data-name = "{{ product.name }}"
-                                                data-price = "{{ product.price }}"
-                                        >
-                                            Оформить заказ
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- Modal request btn Send Request -->
-{#                            <div class="form-group">#}
-{#                                <button type="submit" id="submit_order_btn" class="btn btn-success btn-order"#}
-{#                                        data-toggle="modal" data-target="#SendOrderService">#}
-{#                                    Отправить запрос#}
-{#                                </button>#}
-{#                            </div>#}
                         </div>
                     </div>
                 </div>
@@ -132,22 +135,31 @@
 
 
         <!-- Modal request btn Send Order -->
-{#        <div class="row">#}
-{#            <div class="col-lg-12">#}
-{#                <div class="form-group">#}
-{#                    <button type="submit" id="submit_order_btn" class="btn btn-success btn-order"#}
-{#                            data-toggle="modal" data-target="#SendOrderService">#}
-{#                        Отправить запрос#}
-{#                    </button>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <button type="submit" id="submit_order_btn" class="btn btn-success btn-order"
+                            data-toggle="modal" data-target="#SendProductToBasket">
+                        Отправить запрос
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Modal form html -->
+<!--    <div class="col-lg-12">-->
+<!--        {% include 'cosmetologs/form_send-service-order_item.html' %}-->
+<!--    </div>-->
 
+
+    <!-- Modal form html -->
+    <div class="col-lg-12">
+        {% include 'cosmetologs/modal_form_send-product-to-basket.html' %}
+    </div>
 
         <!-- Modal form html -->
-    <div class="col-lg-12">
-        {% include 'cosmetologs/form_map_modal.html' %}
-    </div>
+<!--    <div class="col-lg-12">-->
+<!--        {% include 'cosmetologs/form_map_modal.html' %}-->
+<!--    </div>-->
 {% endblock %}

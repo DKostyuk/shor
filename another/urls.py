@@ -12,17 +12,20 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.urls import include, re_path
 from django.contrib import admin
 from another import views
+from django.views.generic import TemplateView
+
 
 
 urlpatterns = [
 
-    url(r'^another/$', views.another, name='another'),
-    url(r'^another/(?P<slug>[\w-]+)/$', views.trick_item, name='trick_item'),
-    url(r'^another/crm/product/$', views.crm_product_item, name='crm_product_item'),
-    url(r'^another/crm/product/(?P<slug>[\w-]+)/$', views.crm_product_item, name='crm_product_item'),
+    re_path(r'^another/$', views.another, name='another'),
+    re_path(r'^another/(?P<slug>[\w-]+)/$', views.trick_item, name='trick_item'),
+    re_path(r'^another/crm/product/$', views.crm_product_item, name='crm_product_item'),
+    re_path(r'^another/crm/product/(?P<slug>[\w-]+)/$', views.crm_product_item, name='crm_product_item'),
+    re_path(r'^fullcalendar/', TemplateView.as_view(template_name="fullcalendar.html"), name='fullcalendar'),
     # url(r'^registration/$', views.registration, name='registration'),
     # url(r'^registration_profile/$', views.registration_profile, name='registration_profile'),
     # url(r'^registration_profile/(?P<email_1>[.@0-9A-Za-z_\-]+)/$', views.registration_profile, name='registration_profile'),

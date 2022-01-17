@@ -12,6 +12,8 @@ class ProductCategory(models.Model):
     slug = models.SlugField(max_length=16, unique=True)
     description = RichTextField(blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
+    product_category_logo_image = models.ImageField(upload_to='logo_images/', default='logo_images/Светлана Лескова.png',
+                                                    help_text="optimal size  600x450 - Need to be checked")
 
     def __str__(self):
         return "%s" % self.name
@@ -67,6 +69,7 @@ class Product(models.Model):
     name = models.CharField(max_length=64, blank=True, null=True, default=None)
     name_pl = models.CharField(max_length=64, blank=True, null=True, default=None)
     slug = models.SlugField(max_length=64, unique=True)
+    price_old = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     discount = models.IntegerField(default=0)
     category = models.ForeignKey(ProductCategory, blank=True, null=True, default=None, on_delete=models.CASCADE)

@@ -6,7 +6,13 @@ from cosmetologs.models import ServiceProductImage
 def product(request, slug1, slug):
     product = Product.objects.get(slug=slug)
     cosmetolog = Cosmetolog.objects.get(slug=slug1)
-    cosmetolog_address = str(cosmetolog.street_cosmetolog.display_address) + ', ' + cosmetolog.house_cosmetolog
+    # print('-----------', vars(cosmetolog))
+    # print('ЧТО-то вместо адресса', str(cosmetolog.street_cosmetolog.display_address))
+    if cosmetolog.street_cosmetolog is None:
+        cosmetolog_address = "Работа по вызову"
+    else:
+        cosmetolog_address = str(cosmetolog.street_cosmetolog.display_address) + ', ' + cosmetolog.house_cosmetolog
+    # print('ЧТО-то вместо адресса', cosmetolog_address)
 
 
     service_products_images = ServiceProductImage.objects.filter(is_active=True, is_main=True,

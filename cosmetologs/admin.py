@@ -6,6 +6,7 @@ class CosmetologCategoryInline(admin.TabularInline):
     model = CosmetologCategory
     extra = 0
 
+
 # class SubCosmetologCategoryInline(admin.TabularInline):
 #     model = SubCosmetologCategory
 #     extra = 0
@@ -22,6 +23,7 @@ class CosmetologAddressAdmin(admin.ModelAdmin):
     class Meta:
         model = CosmetologAddress
 
+
 admin.site.register(CosmetologAddress, CosmetologAddressAdmin)
 
 
@@ -30,6 +32,7 @@ class CosmetologEmailAdmin(admin.ModelAdmin):
 
     class Meta:
         model = CosmetologEmail
+
 
 admin.site.register(CosmetologEmail, CosmetologEmailAdmin)
 
@@ -40,17 +43,20 @@ class CosmetologPhoneAdmin(admin.ModelAdmin):
     class Meta:
         model = CosmetologPhone
 
+
 admin.site.register(CosmetologPhone, CosmetologPhoneAdmin)
 
 
 class CosmetologAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Cosmetolog._meta.fields]
+    # list_display = [field.name for field in Cosmetolog._meta.fields]
+    list_display = ['id', "name", "logo_image", "order_phone", "site_url"]
     prepopulated_fields = {'slug': ('name',)}
     inlines = [CosmetologCategoryInline]
     inlines = [CosmetologAddressInline]
 
     class Meta:
         model = Cosmetolog
+
 
 admin.site.register(Cosmetolog, CosmetologAdmin)
 
@@ -73,6 +79,7 @@ class CategoryForCosmetologAdmin(admin.ModelAdmin):
     class Meta:
         model = CategoryForCosmetolog
 
+
 admin.site.register(CategoryForCosmetolog, CategoryForCosmetologAdmin)
 
 
@@ -82,6 +89,7 @@ class SubCategoryForCosmetologAdmin(admin.ModelAdmin):
 
     class Meta:
         model = SubCategoryForCosmetolog
+
 
 admin.site.register(SubCategoryForCosmetolog, SubCategoryForCosmetologAdmin)
 
@@ -99,6 +107,7 @@ class ServiceProductAdmin(admin.ModelAdmin):
     class Meta:
         model = ServiceProduct
 
+
 admin.site.register(ServiceProduct, ServiceProductAdmin)
 
 
@@ -109,3 +118,23 @@ admin.site.register(ServiceProduct, ServiceProductAdmin)
 #         model = SubscriberCosmetolog
 #
 # admin.site.register(SubscriberCosmetolog, SubscriberCosmetologAdmin)
+
+
+class CosmetologAddFileAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in CosmetologAddFile._meta.fields]
+
+    class Meta:
+        model = CosmetologAddFile
+
+
+admin.site.register(CosmetologAddFile, CosmetologAddFileAdmin)
+
+
+class ServiceAddFileAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in ServiceAddFile._meta.fields]
+
+    class Meta:
+        model = ServiceAddFile
+
+
+admin.site.register(ServiceAddFile, ServiceAddFileAdmin)

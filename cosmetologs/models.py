@@ -10,6 +10,7 @@ import openpyxl
 # from django.utils.text import slugify
 from uuslug import slugify
 # from django.utils import unique_slug_generator
+from django.utils import timezone
 
 
 class CategoryForCosmetolog(models.Model):
@@ -78,9 +79,11 @@ class Cosmetolog(models.Model):
     name = models.CharField(max_length=128, blank=True, null=True, default=None)
     slug = models.SlugField(max_length=128, unique=True)
     type = models.ForeignKey(CosmetologType, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    type_text = models.CharField(max_length=128, blank=True, null=True, default=None)
     city_cosmetolog = models.ForeignKey(Address, blank=True, null=True, default=None, on_delete=models.CASCADE)
     index_cosmetolog = models.CharField(max_length=5, blank=True, null=True, default=None)
-    street_cosmetolog = models.ForeignKey(Address, related_name='street_cosmetolog', blank=True, null=True, default=None, on_delete=models.CASCADE)
+    street_cosmetolog = models.ForeignKey(Address, related_name='street_cosmetolog', blank=True, null=True,
+                                          default=None, on_delete=models.CASCADE)
     house_cosmetolog = models.CharField(max_length=8, blank=True, null=True, default=None)
     order_email = models.EmailField(blank=True, null=True, default=None)
     order_phone = models.CharField(max_length=13, blank=True, null=True, default=None)
@@ -93,7 +96,8 @@ class Cosmetolog(models.Model):
     description_service = models.CharField(max_length=255, blank=True, null=True, default=None)
     description_product = models.CharField(max_length=255, blank=True, null=True, default=None)
     headline = models.CharField(max_length=128, blank=True, null=True, default=None)
-    working_hours = models.CharField(max_length=128, blank=True, null=True, default=None)
+    working_hours = RichTextField(blank=True, null=True, default=None,
+                                  help_text="указать дни недели и время от и до - Понедельник 10:00 -15:00")
     rating = models.DecimalField(max_digits=3, decimal_places=0, default=0)
     review_count = models.IntegerField(default=0)
     order_nmb = models.IntegerField(default=0)
@@ -166,8 +170,8 @@ class CosmetologCategory(models.Model):
 class ServiceProduct(models.Model):
     name = models.CharField(max_length=64, blank=True, null=True, default=None)
     slug = models.SlugField(max_length=64, unique=True)
-    price01 = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    price02 = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    price01 = models.DecimalField(max_digits=10, decimal_places=0, default=0)
+    price02 = models.DecimalField(max_digits=10, decimal_places=0, default=0)
     price_avg = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # (price01+price02)/2
     price_action = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     discount = models.IntegerField(default=0)
@@ -177,6 +181,7 @@ class ServiceProduct(models.Model):
                                     on_delete=models.CASCADE)
     description = RichTextField(blank=True, null=True, default=None)
     short_description = models.TextField(blank=True, null=True, default=None)
+    duration = models.CharField(max_length=18, blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
     is_visible = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
@@ -184,8 +189,8 @@ class ServiceProduct(models.Model):
     modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.CASCADE)
 
     def __str__(self):
-        # return "%s" % self.name
-        return "%s, %s" % (self.id, self.name)
+        return "%s" % self.name
+        # return "%s, %s" % (self.id, self.name)
 
     class Meta:
         verbose_name = 'ServiceProduct'
@@ -230,6 +235,8 @@ def create_slug(sender, instance):
 
 
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
+    # if not instance.headline:
+    #     instance.headline = instance.description[:70]
     if not instance.slug:
         instance.slug = create_slug(sender, instance)
         # instance.slug = unique_slug_generator(instance)
@@ -280,3 +287,133 @@ class CosmetologAddress(models.Model):
         # self.city_id = 4
 
         super(CosmetologAddress, self).save(*args, **kwargs)
+
+
+class CosmetologAddFile(models.Model):
+    comments = models.CharField(max_length=124, blank=True, null=True, default=None)
+    cosmetolog_file = models.FileField(upload_to='product_file_add/')
+    is_active = models.BooleanField(default=False)
+    start_import = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "%s" % self.id
+        # return "%s, %s" % (self.price_avg, self.name)
+
+    def __unicode__(self):
+        return "%s" % self.id
+        # return "%s, %s" % (self.price_avg, self.name)
+
+    class Meta:
+        verbose_name = 'CosmetologAddFile'
+        verbose_name_plural = 'CosmetologAddFiles'
+
+    def save(self, *args, **kwargs):
+        file_opened = openpyxl.load_workbook(filename=self.cosmetolog_file)  # put attention for Excel file version
+        active_sheet = file_opened.active
+        data_file = active_sheet.values
+        data_file = list(data_file)
+        for i in range(0, len(data_file)):
+            site_url = data_file[i][0]
+            print('site-url-------------', site_url)
+            name = data_file[i][1]
+            type_text = data_file[i][2]
+            logo_image = data_file[i][4]
+            description = data_file[i][5]
+            description_region = data_file[i][6]
+            working_hours = data_file[i][7]
+            order_phone = data_file[i][8]
+            type = CosmetologType.objects.get(id=1)
+            print('logo', logo_image)
+            new_cosmetolog = Cosmetolog(
+                site_url=site_url,
+                name=name,
+                description=description,
+                description_region=description_region,
+                working_hours=working_hours,
+                order_phone=order_phone,
+                logo_image=logo_image,
+                type_text=type_text,
+                type=type,
+                is_active=True,
+                is_visible=True,
+                registration_time=timezone.now()
+            )
+            new_cosmetolog.save()
+
+            super(CosmetologAddFile, self).save(*args, **kwargs)
+
+
+class ServiceAddFile(models.Model):
+    comments = models.CharField(max_length=124, blank=True, null=True, default=None)
+    service_file = models.FileField(upload_to='product_file_add/')
+    is_active = models.BooleanField(default=False)
+    start_import = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "%s" % self.id
+        # return "%s, %s" % (self.price_avg, self.name)
+
+    def __unicode__(self):
+        return "%s" % self.id
+        # return "%s, %s" % (self.price_avg, self.name)
+
+    class Meta:
+        verbose_name = 'ServiceAddFile'
+        verbose_name_plural = 'ServiceAddFiles'
+
+    def save(self, *args, **kwargs):
+        file_opened = openpyxl.load_workbook(filename=self.service_file)  # put attention for Excel file version
+        active_sheet = file_opened.active
+        data_file = active_sheet.values
+        data_file = list(data_file)
+        for i in range(0, len(data_file)):
+            cosmetolog = Cosmetolog.objects.get(site_url=data_file[i][0])
+            print('cosmetolog ID -------', cosmetolog)
+            # print('site-url-------------', site_url)
+            service_name = data_file[i][1]
+            print('service name  -------', service_name)
+            # service_price = data_file[i][2]
+            service_price = int(data_file[i][2].replace(' грн', ''))
+            # print('price ----', service_price, type(service_price))
+            duration = data_file[i][3]
+            description = data_file[i][4]
+            category = CategoryForCosmetolog.objects.get(id=data_file[i][7])
+            subcategory = SubCategoryForCosmetolog.objects.get(id=data_file[i][8])
+            new_service = ServiceProduct(
+                cosmetolog=cosmetolog,
+                name=service_name,
+                description=description,
+                duration=duration,
+                price01=service_price,
+                price02=service_price,
+                category = category,
+                subcategory = subcategory,
+                # logo_image=logo_image,
+                is_active=True,
+                is_visible=True,
+            )
+            new_service.save()
+            try:
+                service_product = ServiceProduct.objects.get(cosmetolog=cosmetolog, name=service_name,
+                                                             price01=service_price, duration=duration)
+                print('111111111111111111111------------', service_product)
+            except:
+                service_product = ServiceProduct.objects.filter(cosmetolog=cosmetolog, name=service_name)
+                print('222222222222222222222222222------------', service_product)
+            # print('qwerty -------------', service_product)
+            image = data_file[i][6]
+            new_service_image = ServiceProductImage(
+                service_product=service_product,
+                image=image,
+                is_active=True,
+                is_main=True,
+            )
+            new_service_image.save()
+
+            super(ServiceAddFile, self).save(*args, **kwargs)

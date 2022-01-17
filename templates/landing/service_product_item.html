@@ -17,12 +17,20 @@
             </div>
             <div class="service-product-s-description">
                 <p>
-                {{ service_product_image.service_product.short_description|truncatechars_html:70 }}
+                    {% if service_product_image.service_product.short_description %}
+                        {{ service_product_image.service_product.short_description|truncatechars_html:50 }}
+                    {% else %}
+                        {{ service_product_image.service_product.description|truncatechars_html:50 }}
+                    {% endif %}
                 </p>
             </div>
 
             <div class="product-price">
-                {{ service_product_image.service_product.price01 }} - {{ service_product_image.service_product.price02 }} грн.
+                {% if service_product_image.service_product.price01 == service_product_image.service_product.price02 %}
+                    {{ service_product_image.service_product.price01 }} грн.
+                {% else %}
+                    {{ service_product_image.service_product.price01 }} - {{ service_product_image.service_product.price02 }} грн.
+                {% endif %}
             </div>
         </div>
     </a>

@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
-from django.core.mail import EmailMessage,EmailMultiAlternatives
+from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.shortcuts import render
 from cosmetologs.models import *
 from orders.forms import ServiceOrderForm
@@ -12,19 +12,35 @@ from django.template.loader import render_to_string
 from django.template import Context, Template
 
 
-
 def cosmetolog(request, slug):
     cosmetolog = Cosmetolog.objects.get(slug=slug)
-    cosmetolog_address = str(cosmetolog.street_cosmetolog.display_address) + ', ' + cosmetolog.house_cosmetolog
-    services = ServiceProduct.objects.filter(cosmetolog = cosmetolog.id)
+    try:
+        cosmetolog_address = str(cosmetolog.street_cosmetolog.display_address) + ', ' + cosmetolog.house_cosmetolog
+    except:
+        cosmetolog_address = False
+    cosmetolog.working_hours_first = cosmetolog.working_hours[
+                                     cosmetolog.working_hours.find('Понеде'):cosmetolog.working_hours.find('Среда')]
+    cosmetolog.working_hours_first = cosmetolog.working_hours_first.replace('Вторник', '<br>Вторник')
+    cosmetolog.working_hours_second = cosmetolog.working_hours[
+                                      cosmetolog.working_hours.find('Среда'):cosmetolog.working_hours.find('Пятница')]
+    cosmetolog.working_hours_second = cosmetolog.working_hours_second.replace('Четверг', '<br>Четверг')
+    cosmetolog.working_hours_third = cosmetolog.working_hours[cosmetolog.working_hours.find('Пятница'):]
+    cosmetolog.working_hours_third = cosmetolog.working_hours_third.replace('Суббота', '<br>Суббота')
+    cosmetolog.working_hours_third = cosmetolog.working_hours_third.replace('Воскр', '<br>Воскр')
+    if cosmetolog.site_url[:15] == 'https://elmy.ua':
+        cosmetolog_site = False
+    else:
+        cosmetolog_site = True
+    print('type ----', cosmetolog_site, '\n', type(cosmetolog_site))
+    services = ServiceProduct.objects.filter(cosmetolog=cosmetolog.id)
     service_products_images = ServiceProductImage.objects.filter(is_active=True, is_main=True,
                                                                  service_product__is_active=True,
                                                                  service_product__is_visible=True,
                                                                  service_product__cosmetolog=cosmetolog.id)
     products = Product.objects.filter(cosmetolog=cosmetolog.id)
     products_images = ProductImage.objects.filter(is_active=True, is_main=True,
-                                                                 product__is_active=True,
-                                                                 product__cosmetolog=cosmetolog.id)
+                                                  product__is_active=True,
+                                                  product__cosmetolog=cosmetolog.id)
     # Need to do only first three or think about all service - Button
     session_key = request.session.session_key
     if not session_key:
@@ -50,9 +66,9 @@ def cosmetolog(request, slug):
             subject = letter_template.subject + ' --- ' + request.POST.get('subject', '')
             template = Template(letter_template.message)
             context = Context({"from_name": request.POST.get('from_name', ''),
-                              "city_sender": request.POST.get('city_sender', ''),
-                              "email_sender": request.POST.get('email_sender', ''),
-                              "phone_sender": request.POST.get('phone_sender', '')
+                               "city_sender": request.POST.get('city_sender', ''),
+                               "email_sender": request.POST.get('email_sender', ''),
+                               "phone_sender": request.POST.get('phone_sender', '')
                                })
             message = render_to_string('cosmetologs/email_request_to_cosmetolog.html', {
                 'template_message': template.render(context),
@@ -77,11 +93,20 @@ def service(request, slug2, slug1, slug):
 
     service_product = ServiceProduct.objects.get(slug=slug)
     cosmetolog = Cosmetolog.objects.get(slug=slug2)
-    cosmetolog_address = str(cosmetolog.street_cosmetolog.display_address) + ', ' + cosmetolog.house_cosmetolog
+    try:
+        cosmetolog_address = str(cosmetolog.street_cosmetolog.display_address) + ', ' + cosmetolog.house_cosmetolog
+    except:
+        cosmetolog_address = False
     service_products_images = ServiceProductImage.objects.filter(is_active=True, is_main=True,
                                                                  service_product__is_active=True,
                                                                  service_product__is_visible=True,
-                                                                 service_product__cosmetolog=cosmetolog.id).exclude(service_product=service_product)
+                                                                 service_product__cosmetolog=cosmetolog.id).exclude(
+        service_product=service_product)
+
+    k = 0
+    for i in service_product.serviceproductimage_set.all():
+        k = +1
+    print('--------------k=', k)
     products_images = ProductImage.objects.filter(is_active=True, is_main=True,
                                                   product__is_active=True,
                                                   product__cosmetolog=cosmetolog.id)

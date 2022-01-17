@@ -3,16 +3,6 @@
 
 {% block content %}
 
-{#    <div class="large-offset-3 large-6 columns">#}
-{#        <form action="/registration/" method="post">#}
-{#            {% csrf_token %}#}
-{##}
-{#            {{ form }}#}
-{##}
-{#            <input class="button" type="submit" value="Зарегистрироваться">#}
-{#        </form>#}
-{#    </div>#}
-
     {% if registration_success %}
         <div class="general-container-background">
             <div class="container top-container">
@@ -28,51 +18,30 @@
         <div class="general-container-background">
             <div class="container top-container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <h1 class="title">Наш магазин скоро откроется!<br>
-                        Оставляйте Ваш имейл в форме ниже</h1>
-                        <div>
-                            <form action="/registration/" method="post" class="text-center col-lg-6 col-lg-offset-3">
-                                {% csrf_token %}
-                                <div>
-                                    {% for cosmetolog_type in cosmetolog_types %}
-                                        <input name="cosmetolog_type" type="radio" value="{{ cosmetolog_type }}" required="required" > {{ cosmetolog_type }}
-{#                                    <input name="cosmetolog_type" type="radio" value="dzen"> Дзен#}
-{#                                    <input name="cosmetolog_type" type="radio" value="pdzen" checked> Полный дзен#}
-                                    {% endfor %}
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" name="{{ form.email.name }}"
-                                           class="form-control" placeholder="Email" required>
-                                </div>
+                    <div class="col-lg-8 offset-lg-2 login-page">
+                        <h3 class="text-center">Регистрация</h3>
 
-                                {% if registration_error %}
-                                    <label class="error">{{ registration_error }}</label>
-                                {% endif %}
-
-                                <div class="form-group">
-                                    <input name="cosmetolog_name"
-                                           class="form-control" placeholder="Cosmetolog Name please" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <input name="{{ form.username.name }}"
-                                           class="form-control" placeholder="Imię lub nickname" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <input name="{{ form.password1.name }}" type="password"
-                                           class="form-control" placeholder="Hasło" required>
-                                </div>
-
-                                <div class="form-group">
-                                <input name="{{ form.password2.name }}" type="hidden" class="form-control"
-                                       placeholder="Powtórz Hasło">
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-orange">Отправить</button>
-                            </form>
-
-                        </div>
+                            {% if login_error %}
+                        <label class="error">{{ login_error }}</label>
+                            {% endif %}
+                        <form action="/registration/" method="post" class="text-center col-lg-6 offset-lg-3">{% csrf_token %}
+                            <div class="form-group">
+                                <input type="email" name="{{ form.email.name }}"
+                                       class="form-control" placeholder="Эл. почта" required>
+                            </div>
+                             <div class="form-group">
+                                <input name="{{ form.password1.name }}" type="password"
+                                       class="form-control" placeholder="Пароль" required>
+                            </div>
+                            <div class="form-group">
+                            <input name="{{ form.password2.name }}" type="hidden" class="form-control"
+                                   placeholder="Повторить Пароль">
+                            </div>
+                            <label>Регистрируясь, вы соглашаетесь с пользовательским соглашением</label>
+                            <button type="submit" class="btn btn-primary btn-orange btn-registration"
+                            name="_ask_registration">Зарегистрироваться</button>
+                        </form>
+                        <a href="/login/"><div class="label round secondary col-lg-6 offset-lg-3 link-login">Уже Зарегистрирован</div></a>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+
+
+
+
+<div class="general-container-background">
+    <div class="container top-container">
+        <div class="row">
+
+            {% if auto_error %}
+                <label class="error">{{ registration_error }}</label>
+            {% endif %}
+
+            {% if authorization_error %}
+                <label class="error">{{ authorization_error }}</label>
+            {% endif %}
+
+            <div class="col-lg-12">
+                {% if  profile_success %}
+                    <div class="col-lg-12 success-message-notification">
+                        Profile was updated<br>You can make any change here
+                    </div>
+                {% endif %}
+                    <h1> Я ТУТА УРА   КАБИНЕТ    555555555555555555</h1>
+                        {{ subscriber_current }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -13,11 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.urls import include, re_path
 from django.contrib import admin
 from orders import views
 
 urlpatterns = [
-   url(r'^basket_adding/', views.basket_adding, name='basket_adding'),
-   url(r'^checkout/', views.checkout, name='checkout'),
+   re_path(r'^basket_adding/', views.basket_adding, name='basket_adding'),
+   re_path(r'^checkout/', views.checkout, name='checkout'),
 ]

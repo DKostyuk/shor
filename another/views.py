@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import *
 from products.models import *
-
+from django.urls import reverse
 import random
 
 
@@ -115,9 +115,32 @@ def check_dealer_totals(dealer_totals):
     #
 
 
+def calendar_date_picker(request, slug=None):
+    asas = "QWERTYyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+    form = CalendarTrainingForm()
+    if request.method == 'POST':
+        form = CalendarTrainingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = CalendarTrainingForm()
+            return redirect('another/' + slug + '.html'), form
+    else:
+        form = CalendarTrainingForm()
+    return asas, form
+
+
 def trick_item(request, slug=None):
     trick = AnotherTrick.objects.get(slug=slug, is_active=True)
     url_name = slug.replace('-', '_')
+    if slug == "calendar":
+        # base_url = reverse('trick_item')
+        # print(123456789, base_url)
+        asas, form = calendar_date_picker(request, slug)
+    if slug == "scheduler":
+        asas = 'URA - COPETS VSEM'
+        # base_url = reverse('trick_item')
+        print(123456789, asas)
+        # asas, form = calendar_date_picker(request, slug)
     if slug == "file-upload-regular-user":
         form = ProductFileCSVForm()
         print('9999', form)
@@ -128,6 +151,7 @@ def trick_item(request, slug=None):
                 form.save()
                 return redirect('another')
         else:
+            print('Something went wrong')
             form = ProductFileCSVForm()
     if slug == "crm":
         print()

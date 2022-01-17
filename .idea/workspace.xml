@@ -2,354 +2,293 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addresses/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addresses/migrations/0002_address.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addresses/migrations/0003_auto_20171008_1303.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addresses/migrations/0004_address_parent_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addresses/migrations/0005_auto_20171008_1823.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addresses/migrations/0006_address_type_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addresses/migrations/0007_cosmetologaddress.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addresses/migrations/0008_auto_20171009_1155.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addresses/migrations/0009_addressaddfile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addresses/migrations/0010_auto_20171012_1843.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addresses/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/another/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/another/migrations/0002_auto_20180425_1929.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/another/migrations/0003_productfilecsv_document.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/another/migrations/0004_testeditor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/another/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogs/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogs/migrations/0002_auto_20171101_1303.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0002_serviceproduct_is_visible.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0003_cosmetologaddress.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0004_auto_20171021_1853.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0005_subcategoryforcosmetolog.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0006_auto_20171101_1319.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0007_cosmetologcategory_subcategory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0008_serviceproduct_subcategory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0009_auto_20180519_0841.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0010_auto_20180519_0847.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0011_auto_20180529_2047.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0012_auto_20180529_2053.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0013_auto_20180531_1756.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0014_auto_20180621_1008.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0015_subscribercosmetolog.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0016_auto_20181026_0936.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0017_auto_20181026_0946.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0018_auto_20181214_1425.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0019_auto_20181215_2036.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0020_auto_20181221_1216.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0021_auto_20190118_1822.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0022_auto_20190125_2218.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0023_cosmetolog_working_hours.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0024_auto_20190221_1925.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0025_auto_20190302_1352.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0026_auto_20190302_1358.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0027_auto_20190304_1033.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0028_auto_20190304_1253.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0029_cosmetologaddress_address_type_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/NOTICE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/README.textile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-keystore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-keystore.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-plugin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-plugin.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-service-mgr.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-service-x64.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-service-x86.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-service.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-systemd-pre-exec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-translog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch-translog.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch.in.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch.in.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/config/elasticsearch.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/config/jvm.options" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/config/log4j2.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/_state/global-1.st" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/_state/node-1.st" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/_state/state-0.st" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/_0.cfe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/_0.cfs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/_0.si" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/_1.cfe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/_1.cfs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/_1.si" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/segments_3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/index/write.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/translog/translog-2.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/0/translog/translog.ckp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/_state/state-0.st" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/index/_0.cfe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/index/_0.cfs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/index/_0.si" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/index/segments_3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/index/write.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/translog/translog-2.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/1/translog/translog.ckp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/_state/state-0.st" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/index/_0.cfe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/index/_0.cfs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/index/_0.si" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/index/segments_3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/index/write.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/translog/translog-2.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/2/translog/translog.ckp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/_state/state-0.st" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/index/_0.cfe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/index/_0.cfs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/index/_0.si" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/index/segments_3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/index/write.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/translog/translog-2.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/3/translog/translog.ckp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/_state/state-0.st" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/index/_0.cfe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/index/_0.cfs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/index/_0.si" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/index/segments_3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/index/write.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/translog/translog-2.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/4/translog/translog.ckp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/indices/5hPH86vcSieQ5wfPZFlWnA/_state/state-3.st" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/data/nodes/0/node.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/HdrHistogram-2.1.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/elasticsearch-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/hppc-0.7.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jackson-core-2.8.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jackson-dataformat-cbor-2.8.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jackson-dataformat-smile-2.8.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jackson-dataformat-yaml-2.8.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/java-version-checker-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jna-4.4.0-1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/joda-time-2.9.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jopt-simple-5.0.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/jts-1.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/log4j-1.2-api-2.11.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/log4j-api-2.11.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/log4j-core-2.11.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-analyzers-common-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-backward-codecs-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-core-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-grouping-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-highlighter-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-join-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-memory-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-misc-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-queries-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-queryparser-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-sandbox-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-spatial-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-spatial-extras-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-spatial3d-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/lucene-suggest-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/plugin-cli-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/securesm-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/snakeyaml-1.15.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/spatial4j-0.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/lib/t-digest-3.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/logs/elasticsearch-2018-11-06.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/logs/elasticsearch-2018-11-07.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/logs/elasticsearch.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/logs/elasticsearch_deprecation.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/logs/elasticsearch_index_indexing_slowlog.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/logs/elasticsearch_index_search_slowlog.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/aggs-matrix-stats/aggs-matrix-stats-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/aggs-matrix-stats/plugin-descriptor.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/ingest-common/ingest-common-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/ingest-common/jcodings-1.0.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/ingest-common/joni-2.1.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/ingest-common/plugin-descriptor.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/antlr4-runtime-4.5.1-1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/asm-5.0.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/asm-commons-5.0.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/asm-tree-5.0.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/lang-expression-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/lucene-expressions-6.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/plugin-descriptor.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-expression/plugin-security.policy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-groovy/groovy-2.4.6-indy.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-groovy/lang-groovy-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-groovy/plugin-descriptor.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-groovy/plugin-security.policy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-mustache/compiler-0.9.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-mustache/lang-mustache-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-mustache/plugin-descriptor.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-mustache/plugin-security.policy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-painless/antlr4-runtime-4.5.1-1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-painless/asm-debug-all-5.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-painless/lang-painless-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-painless/plugin-descriptor.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/lang-painless/plugin-security.policy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/parent-join/parent-join-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/parent-join/plugin-descriptor.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/percolator/percolator-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/percolator/plugin-descriptor.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/commons-codec-1.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/commons-logging-1.1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/elasticsearch-rest-client-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/httpasyncclient-4.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/httpclient-4.5.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/httpcore-4.4.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/httpcore-nio-4.4.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/plugin-descriptor.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/plugin-security.policy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/reindex/reindex-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty3/netty-3.10.6.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty3/plugin-descriptor.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty3/plugin-security.policy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty3/transport-netty3-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-buffer-4.1.13.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-codec-4.1.13.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-codec-http-4.1.13.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-common-4.1.13.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-handler-4.1.13.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-resolver-4.1.13.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/netty-transport-4.1.13.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/plugin-descriptor.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/plugin-security.policy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch-5.6.12/modules/transport-netty4/transport-netty4-5.6.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0002_auto_20171023_1632.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0003_slidermain_position.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0004_auto_20180303_1709.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0005_auto_20180307_2138.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0006_auto_20180307_2147.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0007_auto_20180311_0013.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0008_auto_20180311_1200.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0009_auto_20180311_1230.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0010_auto_20180311_1359.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0011_auto_20180311_1544.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0012_subscriber_company_confirm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0013_letter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0014_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0015_auto_20180419_0705.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0016_training_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0017_remove_training_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0018_training_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0019_traininguser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0020_auto_20180422_2200.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0021_auto_20180422_2232.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0022_letter_phone_sender.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0023_auto_20190221_1925.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0024_auto_20190222_1119.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0002_serviceorder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0003_auto_20171021_1101.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0004_serviceorder_session_key.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0005_auto_20171021_1853.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0006_remove_serviceorder_customer_address.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0007_auto_20171021_2004.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0008_auto_20171101_1303.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0009_order_user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0010_auto_20190226_0932.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0011_auto_20190226_1256.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0002_auto_20171101_1303.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0003_auto_20180206_1831.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0004_auto_20180226_1852.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0005_productcategory_description.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0006_product_name_pl.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0007_auto_20180519_0723.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0008_productaddfile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0009_auto_20180529_0810.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0010_auto_20190219_1559.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20181102_add_ukrKievRaion.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20181102_add_ukrOblast.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20181102_add_ukrOblastCenter.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_01.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Darnitskiy_raion_03.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Desnyanskiy_raion_11.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Dneprovskiy_raion_06.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Goloseevskiy_raion_02.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Micro_Raion_11.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Obolonsliy_raion_04.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Pecherskiy_raion_10.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Podolskiy_raion_05.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Shevchenkovskiy_raion_07.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Solomenskiy_raion_08.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Svyatoshinskiy_raion_09.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/add_ukrOblast.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/address_add_01.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/address_add_02.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/address_add_03.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/address_add_04.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/address_file_add/address_add_05_KrakowDelnica.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/advert_images/Slider_0201_35IC6dH.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/advert_images/Slider_0202_X9Jrk5X.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/advert_images/Slider_0204_d79A8TZ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/advert_images/Slider_0204_j1w4bcC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/advert_images/advert-left_01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/advert_images/advert-right-down_01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/advert_images/advert-right-up_01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/advert_images/advert-right_01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/blogs_images/blog_01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/blogs_images/blog_02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/blogs_images/blog_03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/blogs_images/blog_04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/blogs_images/blog_05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/20181018_check.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/20181018_check_KwRndIc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/20181018_check_jPF26MW.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/DK_logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Desert.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/HWScan00047.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/HWScan00047_LZnbRgz.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Logo_Tetiana.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Penguins.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/acdc-logo-vector-wallpaper.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/projectName.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/03_Hydration_Gel_250_ml_WebSite_534x558.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/04_Dermo_Control_Mask_group_2_WebSite_534x558.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/06_Moisturizing_Cream_for_Oily__Combined_Skin_oil-free_group_WebSite_534_558.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/07_Phyto_Complex_group_2_box_WebSite_534x558.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/08_09_Drying_Treatment_group_2_WebSite_534x558.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_2XRePZ6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_FYU4wYA.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_GZTcjFc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_MhQWeAf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_Ngjksw3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_oaTPoCH.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Chrysanthemum.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DK_nails_01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DK_nails_01_sMknq3A.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DK_nails_02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DK_nails_02_URE1MxB.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DK_nails_03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Extra_Moisturez_250_ml.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Koala.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Lighthouse.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/TK_nails_01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/TK_nails_01_ahd7cu6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/TK_nails_02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/TK_nails_02_NmSqrap.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/WWDK_nails_01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/WWDK_nails_02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/WWDK_nails_03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/training/Sunscreen_Cream_Demi_Make-up_SPF-30_WebSite_534x558.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/uploads/2018/04/11/img-bc7f8fb3d644f78f5ca8ce367dae3109-v.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/uploads/2018/04/11/img-bc7f8fb3d644f78f5ca8ce367dae3109-v_thumb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/static_dev/img/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/password_reset.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/migrations/0005_calendartraining.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0030_cosmetologaddfile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0031_auto_20191031_1130.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0032_auto_20191031_1252.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0033_cosmetolog_type_text.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0034_auto_20191108_1732.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0035_auto_20191112_1155.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0011_product_price_old.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0012_productcategory_product_category_logo_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Alexandra Brow master Kiev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Alexandra_Brow_master_Kiev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Kate Demish.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/O. lya lya.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/make_up_ by_di___.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/your_beauty_agent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Алина Бондарь.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Анна Корниенко.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Анна Савченко.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Валентина Землянская.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Елена Григор.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Елизавета Корж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Есения Или.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Марианна Марусич.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Марина Булах.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Ольга Бондарь.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Рина Смирнова.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Светлана Лескова.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Татьяна Добряк.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Яна Каминська.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_cosmo_file.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_cosmo_file_1.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_cosmo_file_BZ5DcWY.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_cosmo_file_WDjD0lZ.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_BDsNhiI.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_CTC0MNz.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_F01TT2m.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_IIRXZJo.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_KwXb3d4.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_LLJJLsE.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_LNWQtrR.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_QLBMpU6.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_RpNgD7X.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_V4m5eAV.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_W9C6IZZ.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_oEJpUEZ.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_ubEfkdV.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_wgE6VYP.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/001_service_file_ybOzsxU.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/AHA_Skin_Repair_glass_Ngjksw3_ZX5y9g7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Alexandra Brow master Kiev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Alexandra Brow master Kiev_Дневной Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Alexandra Brow master Kiev_Коррекция и Окрашивание Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Alexandra Brow master Kiev_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish_Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish_Дневной Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish_Коррекция и Окрашивание Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish_Макияж для Фотосессии.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish_Моделирование Бровей Пинцетом.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Kate Demish_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/O. lya lya.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/O. lya lya_Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/O. lya lya_Дневной Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/O. lya lya_Коррекция и Окрашивание Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/O. lya lya_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/O. lya lya_Укладка Волос Обычная.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/icon-make-up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/make_up_ by_di___.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/make_up_ by_di____Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/make_up_ by_di____Коррекция и Окрашивание Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/make_up_ by_di____Укладка Волос Обычная.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/your_beauty_agent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/your_beauty_agent_Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/your_beauty_agent_Консультация по Макияжу.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/your_beauty_agent_Макияж для Фотосессии.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/your_beauty_agent_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Nude-макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Аквагрим.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Детский Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Дневной Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Макияж для Особых Случаев.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Макияж для Фотосессии.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Алина Бондарь_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Nude-макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Коррекция Бровей Нитью (Тридинг).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Коррекция Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Коррекция и Окрашивание Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Ламинирование Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Ламинирование Ресниц.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Мужская Коррекция Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Окрашивание Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Корниенко_Окрашивание Ресниц.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Аквагрим.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Вечерняя и Свадебная Прическа.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Детский Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Дневной Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Макияж для Фотосессии.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Мужской Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Анна Савченко_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Валентина Землянская.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Валентина Землянская_Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Валентина Землянская_Коррекция и Окрашивание Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Елена Григор.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Елена Григор_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Елизавета Корж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Елизавета Корж_Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Елизавета Корж_Моделирование Бровей Пинцетом.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Елизавета Корж_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_3D Татуаж Губ.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Волосковый Татуаж Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Дарсонваль-терапия.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Дневной Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Камуфляж Шрамов.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Комбинированный Татуаж Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Компрессионное Обертывание.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Консультация по Макияжу.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Контур Губ с Растушевкой.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Коррекция Перманентного Макияжа.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Лечение Акне.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Макияж для Особых Случаев.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Макияж для Фотосессии.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Мануальная (Механическая) Чистка Лица.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Межресничный Татуаж Век.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Мужской Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Процедуры для Подростковой Кожи.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Пудровый Татуаж Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Татуаж Губ Растушевка.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Есения Или_Татуаж Контура Губ.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Балаяж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Вечерняя и Свадебная Прическа.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Горячее Капсульное Наращивание.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Дневной Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Женская Стрижка - Короткие Волосы.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Кератиновое Выпрямление Волос.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Ленка Пенка_Мужские Стрижки.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марианна Марусич.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марианна Марусич_Дневной Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марианна Марусич_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марина Булах.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марина Булах_Вечерняя и Свадебная Прическа.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марина Булах_Женская Стрижка - Волосы Средней Длины.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марина Булах_Женская Стрижка - Короткие Волосы.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марина Булах_Женская Стрижка.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Марина Булах_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Рина Смирнова.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Рина Смирнова_Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Рина Смирнова_Вечерняя и Свадебная Прическа.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Рина Смирнова_Дневной Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Рина Смирнова_Женская Стрижка - Волосы Средней Длины.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Рина Смирнова_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Алмазная Микродермабразия.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Альгинатная Маска.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Антистрессовый Массаж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Антицеллюлитный Массаж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Вакуумный Массаж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Дневной Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Классический Массаж Спины.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Комбинированная Чистка Лица.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Косметический Массаж Лица.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Креольский Массаж Бамбуковыми Палочками.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Лимфодренажный Массаж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Лифтинг-макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Макияж для Особых Случаев.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Массаж Шейно-воротниковой Зоны.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Пластический Массаж Лица.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Процедура Глубокого Увлажнения Кожи Лица.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Расслабляющий Массаж Лица.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Салициловый Пилинг.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Устранение Темных Кругов под Глазами.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Фруктовый Пилинг.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Химический Пилинг Гликолевой Кислотой.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Электропорация.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Светлана Лескова_Энзимный Пилинг.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Дневной Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Консультация по Макияжу.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Коррекция Перманентного Макияжа.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Макияж для Особых Случаев.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Макияж для Фотосессии.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Межресничный Татуаж Век.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Микроблейдинг.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Мужской Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Мушка.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Окрашивание Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Пудровый Татуаж Бровей.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Татьяна Добряк_Создание Образа.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Блондирование.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Брондирование.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Вечерний Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Вечерняя и Свадебная Прическа.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Детская Стрижка.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Детский Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Дневной Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Женская Стрижка - Волосы Средней Длины.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Женская Стрижка.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Колорирование.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Макияж для Фотосессии.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Плетение Косы.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Пробная Свадебная Прическа.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Свадебный Макияж.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Создание Образа.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/products_images/Яна Каминська_Укладка Волос Обычная.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/another/calendar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/another/scheduler.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/modal_form_send-product-to-basket.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cosmetologs/service_product_item_image.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/activation_link_request.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/button_send_service_request.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/buttons_see.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/cabinet.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/product_line.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/navbar_MegaMenu_train_myself.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/navbar_dropdown_product_lines.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/navbar_mega_menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_delivery section.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_order_table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_payment section.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_user_contact_section.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orders/order_receiver_contact_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/b_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/b_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addresses/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/addresses/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/another/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/another/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/another/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/another/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/another/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b_project/email_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/b_project/email_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/b_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/b_project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cosmetologs/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cosmetologs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cosmetologs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cosmetologs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landing/tokens.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/tokens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search/documents.py" beforeDir="false" afterPath="$PROJECT_DIR$/search/documents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/search/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/static_dev/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/static_dev/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/another/another.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/another/another.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/another/another_trick_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/another/another_trick_item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cosmetologs/cosmetolog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cosmetologs/form_map_modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cosmetologs/form_map_modal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cosmetologs/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cosmetologs/service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/cosmetolog_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/cosmetolog_item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/service_product_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/service_product_item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orders/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product.html" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -377,23 +316,6 @@
   <component name="FavoritesManager">
     <favorites_list name="b_project" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/static_dev/js/scripts.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="271" selection-start-line="271" selection-end-line="271" />
-              <folding>
-                <element signature="e#253#411#0" />
-                <element signature="e#441#608#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -402,176 +324,70 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>get_city_id</find>
-      <find>sear</find>
-      <find>profi</find>
-      <find>search_ajax</find>
-      <find>profil</find>
-      <find>ela</find>
-      <find>address_set</find>
-      <find>active_addresses_towns</find>
-      <find>app</find>
-      <find>set</find>
-      <find>slugif</find>
-      <find>town-simple</find>
-      <find>tow</find>
-      <find>town</find>
-      <find>hover</find>
-      <find>cosmetolog_address</find>
-      <find>cosmetolog-page-name</find>
-      <find>search</find>
-      <find>distr</find>
-      <find>background-color</find>
-      <find>get_sub</find>
-      <find>footer</find>
-      <find>we-found-title</find>
-      <find>search_address</find>
-      <find>navbar_01</find>
-      <find>search_service</find>
-      <find>tags_city_48</find>
-      <find>test</find>
-      <find>font-family:</find>
-      <find>render_to_string</find>
-    </findStrings>
-    <dirStrings>
-      <dir>C:\Users\Dmytro_Kostiuk\PycharmProjects\b_project</dir>
-      <dir>C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\landing</dir>
-      <dir>C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\orders</dir>
-      <dir>C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\b_project</dir>
-      <dir>C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\cosmetologs</dir>
-      <dir>C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates</dir>
-      <dir>C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/templates/landing/service_product_item.html" />
-        <option value="$PROJECT_DIR$/templates/landing/blog_item.html" />
-        <option value="$PROJECT_DIR$/templates/cosmetologs/service_service.html" />
-        <option value="$PROJECT_DIR$/templates/cosmetologs/form_send-cosmetolog-request.html" />
-        <option value="$PROJECT_DIR$/orders/models.py" />
-        <option value="$PROJECT_DIR$/templates/cosmetologs/form_send-service-order_item.html" />
-        <option value="$PROJECT_DIR$/orders/forms.py" />
-        <option value="$PROJECT_DIR$/templates/cosmetologs/service.html" />
-        <option value="$PROJECT_DIR$/templates/products/product_about.html" />
-        <option value="$PROJECT_DIR$/templates/footer.html" />
-        <option value="$PROJECT_DIR$/templates/landing/profile_home.html" />
-        <option value="$PROJECT_DIR$/templates/landing/profile.html" />
-        <option value="$PROJECT_DIR$/templates/landing/reset.html" />
-        <option value="$PROJECT_DIR$/another/views.py" />
-        <option value="$PROJECT_DIR$/templates/landing/password_reset.html" />
-        <option value="$PROJECT_DIR$/templates/landing/password_reset_done.html" />
-        <option value="$PROJECT_DIR$/templates/landing/password_reset_email.html" />
-        <option value="$PROJECT_DIR$/templates/landing/password_reset_complete.html" />
-        <option value="$PROJECT_DIR$/templates/landing/password_reset_confirm.html" />
-        <option value="$PROJECT_DIR$/templates/landing/login.html" />
-        <option value="$PROJECT_DIR$/orders/views.py" />
-        <option value="$PROJECT_DIR$/templates/products/product.html" />
-        <option value="$PROJECT_DIR$/landing/models.py" />
-        <option value="$PROJECT_DIR$/templates/landing/search_address.html" />
-        <option value="$PROJECT_DIR$/templates/landing/search_fields.html" />
-        <option value="$PROJECT_DIR$/landing/forms.py" />
-        <option value="$PROJECT_DIR$/b_project/settings.py" />
-        <option value="$PROJECT_DIR$/addresses/models.py" />
-        <option value="$PROJECT_DIR$/cosmetologs/models.py" />
-        <option value="$PROJECT_DIR$/templates/cosmetologs/cosmetolog.html" />
-        <option value="$PROJECT_DIR$/templates/landing/search_we_found_title.html" />
-        <option value="$PROJECT_DIR$/templates/landing/service_product_item_street.html" />
-        <option value="$PROJECT_DIR$/templates/landing/service_product_item_district.html" />
-        <option value="$PROJECT_DIR$/templates/landing/service_product_item_city.html" />
-        <option value="$PROJECT_DIR$/templates/landing/search_choose_services.html" />
-        <option value="$PROJECT_DIR$/templates/landing/search_choose_districts.html" />
-        <option value="$PROJECT_DIR$/templates/landing/search_choose_cities.html" />
-        <option value="$PROJECT_DIR$/templates/landing/search_choose_streets.html" />
-        <option value="$PROJECT_DIR$/templates/landing/search_recommend.html" />
-        <option value="$PROJECT_DIR$/templates/landing/search_results.html" />
-        <option value="$PROJECT_DIR$/another/urls.py" />
-        <option value="$PROJECT_DIR$/landing/urls.py" />
-        <option value="$PROJECT_DIR$/templates/landing/profile_main.html" />
-        <option value="$PROJECT_DIR$/static/static_dev/js/scripts.js" />
-        <option value="$PROJECT_DIR$/products/views.py" />
-        <option value="$PROJECT_DIR$/cosmetologs/views.py" />
-        <option value="$PROJECT_DIR$/templates/cosmetologs/service_cosmetolog.html" />
-        <option value="$PROJECT_DIR$/addresses/admin.py" />
-        <option value="$PROJECT_DIR$/templates/navbar.html" />
-        <option value="$PROJECT_DIR$/static/static_dev/css/style.css" />
-        <option value="$PROJECT_DIR$/landing/views.py" />
-      </list>
-    </option>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1378" />
-    <option name="height" value="744" />
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="b_project/invalid/Django" />
+    </ignored-facets>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="b_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="b_project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="b_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="b_project" type="462c0819:PsiDirectoryNode" />
-              <item name="addresses" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="1RaxnxPcDbMc6kN9TiV8AzzdTyF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$USER_HOME$/my-app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/landing" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dmytro.k\PycharmProjects\b_project\templates\landing" />
+      <recent name="C:\Users\dmytro.k\PycharmProjects\b_project\templates" />
+      <recent name="C:\Users\dmytro.k\PycharmProjects\b_project\templates\orders" />
+      <recent name="C:\Users\dmytro.k\PycharmProjects\b_project\templates\cosmetologs" />
+      <recent name="C:\Users\Dmytro Kostyuk\PycharmProjects\b_project\templates\another" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\cosmetologs" />
       <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\landing" />
       <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates" />
       <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\landing\main" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\static\static_dev\css\fonts" />
-      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\landing" />
-      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\products" />
-      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\templates\cosmetologs" />
-      <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\b_project\static\static_dev\css" />
-    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Django server.b_project">
+  <component name="RunManager" selected="Python.models">
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -680,18 +496,7 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Django server.b_project" />
-      <item itemvalue="Django tests.Test: landing" />
       <item itemvalue="Python.models" />
       <item itemvalue="Python.urls" />
     </list>
@@ -699,10 +504,10 @@
       <list>
         <item itemvalue="Python.urls" />
         <item itemvalue="Python.models" />
-        <item itemvalue="Django tests.Test: landing" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -717,6 +522,39 @@
       <workItem from="1563871065183" duration="631000" />
       <workItem from="1569348398529" duration="1338000" />
       <workItem from="1569908530139" duration="1979000" />
+      <workItem from="1569919184003" duration="1231000" />
+      <workItem from="1569930413217" duration="4209000" />
+      <workItem from="1569938524357" duration="605000" />
+      <workItem from="1572264796324" duration="1133000" />
+      <workItem from="1572360956468" duration="20545000" />
+      <workItem from="1572625274203" duration="1787000" />
+      <workItem from="1572628653075" duration="709000" />
+      <workItem from="1572746380357" duration="6607000" />
+      <workItem from="1572957383096" duration="4318000" />
+      <workItem from="1572971606619" duration="1176000" />
+      <workItem from="1573057452111" duration="1895000" />
+      <workItem from="1573225496385" duration="6795000" />
+      <workItem from="1573542629138" duration="12854000" />
+      <workItem from="1574156357723" duration="5519000" />
+      <workItem from="1578718324537" duration="961000" />
+      <workItem from="1580217745577" duration="878000" />
+      <workItem from="1581050769421" duration="1419000" />
+      <workItem from="1586690817627" duration="3757000" />
+      <workItem from="1586947089030" duration="10323000" />
+      <workItem from="1587449216471" duration="12461000" />
+      <workItem from="1588087051725" duration="5293000" />
+      <workItem from="1588664428133" duration="1936000" />
+      <workItem from="1588961291773" duration="4249000" />
+      <workItem from="1589463925230" duration="3958000" />
+      <workItem from="1589523801192" duration="1213000" />
+      <workItem from="1589549511700" duration="1205000" />
+      <workItem from="1590264564071" duration="600000" />
+      <workItem from="1590391760247" duration="1812000" />
+      <workItem from="1590497174012" duration="613000" />
+      <workItem from="1590692073210" duration="2646000" />
+      <workItem from="1593613541514" duration="4022000" />
+      <workItem from="1593937419291" duration="1305000" />
+      <workItem from="1594792414288" duration="637000" />
     </task>
     <servers />
   </component>
@@ -725,408 +563,42 @@
       <configuration name="Test: landing" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4886000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30273142" />
-      <window_info id="Structure" order="1" weight="0.24962178" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.4248366" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32843137" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32843137" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49707174" visible="true" weight="0.37091503" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50292826" weight="0.37254903" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Data View" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.3290469" />
-      <window_info anchor="right" id="SciView" order="5" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31316188" />
-      <window_info id="Structure" order="1" weight="0.24962178" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.24673203" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32843137" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32843137" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49707174" weight="0.31535947" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50292826" weight="0.37254903" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3290469" />
-      <window_info anchor="right" id="Data View" order="4" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/landing/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/search_address.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python371/Lib/site-packages/django/db/models/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="504" column="8" selection-start-line="504" selection-start-column="8" selection-end-line="504" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2016.3/system/python_stubs/1661405622/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13855">
-          <caret line="815" column="8" selection-start-line="815" selection-start-column="8" selection-end-line="815" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cosmetologs/forms.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/landing/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/search_fields.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticsearch-5.6.12/config/jvm.options">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1613" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticsearch-5.6.12/config/elasticsearch.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1241" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticsearch-5.6.12/config/log4j2.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1025" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticsearch-5.6.12/bin/elasticsearch">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticsearch-5.6.12/README.textile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3506" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b_project/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="69" selection-start-line="69" selection-start-column="2" selection-end-line="73" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/cosmetolog_item.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cosmetologs/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/service_product_item.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="28" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/service_product_item_district.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="96" selection-start-line="24" selection-start-column="96" selection-end-line="24" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="82" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/service_product_item_street.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="50" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/service_product_item_city.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/search_choose_services.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="53" column="10" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="53" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/search_choose_streets.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/search_recommend.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/search_choose_cities.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="26" column="42" lean-forward="true" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/search_choose_districts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="2" selection-start-line="2" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/search_we_found_title.html" />
-    <entry file="file://$PROJECT_DIR$/templates/landing/search_title_block_list.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/search_results.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/another/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/navbar_01.html" />
-    <entry file="file://$PROJECT_DIR$/templates/landing/search_service_all_cosmetologs_item_list_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-190" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addresses/urls.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/landing/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="60" column="32" lean-forward="true" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/profile_service.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/modal_form-add-service.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/profile_main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="52" column="88" lean-forward="true" selection-start-line="52" selection-start-column="88" selection-end-line="52" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cosmetologs/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="79" column="111" selection-start-line="79" selection-start-column="111" selection-end-line="79" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
-          <caret line="34" selection-start-line="34" selection-end-line="36" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cosmetologs/cosmetolog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cosmetologs/service_cosmetolog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="109" selection-start-line="13" selection-start-column="109" selection-end-line="13" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/products/product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="80" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/landing/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" column="30" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <element signature="e#12004#14010#0" />
-            <element signature="e#15069#15972#0" />
-            <element signature="e#16010#16933#0" />
-            <element signature="e#17498#18183#0" />
-            <element signature="e#18225#18355#0" />
-            <element signature="e#18382#19390#0" />
-            <element signature="e#19460#21382#0" />
-            <element signature="e#21437#21763#0" />
-            <element signature="e#21843#23354#0" />
-            <element signature="e#23462#24447#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addresses/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addresses/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/static_dev/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addresses/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/static_dev/js/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="271" selection-start-line="271" selection-end-line="271" />
-          <folding>
-            <element signature="e#253#411#0" />
-            <element signature="e#441#608#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/landing/views.py</url>
+          <line>747</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/landing/views.py</url>
+          <line>562</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/landing/views.py</url>
+          <line>223</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

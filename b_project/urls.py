@@ -12,25 +12,25 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.urls import include, re_path
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from search import views as search_views
+# from search import views as search_views
 
 
 urlpatterns = [
     # url(r'^ckeditor/', include('ckeditor.urls')),
-    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('landing.urls')),
-    url(r'^', include('products.urls')),
-    url(r'^', include('orders.urls')),
-    url(r'^', include('blogs.urls')),
-    url(r'^', include('cosmetologs.urls')),
-    url(r'^', include('addresses.urls')),
-    url(r'^', include('another.urls')),
-    url(r'^search/', search_views.search, name='search'),
+    re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^', include('landing.urls')),
+    re_path(r'^', include('products.urls')),
+    re_path(r'^', include('orders.urls')),
+    re_path(r'^', include('blogs.urls')),
+    re_path(r'^', include('cosmetologs.urls')),
+    re_path(r'^', include('addresses.urls')),
+    re_path(r'^', include('another.urls')),
+    # url(r'^search/', search_views.search, name='search'),
 ] \
               + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

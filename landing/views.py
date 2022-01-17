@@ -12,67 +12,44 @@ from django.contrib import auth
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.utils.encoding import force_bytes, force_text
+from django.utils.encoding import force_bytes, force_str
 from .tokens import account_activation_token
 from django.core.mail import EmailMessage
 from django.http import HttpResponse
 import datetime
-from django.utils import timezone
 from django.core.mail import send_mail
 from django.conf import settings
 import json
 from django.http import JsonResponse
 import random
-import googlemaps
+# import googlemaps
 
 
 def landing(request):
-    # logo_images = LogoImage.objects.filter(is_active=True, is_main=True)
     name = "DimaKostyuk"
     current_day = "31.05.2017"
     form = SubscriberForm(request.POST or None)
     # username = auth.get_user(request).username
 
     if request.method == "POST" and form.is_valid():
-        # print (request.POST)
-        # print (form.cleaned_data)
         data = form.cleaned_data
-        # print (data["name"])
         new_form = form.save()
 
     return render(request, 'landing/landing.html', locals())
 
 
-def validate_save_user_send_email(request, newuser_form, email_1, username_original, cosmetolog_name, cosmetolog_type):
-    args_1 = {}
-    newuser = newuser_form.save(commit=False)
-    newuser.is_active = False
-    newuser.save()
-    subscriber_current = Subscriber.objects.get(user__username=email_1)
-    subscriber_current.email = email_1
-    subscriber_current.name = username_original
-    subscriber_current.save()
-    new_cosmetolog_type = CosmetologType.objects.get(name=cosmetolog_type)
-    new_cosmetolog = Cosmetolog(name=cosmetolog_name, type=new_cosmetolog_type,
-                                registration_time=timezone.now(), order_email=email_1)
-    new_cosmetolog.save()
-
-
-    new_subscriber_cosmetolog = SubscriberCosmetolog(cosmetolog_name=new_cosmetolog, cosmetolog_id=new_cosmetolog.id,
-                                                     subscriber_name=subscriber_current,
-                                                     subscriber_id=subscriber_current.id)
-    new_subscriber_cosmetolog.save()
-
+def send_user_activation_email(request, newuser, email_1):
     # Email sending code:
+    args_1 = {}
     current_site = get_current_site(request)
     mail_subject = 'Activate your blog account on Site RENEW for example.'
     message = render_to_string('landing/acc_confirmation_email.html', {
         'user': newuser,
         'domain': current_site.domain,
-        'uid': urlsafe_base64_encode(force_bytes(newuser.pk)).decode(),
+        'uid': urlsafe_base64_encode(force_bytes(newuser.pk)),
         'token': account_activation_token.make_token(newuser),
     })
-    to_email = newuser_form.cleaned_data.get('email')
+    to_email = email_1
     email = EmailMessage(mail_subject, message, to=[to_email])
     email.send()
     args_1['registration_success'] = \
@@ -80,53 +57,65 @@ def validate_save_user_send_email(request, newuser_form, email_1, username_origi
     return args_1
 
 
-def registration(request):
-    args = {}
-    form = UserRegistrationForm()
-    cosmetolog_types = CosmetologType.objects.filter(is_active=True)
-    if request.POST:
-        username_original = request.POST.get('username', '')
-        email_1 = request.POST.get('email', '')
-        password_11 = request.POST.get('password1', '')
-        request.POST = request.POST.copy()
-        request.POST['username'] = email_1
-        request.POST['password2'] = password_11
-        newuser_form = UserRegistrationForm(request.POST)
-        cosmetolog_name = request.POST.get('cosmetolog_name', '')
-        cosmetolog_type = request.POST.get('cosmetolog_type', '')
+def validate_save_user(request, newuser_form, email_1):
+    args_1 = {}
+    if newuser_form.is_valid():
+        newuser = newuser_form.save(commit=False)
+        newuser.is_active = False
+        newuser.save()
+        send_user_activation_email(request, newuser, email_1)
+    return args_1
 
-        # Check email is the same or not
-        user_old = User.objects.filter(username=email_1).first()
-        if user_old:
-            if user_old.is_active:
-                args['registration_error'] =\
-                    'THE SAME E-MAIL and Account is active Please, use option FORGET THE PASSWORD'
-                return render(request, 'landing/registration.html', args)
-            else:
-                now_again = '_AGAIN_'+'-'.join(('_'.join(str(datetime.datetime.now()).split(sep=' '))).split(sep=':'))
-                user_old.username = str(user_old.username)+now_again
-                user_old.email = str(user_old.email)+now_again
-                # we have to change also emial in MySubscriber table - everywhere Uniq enail must be (one time)
-                subs_old = Subscriber.objects.filter(email=email_1).first()
-                subs_old.email = str(subs_old.email) + now_again
-                user_old.save()
-                subs_old.save()
-                cosmetolog_old = Cosmetolog.objects.filter(name=cosmetolog_name).first()
-                if cosmetolog_old:
-                    cosmetolog_old.name = str(cosmetolog_name)+now_again
-                    cosmetolog_old.order_email = str(email_1)+now_again
-                    cosmetolog_old.save()
-                validate_save_user_send_email(request, newuser_form, email_1,
-                                              username_original, cosmetolog_name, cosmetolog_type)
-                return redirect('registration_profile')
+
+def activation_link_request(request):
+    username = auth.get_user(request).username
+    if username:
+        print('HELLO WORLD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+    else:
+        email_1 = request.session['email_1']
+        username = email_1
+    if request.POST:
+        print('HERE--------------------------------------')
+        email_1 = request.POST.get('email_1', '')
+        newuser = User.objects.get(username=email_1)
+        send_user_activation_email(request, newuser, email_1)
+        return redirect('registration_profile')
+    print('activation_link_request--------username----------', username)
+    args = {'registration_error_1': 'Указанный Вами адрес ', 'registration_error_2': ' уже зарегистрирован',
+            'registration_error_3': 'Пожалуйста, подтвердите его', 'email_1': username}
+    return render(request, 'landing/activation_link_request.html', args)
+
+
+def registration(request):
+    form = UserRegistrationForm()
+    if request.POST:
+        email_1 = request.POST.get('email', '')
+        if '_ask_activation' in request.POST:
+            print('HERE--------------------------------------')
+            email_1 = request.POST.get('email_1', '')
+            newuser = User.objects.get(username=email_1)
+            send_user_activation_email(request, newuser, email_1)
         else:
-            if newuser_form.is_valid():
-                validate_save_user_send_email(request, newuser_form, email_1,
-                                              username_original, cosmetolog_name, cosmetolog_type)
-                return redirect('registration_profile')
+            password_11 = request.POST.get('password1', '')
+            request.POST = request.POST.copy()
+            request.POST['username'] = email_1
+            request.POST['password2'] = password_11
+            print('pass-2---', request.POST['password2'])
+            newuser_form = UserRegistrationForm(request.POST)
+
+            # Check email is in USER tablet
+            user_old = User.objects.filter(username=email_1).first()
+            if user_old:
+                request.session['email_1'] = email_1
+                return HttpResponseRedirect(reverse(activation_link_request))
             else:
-                form = newuser_form
-                print(form.error_messages)
+                if newuser_form.is_valid():
+                    print('I am am HERE')
+                    validate_save_user(request, newuser_form, email_1)
+                    return redirect('registration_profile')
+                else:
+                    form = newuser_form
+                    print('ERROR----', form.error_messages)
     return render(request, 'landing/registration.html', locals())
 
 
@@ -137,30 +126,48 @@ def registration_profile(request):
 
 def activate(request, uidb64, token):
     try:
-        uid = force_text(urlsafe_base64_decode(uidb64))
+        uid = force_str(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
     if user is not None and account_activation_token.check_token(user, token):
+        # subscriber = Subscriber.objects.get(email=user.email)
+        # subscriber.email_confirm = True
+        # subscriber.save()
         user.is_active = True
+        user.subscriber.email_confirm = True # was added
         user.save()
         auth.login(request, user)
-        profile = Subscriber.objects.get(email=user.email)
-        profile.email_confirm = True
-        profile.save()
-        # return render(request, 'landing/profile.html', locals())
-        return redirect('profile')
-        # return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
+        return redirect('cabinet')
     else:
         return HttpResponse('Activation link is invalid!')
+
+
+def cabinet(request):
+    username = auth.get_user(request).username
+    # form = CosmetologForm(request.POST or None)
+    if username:
+        subscriber_current = Subscriber.objects.filter(email=username).first().email
+        print('----subscriber_current--email --', subscriber_current)
+        print('cabinet Locals- -----', type(locals()))
+        subscriber = Subscriber.objects.get(email=username)
+        print('---Sunscriber--confrim 0----', subscriber.email_confirm)
+        print('---Sunscriber--1----', subscriber)
+        print('---Sunscriber--1----', subscriber.email_confirm)
+        return render(request, 'landing/cabinet.html', locals())
+    else:
+        authorization_error = "Вход в кабинет только для зарегистрированного пользователя."\
+                              + '\n' + "Ввойдите в систему, пожалуйста."
+        print(authorization_error)
+        return render(request, 'landing/login.html', locals())
 
 
 def profile(request):
     username_now = auth.get_user(request).username
     form = CosmetologForm(request.POST or None)
     if username_now:
-        subscriber_current = Subscriber.objects.filter(email=username_now).first()
-
+        subscriber_current = Subscriber.objects.filter(email=username_now).first().email
+        print('----subscriber_current----', subscriber_current)
         cosmetolog_first_id = SubscriberCosmetolog.objects.filter(
             subscriber_id=subscriber_current.id).first().cosmetolog_id
         cosmetolog_url = Cosmetolog.objects.get(pk=cosmetolog_first_id).slug
@@ -213,6 +220,7 @@ def do_add_service(request, cosmetolog_url):
         form1 = AddServiceForm()
     return render(request, 'landing/profile.html', locals())
 
+
 def test_ajax(request):
     return_dict = dict()
     session_key = request.session.session_key
@@ -234,7 +242,7 @@ def profile_cosmetolog(request, cosmetolog_url=None):
     form2 = AddServiceImageForm()
     service_types = CategoryForCosmetolog.objects.filter(is_active=True)
     subservice_types = SubCategoryForCosmetolog.objects.filter(is_active=True)
-    service_set = ServiceProduct.objects.filter(cosmetolog = cosmetolog_object)
+    service_set = ServiceProduct.objects.filter(cosmetolog=cosmetolog_object)
     # @property
     # def logo_image(self):
     #     if self.image and hasattr(self.image, 'url'):
@@ -251,28 +259,47 @@ def profile_cosmetolog(request, cosmetolog_url=None):
 def profile_cosmetolog_edit_service(request, cosmetolog_url, service_slug):
     return render(request, 'landing/profile.html', locals())
 
+
 def login(request):
     args = {}
     # args.update(csrf(request))
     if request.POST:
-        username = request.POST.get('username', '')
+        # user_email_pure = request.POST.get('username', '')
+        user_email = request.POST.get('username', '').lower().replace(' ', '')
+        print('----логин--1--', user_email+'1')
         password = request.POST.get('password', '')
-        user = auth.authenticate(username=username, password=password)
-        if user is not None:
-            auth.login(request, user)
-            # print("user_login", user)
-            return HttpResponseRedirect(reverse(profile))
-            # return HttpResponseRedirect('/profile' + url_full)
-        else:
-            login_error = "NO NO NO NO NO NO NO"
-            return render(request, 'landing/login.html')
+        print('----логин--2--', password+'1')
+        username = auth.authenticate(username=user_email, password=password)
+        print('----логин--23--', username)
+        user_old = User.objects.filter(username=user_email).first()
+        if user_old and username is None:
+            user_old.is_active = True
+            user_old.save()
+            auth.login(request, user_old)
+            return HttpResponseRedirect(reverse(activation_link_request))
+
+        elif user_old is None:
+            login_error = 'Email ' + str(user_email) + " не зарегистрирован. Пожалуйста, зарегистрируйтесь"
+            return render(request, 'landing/login.html', locals())
             # return render_to_response('login.html', args)
+        else:# only left one condition - that == username is not None
+            auth.login(request, username)
+            # print("user_login", user)
+            return HttpResponseRedirect(reverse(cabinet))
     else:
         return render(request, 'landing/login.html', locals())
         # return render_to_response('login.html', args)
 
 
 def logout(request):
+    username = auth.get_user(request).username
+    subscriber = Subscriber.objects.get(email=username)
+    print('------11-------------', subscriber.email_confirm)
+    if subscriber.email_confirm is False:
+        print('------11-------------', subscriber.email_confirm, '----', type(subscriber.email_confirm))
+        user = User.objects.get(username=username)
+        user.is_active = False
+        user.save()
     auth.logout(request)
     return HttpResponseRedirect(reverse(home))
     # return redirect("/")
@@ -719,9 +746,6 @@ def validate_training_send_email(request, trainee_name, trainee_email, email_mes
 
 
 def training_item(request, slug):
-    # registration_success = 1
-    # product = Product.objects.get(slug=slug)
-
     training = Training.objects.get(slug=slug, is_active=True)
     date_now = datetime.datetime.now(datetime.timezone.utc)
     day_left = (training.start_date - date_now).days
@@ -805,7 +829,7 @@ def training_item(request, slug):
 
 def activate_training(request, uidb64, token):
     try:
-        uid = force_text(urlsafe_base64_decode(uidb64))
+        uid = force_str(urlsafe_base64_decode(uidb64))
         user = TrainingUser.objects.get(pk=uid)
     except(TypeError, ValueError, OverflowError, TrainingUser.DoesNotExist):
         user = None

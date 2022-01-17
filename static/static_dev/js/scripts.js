@@ -79,20 +79,28 @@ $(document).ready(function(){
             }
     });
 
-   function basketUpdating(product_id, nmb, is_delete) {
+   function basketUpdating(product_id, nmb, product_price, is_delete, what_case) {
        // ajax()
        var data ={};
        data.product_id = product_id;
        data.nmb = nmb;
-       // data.price = price;
+       data.price = product_price;
+       data.check_me = 'Что то для проверки'
+       data.what_case = what_case
+
        var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
        data["csrfmiddlewaretoken"] = csrf_token;
+
+       console.log('Первая data')
+       console.log(data)
 
        if (is_delete){
             data["is_delete"] = true;
         }
 
        var url = form.attr("action");
+       console.log('цена')
+       console.log ('------ЦЕНАчка---------------', data.price);
        console.log("DATA_DATA_DATA");
        console.log(data);
 
@@ -111,16 +119,76 @@ $(document).ready(function(){
 
                if (data.products_total_nmb || data.products_total_nmb == 0){
                    $('#basket_total_nmb').text("("+data.products_total_nmb+")");
+                    console.log('data.products')
                     console.log(data.products);
                    $('.basket-items ul').html("");
+                   $('.modal-basket-items ul').html("");
+                   $('.modal-product-image-item').html("");
+                   var total_price = 0;
                    $.each(data.products, function(k, v){
+                       total_price = parseFloat(total_price) + parseFloat(v.total_price)
+                       console.log('----------тип прайса----------', typeof total_price);
+                       $('.modal-basket-items ul').append('<li>'+
+                            '<div class="row">'+
+                                '<div class="col-lg-3">'+
+                                    '<div class="col-lg-12 modal-product-image-item">'+
+                                        '<img src="' + v.modal_product_image_url + '" class="img-fluid modal-product-image-item"/>'+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="col-lg-5 modal-basket-one-item">'+
+                                    '<div class ="col-lg-12 modal-basket-one-item-name">'+
+                                        v.name +
+                                    '</div>'+
+                                    '<div class ="col-lg-12 modal-basket-one-item-nmb-price">'+
+                                        v.nmb +' штук по '+ v.price_per_item +' грн.'+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="col-lg-4">'+
+                                    '<form id ="form_minus_product" class="form-inline" contenteditable="true">'+
+                                        '<div class="form-group button-minus" contenteditable="true">'+
+                                            '<button type="button" id="submit_btn_minus" class="btn btn-success btn-buy" contenteditable="true"'+
+//                                                'data-toggle="modal" data-target="#SendProductToBasket"'+
+                                                'data-number = "'+ v.nmb + '"'+
+                                                'data-product_id = "'+ v.product_id + '"'+
+                                                'data-basket_id = "'+ v.id + '"'+
+                                                'data-name = "'+ v.name + '"'+
+                                                'data-price = "'+ v.price_per_item + '"'+
+                                            '>'+
+                                            '-'+
+                                            '</button>'+
+                                        '</div>'+
+                                        '<div class="form-group" contenteditable="true">'+
+                                            '<input class="form-control number_input_field" name="number_input_field" id="number_input_field" value="'+
+                                            v.nmb+'" min="1" max="10" step="1" pattern="\\d+" contenteditable="true">'+
+                                        '</div>'+
+                                        '<div class="form-group button-plus" contenteditable="true">'+
+                                            '<button type="submit" id="submit_btn_plus" class="btn btn-success btn-buy" contenteditable="true"'+
+//                                                'data-toggle="modal" data-target="#SendProductToBasket"'+
+                                                'data-number = "'+ v.nmb + '"'+
+                                                'data-product_id = "'+ v.product_id + '"'+
+                                                'data-basket_id = "'+ v.id + '"'+
+                                                'data-name = "'+ v.name + '"'+
+                                                'data-price = "'+ v.price_per_item + '"'+
+                                            '>'+
+                                            '+'+
+                                            '</button>'+
+                                        '</div>'+
+                                        '<div class="form-group total_price" contenteditable="true">'+
+                                            v.total_price +
+                                        '</div>'+
+                                    '</form>'+
+                                '</div>'+
+                            '</div>'+
+                            '</li>'+
+                            '<hr>');
+
                        $('.basket-items ul').append('<li>'+ v.name +', '+ v.nmb +' штук по ' + v.price_per_item + ' грн.          ' +
                             '<a class="delete-item" href="" data-product_id="'+v.id+'">X</a>'+
                             '</li>');
-                       // $('.basket-items ul').append('<li>'+ v.name +', '+ v.nmb +' штук по '+ v.price_per_item +' грн.          ' +
-                       //      '<a class="delete-item" href="" data-product_id="'+v.id+'">X</a>'+
-                       //      '</li>');
                    })
+                   console.log('----Total price-----------', total_price);
+                   $('.total_order_price').html("");
+                   $('.total_order_price').append(parseFloat(total_price));
                }
            },
            error: function(error){
@@ -129,9 +197,10 @@ $(document).ready(function(){
            }
        })
    }
+//   setTimeout(basketUpdating, 5000000);
 
    var form = $('#form_buying_product');
-
+   console.log(form);
    form.on('submit', function (e) {
        e.preventDefault();
        console.log('258');
@@ -139,10 +208,55 @@ $(document).ready(function(){
        var submit_btn = $('#submit_btn');
        var product_id = submit_btn.data("product_id");
        var product_name = submit_btn.data("name");
+       var product_price = submit_btn.data("price");
+       var what_case = 1 //'buy'
 
-       basketUpdating(product_id, nmb, is_delete=false)
+       basketUpdating(product_id, nmb, product_price, is_delete=false, what_case)
 
    });
+
+   $(document).on('click','#submit_btn_minus', function(e){
+        e.preventDefault();
+        var p_nbm = $(this).closest('li');
+        var product_number = p_nbm.find('.number_input_field').val();
+        var product_id = $(this).data("product_id");
+        var product_price = $(this).data("price");
+        var what_case = 2; //'minus'
+
+        basketUpdating(product_id, product_number, product_price, is_delete=false, what_case)
+
+    });
+
+   $(document).on('click','#submit_btn_plus', function(e){
+        e.preventDefault();
+        var p_nbm = $(this).closest('li');
+        var product_number = p_nbm.find('.number_input_field').val();
+        var product_id = $(this).data("product_id");
+        var product_price = $(this).data("price");
+        var what_case = 3; //'plus'
+
+        basketUpdating(product_id, product_number, product_price, is_delete=false, what_case)
+
+    });
+
+   $(document).on('input keyup','.number_input_field', function(e){
+        e.preventDefault();
+        var p_nbm = $(this).closest('li');
+        var product_number = $(this).val();
+        var product = p_nbm.find('#submit_btn_minus');
+        var product_id = $(product).data("product_id");
+        var product_price = $(product).data("price");
+        var what_case = 4; //'changes'
+
+        var $this = $(this);
+        var delay = 800; // 2 seconds delay after last input
+
+        clearTimeout($this.data('timer'));
+        $this.data('timer', setTimeout(function(){
+            $this.removeData('timer');
+            basketUpdating(product_id, product_number, product_price, is_delete=false, what_case)
+                }, delay));
+    });
 
     function showingBasket(){
        $('.basket-items').removeClass('hidden');
@@ -203,7 +317,18 @@ $(document).ready(function(){
         slidesToScroll: 1
     });
 
+     $(".dropdown").hover(function(){
+      $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+       $(this).toggleClass('open');
+        },
+         function() {
+          $('.dropdown-menu', this).stop( true, true ).slideUp("slow");
+           $(this).removeClass('open');
+            }
+             );
+
 });
+
 
 $(document).ready(function(){
     // console.log(4055151);
@@ -218,44 +343,54 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    // console.log(4055151);
+});
 
-// Function for Google Map - Start
-function initMapMy() {
-    // console.log(2741913);
-    var geo;
+
     var geoElement = document.getElementById('geoMap');
-    var geoOptions = {
-        zoom: 17
-        // center: {lat: 52.280973, lng: 20.967678}
-    };
+    console.log(846541513521);
+    // Function for Google Map - Start
+    function initMapMy() {
+        console.log(4755151);
+        var geo;
+        var geoElement = document.getElementById('geoMap');
+        console.log(2741913);
+        var geoOptions = {
+            zoom: 17
+            // center: {lat: 52.280973, lng: 20.967678}
+        };
 
-    // console.log(geoElement);
+        // console.log(geoElement);
 
-    geo  = new google.maps.Geocoder();
+        geo  = new google.maps.Geocoder();
 
-    var geoMap  = new google.maps.Map(geoElement, geoOptions);
+        var geoMap  = new google.maps.Map(geoElement, geoOptions);
 
 
-    var  open_map_btn = $('#open_map_btn');
-    var cosmetolog_address = open_map_btn.data("cosmetolog_address");
-    // console.log(cosmetolog_address);
+        var  open_map_btn = $('#open_map_btn');
+        var cosmetolog_address = open_map_btn.data("cosmetolog_address");
+         console.log(cosmetolog_address);
 
-    geo.geocode({'address': cosmetolog_address}, function (results, status){
-        if(status == google.maps.GeocoderStatus.OK) {
-            geoMap.setCenter(results[0].geometry.location);
-            // var qwerty = results[0].geometry.location.lat();
-            // console.log('qwerty', qwerty);
-            var marker = new google.maps.Marker({
-                map: geoMap,
-                position: results[0].geometry.location
-            });
-        }
-        else {
-            alert('Адресс не найден');
-        }
-    });
-}
-// Function for Google Map - End
+        geo.geocode({'address': cosmetolog_address}, function (results, status){
+            if(status == google.maps.GeocoderStatus.OK) {
+                geoMap.setCenter(results[0].geometry.location);
+                // var qwerty = results[0].geometry.location.lat();
+                // console.log('qwerty', qwerty);
+                var marker = new google.maps.Marker({
+                    map: geoMap,
+                    position: results[0].geometry.location
+                });
+            }
+            else {
+                alert('Адресс не найден');
+            }
+        });
+    }
+    // Function for Google Map - End
+
+
+
 
 //autoComplete - Start
 function Search() {

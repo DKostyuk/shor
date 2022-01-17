@@ -1,0 +1,38 @@
+<div class="tab-pane fade show active" id="new_client" role="tabpanel" aria-labelledby="new_client_tab">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Имя</label>
+                <span class="form-error">{{ form.name.errors }}</span>
+                <input type="text" name="{{ form.customer_name.name }}"
+                       class="form-control" placeholder="*Ваше имя" required>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Фамилия</label>
+                <span class="form-error">{{ form.name.errors }}</span>
+                <input name="{{ form.customer_surname.name }}"
+                       class="form-control" placeholder="*Ваш телефон" required>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Отчество</label>
+                <span class="form-error">{{ form.name.errors }}</span>
+                <input name="{{ form.customer_father_name.name }}"
+                       class="form-control" placeholder="*Отчество" required>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Телефон</label>
+                <span class="form-error">{{ form.phone.errors }}</span>
+                <input type="text" name="phone_1" class="form-control"
+                    value="{{ request.POST.phone_1 }}">
+            </div>
+        </div>
+    </div>
+</div>

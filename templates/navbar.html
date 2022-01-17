@@ -1,14 +1,18 @@
 <!-- Static navbar -->
-{% if username %}
+
 <div class="navbar-top">
     <section class="top-bar-section">
         <ul class="navbar-right d-flex flex-row-reverse">
+            {% if username %}
             <li class="nav-logout"><a class="nav-logout-a" href="/profile/">Профиль</a></li>
             <li class="nav-logout"><a class="nav-logout-a" href="/logout/">Выход ({{ username }})</a></li>
+            {% else %}
+            <li class="nav-login"><a class="nav-login-a" href="/registration/">Pегистрация</a></li>
+            <li class="nav-login"><a class="nav-login-a" href="/login/">Вход</a></li>
+            {% endif %}
         </ul>
     </section>
 </div>
-{% endif %}
 
 <nav class="navbar navbar-expand-md navbar-main navbar-toggleable-md navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
@@ -23,32 +27,25 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar">1111111</span>
+    <span class="icon-bar">2222222</span>
     <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <div class="site-logo-name"><span>Find Красота</span></div>
+    <div class="site-logo-name"><span>Все Для Красоты</span></div>
     <div class="collapse navbar-collapse navbar-home12" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="/" title="Главная страница"><i class="fas fa-home"></i></a>
 {#        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>#}
             </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
-                   aria-haspopup="true" aria-expanded="false">Katalog</a>
-                <div class="dropdown-menu">
-                    {% for product_line in product_lines %}
-                        <a class="dropdown-item" href="{% url 'product_line' product_line.slug %}">{{ product_line.name }}</a>
-                    {% endfor %}
-                </div>
-            </li>
+            {% include 'navbar_dropdown_product_lines.html' %}
+            {% include 'navbar_mega_menu.html' %}
+
 {#            <li class="nav-item"><a class="nav-link" href="/about/">Renew w Polsce</a></li>#}
 {#            <li class="nav-item"><a class="nav-link" href="/contact/">Kontakt</a></li>#}
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <div class="basket-container">
-
                     <a class="nav-link buy-cart" href="/checkout/">Корзина
                         <i class="fas fa-shopping-cart buy-cart"></i>
                         <span id="basket_total_amount"></span><span id="basket_total_nmb">

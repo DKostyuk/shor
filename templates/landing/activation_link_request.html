@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+        <div class="general-container-background">
+            <div class="container top-container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 login-page">
+                        <h3 class="text-center">Активация Пользователя</h3>
+
+                        <div class="text-center col-lg-8 offset-lg-2">
+                            <label class="error">{{ registration_error_1 }}</label>
+                            <label class="error email--error">{{ email_1 }}</label>
+                            <label class="error">{{ registration_error_2 }}</label>
+                            <label class="error">{{ registration_error_3 }}</label>
+                        </div>
+
+                        <form action="" method="post" class="text-center col-lg-6 offset-lg-3" enctype="multipart/form-data" id="form_profile_save" >
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="email" name="email_1"
+                                       class="form-control" value='{{ email_1 }}' required>
+                            </div>
+                            <button type="submit" class="btn label round secondary" name="_ask_activation">
+                                        Подтвердить email
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

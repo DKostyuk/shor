@@ -5,22 +5,7 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-                <div class="slider-for">
-                    {% for image_item in service_product.serviceproductimage_set.all %}
-                        <div class="item">
-                            <img src="{{ image_item.image.url }}" alt="image" draggable="false"/>
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="slider-nav">
-                    {% for image_item in service_product.serviceproductimage_set.all %}
-                        <div class="item">
-                            <img src="{{ image_item.image.url }}" alt="image" draggable="false"/>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
+            {% include 'cosmetologs/service_product_item_image.html' %}
             <div class="col-lg-8">
                 <div class="service-page-details">
                     <h1 class="text-center service-page-name">{{ service_product.name }}</h1>
@@ -28,8 +13,12 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group service-page-price">
-                                <p> <span style="font-weight: 700">Стоимость</span>
-                                    от {{ service_product.price01 }} грн. до {{ service_product.price02 }} грн.
+                                <p> <span style="font-weight: 700">Стоимость:</span>
+                                    {% if service_product.price01 == service_product.price02  %}
+                                        {{ service_product.price01 }} грн.
+                                    {% else %}
+                                        от {{ service_product.price01 }} грн. до {{ service_product.price02 }} грн.
+                                    {% endif %}
                                     {% if service_product.discount %}
                                         <button type="submit" id="submit_order_btn" class="btn btn-success service-page-discount-box"
                                                 data-toggle="modal" data-target="#SendOrderService">
@@ -41,42 +30,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">{{ service_product.short_description }}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <!-- Modal request btn See on Map -->
-                            <button type="submit" id="open_map_btn" class="btn btn-see-info"
-                                    data-toggle="modal" data-target="#map_modal"
-                                    data-cosmetolog_address = "{{ cosmetolog_address }}">
-                                Посмотреть адресс на карте
-                            </button>
+                    {% if  service_product.short_description %}
+                        <div class="row">
+                            <div class="col-lg-12">{{ service_product.short_description }}</div>
                         </div>
-                        <div class="col-lg-4">
-                            <a class="btn toggle-text btn-see-info" data-toggle="collapse" href="">
-                                <span>Посмотреть сайт</span>
-                                <span class="hidden hidden-info">{{ cosmetolog.site_url }}</span>
-                            </a>
-                        </div>
-                        <div class="col-lg-4">
-                            <a class="btn toggle-text btn-see-info" data-toggle="collapse" href="">
-                                <span>Посмотреть телефон</span>
-                                <span class="hidden hidden-info">+38 {{ cosmetolog.order_phone }}</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- Modal request btn Send Request -->
-                            <div class="form-group">
-                                <button type="submit" id="submit_order_btn" class="btn btn-success btn-order"
-                                        data-toggle="modal" data-target="#SendOrderService">
-                                    Отправить запрос
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    {% endif %}
+                    {% include 'landing/buttons_see.html' %}
+                    {% include 'landing/button_send_service_request.html' %}
                 </div>
             </div>
         </div>
@@ -111,25 +71,20 @@
                 </div>
             </div>
         </div>
-        <!-- Modal request btn Send Order -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="form-group">
-                    <button type="submit" id="submit_order_btn" class="btn btn-success btn-order"
-                            data-toggle="modal" data-target="#SendOrderService">
-                        Отправить запрос
-                    </button>
-                </div>
-            </div>
-        </div>
+        {% include 'landing/button_send_service_request.html' %}
     </div>
     <!-- Modal form html -->
     <div class="col-lg-12">
         {% include 'cosmetologs/form_send-service-order_item.html' %}
     </div>
 
-    <!-- Modal form html -->
-    <div class="col-lg-12">
-        {% include 'cosmetologs/form_map_modal.html' %}
-    </div>
+    {% if cosmetolog_address %}
+        <!-- Modal form html -->
+        <div class="col-lg-12">
+            {% include 'cosmetologs/form_map_modal.html' %}
+        </div>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOf6FMZtoYvo3HhSLh5p2GmoimoaBQ0SE&callback=initMapMy">
+        </script>
+    {% endif %}
 {% endblock %}
