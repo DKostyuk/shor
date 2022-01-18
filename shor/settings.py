@@ -191,7 +191,7 @@ BOOTSTRAP4 = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
-# try:
-#     from .settings_prod import *
-# except:
-#     pass
+try:
+    from .settings_prod import *
+except:
+    pass
