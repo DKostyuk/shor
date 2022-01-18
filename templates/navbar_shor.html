@@ -1,0 +1,78 @@
+<!-- Static navbar -->
+
+<div class="row g-0">
+    <div class="col-lg-3">
+        <section class="nav-btn-login col">
+                {% if username %}
+                <li class="nav-logout"><a class="nav-logout-a" href="/profile/">Профиль</a></li>
+                <li class="nav-logout"><a class="nav-logout-a" href="/logout/">Выход ({{ username }})</a></li>
+                {% else %}
+<!--                <li class="nav-login"><a class="nav-login-a" href="/registration/">Pегистрация</a></li>-->
+<!--                <li class="nav-login"><a class="nav-login-a" href="/login/">Вход</a></li>-->
+                <a href="/registration/"><div class="btn btn-primary shor-color">Регистрация</div></a>
+                <a href="/registration/"><div class="btn btn-primary shor-color">Вход</div></a>
+                {% endif %}
+        </section>
+    </div>
+
+    <nav class="navbar navbar-expand-md navbar-main navbar-toggleable-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        {% for logo_image in logo_images %}
+                <img src="{{ logo_image.image.url }}" class="d-block mx-auto logo"
+                     alt="здоровье, красота, прелесть">
+        {% endfor %}
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+              aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar">1111111</span>
+    <span class="icon-bar">2222222</span>
+    <span class="icon-bar"></span>
+    <div class="site-logo-name"><span>Все Для Красоты</span></div>
+    <div class="collapse navbar-collapse navbar-home12" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/" title="Главная страница"><i class="fas fa-home"></i></a>
+{#        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>#}
+            </li>
+            {% include 'navbar_dropdown_product_lines.html' %}
+            {% include 'navbar_mega_menu.html' %}
+
+{#            <li class="nav-item"><a class="nav-link" href="/about/">Renew w Polsce</a></li>#}
+{#            <li class="nav-item"><a class="nav-link" href="/contact/">Kontakt</a></li>#}
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <div class="basket-container">
+                    <a class="nav-link buy-cart" href="/checkout/">Корзина
+                        <i class="fas fa-shopping-cart buy-cart"></i>
+                        <span id="basket_total_amount"></span><span id="basket_total_nmb">
+                            {% if products_total_nmb %}
+                                ({{ products_total_nmb }})
+                            {% else %}
+                                (0)
+                            {% endif %}
+                        </span>
+                    </a>
+                </div>
+                {% if products_total_nmb %}
+                    <div class ="hidden basket-items">
+                        <ul class="">
+                            {% for product_in_basket in products_in_basket %}
+                                <li>
+                                    {{ product_in_basket.product.name }} ({{ product_in_basket.nmb }} шт.
+                                    по {{ product_in_basket.price_per_item }} грн.)
+                                    <a class="delete-item" href="" data-product_id="{{ product_in_basket.id }}"></a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</nav>
+</div>

@@ -1,4 +1,4 @@
-<div class="col-lg-3 col-md-6 col-sm-6">
+<div class="col-lg col-md-6 col-sm-6">
     <a href="#" class="link-decoration">
         <div class="product-item shadow-item-box">
             <div>
@@ -15,8 +15,8 @@
                 <h4>{{ product_line.name|truncatechars_html:40 }}</h4>
             </div>
             <div class="product-s-description">
-                <p>
-                {{ product_line.description|truncatechars_html:100 }}
+                <p> {% autoescape off %}
+                {{ product_line.description|truncatechars_html:100 }} {% endautoescape %}
                 </p>
             </div>
 
