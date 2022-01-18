@@ -3,7 +3,7 @@ from django.db import models
 from addresses.models import Address
 from django.contrib.auth.models import User
 from django.db.models.signals import pre_save
-from b_project.current_user import get_current_user
+from shor.current_user import get_current_user
 from ckeditor.fields import RichTextField
 import openpyxl
 # from django.utils import timezone

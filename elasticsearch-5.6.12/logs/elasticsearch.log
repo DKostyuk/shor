@@ -1,2 +1,0 @@
-[2018-11-08T10:25:37,293][WARN ][o.e.m.j.JvmGcMonitorService] [pnIibmX] [gc][young][37167][4] duration [28.2s], collections [1]/[29.2s], total [28.2s]/[1.8m], memory [378.2mb]->[106.7mb]/[1.9gb], all_pools {[young] [266.2mb]->[1.6mb]/[266.2mb]}{[survivor] [31.4mb]->[3.6mb]/[33.2mb]}{[old] [80.4mb]->[102.8mb]/[1.6gb]}
-[2018-11-08T10:25:41,409][WARN ][o.e.m.j.JvmGcMonitorService] [pnIibmX] [gc][37167] overhead, spent [28.2s] collecting in the last [29.2s]
