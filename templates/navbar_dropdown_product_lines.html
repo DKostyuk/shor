@@ -1,19 +1,10 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+                  Каталог препаратів
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-            <li class="nav-item dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">Каталог</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    {% for product_line in product_lines %}
+                  {% for product_line in product_lines %}
                         <a class="dropdown-item" href="{% url 'product_line' product_line.slug %}">{{ product_line.name }}</a>
                     {% endfor %}
                 </div>
-            </li>
+              </li>

@@ -38,6 +38,12 @@ html, body{
     border-color:#C9984E;
 }
 
+.shor-btn{
+    border-radius: 10px;
+    color: white;
+    margin: 10px;
+}
+
 .footer{
     position: relative;
     margin-top: -180px; /* negative value of footer height */
@@ -351,12 +357,27 @@ html, body{
     overflow: visible;
 }
 
+.navbar-brand-shor{
+    margin-right: 7rem;
+}
+
 .nav-logout, .nav-logout-a, .nav-login, .nav-login-a{
     padding-top: 0;
     padding-bottom: 0;
     color: #FFFFFF;
     display: inline;
     margin-right: 10px;
+}
+
+.nav-login-column{
+    display: flex;
+}
+
+.nav-login-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .hidden {
@@ -370,6 +391,12 @@ html, body{
 
 .navbar-home12{
     margin-left: 180px;
+}
+
+.navbar-nav-shor{
+    font-family: "Assistant", Sans-serif;
+    font-size: 1.3vw;
+    font-weight: 400;
 }
 
 @media screen and (min-width: 768px) {

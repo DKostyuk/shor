@@ -1,16 +1,16 @@
 <!-- Static navbar -->
 
 <div class="row g-0">
-    <div class="col-lg-3">
-        <section class="nav-btn-login col">
+    <div class="col-lg-3 nav-login-column">
+        <section class="nav-login-section col">
                 {% if username %}
                 <li class="nav-logout"><a class="nav-logout-a" href="/profile/">Профиль</a></li>
                 <li class="nav-logout"><a class="nav-logout-a" href="/logout/">Выход ({{ username }})</a></li>
                 {% else %}
 <!--                <li class="nav-login"><a class="nav-login-a" href="/registration/">Pегистрация</a></li>-->
 <!--                <li class="nav-login"><a class="nav-login-a" href="/login/">Вход</a></li>-->
-                <a href="/registration/"><div class="btn btn-primary shor-color">Регистрация</div></a>
-                <a href="/registration/"><div class="btn btn-primary shor-color">Вход</div></a>
+                <a href="/registration/"><div class="btn shor-btn shor-color">Реєстрація</div></a>
+                <a href="/registration/"><div class="btn shor-btn shor-color">Вхід</div></a>
                 {% endif %}
         </section>
     </div>
@@ -22,30 +22,20 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto navbar-nav-shor">
               <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Каталог препаратів
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
+                {% include 'navbar_dropdown_product_lines.html' %}
               <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
               </li>
             </ul>
-              <a class="navbar-brand" href="#">
-                <img src="/media/logo_images/Logo_shor.png" width="390" height="209" alt=""></a>
+              <a class="navbar-brand navbar-brand-shor" href="#">
+                <img src="/media/logo_images/Logo_shor.png" width="315" height="169" alt=""></a>
           </div>
         </nav>
     </div>
