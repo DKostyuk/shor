@@ -5,8 +5,8 @@ ALLOWED_HOSTS = ['*']	# we can input IP address of the server where we can run o
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',	#psycopg2 - connector Django & Postgres, have to be installed on the server
-        'NAME': 'h49085c_db_shor',
-        'USER': 'h49085c_dk',
+        'NAME': 'db1',
+        'USER': 'django_shop',
         'PASSWORD': 'Tropinka123!',
         'HOST': 'localhost',
         'PORT': '',                      # Set to empty string for default.
