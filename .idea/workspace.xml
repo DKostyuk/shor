@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="settings_prod2 for Host Pro">
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Slide_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Slide_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Slide_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/home_center_intro_carousel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar_shor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar_shor.html" afterDir="false" />
-    </list>
+    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="settings_prod2 for Host Pro" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -356,7 +346,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642669462390</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="settings_prod2 for Host Pro">
+      <created>1642688642781</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1642688642781</updated>
+    </task>
+    <task id="LOCAL-00013" summary="settings_prod2 for Host Pro">
+      <created>1642688757473</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1642688757473</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
