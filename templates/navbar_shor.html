@@ -17,88 +17,27 @@
     <div class="col-lg-9">
         <nav class="navbar navbar-expand-lg navbar-light">
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto navbar-nav-shor">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-                {% include 'navbar_dropdown_product_lines.html' %}
-              <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    {% include 'navbar_dropdown_product_lines.html' %}
+                    <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
-              </li>
+                    </li>
+                </div>
             </ul>
               <a class="navbar-brand navbar-brand-shor" href="#">
                 <img src="/media/logo_images/Logo_shor.png" width="315" height="169" alt=""></a>
-          </div>
         </nav>
     </div>
 </div>
-
-
-<nav class="navbar navbar-expand-md navbar-main navbar-toggleable-md navbar-dark bg-dark">
-    <a class="navbar-brand navbar-brand-renew" href="#">
-        {% for logo_image in logo_images %}
-                <img src="{{ logo_image.image.url }}" class="d-block mx-auto logo"
-                     alt="здоровье, красота, прелесть">
-        {% endfor %}
-    </a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-              aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <span class="sr-only">Toggle navigation</span>
-    <span class="icon-bar">1111111</span>
-    <span class="icon-bar">2222222</span>
-    <span class="icon-bar"></span>
-    <div class="site-logo-name"><span>Все Для Красоты</span></div>
-    <div class="collapse navbar-collapse navbar-home12" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/" title="Главная страница"><i class="fas fa-home"></i></a>
-{#        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>#}
-            </li>
-            {% include 'navbar_dropdown_product_lines.html' %}
-            {% include 'navbar_mega_menu.html' %}
-
-{#            <li class="nav-item"><a class="nav-link" href="/about/">Renew w Polsce</a></li>#}
-{#            <li class="nav-item"><a class="nav-link" href="/contact/">Kontakt</a></li>#}
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <div class="basket-container">
-                    <a class="nav-link buy-cart" href="/checkout/">Корзина
-                        <i class="fas fa-shopping-cart buy-cart"></i>
-                        <span id="basket_total_amount"></span><span id="basket_total_nmb">
-                            {% if products_total_nmb %}
-                                ({{ products_total_nmb }})
-                            {% else %}
-                                (0)
-                            {% endif %}
-                        </span>
-                    </a>
-                </div>
-                {% if products_total_nmb %}
-                    <div class ="hidden basket-items">
-                        <ul class="">
-                            {% for product_in_basket in products_in_basket %}
-                                <li>
-                                    {{ product_in_basket.product.name }} ({{ product_in_basket.nmb }} шт.
-                                    по {{ product_in_basket.price_per_item }} грн.)
-                                    <a class="delete-item" href="" data-product_id="{{ product_in_basket.id }}"></a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% endif %}
-            </li>
-        </ul>
-    </div>
-</nav>
