@@ -3,15 +3,15 @@
 <div class="row g-0">
     <div class="col-lg-3 nav-login-column">
         <section class="nav-login-section col">
-                {% if username %}
-                <li class="nav-logout"><a class="nav-logout-a" href="/profile/">Профиль</a></li>
-                <li class="nav-logout"><a class="nav-logout-a" href="/logout/">Выход ({{ username }})</a></li>
-                {% else %}
+            {% if username %}
+            <a href="/profile/"><div class="btn shor-btn shor-color">Профіль</div></a>
+            <a href="/logout/"><div class="btn shor-btn shor-color">Вихід ({{ username }})</div></a>
+            {% else %}
 <!--                <li class="nav-login"><a class="nav-login-a" href="/registration/">Pегистрация</a></li>-->
 <!--                <li class="nav-login"><a class="nav-login-a" href="/login/">Вход</a></li>-->
-                <a href="/registration/"><div class="btn shor-btn shor-color">Реєстрація</div></a>
-                <a href="/registration/"><div class="btn shor-btn shor-color">Вхід</div></a>
-                {% endif %}
+            <a href="/registration/"><div class="btn shor-btn shor-color">Реєстрація</div></a>
+            <a href="/login/"><div class="btn shor-btn shor-color">Вхід</div></a>
+            {% endif %}
         </section>
     </div>
     <div class="col-lg-9">
