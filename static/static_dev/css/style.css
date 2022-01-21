@@ -400,6 +400,25 @@ html, body{
     margin: auto;
 }
 
+/*Home Center block- Carousel & Shor Intro*/
+.shor-intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.shor-intro-head{
+    font-family: "Rubik", Sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.shor-intro-text{
+    font-family: "Rubik", Sans-serif;
+    font-size: 21px;
+
+}
+
 @media screen and (min-width: 768px) {
     .navbar-expand-md .navbar-nav .nav-link {
         padding-right: 1.5rem;
