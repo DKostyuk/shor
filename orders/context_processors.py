@@ -18,5 +18,4 @@ def getting_basket_info(request):
     # print('u_user', u_user, type(u_user))
     username = auth.get_user(request).username
     product_lines = ProductCategory.objects.filter(is_active=True)
-    print('-product_lines---------', product_lines )
     return locals()

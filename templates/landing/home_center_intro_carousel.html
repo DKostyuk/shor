@@ -1,24 +1,24 @@
-<div class="container-fluid" xmlns="http://www.w3.org/1999/html">
-      <div class="row section-product-lines">
+<div class="container-fluid">
+    <div class="row section-product-lines">
         <div class="shor-carousel col-lg-5">
-          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="/media/logo_images/Slide_1.png" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="/media/logo_images/Slide_2.png" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="/media/logo_images/Slide_3.png" alt="Third slide">
-              </div>
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    {% for advert in advert_all %}
+                    {% if forloop.counter0 == 0 %}
+                    <div class="carousel-item active">
+                        {% else %}
+                    <div class="carousel-item">
+                        {% endif %}
+                        <img class="d-block w-100 img-fluid" src="{{ advert.image.url }}" alt="{{ advert.alt }}" width="460" height="345">
+                    </div>
+                        {% endfor %}
+                </div>
             </div>
-          </div>
         </div>
         <div class="shor-intro col-lg-7">
             <h2><span class="shor-intro-head">Коли зустрічаються Природа і Наука</span></h2>
             <p><span class="shor-intro-text">Передовая парамедицинская косметика, основанная на исследованиях, которая дает отличные результаты</span><br>
             <span class="shor-intro-text">SHOR Professional - средства по уходу и красоте, которые принесут пользу вашей коже</span></p>
         </div>
-      </div>
     </div>
+</div>

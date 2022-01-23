@@ -12,7 +12,10 @@ class ProductCategory(models.Model):
     slug = models.SlugField(max_length=16, unique=True)
     description = RichTextField(blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
-    product_category_logo_image = models.ImageField(upload_to='logo_images/', default='logo_images/Светлана Лескова.png',
+    product_category_logo_image = models.ImageField(upload_to='logo_images/', default='logo_images/DK_logo.png',
+                                                    help_text="optimal size  600x450 - Need to be checked")
+    product_category_page_image = models.ImageField(upload_to='logo_images/',
+                                                    default='logo_images/DK_logo.png',
                                                     help_text="optimal size  600x450 - Need to be checked")
 
     def __str__(self):

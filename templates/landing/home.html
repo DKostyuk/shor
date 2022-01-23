@@ -5,7 +5,7 @@
 {% block content %}
     <div class="section">
         <div class="container-fluid">
-            <div class="row section-product-lines col-lg-6 offset-3">
+            <div class="row section-product-lines col-lg-8 offset-2">
                 {% include 'landing/home_center_intro_carousel.html' %}
             </div>
         </div>
@@ -13,14 +13,14 @@
 
     <div class="section">
         <div class="container-fluid">
-            <div class="row section-product-lines col-lg-10 offset-1">
+            <div class="row section-product-lines col-lg-12">
                 <div class="col-lg-12">
                     <h1 class="text-center">
-                        Серии препаратов
+                        Серії препаратів
                     </h1>
                 </div>
                     {% for product_line in product_lines %}
-                        {% include 'landing/product_line.html' %}
+                        {% include 'landing/product_line_shor.html' %}
                     {% endfor %}
 
             </div>
