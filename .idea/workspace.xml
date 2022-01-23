@@ -1,59 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="settings_prod2 for Host Pro">
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0025_slidermain_alt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0026_alter_slidermain_alt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0027_remove_slidermain_alt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0028_slidermain_alt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0029_alter_slidermain_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0013_auto_20220123_1141.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/BalanCell_png_ban.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/DSC_3690_copy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/DSC_3690_copy_ISS3CII.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DSC_3307_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/slider_images/BalanCell_png_ban.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/slider_images/HydroProtect_png_ban.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/slider_images/PropioCare_png_ban.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/product_line_shor.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/products/product_before_check.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/context_processors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/advert_images/Slider_0201_35IC6dH.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/advert_images/Slider_0202_X9Jrk5X.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/advert_images/Slider_0204_d79A8TZ.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/advert_images/Slider_0204_j1w4bcC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/advert_images/advert-left_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/advert_images/advert-right-down_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/advert_images/advert-right-up_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/advert_images/advert-right_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Алина Бондарь.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Анна Корниенко.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Анна Савченко.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Валентина Землянская.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Елена Григор.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Елизавета Корж.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Есения Или.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Марианна Марусич.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Марина Булах.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Ольга Бондарь.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Рина Смирнова.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Светлана Лескова.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Татьяна Добряк.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Яна Каминська.png" beforeDir="false" />
+    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="working 2022-01-22 weekend">
       <change beforePath="$PROJECT_DIR$/static/static_dev/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cosmetologs/product_item_cosmetolog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cosmetologs/product_item_cosmetolog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/home_center_intro_carousel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/home_center_intro_carousel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/product_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/product_item.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/navbar_shor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar_shor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products/product_line.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_line.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -483,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642866211168</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="working 2022-01-22 weekend">
+      <created>1642955295721</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1642955295721</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -513,7 +470,8 @@
     <MESSAGE value="shor project - started" />
     <MESSAGE value="before server installation on hyperhost.ua" />
     <MESSAGE value="settings_prod2 for Host Pro" />
-    <option name="LAST_COMMIT_MESSAGE" value="settings_prod2 for Host Pro" />
+    <MESSAGE value="working 2022-01-22 weekend" />
+    <option name="LAST_COMMIT_MESSAGE" value="working 2022-01-22 weekend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -396,6 +396,11 @@ html, body{
     height: auto;
 }
 
+.nav-block-shor-link{
+    align-items: center;
+    display: flex;
+}
+
 .nav-logout, .nav-logout-a, .nav-login, .nav-login-a{
     padding-top: 0;
     padding-bottom: 0;
