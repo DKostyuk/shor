@@ -1,0 +1,29 @@
+<div class="col-lg-3 col-md-6 col-sm-6">
+    <a href="{% url 'product' product_image.product.slug %}" class="link-decoration">
+        <div class="product-item shadow-item-box">
+            <div>
+                <div class="d-block mx-auto img-product">
+                    <img src="{{ product_image.image.url }}" class = "img-fluid img-product-inside">
+                </div>
+                veberberbreb
+                {% if product_image.product.discount %}
+                    <div class="discount-container">
+                        {{ product_image.product.discount }}%
+                    </div>
+                {% endif %}
+            </div>
+            <div class="product-name">
+                <h4>{{ product_image.product.name|truncatechars_html:40 }}</h4>
+            </div>
+            <div class="product-s-description">
+                <p>
+                {{ product_image.product.name_pl|truncatechars_html:50 }}
+                </p>
+            </div>
+
+            <div class="product-price">
+                {{ product_image.product.price }} грн.
+            </div>
+        </div>
+    </a>
+</div>

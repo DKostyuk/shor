@@ -66,6 +66,17 @@ html, body{
     text-decoration: underline;
 }
 
+.footer-logo-shor{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.footer-logo-shor-img{
+    width: 40%;
+    height: auto;
+}
+
 .social-facebook-1{
     font-size: 50px;
     color: #4267b2;
@@ -199,27 +210,27 @@ html, body{
 }
 
 .product-item{
-    height: 285px;
+    height: 400px;
     background-color: white;
     border: 1px solid lightgrey;
     position: relative;
     padding: 10px 0 10px 0;
     text-align: center;
     margin-bottom: 10px;
+    border-radius: 25px;
 }
 
 .img-product{
-    width: 223px;
-    height: 140px;
+    width: 60%;
+    height: auto;
 }
 
 .img-product-inside, .img-cosmetolog-inside {
-    height: 100%;
-    width: auto;
+/*    height: 100%;
+    width: auto;*/
 }
 
 .product-name{
-    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -232,8 +243,8 @@ html, body{
 }
 .product-name > h4{
     /*margin-top: 0;*/
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 600;
     margin: auto;
 }
 
@@ -290,7 +301,7 @@ html, body{
 .product-s-description{
     font-style: italic;
     font-size: 12px;
-    height: 40px;
+    padding-top: 10px;
 }
 
 .name_description{
