@@ -55,8 +55,8 @@ urlpatterns = [
     #
     # url(r'^contact/$', views.contact, name='contact'),
     # url(r'^about/$', views.about, name='about'),
-    # url(r'^warsztaty/$', views.training, name='training'),
-    # url(r'^warsztaty/(?P<slug>[\w-]+)/$', views.training_item, name='training_item'),
+    # url(r'^training/$', views.training, name='training'),
+    # url(r'^training/(?P<slug>[\w-]+)/$', views.training_item, name='training_item'),
     #
     # url(r'^activate_training/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
     #     views.activate_training, name='activate_training'),

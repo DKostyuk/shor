@@ -721,10 +721,9 @@ def about(request):
 
 def training(request):
     session_key = request.session.session_key
-    args = {}
     trainings_all = Training.objects.filter(is_active=True)
 
-    return render(request, 'landing/warsztaty.html', locals())
+    return render(request, 'landing/training.html', locals())
 
 
 def validate_training_send_email(request, trainee_name, trainee_email, email_message):

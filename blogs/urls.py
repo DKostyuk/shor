@@ -18,5 +18,6 @@ from blogs import views
 
 urlpatterns = [
    # url(r'^landing/', views.landing, name='landing'),
-    re_path(r'^blog/(?P<slug>[\w-]+)/$', views.blog, name='blog'),
+    re_path(r'^blog/$', views.blog, name='blog'),
+    re_path(r'^blog/(?P<slug>[\w-]+)/$', views.blog_item, name='blog_item'),
 ]

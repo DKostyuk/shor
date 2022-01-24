@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <h1>
+        TEST SUPER BUDET test
+    </h1>
+    <h2>
+        {{ blog.title_name }}
+    </h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                {% for image in blog.blogimage_set.all %}
+                    <img src="{{  image.image.url }}" class="img-responsive">
+                {% endfor %}
+                {{ blog.content_text }}
+            </div>
+            <div class="col-lg-5">
+                TESTing
+                {% for blog_image in blogs_images %}
+                    {% include 'landing/sidebar_right.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

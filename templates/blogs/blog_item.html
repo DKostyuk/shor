@@ -1,0 +1,21 @@
+<div class="col-lg-4">
+    <div class="">
+        <a class="training-item" href="{% url 'training_item' training.slug %}">
+            <div class="training-name">
+                <h4>{{ blog.name }}</h4>
+            </div>
+            <div class="training-description">
+    {#            {{ product_image.product.description|truncatechars_html:70 }}#}
+                {% autoescape off %} {{ training.description|truncatechars_html:50 }} {% endautoescape %}
+            </div>
+            <div class="training-footer">
+                <span class="training-icon">
+                    <i class="icon fas fa-clock"></i>
+                    <span class="text">
+<!--                        {{ training.start_date }}-->
+                    </span>
+                </span>
+            </div>
+        </a>
+    </div>
+</div>

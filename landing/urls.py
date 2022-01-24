@@ -70,8 +70,8 @@ urlpatterns = [
 
     re_path(r'^contact/$', views.contact, name='contact'),
     re_path(r'^about/$', views.about, name='about'),
-    re_path(r'^warsztaty/$', views.training, name='training'),
-    re_path(r'^warsztaty/(?P<slug>[\w-]+)/$', views.training_item, name='training_item'),
+    re_path(r'^training/$', views.training, name='training'),
+    re_path(r'^training/(?P<slug>[\w-]+)/$', views.training_item, name='training_item'),
 
     re_path(r'^activate_training/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         views.activate_training, name='activate_training'),

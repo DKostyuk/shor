@@ -4,13 +4,13 @@
 
 {% block content %}
     <div class="container">
-        <h3 class="text-center">Trainings</h3>
+        <h3 class="text-center">Навчання</h3>
         {% if trainings_all %}
             {% for training in trainings_all %}
                 {% include 'landing/training_item.html' %}
             {% endfor %}
         {% else %}
-            <div>There is no trainings scheduled</div>
+            <div>На данний час - Продуктові навчання у стадії планування</div>
         {% endif %}
     </div>
 {% endblock %}
