@@ -150,38 +150,53 @@ class ProductAddFile(models.Model):
         verbose_name_plural = 'ProductAddFiles'
 
     def save(self, *args, **kwargs):
+        print("---------------зДЕСЯ --------------------")
         file_opened = openpyxl.load_workbook(filename=self.product_file)  # put attention for Excel file version
         active_sheet = file_opened.active
         data_file = active_sheet.values
         data_file = list(data_file)
-        for i in range(1, len(data_file)):
-            name_common = data_file[i][0]
-            name = data_file[i][1]
-            ref_number = data_file[i][2]
+        print("---------qqqqqqqqqq------------", data_file)
+        for i in range(0, len(data_file)):
+            print("---------111111111111111------------", data_file[i])
+            category = ProductCategory.objects.get(id=data_file[i][0])
+            type_skin_title = "Тип шкіри"
+            type_skin = data_file[i][1]
+            name = data_file[i][2]
             name_pl = data_file[i][3]
-            size = data_file[i][4]
-            # price = data_file[i][5]
-            # discount = data_file[i][6]
-            category = ProductCategory.objects.get(id=data_file[i][8])
-            zus_number = data_file[i][9]
-            d = data_file[i][10]
-            d_1 = data_file[i][11]
-            d_2 = data_file[i][12]
-            # category = data_file[i][7]  # try delete it (not needed)
+            ref_number = data_file[i][4]
+            volume = ProductVolume.objects.get(id=data_file[i][5])
+            volume_type = ProductVolumeType.objects.get(id=data_file[i][6])
+            acid_title = "Кислотність"
+            acid = data_file[i][7]
+            volume_acid_title = "Вміст кислот"
+            volume_acid = data_file[i][8]
+            product_description_title = "Опис"
+            product_description = data_file[i][9]
+            product_usage_title = "Спосіб застосування"
+            product_usage = data_file[i][10]
+            product_inside_title = "Активні інгридієнти"
+            product_inside = data_file[i][11]
             new_product = Product(
-                name_common=name_common,
-                name=name,
-                ref_number=ref_number,
-                name_pl=name_pl,
-                size=size,
-                # price=price,
-                # discount=discount,
                 category=category,
-                description_3=zus_number,
-                description=d,
-                description_1=d_1,
-                description_2=d_2,
+                name_description=type_skin_title,
+                description=type_skin,
+                name=name,
+                name_pl=name_pl,
+                ref_number=ref_number,
+                volume=volume,
+                volume_type=volume_type,
+                name_description_4=acid_title,
+                description_4=acid,
+                name_description_5=volume_acid_title,
+                description_5=volume_acid,
+                name_description_1=product_description_title,
+                description_1=product_description,
+                name_description_2=product_usage_title,
+                description_2=product_usage,
+                name_description_3=product_inside_title,
+                description_3=product_inside,
                 is_active=True)
+            print('New-product----------', new_product)
             new_product.save()
 
             super(ProductAddFile, self).save(*args, **kwargs)

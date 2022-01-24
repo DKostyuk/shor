@@ -69,3 +69,13 @@ class ProductImageAdmin (admin.ModelAdmin):
 
 
 admin.site.register(ProductImage, ProductImageAdmin)
+
+
+class ProductAddFileAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in ProductAddFile._meta.fields]
+
+    class Meta:
+        model = ProductAddFile
+
+
+admin.site.register(ProductAddFile, ProductAddFileAdmin)
