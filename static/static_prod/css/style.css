@@ -66,6 +66,17 @@ html, body{
     text-decoration: underline;
 }
 
+.footer-logo-shor{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.footer-logo-shor-img{
+    width: 40%;
+    height: auto;
+}
+
 .social-facebook-1{
     font-size: 50px;
     color: #4267b2;
@@ -176,28 +187,50 @@ html, body{
     width: 100%;
 }
 
+.product-line-shor{
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.img-product-line-shor{
+    height: auto    ;
+    width: 100%;
+    border-radius: 25px
+}
+
+.product-line-description-block{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
 .product-item{
-    height: 285px;
+    height: 400px;
     background-color: white;
     border: 1px solid lightgrey;
     position: relative;
     padding: 10px 0 10px 0;
     text-align: center;
     margin-bottom: 10px;
+    border-radius: 25px;
 }
 
 .img-product{
-    width: 223px;
-    height: 140px;
+    width: 60%;
+    height: auto;
 }
 
 .img-product-inside, .img-cosmetolog-inside {
-    height: 100%;
-    width: auto;
+/*    height: 100%;
+    width: auto;*/
 }
 
 .product-name{
-    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -210,14 +243,24 @@ html, body{
 }
 .product-name > h4{
     /*margin-top: 0;*/
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 600;
     margin: auto;
 }
 
 .producer-name, .product-category, .product-type{
     font-weight: 700;
     margin-right: 20px;
+}
+
+.product-page-name{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.product-page-name-pl{
+    font-size: 16px;
 }
 
 .product-page-price-old{
@@ -258,7 +301,7 @@ html, body{
 .product-s-description{
     font-style: italic;
     font-size: 12px;
-    height: 40px;
+    padding-top: 10px;
 }
 
 .name_description{
@@ -330,10 +373,11 @@ html, body{
     padding: 5px;
     margin-bottom: 5px;
     margin-top: 5px;
-    height: 350px;
     position: relative;
     overflow: hidden;
     text-align: center;
+    width: 100%;
+    height: auto;
 }
 
 .navbar-top{
@@ -359,7 +403,13 @@ html, body{
 }
 
 .navbar-brand-shor{
-    margin-right: 7rem;
+    width: 100%;
+    height: auto;
+}
+
+.nav-block-shor-link{
+    align-items: center;
+    display: flex;
 }
 
 .nav-logout, .nav-logout-a, .nav-login, .nav-login-a{
@@ -396,7 +446,7 @@ html, body{
 
 .navbar-nav-shor{
     font-family: "Assistant", Sans-serif;
-    font-size: 1.3vw;
+    font-size: 21px;
     font-weight: 400;
     margin: auto;
 }
@@ -416,7 +466,7 @@ html, body{
 
 .shor-intro-text{
     font-family: "Rubik", Sans-serif;
-    font-size: 21px;
+    font-size: 19px;
 
 }
 
@@ -884,8 +934,8 @@ div > ul > a:hover {
 
 /*Product Line Page*/
 .product-line-name {
-    border-top: 1px solid #3338ee;
-    border-bottom: 1px solid #3338ee;
+/*    border-top: 1px solid #3338ee;
+    border-bottom: 1px solid #3338ee;*/
     text-align: center;
     padding: 12px;
 }

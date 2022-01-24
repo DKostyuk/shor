@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="working 2022-01-22 weekend">
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/shor_S_symbol.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/product_item_beforeSHOR.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/product_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/product_item.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -451,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642955647297</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="working 2022-01-22 weekend">
+      <created>1642959811174</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1642959811174</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
