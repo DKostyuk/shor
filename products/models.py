@@ -67,6 +67,7 @@ class ProductVolumeType(models.Model):
 
 class Product(models.Model):
     producer = models.CharField(max_length=64, blank=True, null=True, default='Shor')
+    category = models.ForeignKey(ProductCategory, blank=True, null=True, default=None, on_delete=models.CASCADE)
     name = models.CharField(max_length=128, blank=True, null=True, default=None)
     name_pl = models.CharField(max_length=128, blank=True, null=True, default=None)
     slug = models.SlugField(max_length=128, unique=True)

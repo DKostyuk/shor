@@ -226,8 +226,8 @@ html, body{
 }
 
 .img-product-inside, .img-cosmetolog-inside {
-/*    height: 100%;
-    width: auto;*/
+    height: 278px;
+    width: auto;
 }
 
 .product-name{
@@ -943,6 +943,10 @@ div > ul > a:hover {
     border-bottom: 1px solid #3338ee;*/
     text-align: center;
     padding: 12px;
+}
+
+.product-line-product-items{
+    margin-top: 65px;
 }
 
 /*Contact Page*/
