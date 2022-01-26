@@ -14,7 +14,7 @@ def getting_basket_info(request):
     products_in_basket = ProductInBasket.objects.filter(session_key=session_key, is_active=True)
 
     products_total_nmb = products_in_basket.count()
-    logo_images = LogoImage.objects.filter(is_active=True, is_main=True)
+    logo_images = LogoImage.objects.get(is_active=True, is_main=True)
     # print('u_user', u_user, type(u_user))
     username = auth.get_user(request).username
     product_lines = ProductCategory.objects.filter(is_active=True)

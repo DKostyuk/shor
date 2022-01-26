@@ -66,25 +66,15 @@ class ProductVolumeType(models.Model):
 
 
 class Product(models.Model):
-    cosmetolog = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
-    producer = models.CharField(max_length=64, blank=True, null=True, default=None)
-    ref_number = models.CharField(max_length=10, blank=True, null=True, default=None)
-    name = models.CharField(max_length=64, blank=True, null=True, default=None)
-    name_pl = models.CharField(max_length=64, blank=True, null=True, default=None)
-    slug = models.SlugField(max_length=64, unique=True)
-    price_old = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    discount = models.IntegerField(default=0)
-    category = models.ForeignKey(ProductCategory, blank=True, null=True, default=None, on_delete=models.CASCADE)
-    type = models.ForeignKey(ProductType, blank=True, null=True, default=None, on_delete=models.CASCADE)
-    volume = models.ForeignKey(ProductVolume, blank=True, null=True, default=None, on_delete=models.CASCADE)
-    volume_type = models.ForeignKey(ProductVolumeType, blank=True, null=True, default=None, on_delete=models.CASCADE)
-    volume_equivalent = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    producer = models.CharField(max_length=64, blank=True, null=True, default='Shor')
+    name = models.CharField(max_length=128, blank=True, null=True, default=None)
+    name_pl = models.CharField(max_length=128, blank=True, null=True, default=None)
+    slug = models.SlugField(max_length=128, unique=True)
     name_description = models.CharField(max_length=64, blank=True, null=True, default=None)
     # description = RichTextField()
     description = models.TextField(blank=True, null=True, default=None)
     name_description_1 = models.CharField(max_length=64, blank=True, null=True, default=None)
-    description_1 = RichTextField()
+    description_1 = RichTextField(blank=True, null=True, default=None)
     name_description_2 = models.CharField(max_length=64, blank=True, null=True, default=None)
     description_2 = models.TextField(blank=True, null=True, default=None)
     name_description_3 = models.CharField(max_length=64, blank=True, null=True, default=None)
@@ -99,8 +89,8 @@ class Product(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        # return "%s" % self.name
-        return "%s, %s" % (self.ref_number, self.name)
+        return "%s" % self.name
+        # return "%s, %s" % (self.ref_number, self.name)
 
     class Meta:
         verbose_name = 'Product'
@@ -128,8 +118,16 @@ class ProductImage(models.Model):
         verbose_name_plural = 'Photos'
 
 
+ProductAddFile_choices = [
+    ('Add_Product_Item', 'Add_Product_Item'),
+    ('Add_Product_Join', 'Add_Product_Join'),
+    ('Add_Nothing', 'Add_Nothing'),
+]
+
+
 class ProductAddFile(models.Model):
     comments = models.CharField(max_length=124, blank=True, null=True, default=None)
+    what_to_do = models.CharField(max_length=16, choices=ProductAddFile_choices, default='Add_Nothing')
     product_file = models.FileField(upload_to='product_file_add/')
     is_active = models.BooleanField(default=False)
     start_import = models.BooleanField(default=False)
@@ -156,47 +154,127 @@ class ProductAddFile(models.Model):
         data_file = active_sheet.values
         data_file = list(data_file)
         print("---------qqqqqqqqqq------------", data_file)
-        for i in range(0, len(data_file)):
-            print("---------111111111111111------------", data_file[i])
-            category = ProductCategory.objects.get(id=data_file[i][0])
-            type_skin_title = "Тип шкіри"
-            type_skin = data_file[i][1]
-            name = data_file[i][2]
-            name_pl = data_file[i][3]
-            ref_number = data_file[i][4]
-            volume = ProductVolume.objects.get(id=data_file[i][5])
-            volume_type = ProductVolumeType.objects.get(id=data_file[i][6])
-            acid_title = "Кислотність"
-            acid = data_file[i][7]
-            volume_acid_title = "Вміст кислот"
-            volume_acid = data_file[i][8]
-            product_description_title = "Опис"
-            product_description = data_file[i][9]
-            product_usage_title = "Спосіб застосування"
-            product_usage = data_file[i][10]
-            product_inside_title = "Активні інгридієнти"
-            product_inside = data_file[i][11]
+        choice = self.what_to_do
+        if choice == 'Add_Product_Join':
+            for i in range(0, len(data_file)):
+                print("---------111111111111111------------", data_file[i])
+                product = Product.objects.get(id=data_file[i][0])
+                product.name_description = "Тип шкіри"
+                product.description = data_file[i][1]
+                product.name_pl = data_file[i][2]
+                product.name_description_4 = "Кислотність"
+                product.description_4 = data_file[i][3]
+                product.name_description_5 = "Вміст кислот"
+                product.description_5 = data_file[i][4]
+                product.name_description_1 = "Опис"
+                product.description_1 = data_file[i][5]
+                product.name_description_2 = "Спосіб застосування"
+                product.description_2 = data_file[i][6]
+                product.name_description_3 = "Активні інгридієнти"
+                product.description_3 = data_file[i][7]
+                product.save()
+
+                super(ProductAddFile, self).save(*args, **kwargs)
+
+        elif choice == 'Add_Product_Item':
+            for i in range(0, len(data_file)):
+                print("---------Add_Product_Item------------", data_file[i])
+                category = ProductCategory.objects.get(id=data_file[i][0])
+                name = data_file[i][1]
+                ref_number = data_file[i][2]
+                volume = ProductVolume.objects.get(id=data_file[i][3])
+                volume_type = ProductVolumeType.objects.get(id=data_file[i][4])
+                product_type = ProductType.objects.get(id=data_file[i][5])
+                new_product_item = ProductItem(
+                    ref_number=ref_number,
+                    name=name,
+                    category=category,
+                    type=product_type,
+                    volume=volume,
+                    volume_type=volume_type,
+                    is_active=True)
+                print('New-product--ITEM--------', new_product_item)
+                new_product_item.save()
+
+            products_item_all = ProductItem.objects.all()
+            products_item_all_name = set()
+            for product in products_item_all:
+                products_item_all_name.add(product.name)
+            products_all = Product.objects.all()
+            products_all_name = set()
+            for product in products_all:
+                products_all_name.add(product.name)
+            for p in products_item_all_name:
+                if p not in products_all_name:
+                    new_product = Product(
+                        name=p,
+                        is_active=True)
+                    new_product.save()
+
+                super(ProductAddFile, self).save(*args, **kwargs)
+
+
+def join_products():
+    print('----start----')
+    products_item_all = ProductItem.objects.all()
+    products_item_all_name = set()
+    for product in products_item_all:
+        print('----start join')
+        products_item_all_name.add(product.name)
+    print(products_item_all_name)
+    products_all = Product.objects.all()
+    products_all_name = set()
+    for product in products_all:
+        print('----start join---222222222')
+        products_all_name.add(product.name)
+    print(products_all_name)
+    for p in products_item_all_name:
+        print(p)
+        if p in products_all_name:
+            print("-------ПРИНТ ТУТУ----", p)
+        else:
             new_product = Product(
-                category=category,
-                name_description=type_skin_title,
-                description=type_skin,
-                name=name,
-                name_pl=name_pl,
-                ref_number=ref_number,
-                volume=volume,
-                volume_type=volume_type,
-                name_description_4=acid_title,
-                description_4=acid,
-                name_description_5=volume_acid_title,
-                description_5=volume_acid,
-                name_description_1=product_description_title,
-                description_1=product_description,
-                name_description_2=product_usage_title,
-                description_2=product_usage,
-                name_description_3=product_inside_title,
-                description_3=product_inside,
+                name=p,
                 is_active=True)
             print('New-product----------', new_product)
             new_product.save()
 
-            super(ProductAddFile, self).save(*args, **kwargs)
+    return 'test-success'
+
+
+class ProductJoin(models.Model):
+    name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    description = models.TextField(blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return "%s" % self.name
+
+    class Meta:
+        verbose_name = 'ProductJoin'
+        verbose_name_plural = 'ProductJoin'
+
+    def save(self, *args, **kwargs):
+        s = join_products()
+        print(s)
+        super(ProductJoin, self).save(*args, **kwargs)
+
+
+class ProductItem(models.Model):
+    ref_number = models.CharField(max_length=10, blank=True, null=True, default=None)
+    name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    category = models.ForeignKey(ProductCategory, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    type = models.ForeignKey(ProductType, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    volume = models.ForeignKey(ProductVolume, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    volume_type = models.ForeignKey(ProductVolumeType, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    volume_equivalent = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    is_active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __str__(self):
+        return "%s" % self.name
+
+    class Meta:
+        verbose_name = 'ProductItem'
+        verbose_name_plural = 'ProductItem'

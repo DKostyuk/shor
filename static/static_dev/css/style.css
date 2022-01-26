@@ -221,8 +221,8 @@ html, body{
 }
 
 .img-product{
-    width: 60%;
-    height: auto;
+    height: 278px;
+    width: 155px;
 }
 
 .img-product-inside, .img-cosmetolog-inside {
@@ -261,6 +261,11 @@ html, body{
 
 .product-page-name-pl{
     font-size: 16px;
+}
+
+.product-page-volume{
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .product-page-price-old{

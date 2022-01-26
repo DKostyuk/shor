@@ -4,7 +4,16 @@ from cosmetologs.models import ServiceProductImage
 
 
 def product(request, slug1=None, slug=None):
+    session_key = request.session.session_key
+    if not session_key:
+        request.session.cycle_key()
+
     product = Product.objects.get(slug=slug)
+    print("--------продакт нейм-----", product.name)
+    product_item = ProductItem.objects.filter(name=product.name)
+    print("----------------------", product_item)
+    ppp = ProductItem.objects.all()
+    print("----------ppp------------", ppp)
     #cosmetolog = Cosmetolog.objects.get(slug=slug1)
     # print('-----------', vars(cosmetolog))
     # print('ЧТО-то вместо адресса', str(cosmetolog.street_cosmetolog.display_address))
@@ -21,13 +30,6 @@ def product(request, slug1=None, slug=None):
                                                                  #service_product__cosmetolog=cosmetolog.id)
     products_images = ProductImage.objects.filter(is_active=True, is_main=True,
                                                   product__is_active=True)
-
-
-    session_key = request.session.session_key
-    if not session_key:
-        request.session.cycle_key()
-
-    # print(request.session.session_key)
 
     return render(request, 'products/product.html', locals())
 

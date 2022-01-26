@@ -15,7 +15,24 @@
                     <h1 class="product-page-name">{{ product.name }}</h1>
                     <h2 class="product-page-name-pl">{{ product.name_pl }}</h2>
                     <p>{{ product.name_description }} - {{ product.description }}</p>
-                    <p>Арт. {{ product.ref_number }}<br>
+
+                    <p><span class="product-page-volume">{% for p_item in product_item %}
+                            {% if forloop.last %}
+                                {{ p_item.volume }} {{ p_item.volume_type }}
+                            {% else %}
+                                {{ p_item.volume }} {{ p_item.volume_type }} /
+                            {% endif %}
+                        {% endfor %}
+                        </span><br>
+                        Арт.
+                        {% for p_item in product_item %}
+                            {% if forloop.last %}
+                                {{ p_item.ref_number }}
+                            {% else %}
+                                {{ p_item.ref_number }} /
+                            {% endif %}
+                        {% endfor %}
+                                <br>
                     {{ product.description_4 }} / {{ product.description_5 }}</p>
                     <div class="text-center cosmetolog-page-type hidden">
                         <span>Производитель: <span class="producer-name">{{ product.producer }}</span></span>

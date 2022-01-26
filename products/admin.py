@@ -79,3 +79,23 @@ class ProductAddFileAdmin(admin.ModelAdmin):
 
 
 admin.site.register(ProductAddFile, ProductAddFileAdmin)
+
+
+class ProductJoinAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in ProductJoin._meta.fields]
+
+    class Meta:
+        model = ProductJoin
+
+
+admin.site.register(ProductJoin, ProductJoinAdmin)
+
+
+class ProductItemAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in ProductItem._meta.fields]
+
+    class Meta:
+        model = ProductItem
+
+
+admin.site.register(ProductItem, ProductItemAdmin)

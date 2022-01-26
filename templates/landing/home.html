@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="text-center">
-                        Популярные Новинки
+                        Популярні новинки
                     </h1>
                 </div>
                 {% for product_image in products_images %}
@@ -50,45 +50,31 @@
 <!--        </div>-->
 <!--    </div>-->
 
-    <div class="section section2 new">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="text-center">
-                        Recent posts
-                    </h1>
-                </div>
-                {% for blog_image in blogs_images %}
-                    {% include 'landing/blog_item.html' %}
-                {% endfor %}
+<!--    <div class="section section2 new">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12">-->
+<!--                    <h1 class="text-center">-->
+<!--                        Recent posts-->
+<!--                    </h1>-->
+<!--                </div>-->
+<!--                {% for blog_image in blogs_images %}-->
+<!--                    {% include 'landing/blog_item.html' %}-->
+<!--                {% endfor %}-->
 
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3>
-                        <a href="#">
-                            <div class="read-all">
-                                <div class="read-all-text">Read All Articles</div>
-                            </div>
-                        </a>
-                    </h3>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section section3 popular">
-        <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="text-center">
-                            ПОПУЛЯРНЫЕ УСЛУГИ
-                        </h1>
-                    </div>
-                    {% for service_product_image in service_products_images %}
-                        {% include 'landing/service_product_item.html' %}
-                    {% endfor %}
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12">-->
+<!--                    <h3>-->
+<!--                        <a href="#">-->
+<!--                            <div class="read-all">-->
+<!--                                <div class="read-all-text">Read All Articles</div>-->
+<!--                            </div>-->
+<!--                        </a>-->
+<!--                    </h3>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-                </div>
-        </div>
-    </div>
 {% endblock %}

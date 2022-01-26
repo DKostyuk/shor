@@ -335,8 +335,8 @@ def home(request):
     blogs_images = blogs_images_all[:4]
     products_images_all = ProductImage.objects.filter(is_active=True, is_main=True, product__is_active=True)
     products_images = products_images_all[:4]
-    products_images_new = products_images_all.filter(product__category__id=1)
-    products_images_popular = products_images_all.filter(product__category__id=2)
+    # products_images_new = products_images_all.filter(product__category__id=1)
+    # products_images_popular = products_images_all.filter(product__category__id=2)
 
     return render(request, 'landing/home.html', locals())
 
