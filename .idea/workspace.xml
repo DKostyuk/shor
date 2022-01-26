@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-01-26 many changes - ready for product">
-      <change afterPath="$PROJECT_DIR$/products/migrations/0020_auto_20220126_1445.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0021_auto_20220126_1500.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Logo_Shor_Ukraine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Logo_shor_Ukraine.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Logo_shor_shakyf_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/product_join_01_JstJyx4.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/product_join_01_TmyGX0M.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/product_join_01_yuNVyKn.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DSC_3310_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DSC_3319_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DSC_3369_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DSC_3382_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DSC_3385_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DSC_3394_s.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -577,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643206312035</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="2022-01-26 many changes - ready for product">
+      <created>1643207163267</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1643207163267</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">

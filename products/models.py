@@ -262,7 +262,7 @@ class ProductJoin(models.Model):
 
 class ProductItem(models.Model):
     ref_number = models.CharField(max_length=10, blank=True, null=True, default=None)
-    name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    name = models.CharField(max_length=128, blank=True, null=True, default=None)
     category = models.ForeignKey(ProductCategory, blank=True, null=True, default=None, on_delete=models.CASCADE)
     type = models.ForeignKey(ProductType, blank=True, null=True, default=None, on_delete=models.CASCADE)
     volume = models.ForeignKey(ProductVolume, blank=True, null=True, default=None, on_delete=models.CASCADE)
