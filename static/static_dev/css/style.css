@@ -222,11 +222,11 @@ html, body{
 
 .img-product{
     height: 278px;
-    width: 155px;
+    width: 100%;
 }
 
 .img-product-inside, .img-cosmetolog-inside {
-    height: 278px;
+    height: 100%;
     width: auto;
 }
 

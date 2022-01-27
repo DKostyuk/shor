@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-01-27 many changes - ready for product">
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Logo_Shor_Ukraine.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Logo_shor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Logo_shor_Ukraine.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Logo_shor_shakyf_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/static_dev/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/static_dev/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar_dropdown_product_lines.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar_dropdown_product_lines.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -629,7 +631,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643280718800</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="2022-01-27 many changes - ready for product">
+      <created>1643281178319</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1643281178319</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TestHistory">

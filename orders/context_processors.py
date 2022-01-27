@@ -19,5 +19,5 @@ def getting_basket_info(request):
     except:
         pass
     username = auth.get_user(request).username
-    product_lines = ProductCategory.objects.filter(is_active=True)
+    product_lines = ProductCategory.objects.filter(is_active=True).order_by('id')
     return locals()

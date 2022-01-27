@@ -6,34 +6,13 @@ $(document).ready(function(){
         $(this).find('span').each(function() { $(this).toggle(); });
     });
 
-    $('.slider-for').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.slider-nav',
-        autoplay: true
-    });
-    $('.slider-nav').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        asNavFor: '.slider-for',
-        dots: false,
-        centerMode: true,
-        focusOnSelect: true
-    });
 
-    $("#category_name").change(function(){//подписываемся на событие
+        $("#category_name").change(function(){//подписываемся на событие
         var csrf_token = $('input[name="csrfmiddlewaretoken"]').val();
         var category_name = $("#category_name").val();
         var data = {};
         data["csrfmiddlewaretoken"] = csrf_token;
         data.category_name = category_name;
-        console.log(data.category_name);
-        console.log(data);
-        console.log(77777777777);
-        // console.log(url);
-        console.log(category_name);
         $.ajax({
             url: '/test_ajax/',
             type: 'POST',
@@ -62,7 +41,6 @@ $(document).ready(function(){
         });
     });
 
-    $(".navbar-home12").css("background-color","yellow");
 
     $('.navbar-nav a').each(function () {      // проходим по нужным нам ссылками
         var location = window.location.href; // переменная с адресом страницы
@@ -197,10 +175,9 @@ $(document).ready(function(){
            }
        })
    }
-//   setTimeout(basketUpdating, 5000000);
 
    var form = $('#form_buying_product');
-   console.log(form);
+
    form.on('submit', function (e) {
        e.preventDefault();
        console.log('258');
@@ -307,15 +284,6 @@ $(document).ready(function(){
 
     calculatingBasketAmount();
 
-    // $("#show-hide").hide("drop", 9000);
-    setTimeout(function() { $("#show-hide").hide("bounce", 'slow'); }, 1000);
-
-
-    $('.service-slider').slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1
-    });
 
      $(".dropdown").hover(function(){
       $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
@@ -342,53 +310,6 @@ $(document).ready(function(){
             ]
     });
 });
-
-$(document).ready(function(){
-    // console.log(4055151);
-});
-
-
-    var geoElement = document.getElementById('geoMap');
-    console.log(846541513521);
-    // Function for Google Map - Start
-    function initMapMy() {
-        console.log(4755151);
-        var geo;
-        var geoElement = document.getElementById('geoMap');
-        console.log(2741913);
-        var geoOptions = {
-            zoom: 17
-            // center: {lat: 52.280973, lng: 20.967678}
-        };
-
-        // console.log(geoElement);
-
-        geo  = new google.maps.Geocoder();
-
-        var geoMap  = new google.maps.Map(geoElement, geoOptions);
-
-
-        var  open_map_btn = $('#open_map_btn');
-        var cosmetolog_address = open_map_btn.data("cosmetolog_address");
-         console.log(cosmetolog_address);
-
-        geo.geocode({'address': cosmetolog_address}, function (results, status){
-            if(status == google.maps.GeocoderStatus.OK) {
-                geoMap.setCenter(results[0].geometry.location);
-                // var qwerty = results[0].geometry.location.lat();
-                // console.log('qwerty', qwerty);
-                var marker = new google.maps.Marker({
-                    map: geoMap,
-                    position: results[0].geometry.location
-                });
-            }
-            else {
-                alert('Адресс не найден');
-            }
-        });
-    }
-    // Function for Google Map - End
-
 
 
 
@@ -458,14 +379,3 @@ function Search() {
     });
 }
 Search();
-
-
-
-// form.on('submit', function (e) {
-   //     e.preventDefault();
-   //     var address123 = $('#tags').val();
-   //     console.log(address123);
-   //
-   // });
-
-//autoComplete - End
