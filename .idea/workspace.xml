@@ -2,57 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-01-27 many changes - ready for product">
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20181102_add_ukrKievRaion.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20181102_add_ukrOblast.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20181102_add_ukrOblastCenter.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_01.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Darnitskiy_raion_03.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Desnyanskiy_raion_11.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Dneprovskiy_raion_06.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Goloseevskiy_raion_02.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Micro_Raion_11.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Obolonsliy_raion_04.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Pecherskiy_raion_10.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Podolskiy_raion_05.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Shevchenkovskiy_raion_07.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Solomenskiy_raion_08.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/20190319_add_ukrKievStreet_Svyatoshinskiy_raion_09.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/add_ukrOblast.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/address_add_01.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/address_add_02.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/address_add_03.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/address_add_04.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/address_file_add/address_add_05_KrakowDelnica.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/blogs_images/blog_01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/blogs_images/blog_02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/blogs_images/blog_03.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/blogs_images/blog_04.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/blogs_images/blog_05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Alexandra Brow master Kiev.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Alexandra_Brow_master_Kiev.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/HWScan00047.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/HWScan00047_LZnbRgz.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Kate Demish.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/LogoRenew.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Logo_Tetiana.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/O. lya lya.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Penguins.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Slide_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Slide_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Slide_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/acdc-logo-vector-wallpaper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/logo_images/make_up_ by_di___.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/training/Sunscreen_Cream_Demi_Make-up_SPF-30_WebSite_534x558.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/img/LogoRenew.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/img/Slider0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/img/advert-right-down_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/img/advert-right-up_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/img/advert-right_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_prod/img/LogoRenew.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_prod/img/Slider0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_prod/img/advert-right-down_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_prod/img/advert-right-up_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_prod/img/advert-right_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Logo_Shor_Ukraine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Logo_shor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Logo_shor_Ukraine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/logo_images/Logo_shor_shakyf_logo.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -669,7 +622,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643280361619</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="2022-01-27 many changes - ready for product">
+      <created>1643280718800</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1643280718800</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TestHistory">
