@@ -407,6 +407,14 @@ html, body{
     overflow: visible;
 }
 
+.navbar-second-block{
+    display: block;
+}
+
+.nav-brand-block{
+    max-width:23%;
+}
+
 .navbar-brand-shor{
     width: 100%;
     height: auto;
