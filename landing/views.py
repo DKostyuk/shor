@@ -710,12 +710,23 @@ def contact(request):
 
 def about(request):
     session_key = request.session.session_key
-    args = {}
     about_text_object = Page.objects.get(is_active=True, page_name="About")
-    print(about_text_object)
-    # about_text = about_text_object.page_text
 
     return render(request, 'landing/about.html', locals())
+
+
+def rules(request):
+    session_key = request.session.session_key
+    rules_text_object = Page.objects.get(is_active=True, page_name="Rules")
+
+    return render(request, 'landing/about_rules.html', locals())
+
+
+def public_offer(request):
+    session_key = request.session.session_key
+    public_offer_text_object = Page.objects.get(is_active=True, page_name="Public_Offer")
+
+    return render(request, 'landing/about_public_offer.html', locals())
 
 
 def training(request):
