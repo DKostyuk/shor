@@ -185,7 +185,6 @@ def do_save_profile(request, cosmetolog_url):
     if form.is_valid():
         form_save = form.save(commit=False)
         form_save.city_cosmetolog = Address.objects.get(pk=request.POST.get('city_cosmetolog',''))
-        # form1_save.category = service_category
         form_save.save()
         profile_success = "success"
         print(profile_success)

@@ -5,12 +5,12 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 product-image-item">
+            <div class="col-lg-5 product-image-item">
                 {% for image_item in product.productimage_set.all %}
                 <img src="{{ image_item.image.url }}" class="img-fluid">
                 {% endfor %}
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-7">
                 <div class="service-page-details">
                     <h1 class="product-page-name">{{ product.name }}</h1>
                     <h2 class="product-page-name-pl">{{ product.name_pl }}</h2>
