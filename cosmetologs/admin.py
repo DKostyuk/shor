@@ -7,11 +7,6 @@ class CosmetologCategoryInline(admin.TabularInline):
     extra = 0
 
 
-# class SubCosmetologCategoryInline(admin.TabularInline):
-#     model = SubCosmetologCategory
-#     extra = 0
-
-
 class CosmetologAddressInline(admin.TabularInline):
     model = CosmetologAddress
     extra = 0
@@ -48,11 +43,8 @@ admin.site.register(CosmetologPhone, CosmetologPhoneAdmin)
 
 
 class CosmetologAdmin(admin.ModelAdmin):
-    # list_display = [field.name for field in Cosmetolog._meta.fields]
-    list_display = ['id', "name", "logo_image", "order_phone", "site_url"]
-    prepopulated_fields = {'slug': ('name',)}
+    list_display = [field.name for field in Cosmetolog._meta.fields]
     inlines = [CosmetologCategoryInline]
-    inlines = [CosmetologAddressInline]
 
     class Meta:
         model = Cosmetolog

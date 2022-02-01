@@ -57,14 +57,21 @@ def send_user_activation_email(request, newuser, email_1):
     return args_1
 
 
-def validate_save_user(request, newuser_form, email_1):
-    args_1 = {}
-    if newuser_form.is_valid():
+def validate_save_user(request, newuser_form, email_1, new_form_cosmetolog):
+    if newuser_form.is_valid() and new_form_cosmetolog.is_valid():
         newuser = newuser_form.save(commit=False)
         newuser.is_active = False
         newuser.save()
+        new_cosmetolog = new_form_cosmetolog.save(commit=False)
+        new_cosmetolog.user = newuser
+        new_cosmetolog.save()
         send_user_activation_email(request, newuser, email_1)
-    return args_1
+    else:
+        form = newuser_form
+        form_cosmetolog = new_form_cosmetolog
+        print('ERROR-11111111---', form.error_messages)
+        print(form_cosmetolog.errors.as_data())
+    return "passed"
 
 
 def activation_link_request(request):
@@ -75,12 +82,10 @@ def activation_link_request(request):
         email_1 = request.session['email_1']
         username = email_1
     if request.POST:
-        print('HERE--------------------------------------')
         email_1 = request.POST.get('email_1', '')
         newuser = User.objects.get(username=email_1)
         send_user_activation_email(request, newuser, email_1)
         return redirect('registration_profile')
-    print('activation_link_request--------username----------', username)
     args = {'registration_error_1': 'Указанный Вами адрес ', 'registration_error_2': ' уже зарегистрирован',
             'registration_error_3': 'Пожалуйста, подтвердите его', 'email_1': username}
     return render(request, 'landing/activation_link_request.html', args)
@@ -88,10 +93,11 @@ def activation_link_request(request):
 
 def registration(request):
     form = UserRegistrationForm()
+    form_cosmetolog = CosmetologForm()
     if request.POST:
+        print("------Request registration-post", request.POST)
         email_1 = request.POST.get('email', '')
         if '_ask_activation' in request.POST:
-            print('HERE--------------------------------------')
             email_1 = request.POST.get('email_1', '')
             newuser = User.objects.get(username=email_1)
             send_user_activation_email(request, newuser, email_1)
@@ -100,18 +106,17 @@ def registration(request):
             request.POST = request.POST.copy()
             request.POST['username'] = email_1
             request.POST['password2'] = password_11
-            print('pass-2---', request.POST['password2'])
             newuser_form = UserRegistrationForm(request.POST)
+            new_form_cosmetolog = CosmetologForm(request.POST, request.FILES)
 
-            # Check email is in USER tablet
+            # Check email is in USER table
             user_old = User.objects.filter(username=email_1).first()
             if user_old:
                 request.session['email_1'] = email_1
                 return HttpResponseRedirect(reverse(activation_link_request))
             else:
                 if newuser_form.is_valid():
-                    print('I am am HERE')
-                    validate_save_user(request, newuser_form, email_1)
+                    validate_save_user(request, newuser_form, email_1, new_form_cosmetolog)
                     return redirect('registration_profile')
                 else:
                     form = newuser_form
@@ -120,6 +125,8 @@ def registration(request):
 
 
 def registration_profile(request):
+    session_key = request.session.session_key
+    registration_profile_text_object = Page.objects.get(is_active=True, page_name="Registration_Profile")
     aswer = "wefewrfergrtgrtgersd"
     return render(request, 'landing/registration_profile.html', locals())
 
@@ -306,23 +313,6 @@ def logout(request):
 
 def home(request):
     # username = auth.get_user(request).username
-
-    address_cosmetologs = Cosmetolog.objects.filter(is_active=True)
-    cosmetolog_addresses = CosmetologAddress.objects.filter(is_active=True)
-    search_active_addresses = Address.objects.filter(is_active=True)
-    active_addresses = search_active_addresses.filter(
-        Q(type_id=5) |
-        Q(type_id=4)
-    ).order_by('type_id')
-    service_categories = CategoryForCosmetolog.objects.filter(is_active=True)
-    subservice_categories = SubCategoryForCosmetolog.objects.filter(is_active=True)
-    service_products = ServiceProduct.objects.filter(is_active=True, is_visible=True)
-    service_products_images_all = ServiceProductImage.objects.filter(is_active=True, is_main=True,
-                                                                     service_product__is_active=True,
-                                                                     service_product__is_visible=True)
-    service_products_images = service_products_images_all[:4]
-    cosmetologs_all = Cosmetolog.objects.filter(is_active=True, is_visible=True)
-    cosmetologs = cosmetologs_all[:4]
     slider_mains = SliderMain.objects.filter(is_active=True, is_main=True)
     slider_mains_counts = range(slider_mains.count() - 1)
     advert_all = SliderMain.objects.filter(is_active=True, is_main=False)

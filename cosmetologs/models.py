@@ -77,40 +77,13 @@ class CosmetologType(models.Model):
 
 class Cosmetolog(models.Model):
     name = models.CharField(max_length=128, blank=True, null=True, default=None)
-    slug = models.SlugField(max_length=128, unique=True)
     type = models.ForeignKey(CosmetologType, blank=True, null=True, default=None, on_delete=models.CASCADE)
-    type_text = models.CharField(max_length=128, blank=True, null=True, default=None)
-    city_cosmetolog = models.ForeignKey(Address, blank=True, null=True, default=None, on_delete=models.CASCADE)
-    index_cosmetolog = models.CharField(max_length=5, blank=True, null=True, default=None)
-    street_cosmetolog = models.ForeignKey(Address, related_name='street_cosmetolog', blank=True, null=True,
-                                          default=None, on_delete=models.CASCADE)
-    house_cosmetolog = models.CharField(max_length=8, blank=True, null=True, default=None)
-    order_email = models.EmailField(blank=True, null=True, default=None)
-    order_phone = models.CharField(max_length=13, blank=True, null=True, default=None)
-    balance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    logo_image = models.ImageField(upload_to='logo_images/', help_text="optimal size  600x450")
-    description = RichTextField(blank=True, null=True, default=None,
-                                help_text="краткое описание, 70 симоволов, которых будет на шот-рекламе")
-    description_region = models.CharField(max_length=255, blank=True, null=True, default=None)
-    description_tariff = models.CharField(max_length=255, blank=True, null=True, default=None)
-    description_service = models.CharField(max_length=255, blank=True, null=True, default=None)
-    description_product = models.CharField(max_length=255, blank=True, null=True, default=None)
-    headline = models.CharField(max_length=128, blank=True, null=True, default=None)
-    working_hours = RichTextField(blank=True, null=True, default=None,
-                                  help_text="указать дни недели и время от и до - Понедельник 10:00 -15:00")
-    rating = models.DecimalField(max_digits=3, decimal_places=0, default=0)
-    review_count = models.IntegerField(default=0)
-    order_nmb = models.IntegerField(default=0)
-    fee = models.DecimalField(max_digits=3, decimal_places=2, default=0)
+    city = models.CharField(max_length=16, blank=True, null=True, default=None)
+    certificate_image = models.ImageField(upload_to='certificate_images/', default=None)
+    user = models.OneToOneField(User, default=None, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=False)
-    is_visible = models.BooleanField(default=False)
-    registration_time = models.DateTimeField(blank=True, default=None)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-    site_url = models.URLField(blank=True, null=True, default=None)
-    active_until = models.DateTimeField(auto_now_add=True, auto_now=False)
-    is_paid = models.BooleanField(default=False)
-    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.CASCADE)
 
     def __str__(self):
         # return "%s" % self.name
@@ -243,8 +216,8 @@ def pre_save_post_receiver(sender, instance, *args, **kwargs):
 
 
 # pre_save.connect(pre_save_post_receiver, sender=CategoryForCosmetolog)
-pre_save.connect(pre_save_post_receiver, sender=Cosmetolog)
-pre_save.connect(pre_save_post_receiver, sender=ServiceProduct)
+# pre_save.connect(pre_save_post_receiver, sender=Cosmetolog)
+# pre_save.connect(pre_save_post_receiver, sender=ServiceProduct)
 
 
 class CosmetologAddress(models.Model):

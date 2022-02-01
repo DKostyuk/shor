@@ -3,9 +3,16 @@
 
 {% block content %}
 
-<h1 class="text-center">
-    Rejestracja została ukończona.<br>Potwierdzenie rejestracji otrzymasz przez email.<br>Proszę sprawdzić emaila.
-</h1>
-{{ aswer }}
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 about-box">
+                {% if registration_profile_text_object.page_text %}
+                    {% autoescape off %} {{ registration_profile_text_object.page_text }} {% endautoescape %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

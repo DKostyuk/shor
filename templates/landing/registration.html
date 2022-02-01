@@ -19,17 +19,26 @@
             <div class="container top-container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 login-page">
-                        <h3 class="text-center">Регистрация</h3>
+                        <h3 class="text-center">Реєстрація</h3>
 
                             {% if login_error %}
                         <label class="error">{{ login_error }}</label>
                             {% endif %}
-                        <form action="/registration/" method="post" class="text-center col-lg-6 offset-lg-3">{% csrf_token %}
+                        <form action="/registration/" method="post" class="text-center col-lg-6 offset-lg-3" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" name="{{ form_cosmetolog.name.name }}" class="form-control"
+                                       placeholder="Призвище та Ім'я" required>
+                            </div>
                             <div class="form-group">
                                 <input type="email" name="{{ form.email.name }}"
-                                       class="form-control" placeholder="Эл. почта" required>
+                                       class="form-control" placeholder="Ел. пошта" required>
                             </div>
-                             <div class="form-group">
+                            <div class="form-group">
+                                <input type="text" name="{{ form_cosmetolog.city.name }}"
+                                       class="form-control" placeholder="Місто" required>
+                            </div>
+                            <div class="form-group">
                                 <input name="{{ form.password1.name }}" type="password"
                                        class="form-control" placeholder="Пароль" required>
                             </div>
@@ -37,11 +46,17 @@
                             <input name="{{ form.password2.name }}" type="hidden" class="form-control"
                                    placeholder="Повторить Пароль">
                             </div>
-                            <label>Регистрируясь, вы соглашаетесь с пользовательским соглашением</label>
-                            <button type="submit" class="btn btn-primary btn-orange btn-registration"
-                            name="_ask_registration">Зарегистрироваться</button>
+                            <div class="form-group">
+                                <label> Додайте Ваш сертифікат косметолога
+                                    <input type="file" name="{{ form_cosmetolog.certificate_image.name }}" id="getFile">
+                                </label>
+                            </div>
+                            <label>Реєструючись, ви погоджуєтеся з <a href="/dohovir-publichnoi-oferty/"> договором публичної оферти</a>
+                                та <a href="/uhoda-korystuvacha/">угодою користувача</a></label>
+                            <button type="submit" class="btn shor-btn shor-color"
+                            name="_ask_registration">Зареєструватися</button>
                         </form>
-                        <a href="/login/"><div class="label round secondary col-lg-6 offset-lg-3 link-login">Уже Зарегистрирован</div></a>
+                        <a href="/login/"><div class="label round secondary col-lg-6 offset-lg-3 link-login">Вже Зареєстрований</div></a>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,6 @@ from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
 
-
 class Subscriber(models.Model):
     email = models.EmailField()
     email_confirm = models.BooleanField(default=False)
@@ -36,18 +35,10 @@ class Subscriber(models.Model):
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
         if created:
-            print('---instance---', instance)
-            print('---type of instance---', type(instance))
-            print('---QQQQQQ---', str(instance))
             Subscriber.objects.create(user=instance, email=str(instance))
 
     @receiver(post_save, sender=User)
     def save_user_profile(sender, instance, **kwargs):
-        print('---instance--Save-', instance)
-        print('---type of instance--Save-', type(instance))
-        print('---QQQQQQ--Save-', str(instance))
-        print("-----instance.subscriber----", instance.subscriber)
-        print("-----instance.subscriber----", dir(instance))
         instance.subscriber.save()
 
     class Meta:

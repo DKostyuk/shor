@@ -7,7 +7,6 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from ckeditor.widgets import CKEditorWidget
 
 
-
 class SubscriberForm(forms.ModelForm):
 
     class Meta:
@@ -19,19 +18,7 @@ class CosmetologForm(forms.ModelForm):
 
     class Meta:
         model = Cosmetolog
-        fields = ["name", "order_email", "order_phone", "logo_image", "headline", "description", "description_region",
-                  "description_tariff", "description_service", "description_product", "city_cosmetolog",
-                  "index_cosmetolog", "street_cosmetolog", "house_cosmetolog"]
-        description = forms.CharField(widget=CKEditorWidget())
-
-
-class TestCosmetologForm(forms.ModelForm):
-
-    class Meta:
-        model = Cosmetolog
-        fields = ['description']
-        # description = forms.CharField(widget=CKEditorWidget())
-
+        fields = ["name", "city", "certificate_image"]
 
 
 class AddServiceForm(forms.ModelForm):
