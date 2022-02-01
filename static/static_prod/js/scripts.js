@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+    $("#getFile").change(function() {
+      filename = this.files[0].name;
+      console.log(filename);
+    });
     // console.log(1);
 
 //    $('.hidden-info').removeClass('hidden').hide();
