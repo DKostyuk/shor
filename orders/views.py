@@ -104,7 +104,7 @@ def checkout(request):
 
             # создать Заказ включая инфо по Получателю и статус новый
             new_order = new_order_form.save(commit=False)
-            status = StatusOrder.objects.get(name='NEW')
+            status = StatusOrder.objects.get(status_number=11)
             new_order.status_id = status.id
             username_id = auth.get_user(request).id
             cosmetolog = Cosmetolog.objects.get(user=username_id, is_active=True)
