@@ -27,12 +27,29 @@
                         <form action="/registration/" method="post" class="text-center col-lg-6 offset-lg-3" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="form-group">
-                                <input type="text" name="{{ form_cosmetolog.name.name }}" class="form-control"
-                                       placeholder="Призвище та Ім'я" required>
+                                <input type="text" name="{{ form_cosmetolog.cosmetolog_surname.name }}" class="form-control"
+                                       placeholder="Призвище" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="{{ form_cosmetolog.cosmetolog_name.name }}" class="form-control"
+                                       placeholder="Ім'я" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="{{ form_cosmetolog.cosmetolog_father_name.name }}" class="form-control"
+                                       placeholder="По батькові" required>
+                            </div>
+                            <div class="row">
+                                <div class="form-group tel-index col-lg-3">
+                                    <div name="tel_index" class="form-control">+38</div>
+                                </div>
+                                <div class="form-group tel-number col-lg-9">
+                                    <input name="{{ form_cosmetolog.tel_number.name }}" class="form-control"
+                                           type="tel" pattern="[0-9]{10}" placeholder="Телефон 0504755151" required>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <input type="email" name="{{ form.email.name }}"
-                                       class="form-control" placeholder="Ел. пошта" required>
+                                       class="form-control" placeholder="Ел. пошта - це буде Ваш логін" required>
                             </div>
                             <div class="form-group">
                                 <input type="text" name="{{ form_cosmetolog.city.name }}"

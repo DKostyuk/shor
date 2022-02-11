@@ -1,42 +1,82 @@
 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <form action="" method="post" class="text-center" enctype="multipart/form-data" id="form_profile_save" >
-        {% csrf_token %}
-        <div>
-            <input name="cosmetolog_id" class="form-control" value="{{ cosmetolog_object.id }}" type="hidden">
-        </div>
-        <div class="form-group row justify-content-center">
-            <div class="col-lg-11">
-                <label class="title_input_01">Краткое описание места предоставления услуг</label>
-                <input name="{{ form.description_region.name }}" class="form-control form-control-sm" type="text"
-                       placeholder="Введите краткое описание места предоставления услуг"
-                       value="{{ cosmetolog_object.description_region|default_if_none:'' }}">
-            </div>
-        </div>
-        <div class="form-group row justify-content-center">
-            <div class="col-lg-11 profile-text-block">
-                <label class="title_input_01">Описание ценовой политики</label>
-                <input name="{{ form.description_tariff.name }}" class="form-control form-control-sm" type="text"
-                       placeholder="Введите краткое описание ценовой политики"
-                       value="{{ cosmetolog_object.description_tariff|default_if_none:'' }}">
-            </div>
-        </div>
-        <div class="form-group row justify-content-center">
-            <div class="col-lg-11">
-                <label class="title_input_01">Описание услуг</label>
-                <input name="{{ form.description_service.name }}" class="form-control form-control-sm"
-                          placeholder="Введите краткое описание предоставляемых услуг"
-                          value="{{ cosmetolog_object.description_service|default_if_none:'' }}">
-            </div>
-        </div>
-        <div class="form-group row justify-content-center">
-            <div class="col-lg-11">
-                <label class="title_input_01">Описание товаров</label>
-                <input name="{{ form.description_product.name }}" class="form-control form-control-sm"
-                          placeholder="Введите краткое описание товаров"
-                          value="{{ cosmetolog_object.description_product|default_if_none:'' }}">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary btn-orange profile-btn-save" name="_save_profile">
-            Сохранить</button>
-    </form>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#order_"
+            aria-expanded="false" aria-controls="collapseExample"> Button with data-target</button>
+    <div class="collapse" id="order_">
+      <div class="card card-body">
+        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+      </div>
+    </div>
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>Дата Замовлення</th>
+                <th>Номер Замовлення</th>
+                <th>Поточний статус</th>
+                <th>Сумма</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ order_set }}
+
+            {% for order in order_list %}
+                <tr>
+                    <td>
+                        <span>{{ order.order_created }}</span>
+                    </td>
+                    <td>
+                        <span>{{ order.order_number }}</span>
+                    </td>
+                    <td>
+                         <span >{{ order.order_status }}</span>
+                    </td>
+                    <td>
+                         <span>{{ order.total_price }} грн.</span>
+                    </td>
+                    <td>
+                         <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                 data-target="#order_{{ order.order_number }}" aria-expanded="false"
+                                 aria-controls="collapseExample"> Розгорнути</button>
+                    </td>
+                </tr>
+                <table class="table text-center collapse" id="order_{{ order.order_number }}">
+                    <thead>
+                        <tr>
+                            <th>Товар</th>
+                            <th>Кількість</th>
+                            <th>Ціна</th>
+                            <th>Сума</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product_in_order in products_in_order %}
+                            <tr>
+                                <td>
+                                    <span>{{ product_in_order.product }}</span>
+                                </td>
+                                <td>
+                                    <span>{{ product_in_order.nmb }}</span>
+                                </td>
+                                <td>
+                                     <span class="product-price" name="price_per_item">
+                                        {{ product_in_order.price_per_item}} грн.
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="total-product-in-basket-amount">
+                                        {{ product_in_order.total_price }} грн.
+                                    </span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+<hr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+<hr>
+
 </div>

@@ -2,9 +2,12 @@ from django import forms
 from .models import *
 
 
-class CheckoutContactForm(forms.Form):
-    name = forms.CharField(required=True)
-    phone = forms.CharField(required=True)
+class OrderForm(forms.ModelForm):
+
+    class Meta:
+        model = Order
+        fields = ["receiver_name", "receiver_surname", "receiver_father_name", "receiver_email",
+                  "receiver_phone", "receiver_delivery_address"]
 
 
 class ServiceOrderForm(forms.ModelForm):

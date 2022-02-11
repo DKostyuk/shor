@@ -5,17 +5,18 @@
     </div>
     <div class="checkout-total-order">
         <h4 class="checkout-total-order-title"> Итого </h4>
-        <div class="checkout-total-items"> X единиц товаров на сумму ZZZZ грн. </div>
-        <div class="checkout-total-delivery"> Стоимость доставки - по тарифам перевозчика</div>
+        <div class="checkout-total-items"><span id="total-payment-nmb-sum">{{ payment_nmb_sum }}</span> одиниць товару </div>
+        <div class="checkout-total-delivery"> Вартість доставки згідно тарифам перевізника</div>
         <hr>
-        <div class="checkout-total-payment"> К оплате  ЙЙЙЙЙЙ грн.</div>
+        <div class="checkout-total-payment"> До сплати <span  id="total_order_amount">{{ payment_money_sum }}</span> грн.</div>
         <hr>
         <div class="text-right">
-            <button type="submit" class="btn btn-primary btn-lg">Заказ подтверждаю</button>
+            <button type="submit" class="btn btn-primary btn-lg"
+                    onclick="document.getElementById('submit_order_btn').click()">Заказ подтверждаю</button>
         </div>
-        <div class="checkout-user-agreement"> Подтверждая заказ, я принимаю условия:
-            положения о сборе и защите персональных данных
-            пользовательского соглашения
+        <div class="checkout-user-agreement"> Підтверджуючи замовлення, я приймаю умови:
+            <a href="/dohovir-publichnoi-oferty/"> Договору публичної оферти</a>
+            та <a href="/uhoda-korystuvacha/">Угоди користувача</a>
         </div>
     </div>
 </div>

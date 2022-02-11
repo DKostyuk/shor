@@ -2,36 +2,54 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <label>Имя</label>
-                <span class="form-error">{{ form.name.errors }}</span>
-                <input type="text" name="{{ form.customer_name.name }}"
-                       class="form-control" placeholder="*Ваше имя" required>
+                <label>Ім'я</label>
+                <span class="form-error">{{ form.receiver_name.errors }}</span>
+                <input type="text" name="{{ form.receiver_name.name }}" value="{{ request.POST.receiver_name }}"
+                       class="form-control" placeholder="*" required>
+                <span class="email--error">{{ form.receiver_name.errors }}</span>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                <label>Фамилия</label>
-                <span class="form-error">{{ form.name.errors }}</span>
-                <input name="{{ form.customer_surname.name }}"
-                       class="form-control" placeholder="*Ваш телефон" required>
+                <label>Призвище</label>
+                <span class="form-error">{{ form.receiver_surname.errors }}</span>
+                <input name="{{ form.receiver_surname.name }}" value="{{ request.POST.receiver_surname }}"
+                       class="form-control" placeholder="*" required>
+                <span class="email--error">{{ form.receiver_surname.errors }}</span>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <label>Отчество</label>
-                <span class="form-error">{{ form.name.errors }}</span>
-                <input name="{{ form.customer_father_name.name }}"
-                       class="form-control" placeholder="*Отчество" required>
+                <label>По батькові</label>
+                <span class="form-error">{{ form.receiver_father_name.errors }}</span>
+                <input name="{{ form.receiver_father_name.name }}" value="{{ request.POST.receiver_father_name }}"
+                       class="form-control" placeholder="*" required>
+                <span class="email--error">{{ form.receiver_father_name.errors }}</span>
             </div>
         </div>
         <div class="col-lg-6">
+            <label>Ел. пошта</label>
             <div class="form-group">
-                <label>Телефон</label>
-                <span class="form-error">{{ form.phone.errors }}</span>
-                <input type="text" name="phone_1" class="form-control"
-                    value="{{ request.POST.phone_1 }}">
+                <input name="{{ form.receiver_email.name }}" class="form-control"
+                       type="email" value="{{ request.POST.receiver_email }}">
+                <span class="email--error">{{ form.receiver_email.errors }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <label>Телефон</label>
+            <div class="row">
+                <div class="form-group tel-index col-lg-3">
+                    <div name="tel_index" class="form-control">+38</div>
+                </div>
+                <div class="form-group tel-number col-lg-9">
+                    <input name="{{ form.receiver_phone.name }}" class="form-control"
+                           type="tel" pattern="[0-9]{10}" value="{{ request.POST.receiver_phone }}">
+                    <span class="email--error">{{ form.receiver_phone.errors }}</span>
+                </div>
             </div>
         </div>
     </div>

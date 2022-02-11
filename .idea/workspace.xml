@@ -1,20 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-01-27 many changes - ready for product">
-      <change afterPath="$PROJECT_DIR$/cosmetologs/migrations/0037_cosmetolog_user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/certificate_images/BalanCell_png_ban_jVfu4KO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/certificate_images/DSC_3369_s.png" afterDir="false" />
+    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-02-01 registration">
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0014_alter_productinorder_product.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0015_rename_status_statusorder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0016_order_order_number.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0023_productitemsales.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0029_auto_20220208_1710.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/certificate_images/DSC_3319_s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/home_cosmetolog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/home_visitor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/product_item_sales.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/profile_additional_before.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/profile_before.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_before_changing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_delivery section_before change.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_order_table_before.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orders/order_history.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orders/order_success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/products/product_before_split.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/products/product_cosmetolog_sales.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/products/product_visitor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/another/tokens.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/tokens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cosmetologs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/landing/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shor/current_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/shor/current_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/static_dev/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/static_dev/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/cabinet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/home_center_intro_carousel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/home_center_intro_carousel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/profile_additional.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/profile_additional.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/profile_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/profile_main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/landing/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/registration_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/registration_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar_shor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar_shor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orders/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orders/checkout_delivery section.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/checkout_delivery section.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orders/checkout_order_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/checkout_order_table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orders/checkout_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/checkout_sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orders/order_receiver_contact_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/order_receiver_contact_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/product_line.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_line.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,10 +133,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\landing" />
+      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\orders" />
+      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\products" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\blogs" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\blog" />
-      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\static\media\logo_images" />
-      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\products" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor" />
@@ -329,20 +369,6 @@
       <workItem from="1593613541514" duration="4022000" />
       <workItem from="1593937419291" duration="1305000" />
       <workItem from="1594792414288" duration="637000" />
-    </task>
-    <task id="LOCAL-00002" summary="shor project - started">
-      <created>1642431933636</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1642431933637</updated>
-    </task>
-    <task id="LOCAL-00003" summary="shor project - started">
-      <created>1642431997590</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1642431997590</updated>
     </task>
     <task id="LOCAL-00004" summary="shor project - started">
       <created>1642432018377</created>
@@ -673,7 +699,21 @@
       <option name="project" value="LOCAL" />
       <updated>1643386553685</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="2022-02-01 registration">
+      <created>1643716737131</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1643716737132</updated>
+    </task>
+    <task id="LOCAL-00052" summary="2022-02-01 registration">
+      <created>1643716752213</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1643716752213</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -708,14 +748,15 @@
     <MESSAGE value="2022-01-24 new footer" />
     <MESSAGE value="2022-01-26 many changes - ready for product" />
     <MESSAGE value="2022-01-27 many changes - ready for product" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-01-27 many changes - ready for product" />
+    <MESSAGE value="2022-02-01 registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022-02-01 registration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/landing/views.py</url>
-          <line>229</line>
+          <line>247</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

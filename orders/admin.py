@@ -7,21 +7,41 @@ class ProductInOrderInline(admin.TabularInline):
     extra = 0
 
 
-class StatusAdmin (admin.ModelAdmin):
-    list_display = [field.name for field in Status._meta.fields]
+class OrderPaymentInline(admin.TabularInline):
+    model = OrderPayment
+    extra = 0
+    readonly_fields = ['order_total_price', 'modified_by']
+
+
+class StatusPaymentAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in StatusPayment._meta.fields]
 
     class Meta:
-        model = Status
+        model = StatusPayment
 
-admin.site.register(Status, StatusAdmin)
+
+admin.site.register(StatusPayment, StatusPaymentAdmin)
+
+
+class StatusOrderAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in StatusOrder._meta.fields]
+
+    class Meta:
+        model = StatusOrder
+
+
+admin.site.register(StatusOrder, StatusOrderAdmin)
 
 
 class OrderAdmin (admin.ModelAdmin):
     list_display = [field.name for field in Order._meta.fields]
-    inlines = [ProductInOrderInline]
+    inlines = [ProductInOrderInline, OrderPaymentInline]
+    search_fields = ['cosmetolog__cosmetolog_name', 'cosmetolog__tel_number']
+    # inlines = [OrderPaymentInline]
 
     class Meta:
         model = Order
+
 
 admin.site.register(Order, OrderAdmin)
 
@@ -32,6 +52,7 @@ class ProductInOrderAdmin (admin.ModelAdmin):
     class Meta:
         model = ProductInOrder
 
+
 admin.site.register(ProductInOrder, ProductInOrderAdmin)
 
 
@@ -40,6 +61,7 @@ class ProductInBasketAdmin (admin.ModelAdmin):
 
     class Meta:
         model = ProductInBasket
+
 
 admin.site.register(ProductInBasket, ProductInBasketAdmin)
 
@@ -51,4 +73,17 @@ class ServiceOrderAdmin (admin.ModelAdmin):
     class Meta:
         model = ServiceOrder
 
+
 admin.site.register(ServiceOrder, ServiceOrderAdmin)
+
+
+class OrderPaymentAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in OrderPayment._meta.fields]
+    search_fields = ['order__order_number']
+    readonly_fields = ['order_total_price', 'modified_by']
+
+    class Meta:
+        model = OrderPayment
+
+
+admin.site.register(OrderPayment, OrderPaymentAdmin)

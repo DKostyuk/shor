@@ -2,6 +2,7 @@ from .models import ProductInBasket
 from landing.models import LogoImage, Subscriber
 from products.models import ProductCategory
 from django.contrib import auth
+from cosmetologs.models import *
 
 
 def getting_basket_info(request):
@@ -12,12 +13,20 @@ def getting_basket_info(request):
         #re-apply value
         request.session.cycle_key()
     products_in_basket = ProductInBasket.objects.filter(session_key=session_key, is_active=True)
-
     products_total_nmb = products_in_basket.count()
     try:
         logo_images = LogoImage.objects.get(is_active=True, is_main=True)
     except:
         pass
-    username = auth.get_user(request).username
     product_lines = ProductCategory.objects.filter(is_active=True).order_by('id')
+
+    username = auth.get_user(request).username
+    username_id = auth.get_user(request).id
+    try:
+        print('---CONTEXT-------username_id-----', username_id, username)
+        cosmetolog = Cosmetolog.objects.get(user=username_id, is_active=True)
+    except:
+        cosmetolog = None
+    print('--CONTEXT-----HERE HOM and COSMO -----', cosmetolog, type(cosmetolog))
+
     return locals()

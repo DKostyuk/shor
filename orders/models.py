@@ -1,11 +1,32 @@
 from django.db import models
-from products.models import Product
+from products.models import Product, ProductItemSales
 from cosmetologs.models import ServiceProduct, Cosmetolog
 from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.contrib.auth.models import User
+from shor.current_user import get_current_user
 
 
-class Status(models.Model):
+class StatusPayment(models.Model):
+    status_number = models.IntegerField(default=0)
+    name = models.CharField(max_length=24, blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __str__(self):
+        return "%s" % self.name
+
+    def __unicode__(self):
+        return "%s" % self.name
+
+    class Meta:
+        verbose_name = 'StatusPayment'
+        verbose_name_plural = 'StatusPayments'
+
+
+class StatusOrder(models.Model):
+    status_number = models.IntegerField(default=0)
     name = models.CharField(max_length=24, blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
@@ -23,32 +44,39 @@ class Status(models.Model):
 
 
 class Order(models.Model):
-    user = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    order_number = models.IntegerField(default=0)
+    cosmetolog = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    status = models.ForeignKey(StatusOrder, on_delete=models.CASCADE)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0) #total price for all products in order
-    customer_name = models.CharField(max_length=64, blank=True, null=True, default=None)
-    customer_email = models.EmailField(blank=True, null=True, default=None)
-    customer_phone = models.CharField(max_length=48, blank=True, null=True, default=None)
-    customer_address = models.CharField(max_length=128, blank=True, null=True, default=None)
+    receiver_name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    receiver_surname = models.CharField(max_length=64, blank=True, null=True, default=None)
+    receiver_father_name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    receiver_email = models.EmailField(blank=True, null=True, default=None)
+    receiver_phone = models.CharField(max_length=16, blank=True, null=True, default=None)
+    receiver_delivery_address = models.CharField(max_length=128, blank=True, null=True, default=None)
     comments = models.TextField(blank=True, null=True, default=None)
-    status = models.ForeignKey(Status, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "Order %s %s" % (self.id, self.status.name)
+        return "Order %s %s" % (self.order_number, self.status.name)
 
     class Meta:
         verbose_name = 'Order'
         verbose_name_plural = 'Orders'
 
-    def save(self, *args, **kwargs):
 
-        super(Order, self).save(*args, **kwargs)
+@receiver(post_save, sender=Order)
+def create_order_number(sender, instance, created, *args, **kwargs):
+    if created:
+        print('----after Order creation----')
+        instance.order_number = 100100 + instance.id
+        instance.save(force_update=True)
 
 
 class ProductInOrder(models.Model):
     order = models.ForeignKey(Order, blank=True, null=True, default=None, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    product = models.ForeignKey(ProductItemSales, blank=True, null=True, default=None, on_delete=models.CASCADE)
     nmb = models.IntegerField(default=1)
     price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # price*nmb
@@ -57,16 +85,18 @@ class ProductInOrder(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "%s" % self.product.name
+        return "%s" % self.product.product_item
 
     class Meta:
         verbose_name = 'ProductInOrder'
         verbose_name_plural = 'ProductInOrders'
 
     def save(self, *args, **kwargs):
-        price_per_item = self.product.price
-        self.price_per_item = price_per_item
-        self.total_price = int(self.nmb) * price_per_item
+        # price_per_item = self.product.price_current
+        # Проверить - а вообще подумать над логикой если изменяется цена продукта в то время когда лежит товар в корзине
+        # Проверить - а вообще подумать над логикой изменения товара в ORDER - все модификации должны быть там
+        # self.price_per_item = price_per_item
+        self.total_price = int(self.nmb) * self.price_per_item
 
         super(ProductInOrder, self).save(*args, **kwargs)
 
@@ -89,7 +119,7 @@ post_save.connect(product_in_order_post_save, sender=ProductInOrder)
 class ProductInBasket(models.Model):
     session_key = models.CharField(max_length=128, blank=True, null=True, default=None)
     order = models.ForeignKey(Order, blank=True, null=True, default=None, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    product = models.ForeignKey(ProductItemSales, blank=True, null=True, default=None, on_delete=models.CASCADE)
     nmb = models.IntegerField(default=1)
     price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)#price*nmb
@@ -98,16 +128,16 @@ class ProductInBasket(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "%s" % self.product.name
+        return "%s" % self.product.product_item
 
     class Meta:
         verbose_name = 'ProductInBasket'
         verbose_name_plural = 'ProductInBaskets'
 
     def save(self, *args, **kwargs):
-        price_per_item = self.product.price
+        price_per_item = self.product.price_current
         self.price_per_item = price_per_item
-        self.total_price = int(self.nmb) * price_per_item
+        self.total_price = int(self.nmb) * self.price_per_item
 
         super(ProductInBasket, self).save(*args, **kwargs)
 
@@ -130,7 +160,7 @@ class ServiceOrder(models.Model):
     customer_phone = models.CharField(max_length=48, blank=True, null=True, default=None)
     customer_city = models.CharField(max_length=48, blank=True, null=True, default=None)
     comments = models.TextField(blank=True, null=True, default=None)
-    status = models.ForeignKey(Status, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    status = models.ForeignKey(StatusOrder, blank=True, null=True, default=None, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -146,3 +176,42 @@ class ServiceOrder(models.Model):
         super(ServiceOrder, self).save(*args, **kwargs)
 
 
+class OrderPayment(models.Model):
+    status = models.ForeignKey(StatusPayment, default=None, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    payment_sum = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    order_total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    comments = models.TextField(blank=True, null=True, default=None)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "Order %s %s" % (self.id, self.status.name)
+
+    class Meta:
+        verbose_name = 'OrderPayment'
+        verbose_name_plural = 'OrderPayments'
+
+    def save(self, *args, **kwargs):
+        user = get_current_user()
+        if user and user.is_authenticated:
+            self.modified_by = user
+        print('checking ------ checking')
+
+        super(OrderPayment, self).save(*args, **kwargs)
+
+
+@receiver(post_save, sender=Order)
+def update_order_total_price(sender, instance, created, *args, **kwargs):
+    order_payments = OrderPayment.objects.filter(order=instance)
+    for op in order_payments:
+        op.order_total_price = instance.total_price
+        op.save(force_update=True)
+
+
+@receiver(post_save, sender=OrderPayment)
+def update_order_total_price(sender, instance, created, *args, **kwargs):
+    if created:
+        instance.order_total_price = instance.order.total_price
+        instance.save(force_update=True)

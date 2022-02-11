@@ -1,0 +1,22 @@
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <p><span class="product-page-volume">{% for p_item in product_item %}
+                            {% if forloop.last %}
+                                {{ p_item.volume }} {{ p_item.volume_type }}
+                            {% else %}
+                                {{ p_item.volume }} {{ p_item.volume_type }} /
+                            {% endif %}
+                        {% endfor %}
+                        </span><br>
+                        Арт.
+                        {% for p_item in product_item %}
+                            {% if forloop.last %}
+                                {{ p_item.ref_number }}
+                            {% else %}
+                                {{ p_item.ref_number }} /
+                            {% endif %}
+                        {% endfor %}
+                                <br>
+                        {{ product.description_4 }} / {{ product.description_5 }}</p>
+                        </div>
+                    </div>

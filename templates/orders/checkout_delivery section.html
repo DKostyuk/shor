@@ -1,27 +1,35 @@
 <div>
-    delivery block - надо добавить общий текст ил н енадо, добавить сбоку
-
-
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link active" id="pills-new-post-tab" data-toggle="pill" href="#pills-new-post" role="tab" aria-controls="pills-new-post" aria-selected="true">Новая Почта</a>
+        <a class="nav-link active" id="pills-new-post-tab" data-toggle="pill" href="#pills-new-post" role="tab" aria-controls="pills-new-post" aria-selected="true">Нова Пошта</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+        <a class="nav-link hidden" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+        <a class="nav-link hidden" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
       </li>
     </ul>
     <div class="tab-content" id="pills-tabContent">
-      <div class="tab-pane fade show active" id="pills-new-post" role="tabpanel" aria-labelledby="pills-new-post-tab">.Укажите отедление Новой Почты..</div>
-      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+      <div class="tab-pane fade show active" id="pills-new-post" role="tabpanel" aria-labelledby="pills-new-post-tab">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="form-group">
+                      <label>Вкажіть точку видачі - Місто та відділення Нова Пошта</label>
+                      <span class="form-error">{{ form.receiver_delivery_address.errors }}</span>
+                      <input type="text" name="{{ form.receiver_delivery_address.name }}"
+                             value="{{ request.POST.receiver_delivery_address }}"
+                             class="form-control" placeholder="*" required>
+                      {{ form.errors }}
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
     <hr>
     <div>
         <div class="checkout-page-order-title">
-            <span class="checkout-page-list-number"> * </span> Контактные данные получателя заказа
+            <span class="checkout-page-list-number"> * </span> Контактні дані отримувача замовлення
         </div>
         {% include 'orders/order_receiver_contact_form.html' %}
     </div>

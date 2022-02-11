@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 order-success">
+                    <h1>Замовлення {{ new_order_number }}</h1>
+                    {% if order_text_object.page_text %}
+                        {% autoescape off %} {{ order_text_object.page_text }} {% endautoescape %}
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

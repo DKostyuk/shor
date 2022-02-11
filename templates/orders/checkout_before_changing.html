@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<form class="form-horizontal" method="post">{% csrf_token %}
+    <div class="container">
+        <div class="row col-lg-12">
+            {% if products_in_basket %}
+            <div class="col-lg-8">
+                <h2 class="text-center checkout-page-title">Оформление заказа</h2>
+                <hr>
+                <div class="checkout-page-contact-data">
+                    <span class="checkout-page-list-number"> 1 </span>
+                        Контактные данные
+                </div>
+                    {% include 'orders/checkout_user_contact_section.html' %}
+
+                    <div class="checkout-page-order-title">
+                        <span class="checkout-page-list-number"> 2 </span> Ваш Заказ
+                    </div>
+                    {% include 'orders/checkout_order_table.html' %}
+
+                    <div class="checkout-page-order-title">
+                        <span class="checkout-page-list-number"> 3 </span>
+                        Доставка
+                    </div>
+                    {% include 'orders/checkout_delivery section.html' %}
+
+                    <div class="checkout-page-order-title">
+                        <span class="checkout-page-list-number"> 4 </span>
+                        Оплата
+                    </div>
+                    {% include 'orders/checkout_payment section.html' %}
+
+            </div>
+            <div class="col-lg-4 checkout-sidebar">
+                {% include 'orders/checkout_sidebar.html' %}
+            </div>
+        </div>
+    </div>
+</form>
+             {% else %}
+                <h3 class="text-center">В Вашей корзине нет товаров</h3>
+            {% endif %}
+
+{% endblock %}

@@ -99,3 +99,33 @@ class ProductItemAdmin (admin.ModelAdmin):
 
 
 admin.site.register(ProductItem, ProductItemAdmin)
+
+
+class ProductItemSalesAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in ProductItemSales._meta.fields]
+    readonly_fields = ('price_old', 'price_current', 'price_current_usd', 'exchange_rate', 'created',
+                       'updated', 'modified_by',)
+
+    class Meta:
+        model = ProductItemSales
+
+
+admin.site.register(ProductItemSales, ProductItemSalesAdmin)
+
+
+class CurrencyExchangeAdmin (admin.ModelAdmin):
+    # list_display = [field.name for field in CurrencyExchange._meta.fields]
+    readonly_fields = ('usd_price_uah', 'created', 'updated', 'modified_by',
+                       'usd_rate_before', 'date_before', 'usd_diff',)
+    fields = (
+        ('usd_price_uah', 'usd_rate_initial', 'usd_rate_correct'),
+        ('usd_rate_before', 'date_before', 'usd_diff'),
+        ('modified_by', 'updated'),
+        'created'
+    )
+
+    class Meta:
+        model = CurrencyExchange
+
+
+admin.site.register(CurrencyExchange, CurrencyExchangeAdmin)

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+{% static 'img/LogoRenew.png' as no_logo %}
+
+
+{% if username %}
+<div class="navbar-top">
+    <section class="top-bar-section">
+        <ul class="navbar-right d-flex flex-row-reverse">
+            <li class="nav-logout"><a class="nav-logout-a" href="/profile/">Профиль</a></li>
+            <li class="nav-logout"><a class="nav-logout-a" href="/logout/">Выход ({{ username }})</a></li>
+{#            {% else %}#}
+{#                <li class="nav-login">#}
+{#                    <a class="nav-login-a" href="/registration/">REJESTRACJA</a>#}
+{#                </li>#}
+{#                <li class="nav-login">#}
+{#                    <a class="nav-login-a" href="/login/">LOGOWANIE</a>#}
+{#                </li>#}
+        </ul>
+    </section>
+</div>
+{% endif %}
+
+<div class="general-container-background">
+    <div class="container top-container">
+        <div class="row">
+
+            {% if auto_error %}
+                <label class="error">{{ registration_error }}</label>
+            {% endif %}
+
+            {% if authorization_error %}
+                <label class="error">{{ authorization_error }}</label>
+            {% endif %}
+
+            <div class="col-lg-12">
+                {% if  profile_success %}
+                    <div class="col-lg-12 success-message-notification">
+                        Profile was updated<br>You can make any change here
+                    </div>
+                {% endif %}
+                <h1 class="title"> Please, fill your profile {{ username }}</h1>
+
+                    <select class="selectpicker" name="query_cos">
+                        {% for cosmetolog in cosmetologs_objects_get %}:
+                            <option>{{ cosmetolog.cosmetolog_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <div>
+                        <ul class="nav nav-tabs profile-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                   aria-controls="home" aria-selected="true">Основная информация</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                   aria-controls="profile" aria-selected="false">Дополнительно</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="service-tab" data-toggle="tab" href="#service" role="tab"
+                                   aria-controls="service" aria-selected="false">Услуги</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+
+                                {% include 'landing/profile_main.html' %}
+                                {% include 'landing/profile_additional.html' %}
+                                {% include 'landing/profile_service.html' %}
+
+{#                            <div class="tab-pane fade" id="service" role="tabpanel" aria-labelledby="service-tab">#}
+{#                                ...AAAAAAAAAAA#}
+{#                            </div>#}
+                        </div>
+                    </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

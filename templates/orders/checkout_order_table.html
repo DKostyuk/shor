@@ -1,17 +1,18 @@
 <table class="table text-center">
     <thead>
         <tr>
-            <th>Название товара</th>
-            <th>Количество</th>
-            <th>Цена за еденицу</th>
-            <th>Общая цена</th>
+            <th>Товар</th>
+            <th>Кількість</th>
+            <th>Ціна</th>
+            <th>Сума</th>
         </tr>
     </thead>
     <tbody>
         {% for product_in_basket in products_in_basket %}
             <tr>
                 <td>
-                     {{ product_in_basket.product.name }}
+                    <span>{{ product_in_basket.product }}</span>
+                    <span class="product-basket-name" hidden>{{ product_in_basket.id }}</span>
                 </td>
                 <td>
                      <input value="{{ product_in_basket.nmb }}" type="number"
@@ -32,9 +33,5 @@
         {% endfor %}
     </tbody>
 </table>
-
-<div class="text-right">
-    <b>Сумма заказа: </b> <span id="total_order_amount">9999999</span>
-</div>
 
 <hr>

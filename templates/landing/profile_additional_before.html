@@ -1,0 +1,42 @@
+<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <form action="" method="post" class="text-center" enctype="multipart/form-data" id="form_profile_save" >
+        {% csrf_token %}
+        <div>
+            <input name="cosmetolog_id" class="form-control" value="{{ cosmetolog_object.id }}" type="hidden">
+        </div>
+        <div class="form-group row justify-content-center">
+            <div class="col-lg-11">
+                <label class="title_input_01">Краткое описание места предоставления услуг</label>
+                <input name="{{ form.description_region.name }}" class="form-control form-control-sm" type="text"
+                       placeholder="Введите краткое описание места предоставления услуг"
+                       value="{{ cosmetolog_object.description_region|default_if_none:'' }}">
+            </div>
+        </div>
+        <div class="form-group row justify-content-center">
+            <div class="col-lg-11 profile-text-block">
+                <label class="title_input_01">Описание ценовой политики</label>
+                <input name="{{ form.description_tariff.name }}" class="form-control form-control-sm" type="text"
+                       placeholder="Введите краткое описание ценовой политики"
+                       value="{{ cosmetolog_object.description_tariff|default_if_none:'' }}">
+            </div>
+        </div>
+        <div class="form-group row justify-content-center">
+            <div class="col-lg-11">
+                <label class="title_input_01">Описание услуг</label>
+                <input name="{{ form.description_service.name }}" class="form-control form-control-sm"
+                          placeholder="Введите краткое описание предоставляемых услуг"
+                          value="{{ cosmetolog_object.description_service|default_if_none:'' }}">
+            </div>
+        </div>
+        <div class="form-group row justify-content-center">
+            <div class="col-lg-11">
+                <label class="title_input_01">Описание товаров</label>
+                <input name="{{ form.description_product.name }}" class="form-control form-control-sm"
+                          placeholder="Введите краткое описание товаров"
+                          value="{{ cosmetolog_object.description_product|default_if_none:'' }}">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-orange profile-btn-save" name="_save_profile">
+            Сохранить</button>
+    </form>
+</div>

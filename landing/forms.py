@@ -18,7 +18,8 @@ class CosmetologForm(forms.ModelForm):
 
     class Meta:
         model = Cosmetolog
-        fields = ["name", "city", "certificate_image"]
+        fields = ["cosmetolog_name", "city", "certificate_image", "cosmetolog_surname",
+                  "cosmetolog_father_name", 'tel_number']
 
 
 class AddServiceForm(forms.ModelForm):

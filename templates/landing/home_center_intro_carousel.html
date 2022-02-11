@@ -16,9 +16,9 @@
             </div>
         </div>
         <div class="shor-intro col-lg-7">
-            <h2><span class="shor-intro-head">Коли зустрічаються Природа і Наука</span></h2>
-            <p><span class="shor-intro-text">Передовая парамедицинская косметика, основанная на исследованиях, которая дает отличные результаты</span><br>
-            <span class="shor-intro-text">SHOR Professional - средства по уходу и красоте, которые принесут пользу вашей коже</span></p>
+            {% if home_carousel_text_object.page_text %}
+                    {% autoescape off %} {{ home_carousel_text_object.page_text }} {% endautoescape %}
+                {% endif %}
         </div>
     </div>
 </div>

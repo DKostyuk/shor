@@ -76,7 +76,11 @@ class CosmetologType(models.Model):
 
 
 class Cosmetolog(models.Model):
-    name = models.CharField(max_length=128, blank=True, null=True, default=None)
+    cosmetolog_name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    cosmetolog_surname = models.CharField(max_length=64, blank=True, null=True, default=None)
+    cosmetolog_father_name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    email = models.EmailField(blank=True, null=True, default=None)
+    tel_number = models.CharField(max_length=10, blank=True, null=True, default=None)
     type = models.ForeignKey(CosmetologType, blank=True, null=True, default=None, on_delete=models.CASCADE)
     city = models.CharField(max_length=16, blank=True, null=True, default=None)
     certificate_image = models.ImageField(upload_to='certificate_images/', default=None)
@@ -87,7 +91,7 @@ class Cosmetolog(models.Model):
 
     def __str__(self):
         # return "%s" % self.name
-        return "%s, %s" % (self.id, self.name)
+        return "%s, %s" % (self.id, self.cosmetolog_name)
 
     class Meta:
         verbose_name = 'Cosmetolog'

@@ -3,32 +3,35 @@
 
 
 {% block content %}
-<form class="form-horizontal" method="post">{% csrf_token %}
+
     <div class="container">
         <div class="row col-lg-12">
             {% if products_in_basket %}
             <div class="col-lg-8">
-                <h2 class="text-center checkout-page-title">Оформление заказа</h2>
+                <h2 class="text-center checkout-page-title">Оформлення замовлення</h2>
                 <hr>
-                <div class="checkout-page-contact-data">
-                    <span class="checkout-page-list-number"> 1 </span>
-                        Контактные данные
-                </div>
-                    {% include 'orders/checkout_user_contact_section.html' %}
-
                     <div class="checkout-page-order-title">
-                        <span class="checkout-page-list-number"> 2 </span> Ваш Заказ
+                        <span class="checkout-page-list-number"> 1 </span> Ваше Замовлення
                     </div>
-                    {% include 'orders/checkout_order_table.html' %}
-
+                    <form class="form-horizontal" method="post" id ="form_order_product"
+                          action="{% url 'basket_update' %}">{% csrf_token %}
+                        {% include 'orders/checkout_order_table.html' %}
+                    </form>
                     <div class="checkout-page-order-title">
-                        <span class="checkout-page-list-number"> 3 </span>
+                        <span class="checkout-page-list-number"> 2 </span>
                         Доставка
                     </div>
-                    {% include 'orders/checkout_delivery section.html' %}
+                    <form class="form-horizontal" method="post" id ="form_order_delivery"
+                          action="{% url 'checkout' %}">{% csrf_token %}
+                        {% include 'orders/checkout_delivery section.html' %}
+                        <div class="form-group">
+                            <button type="submit" id="submit_order_btn" class="hidden"
+                            data-product_in_basket = "{{ products_in_basket }}">Купити</button>
 
+                        </div>
+                    </form>
                     <div class="checkout-page-order-title">
-                        <span class="checkout-page-list-number"> 4 </span>
+                        <span class="checkout-page-list-number"> 3 </span>
                         Оплата
                     </div>
                     {% include 'orders/checkout_payment section.html' %}
@@ -39,7 +42,7 @@
             </div>
         </div>
     </div>
-</form>
+
              {% else %}
                 <h3 class="text-center">В Вашей корзине нет товаров</h3>
             {% endif %}
