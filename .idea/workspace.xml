@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-02-11 sales &amp; registration" />
+    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-02-11 sales &amp; registration">
+      <change beforePath="$PROJECT_DIR$/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -315,13 +317,6 @@
       <workItem from="1593613541514" duration="4022000" />
       <workItem from="1593937419291" duration="1305000" />
       <workItem from="1594792414288" duration="637000" />
-    </task>
-    <task id="LOCAL-00006" summary="before server installation on hyperhost.ua">
-      <created>1642599227911</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1642599227911</updated>
     </task>
     <task id="LOCAL-00007" summary="before server installation on hyperhost.ua">
       <created>1642608292659</created>
@@ -659,7 +654,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644595075496</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="2022-02-11 sales &amp; registration">
+      <created>1644595488298</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1644595488298</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TestHistory">

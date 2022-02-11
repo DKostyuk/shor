@@ -355,8 +355,10 @@ def home(request):
     products_sales = ProductItemSales.objects. filter(is_active=True)
     print(products_sales)
     p_sales = get_products_in_sales(products_sales)
-
-    home_carousel_text_object = Page.objects.get(is_active=True, page_name="Home_Carousel")
+    try:
+        home_carousel_text_object = Page.objects.get(is_active=True, page_name="Home_Carousel")
+    except:
+        home_carousel_text_object = None
 
     # products_images_new = products_images_all.filter(product__category__id=1)
     # products_images_popular = products_images_all.filter(product__category__id=2)
