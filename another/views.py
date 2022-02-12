@@ -136,7 +136,7 @@ def trick_item(request, slug=None):
         # base_url = reverse('trick_item')
         # print(123456789, base_url)
         asas, form = calendar_date_picker(request, slug)
-    if slug == "scheduler":
+    if slug == "s": # ранее ьбыло иф слаг шедулер
         asas = 'URA - COPETS VSEM'
         # base_url = reverse('trick_item')
         print(123456789, asas)

@@ -2,32 +2,32 @@ from django.contrib import admin
 from .models import *
 
 
-class SubscriberAdmin (admin.ModelAdmin):
-    list_display = ['id', "name", "email", 'city']
-    # list_display = [field.name for field in Subscriber._meta.fields]
-    list_filter = ['name', 'city']
-    search_fields = ['name', 'email', 'city']
-    # fields = ["email"]
-    # exclude = ["email"]
-    # inlines = [FieldMappingInline]
-	# fields = []
-    #exclude = ["type"]
-	#list_filter = ('report_data',)
-	# search_fields = ['category', 'subCategory', 'suggestKeyword']
+# class SubscriberAdmin (admin.ModelAdmin):
+#     list_display = ['id', "name", "email", 'city']
+#     # list_display = [field.name for field in Subscriber._meta.fields]
+#     list_filter = ['name', 'city']
+#     search_fields = ['name', 'email', 'city']
+#     # fields = ["email"]
+#     # exclude = ["email"]
+#     # inlines = [FieldMappingInline]
+# 	# fields = []
+#     #exclude = ["type"]
+# 	#list_filter = ('report_data',)
+# 	# search_fields = ['category', 'subCategory', 'suggestKeyword']
+#
+#     class Meta:
+#         model = Subscriber
+#
+# admin.site.register(Subscriber, SubscriberAdmin)
 
-    class Meta:
-        model = Subscriber
 
-admin.site.register(Subscriber, SubscriberAdmin)
-
-
-class LogoImageAdmin (admin.ModelAdmin):
-    list_display = [field.name for field in LogoImage._meta.fields]
-
-    class Meta:
-        model = LogoImage
-
-admin.site.register(LogoImage, LogoImageAdmin)
+# class LogoImageAdmin (admin.ModelAdmin):
+#     list_display = [field.name for field in LogoImage._meta.fields]
+#
+#     class Meta:
+#         model = LogoImage
+#
+# admin.site.register(LogoImage, LogoImageAdmin)
 
 
 class SliderMainAdmin (admin.ModelAdmin):
@@ -97,10 +97,10 @@ class TrainingUserAdmin (admin.ModelAdmin):
 admin.site.register(TrainingUser, TrainingUserAdmin)
 
 
-class SubscriberCosmetologAdmin (admin.ModelAdmin):
-    list_display = [field.name for field in SubscriberCosmetolog._meta.fields]
-
-    class Meta:
-        model = SubscriberCosmetolog
-
-admin.site.register(SubscriberCosmetolog, SubscriberCosmetologAdmin)
+# class SubscriberCosmetologAdmin (admin.ModelAdmin):
+#     list_display = [field.name for field in SubscriberCosmetolog._meta.fields]
+#
+#     class Meta:
+#         model = SubscriberCosmetolog
+#
+# admin.site.register(SubscriberCosmetolog, SubscriberCosmetologAdmin)

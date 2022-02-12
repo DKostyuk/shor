@@ -5,6 +5,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.contrib.auth.models import User
 from shor.current_user import get_current_user
+from products.models import CurrencyExchange
 
 
 class StatusPayment(models.Model):
@@ -140,6 +141,19 @@ class ProductInBasket(models.Model):
         self.total_price = int(self.nmb) * self.price_per_item
 
         super(ProductInBasket, self).save(*args, **kwargs)
+
+    @receiver(post_save, sender=ProductItemSales)
+    def update_price_per_item(sender, instance, created, *args, **kwargs):
+        # usd_rate = instance.usd_price_uah
+        products_in_basket = ProductInBasket.objects.filter(product=instance, is_active=True)
+        for p in products_in_basket:
+            # p.price_per_item = instance.price_current
+            # p.price_old = p.price_old_usd * usd_rate
+            # p.price_current = p.price_current_usd * usd_rate
+            p.save()
+
+    # if created:
+    #     Subscriber.objects.create(user=instance, email=str(instance))
 
 
 # Order of Service

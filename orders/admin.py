@@ -66,21 +66,22 @@ class ProductInBasketAdmin (admin.ModelAdmin):
 admin.site.register(ProductInBasket, ProductInBasketAdmin)
 
 
-class ServiceOrderAdmin (admin.ModelAdmin):
-    list_display = [field.name for field in ServiceOrder._meta.fields]
-    # inlines = [ProductInOrderInline]
-
-    class Meta:
-        model = ServiceOrder
-
-
-admin.site.register(ServiceOrder, ServiceOrderAdmin)
+# class ServiceOrderAdmin (admin.ModelAdmin):
+#     list_display = [field.name for field in ServiceOrder._meta.fields]
+#     # inlines = [ProductInOrderInline]
+#
+#     class Meta:
+#         model = ServiceOrder
+#
+#
+# admin.site.register(ServiceOrder, ServiceOrderAdmin)
 
 
 class OrderPaymentAdmin (admin.ModelAdmin):
     list_display = [field.name for field in OrderPayment._meta.fields]
     search_fields = ['order__order_number']
     readonly_fields = ['order_total_price', 'modified_by']
+    raw_id_fields = ['order']
 
     class Meta:
         model = OrderPayment

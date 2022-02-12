@@ -66,7 +66,7 @@ INSTALLED_APPS = [
     'search',
     'bootstrap4',
     'bootstrap_datepicker_plus',
-    'schedule',
+
 
 ]
 

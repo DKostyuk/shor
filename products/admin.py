@@ -2,9 +2,9 @@ from django.contrib import admin
 from .models import *
 
 
-class ProductImageInline(admin.TabularInline):
-    model = ProductImage
-    extra = 0
+# class ProductImageInline(admin.TabularInline):
+#     model = ProductImage
+#     extra = 0
 
 
 class ProductCategoryAdmin (admin.ModelAdmin):
@@ -52,7 +52,7 @@ admin.site.register(ProductVolumeType, ProductVolumeTypeAdmin)
 class ProductAdmin (admin.ModelAdmin):
     list_display = [field.name for field in Product._meta.fields]
     prepopulated_fields = {'slug': ('name',)}
-    inlines = [ProductImageInline]
+    # inlines = [ProductImageInline]
 
     class Meta:
         model = Product
@@ -61,14 +61,14 @@ class ProductAdmin (admin.ModelAdmin):
 admin.site.register(Product, ProductAdmin)
 
 
-class ProductImageAdmin (admin.ModelAdmin):
-    list_display = [field.name for field in ProductImage._meta.fields]
-
-    class Meta:
-        model = ProductImage
-
-
-admin.site.register(ProductImage, ProductImageAdmin)
+# class ProductImageAdmin (admin.ModelAdmin):
+#     list_display = [field.name for field in ProductImage._meta.fields]
+#
+#     class Meta:
+#         model = ProductImage
+#
+#
+# admin.site.register(ProductImage, ProductImageAdmin)
 
 
 class ProductAddFileAdmin(admin.ModelAdmin):
