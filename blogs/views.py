@@ -3,7 +3,10 @@ from blogs.models import *
 
 
 def blog_item(request, slug):
-    blog = Blog.objects.get(slug=slug)
+    try:
+        blog = Blog.objects.get(slug=slug)
+    except:
+        blog = None
     blogs_images_all = BlogImage.objects.filter(is_active=True, is_main=True)
     blogs_images = blogs_images_all[:2]
 

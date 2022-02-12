@@ -87,8 +87,11 @@ def activation_link_request(request):
         username = email_1
     if request.POST:
         email_1 = request.POST.get('email_1', '')
-        newuser = User.objects.get(username=email_1)
-        send_user_activation_email(request, newuser, email_1)
+        try:
+            newuser = User.objects.get(username=email_1)
+            send_user_activation_email(request, newuser, email_1)
+        except:
+            pass
         return redirect('registration_profile')
     args = {'registration_error_1': 'Указанный Вами адрес ', 'registration_error_2': ' уже зарегистрирован',
             'registration_error_3': 'Пожалуйста, подтвердите его', 'email_1': username}
@@ -103,8 +106,11 @@ def registration(request):
         email_1 = request.POST.get('email', '')
         if '_ask_activation' in request.POST:
             email_1 = request.POST.get('email_1', '')
-            newuser = User.objects.get(username=email_1)
-            send_user_activation_email(request, newuser, email_1)
+            try:
+                newuser = User.objects.get(username=email_1)
+                send_user_activation_email(request, newuser, email_1)
+            except:
+                pass
         else:
             password_11 = request.POST.get('password1', '')
             request.POST = request.POST.copy()
@@ -130,7 +136,10 @@ def registration(request):
 
 def registration_profile(request):
     session_key = request.session.session_key
-    registration_profile_text_object = Page.objects.get(is_active=True, page_name="Registration_Profile")
+    try:
+        registration_profile_text_object = Page.objects.get(is_active=True, page_name="Registration_Profile")
+    except:
+        registration_profile_text_object = None
     return render(request, 'landing/registration_profile.html', locals())
 
 
@@ -160,7 +169,10 @@ def cabinet(request):
         subscriber_current = Subscriber.objects.filter(email=username).first().email
         print('----subscriber_current--email --', subscriber_current)
         print('cabinet Locals- -----', type(locals()))
-        subscriber = Subscriber.objects.get(email=username)
+        try:
+            subscriber = Subscriber.objects.get(email=username)
+        except:
+            subscriber = None
         return render(request, 'landing/cabinet.html', locals())
     else:
         authorization_error = "Вход в кабинет только для зарегистрированного пользователя." \
@@ -175,17 +187,19 @@ def profile(request):
     print('----Profile---user-object---', user_object, type(user_object))
     form = CosmetologForm(request.POST or None)
     if username_now:
-        cosmetolog = Cosmetolog.objects.get(user=user_object)
-        form = CosmetologForm(request.POST or None, instance=cosmetolog)
-        order_set = Order.objects.filter(cosmetolog=cosmetolog)
-        order_list = list()
-        for order in order_set:
-            products_in_order = ProductInOrder.objects.filter(order=order)
-            order_with_products = {'order_number': order.order_number, 'order_created': order.created,
-                                   'total_price': order.total_price, 'order_status': order.status,
-                                   'products_in_order': products_in_order}
-            order_list.append(order_with_products)
-
+        try:
+            cosmetolog = Cosmetolog.objects.get(user=user_object)
+            form = CosmetologForm(request.POST or None, instance=cosmetolog)
+            order_set = Order.objects.filter(cosmetolog=cosmetolog)
+            order_list = list()
+            for order in order_set:
+                products_in_order = ProductInOrder.objects.filter(order=order)
+                order_with_products = {'order_number': order.order_number, 'order_created': order.created,
+                                       'total_price': order.total_price, 'order_status': order.status,
+                                       'products_in_order': products_in_order}
+                order_list.append(order_with_products)
+        except:
+            pass
         if request.POST:
             if '_save_profile' in request.POST:
                 form = CosmetologForm(request.POST or None, instance=cosmetolog)
@@ -250,12 +264,15 @@ def test_ajax(request):
     session_key = request.session.session_key
     data = request.POST
     service_category = data.get("category_name")
-    service_category_object = CategoryForCosmetolog.objects.get(name=service_category, is_active=True)
-    service_subcategory_set = SubCategoryForCosmetolog.objects.filter(category=service_category_object, is_active=True)
-    i = 1
-    for item in service_subcategory_set:
-        return_dict[i] = item.name
-        i += 1
+    try:
+        service_category_object = CategoryForCosmetolog.objects.get(name=service_category, is_active=True)
+        service_subcategory_set = SubCategoryForCosmetolog.objects.filter(category=service_category_object, is_active=True)
+        i = 1
+        for item in service_subcategory_set:
+            return_dict[i] = item.name
+            i += 1
+    except:
+        pass
     return JsonResponse(return_dict)
 
 
@@ -317,7 +334,10 @@ def login(request):
 
 def logout(request):
     username = auth.get_user(request).username
-    subscriber = Subscriber.objects.get(email=username)
+    try:
+        subscriber = Subscriber.objects.get(email=username)
+    except:
+        subscriber = None
     if subscriber.email_confirm is False:
         user = User.objects.get(username=username)
         user.is_active = False
@@ -330,12 +350,15 @@ def logout(request):
 def get_products_in_sales(products_sales):
     p_sales = list()
     for p in products_sales:
-        product = Product.objects.get(name=p.product_item.name)
-        product_image = ProductImage.objects.get(is_active=True, is_main=True, product__is_active=True, product=product)
-        sales_item = {'name': p.product_item.name, 'image_url': product_image.image.url,
-                      'price_old': p.price_old, 'price_current': p.price_current, 'discount': p.discount,
-                      'slug': product.slug}
-        p_sales.append(sales_item)
+        try:
+            product = Product.objects.get(name=p.product_item.name)
+            product_image = ProductImage.objects.get(is_active=True, is_main=True, product__is_active=True, product=product)
+            sales_item = {'name': p.product_item.name, 'image_url': product_image.image.url,
+                          'price_old': p.price_old, 'price_current': p.price_current, 'discount': p.discount,
+                          'slug': product.slug}
+            p_sales.append(sales_item)
+        except:
+            pass
     return p_sales
 
 
@@ -741,21 +764,30 @@ def contact(request):
 
 def about(request):
     session_key = request.session.session_key
-    about_text_object = Page.objects.get(is_active=True, page_name="About")
+    try:
+        about_text_object = Page.objects.get(is_active=True, page_name="About")
+    except:
+        about_text_object = None
 
     return render(request, 'landing/about.html', locals())
 
 
 def rules(request):
     session_key = request.session.session_key
-    rules_text_object = Page.objects.get(is_active=True, page_name="Rules")
+    try:
+        rules_text_object = Page.objects.get(is_active=True, page_name="Rules")
+    except:
+        rules_text_object = None
 
     return render(request, 'landing/about_rules.html', locals())
 
 
 def public_offer(request):
     session_key = request.session.session_key
-    public_offer_text_object = Page.objects.get(is_active=True, page_name="Public_Offer")
+    try:
+        public_offer_text_object = Page.objects.get(is_active=True, page_name="Public_Offer")
+    except:
+        public_offer_text_object = None
 
     return render(request, 'landing/about_public_offer.html', locals())
 
@@ -786,7 +818,10 @@ def validate_training_send_email(request, trainee_name, trainee_email, email_mes
 
 
 def training_item(request, slug):
-    training = Training.objects.get(slug=slug, is_active=True)
+    try:
+        training = Training.objects.get(slug=slug, is_active=True)
+    except:
+        training = None
     date_now = datetime.datetime.now(datetime.timezone.utc)
     day_left = (training.start_date - date_now).days
     if day_left >= 7:
