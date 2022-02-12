@@ -21,13 +21,13 @@ from .models import *
 # admin.site.register(Subscriber, SubscriberAdmin)
 
 
-# class LogoImageAdmin (admin.ModelAdmin):
-#     list_display = [field.name for field in LogoImage._meta.fields]
-#
-#     class Meta:
-#         model = LogoImage
-#
-# admin.site.register(LogoImage, LogoImageAdmin)
+class LogoImageAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in LogoImage._meta.fields]
+
+    class Meta:
+        model = LogoImage
+
+admin.site.register(LogoImage, LogoImageAdmin)
 
 
 class SliderMainAdmin (admin.ModelAdmin):
