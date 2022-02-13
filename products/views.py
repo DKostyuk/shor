@@ -27,7 +27,10 @@ def product(request, slug1=None, slug=None):
         except:
             sales_item = {}
         p_sales.append(sales_item)
-    p_sales.sort(key=operator.itemgetter('price_current'))
+    try:
+        p_sales.sort(key=operator.itemgetter('price_current'))
+    except:
+        pass
 
     # sss = sorted(p_sales, key=operator.itemgetter('price_current'), reverse=True)
     # print('PRINT------------', sss)
