@@ -114,7 +114,8 @@ def checkout(request):
                 new_order.cosmetolog = None
             new_order.save()
 
-            # создать Продукты в Заказе на основе того, что осталось в корзине - Проверить после реализации функции удаления
+            # создать Продукты в Заказе на основе того, что осталось в корзине -
+            # #Проверить после реализации функции удаления
             for p in products_in_basket:
                 ProductInOrder.objects.create(product=p.product, nmb=p.nmb, price_per_item=p.price_per_item,
                                               order=new_order)

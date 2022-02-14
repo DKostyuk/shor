@@ -1,12 +1,22 @@
-{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shor Professional Ukraine</title>
+</head>
 
-{% autoescape off %}
+<body>
+<h3>Доброго дня, {{ user.cosmetolog_name }}!!!</h3>
+<p>Дякуємо за реєстрацію на сайті Shor Professional Ukraine - http://shor.com.ua/.</p>
+<p>Ваш обліковий запис створено та очікує активації для його використання.<br>
+    Для активації облікового запису натисніть на наступне посилання або скопіюйте й вставте його в ваш браузер:<br>
+    http://{{ domain }}{% url 'activate' uidb64=uid token=token %}</p>
+<p>Логін - це Ваша електрона адреса: {{ to_list }}</p>
+<br>
+<p>До зв'язку...</p>
 
-    Hi {{ newuser.username }},
-    Please click on the link to confirm your registration,
-    http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
-
-{% endautoescape %}
+</body>
+</html>
 
 {#{% autoescape off %}#}
 {#{% blocktrans %}You're receiving this email because you requested a password reset for your user account at {{ site_name }}.#}

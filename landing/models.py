@@ -102,29 +102,6 @@ class SliderMain(models.Model):
         verbose_name_plural = 'SliderMains'
 
 
-class Letter(models.Model):
-    subject = models.CharField(max_length=64)
-    from_name = models.CharField(max_length=32)
-    email_sender = models.EmailField(blank=True, null=True, default=None)
-    phone_sender = models.CharField(max_length=13, blank=True, null=True, default=None)
-    city_sender = models.CharField(max_length=32)
-    message = models.TextField(blank=True, null=True, default=None)
-    created = models.DateTimeField(auto_now_add=True, auto_now=False)
-    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-    cosmetolog = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
-    cosmetolog_email = models.EmailField(blank=True, null=True, default=None)
-    user_name = models.CharField(max_length=32)
-    user_email = models.EmailField()
-    who_answer = models.CharField(max_length=64)
-
-    def __str__(self):
-        return "%s" % self.id
-
-    class Meta:
-        verbose_name = 'Letter'
-        verbose_name_plural = 'Letters'
-
-
 class LetterTemplate(models.Model):
     name = models.CharField(max_length=64)
     subject = models.CharField(max_length=64)
@@ -134,13 +111,34 @@ class LetterTemplate(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
     is_active = models.BooleanField(default=True)
 
-
     def __str__(self):
         return "%s" % self.name
 
     class Meta:
         verbose_name = 'LetterTemplate'
         verbose_name_plural = 'LetterTemplates'
+
+
+class Letter(models.Model):
+    type = models.ForeignKey(LetterTemplate, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
+    subject = models.CharField(max_length=64)
+    from_name = models.CharField(max_length=32)
+    email_sender = models.EmailField(blank=True, null=True, default=None)
+    phone_sender = models.CharField(max_length=13, blank=True, null=True, default=None)
+    city_sender = models.CharField(max_length=32)
+    message = models.TextField(blank=True, null=True, default=None)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    cosmetolog = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    user_email = models.EmailField(blank=True, null=True, default=None)
+    who_answer = models.CharField(max_length=64)
+
+    def __str__(self):
+        return "%s" % self.id
+
+    class Meta:
+        verbose_name = 'Letter'
+        verbose_name_plural = 'Letters'
 
 
 class LetterEmail(models.Model):

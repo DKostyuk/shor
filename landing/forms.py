@@ -49,8 +49,7 @@ class LetterForm(forms.ModelForm):
 
     class Meta:
         model = Letter
-        fields = ["subject", "from_name", "email_sender", "phone_sender", "city_sender",
-                  "message", "cosmetolog_email", "cosmetolog"]
+        fields = ["subject", "message", "email_sender", "phone_sender", "from_name",  "city_sender", "cosmetolog"]
 
 
 class TrainingUserForm(forms.ModelForm):

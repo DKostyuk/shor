@@ -23,6 +23,8 @@ import json
 from django.http import JsonResponse
 import random
 from orders.models import Order, ProductInOrder
+from utils.emails import SendingEmail
+from django.template.loader import get_template
 
 
 # import googlemaps
@@ -41,7 +43,7 @@ def landing(request):
     return render(request, 'landing/landing.html', locals())
 
 
-def send_user_activation_email(request, newuser, email_1):
+def send_user_activation_email_1(request, newuser, email_1):
     # Email sending code:
     args_1 = {}
     current_site = get_current_site(request)
@@ -60,8 +62,27 @@ def send_user_activation_email(request, newuser, email_1):
     return args_1
 
 
+def send_user_activation_email(request, newuser, new_cosmetolog, email_1):
+    # Email sending code:
+    current_site = get_current_site(request)
+    email_details = {}
+    email_details['user'] = new_cosmetolog
+    email_details['to_list'] = email_1
+    email_details['domain'] = current_site.domain
+    email_details['uid'] = urlsafe_base64_encode(force_bytes(newuser.pk))
+    email_details['token'] = account_activation_token.make_token(newuser)
+
+    email = SendingEmail()
+    email.sending_email(type_id=1, email_details=email_details)
+    result = "SENT"
+    print(result)
+    return result
+
+
 def validate_save_user(request, newuser_form, email_1, new_form_cosmetolog):
+    print('-------starting validation -----------')
     if newuser_form.is_valid() and new_form_cosmetolog.is_valid():
+        print('-------VALID -----------')
         newuser = newuser_form.save(commit=False)
         newuser.is_active = False
         newuser.save()
@@ -69,7 +90,8 @@ def validate_save_user(request, newuser_form, email_1, new_form_cosmetolog):
         new_cosmetolog.user = newuser
         new_cosmetolog.email = email_1
         new_cosmetolog.save()
-        send_user_activation_email(request, newuser, email_1)
+        print('-------SAVED COSMO -----------')
+        send_user_activation_email(request, newuser, new_cosmetolog, email_1)
     else:
         form = newuser_form
         form_cosmetolog = new_form_cosmetolog
@@ -106,6 +128,7 @@ def registration(request):
         email_1 = request.POST.get('email', '')
         if '_ask_activation' in request.POST:
             email_1 = request.POST.get('email_1', '')
+            print('registration started-----------')
             try:
                 newuser = User.objects.get(username=email_1)
                 send_user_activation_email(request, newuser, email_1)
@@ -126,6 +149,7 @@ def registration(request):
                 return HttpResponseRedirect(reverse(activation_link_request))
             else:
                 if newuser_form.is_valid():
+                    print('-------starting validation -----------')
                     validate_save_user(request, newuser_form, email_1, new_form_cosmetolog)
                     return redirect('registration_profile')
                 else:
@@ -736,28 +760,59 @@ def contact(request):
     if request.POST:
         new_letter_form = LetterForm(request.POST)
         if new_letter_form.is_valid():
-            username = auth.get_user(request).username
+            email_details ={}
+            email_details['subject'] = request.POST.get('subject', '')
+            email_details['message'] = request.POST.get('message', '')
+            email_details['requestor_name'] = request.POST.get('from_name', '')
+            email_details['to_list'] = request.POST.get('email_sender', '')
+            email_details['message'] = request.POST.get('message', '')
+            # message = 'landing/acc_confirmation_email.html'
+            # from_email = settings.EMAIL_HOST_USER
+            # print('----from_email ----', from_email)
+            # to_list = ['dkostyuk@ukr.net']
+            print('111111111111111111111111', email_details)
+
+            email = SendingEmail()
+            email.sending_email(type_id=2, email_details=email_details)
+
+            username = auth.get_user(request)
+            new_letter = new_letter_form.save(commit=False)
             if username:
-                user_current = Subscriber.objects.filter(email=username).first()
-                new_letter = new_letter_form.save(commit=False)
-                new_letter.user_name = user_current.name
-                new_letter.user_email = user_current.email
-                data = new_letter_form.cleaned_data
-                new_letter.save()
-            else:
-                data = new_letter_form.cleaned_data
-                new_letter = new_letter_form.save()
-
-            subject = 'message from site renew-polska.pl/contact' + request.POST.get('subject', '')
-            message = request.POST.get('message', '')
-            from_email = settings.EMAIL_HOST_USER
-            to_list = ['biuro@renew-polska.pl', settings.EMAIL_HOST_USER]
-            send_mail(subject, message, from_email, to_list, fail_silently=True)
-
+                new_letter.user_email = username.email
+                # user_current = User.objects.get(username=username)
+                try:
+                    cosmetolog = Cosmetolog.objects.get(user=username)
+                except:
+                    cosmetolog = None
+                new_letter.cosmetolog = cosmetolog
+            letter_template = LetterTemplate.objects.get(name="Contact_Us_Form")
+            new_letter.type = letter_template
+            data = new_letter_form.cleaned_data
+            new_letter.save()
             letter_success = "success"
+            # else:
+            #     data = new_letter_form.cleaned_data
+            #     new_letter = new_letter_form.save()
+
+            # subject = 'message from site renew-polska.pl/contact' + request.POST.get('subject', '')
+            #
+            #
+            #
+            # letter_template = LetterTemplate.objects.get(name="Contact_Us_Form")
+            # Letter.objects.create(type=letter_template, subject=email_details['subject'],
+            #                       from_name=email_details['requestor_name'], email_sender=email_details['to_list'],
+            #                       message=email_details['message'], cosmetolog="", cosmetolog_email="")
+
+
+            # try:
+            #     send_mail(subject, message, from_email, to_list, fail_silently=False)
+            #     letter_success = "success"
+            #     print(letter_success)
+            # except:
+            #     print('----CONTACT ------ NOT SENT-----')
         else:
             form = new_letter_form
-            # print(form.error_messages)
+            print(form.error_messages)
 
     return render(request, 'landing/contact.html', locals())
 

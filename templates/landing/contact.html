@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             {% if  letter_success %}
-                <div class="col-lg-12 success-message-notification">Wiadomość wysłana</div>
+                <div class="col-lg-12 success-message-notification">Ваше повідомлення вислане</div>
             {% endif %}
             <div class="col-lg-8 offset-lg-2 letter-box">
                 <h1 class="text-center">
@@ -19,11 +19,22 @@
                         <input name="{{ form.subject.name }}" class="form-control" placeholder="Тема">
                     </div>
                     <div class="form-group">
-                        <textarea name="{{ form.message.name }}" class="text-message form-control" placeholder="Ваше повідомлення"></textarea>
+                        <textarea name="{{ form.message.name }}" class="text-message form-control"
+                                  placeholder="Ваше повідомлення"></textarea>
                     </div>
                     <div class="form-group">
                         <input type="email" name="{{ form.email_sender.name }}" class="form-control" placeholder="Email">
                     </div>
+                    <div class="row">
+                                <div class="form-group tel-index col-lg-3">
+                                    <div name="tel_index" class="form-control">+38</div>
+                                </div>
+                                <div class="form-group tel-number col-lg-9">
+                                    <input name="{{ form.phone_sender.name }}" class="form-control"
+                                           type="tel" pattern="[0-9]{10}" placeholder="телефон у форматі 0504755151"
+                                           required>
+                                </div>
+                            </div>
                     <div class="form-group">
                         <input name="{{ form.from_name.name }}" class="form-control" placeholder="Ім'я">
                     </div>
