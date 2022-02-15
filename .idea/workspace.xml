@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-02-12 include try for get()">
+    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-02-12 gitignor">
+      <change afterPath="$PROJECT_DIR$/templates/orders/acc_confirmation_order_email.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/_gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shor/email_info.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shor/settings_prod1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landing/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/emails.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/emails.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,14 +80,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/landing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/orders" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\landing" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\orders" />
+      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\landing" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\products" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\blogs" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\blog" />
@@ -259,9 +262,9 @@
     </configuration>
     <list>
       <item itemvalue="Python.models" />
-      <item itemvalue="Python.test" />
       <item itemvalue="Python.urls" />
       <item itemvalue="Python.views" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
@@ -320,13 +323,6 @@
       <workItem from="1593613541514" duration="4022000" />
       <workItem from="1593937419291" duration="1305000" />
       <workItem from="1594792414288" duration="637000" />
-    </task>
-    <task id="LOCAL-00019" summary="settings_prod2 for Host Pro">
-      <created>1642857552559</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1642857552559</updated>
     </task>
     <task id="LOCAL-00020" summary="settings_prod2 for Host Pro">
       <created>1642861798428</created>
@@ -664,7 +660,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644907531501</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="2022-02-12 gitignor">
+      <created>1644908335157</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1644908335158</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -703,6 +706,7 @@
     <MESSAGE value="2022-02-11 sales &amp; registration" />
     <MESSAGE value="2022-02-12 scheduler was deleted" />
     <MESSAGE value="2022-02-12 include try for get()" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-02-12 include try for get()" />
+    <MESSAGE value="2022-02-12 gitignor" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022-02-12 gitignor" />
   </component>
 </project>

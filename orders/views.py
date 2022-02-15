@@ -5,6 +5,7 @@ from landing.models import Page
 from django.shortcuts import render
 from .forms import OrderForm
 from django.contrib import auth
+from utils.emails import SendingEmail
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 
@@ -127,17 +128,23 @@ def checkout(request):
                 order_text_object = None
             form = OrderForm()
             request.session["order_number"] = new_order.order_number
+            #  Отправка email - с деталями заказа или после созвона
+            try:
+                email = SendingEmail()
+                email.sending_email(type_id=3, email_details=new_order)
+            except:
+                pass
+
+
 
             return render(request, 'orders/order_success.html', locals())
             # return HttpResponseRedirect(reverse(order_history))
             # return render(request, 'orders/order_history.html', locals())
 
-            #  Проверить - отправка email - с деталями заказа или после созвона
             # Проверить подумать Куда направлять - типа УСПЕХ страница и с Вами созвоняться по вопросам Оплаты и Доставки
-        #     вот страница Заказов - и какую инфо там показывать - Розетка и/или Эпицентр
 
         else:
-            print('NOW')
+            print('NO valid')
 
     return render(request, 'orders/checkout.html', locals())
 

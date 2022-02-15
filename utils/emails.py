@@ -2,7 +2,16 @@ from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from shor.email_info import EMAIL_FROM, EMAIL_ADMIN
 from django.forms.models import model_to_dict
-from landing.models import LetterTemplate, LetterEmail
+from landing.models import LetterTemplate, LetterEmail, Letter
+import re
+from django.utils.html import strip_tags
+
+
+def textify(message):
+    # Remove html tags and continuous whitespaces
+    text_only = re.sub('[ \t]+', ' ', strip_tags(message))
+    # Strip single spaces in the beginning of each line
+    return text_only.replace('\n ', '\n').strip()
 
 
 class SendingEmail(object):
@@ -47,7 +56,7 @@ class SendingEmail(object):
                 print(subject)
                 message = letter_template.message
                 print(message)
-                print('--------------11111111111111111111-------------')
+                print('--------------22222222222222222-------------')
                 receiver_emails = LetterEmail.objects.filter(letter_template_name=letter_template)
                 print('-----------------------', receiver_emails)
                 target_emails = []
@@ -68,8 +77,28 @@ class SendingEmail(object):
             # vars["order_fields"] = model_to_dict(order)
             # vars["order"] = order
         elif type_id == 3:
-            subject = "номер 3"
-            message = get_template('landing/acc_confirmation_email.html').render(vars)
+            name = "Order"
+            print('----после трай --------333333333')
+            print('----после трай-----------3333333333333', email_details)
+            print('----после трай-----------333333333333', type(email_details))
+            print('----после трай-----------ORDER_KOSMO', email_details.cosmetolog)
+
+            letter_template = LetterTemplate.objects.get(name=name)
+            print(letter_template)
+            # subject = letter_template.subject
+            print(email_details.order_number, type(email_details.order_number))
+            subject = "Ваше замовлення № " + str(email_details.order_number) + " прийняте"
+            print(subject)
+            vars["order"] = model_to_dict(email_details)
+            vars["order_created"] = email_details.created
+            message = get_template('orders/acc_confirmation_order_email.html').render(vars)
+            print(('---------MSG------------', message))
+            target_emails = [email_details.receiver_email]
+            print('---------------отправка----НА--------', target_emails)
+            # создание записи об отправке письма
+            Letter.objects.create(type=letter_template, subject=subject, email_sender=email_details.receiver_email,
+                                  phone_sender=email_details.receiver_phone, message=textify(message),
+                                  cosmetolog=email_details.cosmetolog)
 
         # print('----Это МЕСАГА-----', message)
         print('----Это from-----', self.email_from)

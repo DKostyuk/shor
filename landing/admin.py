@@ -44,7 +44,13 @@ admin.site.register(SliderMain, SliderMainAdmin)
 
 
 class LetterAdmin (admin.ModelAdmin):
-    list_display = [field.name for field in Letter._meta.fields]
+    list_display = ['type', 'subject', 'from_name', 'email_sender', 'phone_sender', 'city_sender',
+                    'msg', 'created', 'updated', 'cosmetolog', 'user_email', 'who_answer']
+    readonly_fields = ['type', 'subject', 'email_sender', 'phone_sender', 'cosmetolog', 'message', 'created', 'updated', ]
+        # list_display = [field.name for field in Letter._meta.fields]
+
+    def msg(self, obj):
+        return obj.message[:20]
 
     class Meta:
         model = Letter

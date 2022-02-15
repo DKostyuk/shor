@@ -766,50 +766,26 @@ def contact(request):
             email_details['requestor_name'] = request.POST.get('from_name', '')
             email_details['to_list'] = request.POST.get('email_sender', '')
             email_details['message'] = request.POST.get('message', '')
-            # message = 'landing/acc_confirmation_email.html'
-            # from_email = settings.EMAIL_HOST_USER
-            # print('----from_email ----', from_email)
-            # to_list = ['dkostyuk@ukr.net']
-            print('111111111111111111111111', email_details)
+            try:
+                email = SendingEmail()
+                email.sending_email(type_id=2, email_details=email_details)
 
-            email = SendingEmail()
-            email.sending_email(type_id=2, email_details=email_details)
-
-            username = auth.get_user(request)
-            new_letter = new_letter_form.save(commit=False)
-            if username:
-                new_letter.user_email = username.email
-                # user_current = User.objects.get(username=username)
-                try:
-                    cosmetolog = Cosmetolog.objects.get(user=username)
-                except:
-                    cosmetolog = None
-                new_letter.cosmetolog = cosmetolog
-            letter_template = LetterTemplate.objects.get(name="Contact_Us_Form")
-            new_letter.type = letter_template
-            data = new_letter_form.cleaned_data
-            new_letter.save()
-            letter_success = "success"
-            # else:
-            #     data = new_letter_form.cleaned_data
-            #     new_letter = new_letter_form.save()
-
-            # subject = 'message from site renew-polska.pl/contact' + request.POST.get('subject', '')
-            #
-            #
-            #
-            # letter_template = LetterTemplate.objects.get(name="Contact_Us_Form")
-            # Letter.objects.create(type=letter_template, subject=email_details['subject'],
-            #                       from_name=email_details['requestor_name'], email_sender=email_details['to_list'],
-            #                       message=email_details['message'], cosmetolog="", cosmetolog_email="")
-
-
-            # try:
-            #     send_mail(subject, message, from_email, to_list, fail_silently=False)
-            #     letter_success = "success"
-            #     print(letter_success)
-            # except:
-            #     print('----CONTACT ------ NOT SENT-----')
+                username = auth.get_user(request)
+                new_letter = new_letter_form.save(commit=False)
+                if username:
+                    new_letter.user_email = username.email
+                    try:
+                        cosmetolog = Cosmetolog.objects.get(user=username)
+                    except:
+                        cosmetolog = None
+                    new_letter.cosmetolog = cosmetolog
+                letter_template = LetterTemplate.objects.get(name="Contact_Us_Form")
+                new_letter.type = letter_template
+                data = new_letter_form.cleaned_data
+                new_letter.save()
+                letter_success = "success"
+            except:
+                pass
         else:
             form = new_letter_form
             print(form.error_messages)
