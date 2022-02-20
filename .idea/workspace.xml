@@ -2,56 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-02-15 order email">
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0020_auto_20220217_1630.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0030_productsalestype.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0031_auto_20220216_1347.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0032_remove_productitemsales_product_item.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0033_productitemsales_product_item.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/bundles_images/DSC_3310_s_-_Copy-BUNDLE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/bundles_images/DSC_3310_s_-_Copy-BUNDLE_siLieXW.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/certificate_images/DSC_3310_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DSC_3310_s_-_Copy-BUNDLE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DSC_3310_s_-_Copy-BUNDLE_Jxs2WUq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DSC_3310_s_Lgo138u.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DSC_3319_s_27B8Hvx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DSC_3385_s_iIOQxWZ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/about_delivery_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/about_goods_back.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/about_politic_conf.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/product_line_shor_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/products/product_bundle.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/products/product_cosmetolog_bundle_sales.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/get_product_details.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/certificate_images/DSC_3385_s.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/context_processors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/js/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/cabinet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/home_cosmetolog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/home_cosmetolog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/home_visitor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/home_visitor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/product_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/product_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/product_line.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/product_line.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/product_line_shor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/product_line_shor_1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/profile_additional.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/profile_additional.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/profile_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/profile_main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orders/checkout_delivery section.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/checkout_delivery section.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orders/checkout_order_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/checkout_order_table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orders/checkout_payment section.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/checkout_payment section.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orders/order_receiver_contact_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/order_receiver_contact_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products/product_cosmetolog_sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_cosmetolog_sales.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products/product_line.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_line.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products/product_visitor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_visitor.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -366,20 +318,6 @@
       <workItem from="1593613541514" duration="4022000" />
       <workItem from="1593937419291" duration="1305000" />
       <workItem from="1594792414288" duration="637000" />
-    </task>
-    <task id="LOCAL-00022" summary="settings_prod2 for Host Pro">
-      <created>1642865559691</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1642865559691</updated>
-    </task>
-    <task id="LOCAL-00023" summary="settings_prod2 for Host Pro">
-      <created>1642866211168</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1642866211168</updated>
     </task>
     <task id="LOCAL-00024" summary="working 2022-01-22 weekend">
       <created>1642955295721</created>
@@ -710,7 +648,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644941940501</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="2022-02-15 order email">
+      <created>1645337863665</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1645337863666</updated>
+    </task>
+    <task id="LOCAL-00072" summary="2022-02-15 order email">
+      <created>1645337887088</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1645337887088</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TestHistory">
