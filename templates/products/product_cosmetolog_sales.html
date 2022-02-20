@@ -32,7 +32,7 @@
                                       action="{% url 'basket_adding' %}">{% csrf_token %}
                                     <div class="form-group service-page-price">
                                         {% for p_sale in p_sales %}
-                                            {% if p_sale.price_old  > 0 %}
+                                            {% if p_sale.discount  > 0 %}
                                                 {% if forloop.counter0 == 0 %}
                                                     <div class="product-page-price-old" id='{{ p_sale.volume }}'>
                                                         {{ p_sale.price_old }} грн.

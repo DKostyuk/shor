@@ -16,7 +16,7 @@
                                     <form id ="form_buying_product" class="form-inline"
                                           action="{% url 'basket_adding' %}">{% csrf_token %}
                                         <div class="form-group service-page-price">
-                                            {% if bundle_sales.price_old  > 0 %}
+                                            {% if bundle_sales.discount  > 0 %}
                                                 <div class="product-page-price-old">
                                                     {{ bundle_sales.price_old }} грн.
                                                 </div>
