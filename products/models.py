@@ -316,25 +316,37 @@ class ProductItem(models.Model):
         verbose_name_plural = 'ProductItem'
 
 
+class ProductSalesType(models.Model):
+    name = models.CharField(max_length=16, blank=True, null=True, default=None)
+    description = models.TextField(blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return "%s" % self.name
+
+    class Meta:
+        verbose_name = 'ProductSalesType'
+        verbose_name_plural = 'ProductSalesTypes'
+
+
 class ProductItemSales(models.Model):
-    product_item = models.ForeignKey(ProductItem, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    product_item = models.ForeignKey(ProductItem, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
     price_old = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     price_current = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     price_old_usd = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     price_current_usd = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    exchange_rate = models.ForeignKey(CurrencyExchange, blank=True, null=True, default=1,
-                                      on_delete=models.CASCADE)
+    exchange_rate = models.ForeignKey(CurrencyExchange, blank=True, null=True, default=1, on_delete=models.DO_NOTHING)
     discount = models.IntegerField(default=0)
     is_active = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "%s" % self.product_item
 
     class Meta:
-        verbose_name = 'ProductItemSales'
+        verbose_name = 'ProductItemSale'
         verbose_name_plural = 'ProductItemSales'
 
     def save(self, *args, **kwargs):
@@ -353,9 +365,62 @@ class ProductItemSales(models.Model):
         products_item_sales = ProductItemSales.objects.all()
         for p in products_item_sales:
             p.exchange_rate = instance
-            # p.price_old = p.price_old_usd * usd_rate
-            # p.price_current = p.price_current_usd * usd_rate
             p.save()
 
-        # if created:
-        #     Subscriber.objects.create(user=instance, email=str(instance))
+
+class BundleSale(models.Model):
+    name = models.CharField(max_length=128, blank=True, null=True, default=None)
+    name_pl = models.CharField(max_length=128, blank=True, null=True, default=None)
+    slug = models.SlugField(max_length=128, unique=True)
+    price_old = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    price_current = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    price_old_usd = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    price_current_usd = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    exchange_rate = models.ForeignKey(CurrencyExchange, blank=True, null=True, default=1, on_delete=models.DO_NOTHING)
+    discount = models.IntegerField(default=0)
+    image = models.ImageField(upload_to='bundles_images/', blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return "%s" % self.name
+
+    class Meta:
+        verbose_name = 'BundleSale'
+        verbose_name_plural = 'BundleSales'
+
+    def save(self, *args, **kwargs):
+        user = get_current_user()
+        if user and user.is_authenticated:
+            self.modified_by = user
+        self.price_current_usd = self.price_old_usd * (1 - Decimal(str(self.discount / 100)))
+        self.price_current = int(self.price_current_usd * self.exchange_rate.usd_price_uah) + 1
+        self.price_old = int(self.price_old_usd * self.exchange_rate.usd_price_uah) + 1
+        self.slug = slugify(self.name)
+
+        super(BundleSale, self).save(*args, **kwargs)
+
+    @receiver(post_save, sender=CurrencyExchange)
+    def update_exchange_rate(sender, instance, created, *args, **kwargs):
+        # usd_rate = instance.usd_price_uah
+        bundle_sales = BundleSale.objects.all()
+        for p in bundle_sales:
+            p.exchange_rate = instance
+            p.save()
+
+
+class ProductInBundle(models.Model):
+    bundle = models.ForeignKey(BundleSale, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
+    product_item = models.ForeignKey(ProductItem, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
+    is_active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __str__(self):
+        return "%s" % self.product_item
+
+    class Meta:
+        verbose_name = 'ProductInBundle'
+        verbose_name_plural = 'ProductInBundles'

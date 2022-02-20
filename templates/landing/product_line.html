@@ -5,11 +5,6 @@
                 <div class="d-block mx-auto img-product">
                     <img src="{{ product_line.product_category_logo_image.url }}" class = "img-fluid img-product-inside">
                 </div>
-<!--                {% if product_image.product.discount %}-->
-<!--                    <div class="discount-container">-->
-<!--                        {{ product_image.product.discount }}%-->
-<!--                    </div>-->
-<!--                {% endif %}-->
             </div>
             <div class="product-name">
                 <h4>{{ product_line.name|truncatechars_html:40 }}</h4>
@@ -19,10 +14,6 @@
                 {{ product_line.description|truncatechars_html:100 }} {% endautoescape %}
                 </p>
             </div>
-
-<!--            <div class="product-price">-->
-<!--                {{ product_image.product.price }} грн.-->
-<!--            </div>-->
         </div>
     </a>
 </div>

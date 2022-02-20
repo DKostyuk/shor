@@ -1,15 +1,15 @@
 <div class="col-lg-3 col-md-6 col-sm-6">
-    <a href="{% url 'product' product_image.product.slug %}" class="link-decoration">
+    <a href="{% url 'product' product_item.slug %}" class="link-decoration">
         <div class="product-item shadow-item-box">
             <div class="d-block mx-auto img-product">
-                <img src="{{ product_image.image.url }}" class = "img-fluid img-product-inside">
+                <img src="{{ product_item.image_url }}" class = "img-fluid img-product-inside">
             </div>
             <div class="product-name">
-                <h4>{{ product_image.product.name }}</h4>
+                <h4>{{ product_item.name }}</h4>
             </div>
             <div class="product-s-description">
                 <p>
-                {{ product_image.product.name_pl }}
+                {{ product_item.name_pl }}
                 </p>
             </div>
         </div>

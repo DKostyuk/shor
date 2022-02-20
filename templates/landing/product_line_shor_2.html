@@ -1,0 +1,10 @@
+<div class="col-lg-6">
+    <a href="{% url 'product_line' product_line.slug %}" class="link-decoration">
+        <div class="product-line-shor d-block mx-auto">
+            <img src="{{ product_line.product_category_logo_image.url }}" class = "img-fluid img-product-line-shor">
+            <div class="product-name">
+                <h4>{{ product_line.name }}</h4>
+            </div>
+        </div>
+    </a>
+</div>

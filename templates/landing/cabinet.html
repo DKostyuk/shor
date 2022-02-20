@@ -20,14 +20,12 @@
             {% endif %}
 
             <div class="col-lg-12">
-                {% if  profile_success %}
-                    <div class="col-lg-12 success-message-notification">
-                        Profile was updated<br>You can make any change here
-                    </div>
+                <h1>Вашу ел. адресу {{ subscriber_current }} підтверждено!!!</h1>
+            </div>
+            <div class="col-lg-12 activation-success-box">
+                {% if activation_success_text_object.page_text %}
+                    {% autoescape off %} {{ activation_success_text_object.page_text }} {% endautoescape %}
                 {% endif %}
-                <h1>Вашу ел. адресу {{ subscriber_current }} підтверждено!!! <br>
-                    Дякуємо!!!
-                </h1>
             </div>
         </div>
     </div>

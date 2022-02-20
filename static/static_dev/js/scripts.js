@@ -159,6 +159,7 @@ $(document).ready(function(){
 //                                                'data-toggle="modal" data-target="#SendProductToBasket"'+
                                                 'data-number = "'+ v.nmb + '"'+
                                                 'data-product_id = "'+ v.product_id + '"'+
+                                                'data-sales_type = "'+ v.sales_type + '"'+
                                                 'data-basket_id = "'+ v.id + '"'+
                                                 'data-name = "'+ v.name + '"'+
                                                 'data-price = "'+ v.price_per_item + '"'+
@@ -175,6 +176,7 @@ $(document).ready(function(){
 //                                                'data-toggle="modal" data-target="#SendProductToBasket"'+
                                                 'data-number = "'+ v.nmb + '"'+
                                                 'data-product_id = "'+ v.product_id + '"'+
+                                                'data-sales_type = "'+ v.sales_type + '"'+
                                                 'data-basket_id = "'+ v.id + '"'+
                                                 'data-name = "'+ v.name + '"'+
                                                 'data-price = "'+ v.price_per_item + '"'+
@@ -218,12 +220,31 @@ $(document).ready(function(){
        var product_sales_id = product.data("product_sales_id");
        var product_name = product.data("name");
        var product_price = product.data("price");
-       var what_case = 1; //'buy'
-       console.log('----после КУПИТИ----', product_volume, product_sales_id, product_name, product_price);
+//       var qqq = product.data("case");
+       var what_case = product.data("case"); //'buy'
+       console.log('----после КУПИТИ----', product_volume, product_sales_id, product_name, product_price, what_case);
 
        basketUpdating(product_sales_id, nmb, product_price, is_delete=false, what_case)
 
    });
+
+//   var form_bundle = $('#form_buying_bundle');
+//
+//   form_bundle.on('submit', function (e) {
+//       e.preventDefault();
+//       console.log('Bundle 258');
+//       var nmb = $('#number').val();
+//       var bundle = $('.active').find('input');
+//       var product_volume = product.val();
+//       var bundle_sales_id = bundle.data("bundle_sales_id");
+//       var bundle_name = product.data("name");
+//       var bundle_price = product.data("price");
+//       var what_case = 1; //'buy'
+//       console.log('----после КУПИТИ-BUNDLE---', product_volume, product_sales_id, product_name, product_price);
+//
+//       basketUpdating(product_sales_id, nmb, product_price, is_delete=false, what_case)
+//
+//   });
 
    $(document).on('click','#submit_btn_minus', function(e){
         e.preventDefault();
@@ -231,8 +252,14 @@ $(document).ready(function(){
         var product_number = p_nbm.find('.number_input_field').val();
         var product_id = $(this).data("product_id");
         var product_price = $(this).data("price");
-        var what_case = 2; //'minus'
-
+        var sales_type = $(this).data("sales_type");
+        if(sales_type == 'item') {
+            console.log('ПРОДАЕМ Айтем');
+            var what_case = 21; //'minus for item'
+        } else {
+            console.log(' ПРОДАЕМ БАНДЛ');
+            var what_case = 22; //'minus for item'
+        }
         basketUpdating(product_id, product_number, product_price, is_delete=false, what_case)
 
     });
@@ -243,7 +270,14 @@ $(document).ready(function(){
         var product_number = p_nbm.find('.number_input_field').val();
         var product_id = $(this).data("product_id");
         var product_price = $(this).data("price");
-        var what_case = 3; //'plus'
+        var sales_type = $(this).data("sales_type");
+        if(sales_type == 'item') {
+            console.log('ПРОДАЕМ Айтем');
+            var what_case = 31; //'plus for item'
+        } else {
+            console.log(' ПРОДАЕМ БАНДЛ');
+            var what_case = 32; //'plus for item'
+        }
 
         basketUpdating(product_id, product_number, product_price, is_delete=false, what_case)
 
@@ -256,7 +290,14 @@ $(document).ready(function(){
         var product = p_nbm.find('#submit_btn_minus');
         var product_id = $(product).data("product_id");
         var product_price = $(product).data("price");
-        var what_case = 4; //'changes'
+        var product_price = $(product).data("sales_type");
+        if(sales_type == 'item') {
+            console.log('ПРОДАЕМ Айтем');
+            var what_case = 41; //'changes'
+        } else {
+            console.log(' ПРОДАЕМ БАНДЛ');
+            var what_case = 42; //'changes'
+        }
 
         console.log('Ура --- словил Чек АУТ---------')
 

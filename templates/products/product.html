@@ -6,15 +6,15 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-5 product-image-item">
-                {% for image_item in product.productimage_set.all %}
+                {% for image_item in product_show.productimage_set.all %}
                 <img src="{{ image_item.image.url }}" class="img-fluid">
                 {% endfor %}
             </div>
             <div class="col-lg-7">
                 <div class="service-page-details">
-                    <h1 class="product-page-name">{{ product.name }}</h1>
-                    <h2 class="product-page-name-pl">{{ product.name_pl }}</h2>
-                    <p>{{ product.name_description }} - {{ product.description }}</p>
+                    <h1 class="product-page-name">{{ product_show.name }}</h1>
+                    <h2 class="product-page-name-pl">{{ product_show.name_pl }}</h2>
+                    <p>{{ product_show.name_description }} - {{ product_show.description }}</p>
 
                     {% if cosmetolog %}
                         {% include 'products/product_cosmetolog_sales.html' %}
@@ -23,24 +23,24 @@
                     {% endif %}
 
                     <div class="text-center cosmetolog-page-type hidden">
-                        <span>Производитель: <span class="producer-name">{{ product.producer }}</span></span>
-                        <span>Категория товара: <span class="product-category">{{ product.category }}</span></span>
-                        <span>Вид: <span class="product-type">{{ product.type }}</span></span>
+                        <span>Производитель: <span class="producer-name">{{ product_show.producer }}</span></span>
+                        <span>Категория товара: <span class="product-category">{{ product_show.category }}</span></span>
+                        <span>Вид: <span class="product-type">{{ product_show.type }}</span></span>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            {% autoescape off %} {{ product.description_1 }} {% endautoescape %}
+                            {% autoescape off %} {{ product_show.description_1 }} {% endautoescape %}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div>
-                                <p><span style="font-weight: bold">{{ product.name_description_2 }}:</span>
-                                        {{ product.description_2 }}</p>
+                                <p><span style="font-weight: bold">{{ product_show.name_description_2 }}:</span>
+                                        {{ product_show.description_2 }}</p>
                             </div>
                             <div>
-                                <p><span style="font-weight: bold">{{ product.name_description_3 }}:</span>
-                                        {{ product.description_3 }}</p>
+                                <p><span style="font-weight: bold">{{ product_show.name_description_3 }}:</span>
+                                        {{ product_show.description_3 }}</p>
                             </div>
                         </div>
                     </div>

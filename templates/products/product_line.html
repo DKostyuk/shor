@@ -29,7 +29,7 @@
                     {% include 'landing/product_item_sales.html' %}
                 {% endfor %}
             {% else %}
-                {% for product_image in products_images %}
+                {% for product_item in p_items %}
                     {% include 'landing/product_item.html' %}
                 {% endfor %}
             {% endif %}

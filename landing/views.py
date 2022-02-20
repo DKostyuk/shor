@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.db.models import Q
 from .forms import *
+from products.views import get_items_product_bundle_home
 from products.models import *
 from landing.models import *
 from blogs.models import *
@@ -17,14 +18,12 @@ from .tokens import account_activation_token
 from django.core.mail import EmailMessage
 from django.http import HttpResponse
 import datetime
-from django.core.mail import send_mail
-from django.conf import settings
 import json
 from django.http import JsonResponse
 import random
 from orders.models import Order, ProductInOrder
 from utils.emails import SendingEmail
-from django.template.loader import get_template
+from utils.get_product_details import get_products_in_sales, get_bundles_in_sales
 
 
 # import googlemaps
@@ -197,6 +196,11 @@ def cabinet(request):
             subscriber = Subscriber.objects.get(email=username)
         except:
             subscriber = None
+        session_key = request.session.session_key
+        try:
+            activation_success_text_object = Page.objects.get(is_active=True, page_name="activation_success")
+        except:
+            activation_success_text_object = None
         return render(request, 'landing/cabinet.html', locals())
     else:
         authorization_error = "Вход в кабинет только для зарегистрированного пользователя." \
@@ -371,21 +375,6 @@ def logout(request):
     # return redirect("/")
 
 
-def get_products_in_sales(products_sales):
-    p_sales = list()
-    for p in products_sales:
-        try:
-            product = Product.objects.get(name=p.product_item.name)
-            product_image = ProductImage.objects.get(is_active=True, is_main=True, product__is_active=True, product=product)
-            sales_item = {'name': p.product_item.name, 'image_url': product_image.image.url,
-                          'price_old': p.price_old, 'price_current': p.price_current, 'discount': p.discount,
-                          'slug': product.slug}
-            p_sales.append(sales_item)
-        except:
-            pass
-    return p_sales
-
-
 def home(request):
     session_key = request.session.session_key
     slider_mains = SliderMain.objects.filter(is_active=True, is_main=True)
@@ -397,11 +386,20 @@ def home(request):
     # advert_right_down = advert_all.get(position=4)
     blogs_images_all = BlogImage.objects.filter(is_active=True, is_main=True)
     blogs_images = blogs_images_all[:4]
-    products_images_all = ProductImage.objects.filter(is_active=True, is_main=True, product__is_active=True)
-    products_images = products_images_all[:4]
-    products_sales = ProductItemSales.objects. filter(is_active=True)
-    print(products_sales)
+    p_items_all, b_sales = get_items_product_bundle_home()
+    p_items = p_items_all[:4]
+    for p in p_items:
+        print('=1==============11111111111111=============', p)
+
+    products_sales = ProductItemSales.objects.filter(is_active=True)
+
     p_sales = get_products_in_sales(products_sales)
+
+    bundles_sales = BundleSale.objects.filter(is_active=True)
+    b_sales = get_bundles_in_sales(bundles_sales)
+    p_sales = p_sales + b_sales
+
+
     try:
         home_carousel_text_object = Page.objects.get(is_active=True, page_name="Home_Carousel")
     except:
@@ -821,6 +819,36 @@ def public_offer(request):
         public_offer_text_object = None
 
     return render(request, 'landing/about_public_offer.html', locals())
+
+
+def politic_conf(request):
+    session_key = request.session.session_key
+    try:
+        politic_conf_text_object = Page.objects.get(is_active=True, page_name="politic_conf")
+    except:
+        politic_conf_text_object = None
+
+    return render(request, 'landing/about_politic_conf.html', locals())
+
+
+def delivery_page(request):
+    session_key = request.session.session_key
+    try:
+        delivery_page_text_object = Page.objects.get(is_active=True, page_name="delivery_page")
+    except:
+        delivery_page_text_object = None
+
+    return render(request, 'landing/about_delivery_page.html', locals())
+
+
+def goods_back(request):
+    session_key = request.session.session_key
+    try:
+        goods_back_text_object = Page.objects.get(is_active=True, page_name="goods_back")
+    except:
+        goods_back_text_object = None
+
+    return render(request, 'landing/about_goods_back.html', locals())
 
 
 def training(request):

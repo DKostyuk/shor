@@ -1,5 +1,5 @@
 from django.db import models
-from products.models import Product, ProductItemSales
+from products.models import ProductItemSales, BundleSale
 from cosmetologs.models import ServiceProduct, Cosmetolog
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -77,7 +77,8 @@ def create_order_number(sender, instance, created, *args, **kwargs):
 
 class ProductInOrder(models.Model):
     order = models.ForeignKey(Order, blank=True, null=True, default=None, on_delete=models.CASCADE)
-    product = models.ForeignKey(ProductItemSales, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    product = models.ForeignKey(ProductItemSales, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
+    bundle = models.ForeignKey(BundleSale, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
     nmb = models.IntegerField(default=1)
     price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # price*nmb
@@ -86,7 +87,10 @@ class ProductInOrder(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "%s" % self.product.product_item
+        if self.product is not None:
+            return "%s" % self.product.product_item
+        else:
+            return "%s" % self.bundle
 
     class Meta:
         verbose_name = 'ProductInOrder'
@@ -120,7 +124,8 @@ post_save.connect(product_in_order_post_save, sender=ProductInOrder)
 class ProductInBasket(models.Model):
     session_key = models.CharField(max_length=128, blank=True, null=True, default=None)
     order = models.ForeignKey(Order, blank=True, null=True, default=None, on_delete=models.CASCADE)
-    product = models.ForeignKey(ProductItemSales, blank=True, null=True, default=None, on_delete=models.CASCADE)
+    product = models.ForeignKey(ProductItemSales, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
+    bundle = models.ForeignKey(BundleSale, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
     nmb = models.IntegerField(default=1)
     price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)#price*nmb
@@ -129,14 +134,22 @@ class ProductInBasket(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "%s" % self.product.product_item
+        if self.product is not None:
+            return "%s" % self.product.product_item
+        else:
+            return "%s" % self.bundle
 
     class Meta:
         verbose_name = 'ProductInBasket'
         verbose_name_plural = 'ProductInBaskets'
 
     def save(self, *args, **kwargs):
-        price_per_item = self.product.price_current
+        print('------------SLEF=====================', self.session_key)
+        print('------------SLEF=====================', self.total_price)
+        if self.product is not None:
+            price_per_item = self.product.price_current
+        else:
+            price_per_item = self.bundle.price_current
         self.price_per_item = price_per_item
         self.total_price = int(self.nmb) * self.price_per_item
 
@@ -151,6 +164,16 @@ class ProductInBasket(models.Model):
             # p.price_old = p.price_old_usd * usd_rate
             # p.price_current = p.price_current_usd * usd_rate
             p.save()
+
+    @receiver(post_save, sender=BundleSale)
+    def update_price_per_item(sender, instance, created, *args, **kwargs):
+        # usd_rate = instance.usd_price_uah
+        bundles_in_basket = ProductInBasket.objects.filter(bundle=instance, is_active=True)
+        for b in bundles_in_basket:
+            # p.price_per_item = instance.price_current
+            # p.price_old = p.price_old_usd * usd_rate
+            # p.price_current = p.price_current_usd * usd_rate
+            b.save()
 
     # if created:
     #     Subscriber.objects.create(user=instance, email=str(instance))

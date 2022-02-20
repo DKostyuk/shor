@@ -45,7 +45,11 @@
                                 {% for product_in_order in products_in_order %}
                                     <tr>
                                         <td>
+                                            {% if product_in_order.product %}
                                             <span>{{ product_in_order.product }}</span>
+                                            {% else %}
+                                            <span>{{ product_in_order.bundle }}</span>
+                                            {% endif %}
                                         </td>
                                         <td>
                                             <span>{{ product_in_order.nmb }}</span>

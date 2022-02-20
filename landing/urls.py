@@ -72,6 +72,9 @@ urlpatterns = [
     re_path(r'^about/$', views.about, name='about'),
     re_path(r'^uhoda-korystuvacha/$', views.rules, name='rules'),
     re_path(r'^dohovir-publichnoi-oferty/$', views.public_offer, name='public_offer'),
+    re_path(r'^polityka-konfidentsiinosti/$', views.politic_conf, name='politic_conf'),
+    re_path(r'^dostavka-i-oplata/$', views.delivery_page, name='delivery_page'),
+    re_path(r'^povernennia-tovaru/$', views.goods_back, name='goods_back'),
     re_path(r'^training/$', views.training, name='training'),
     re_path(r'^training/(?P<slug>[\w-]+)/$', views.training_item, name='training_item'),
 

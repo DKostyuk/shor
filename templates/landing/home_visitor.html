@@ -14,9 +14,26 @@
                         Серії препаратів
                     </h1>
                 </div>
-                    {% for product_line in product_lines %}
-                        {% include 'landing/product_line_shor.html' %}
-                    {% endfor %}
+                {% for product_line in product_lines %}
+                        {% include 'landing/product_line_shor_1.html' %}
+                 {% endfor %}
+
+<!--                <div class="row">-->
+<!--                    {% for product_line in product_lines|slice:":3" %}-->
+<!--                        {% include 'landing/product_line_shor_1.html' %}-->
+<!--                    {% endfor %}-->
+<!--                </div>-->
+<!--                <div class="row">-->
+<!--                    <div class="col-lg-8 offset-lg-2">-->
+<!--                        {% for product_line in product_lines|slice:"3:" %}-->
+<!--                            {% include 'landing/product_line_shor_2.html' %}-->
+<!--                        {% endfor %}-->
+<!--                    </div>-->
+
+<!--                </div>-->
+
+
+
 
             </div>
         </div>
@@ -31,7 +48,7 @@
                         Популярні новинки
                     </h1>
                 </div>
-                {% for product_image in products_images %}
+                {% for product_item in p_items %}
                     {% include 'landing/product_item.html' %}
                 {% endfor %}
 

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 product-image-item">
+                {% for image_item in p_product %}
+                {% if forloop.counter0 == 0 %}
+                <img src="{{ image_item.image_url }}" class="img-fluid">
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="col-lg-7">
+                <div class="service-page-details">
+                    {% for bundle in p_product %}
+                    {% if forloop.counter0 == 0 %}
+                    <h1 class="product-page-name">{{ bundle.name }}</h1>
+                    <h2 class="product-page-name-pl">{{ bundle.name_pl }}</h2>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if cosmetolog %}
+                        {% include 'products/product_cosmetolog_bundle_sales.html' %}
+                    {% endif %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="nav nav-tabs profile-tabs" id="myTab" role="tablist">
+                                    {% for bundle in p_product %}
+                                    {% if forloop.counter0 == 0 %}
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="{{ bundle.for_id }}-tab" data-toggle="tab" href="#{{ bundle.for_id}}" role="tab"
+                                           aria-controls="about" aria-selected="true">{{ bundle.product_name}} </a>
+                                    </li>
+                                    {% else %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="{{ bundle.for_id }}-tab" data-toggle="tab" href="#{{ bundle.for_id}}" role="tab"
+                                           aria-controls="about" aria-selected="true">{{ bundle.product_name}} </a>
+                                    </li>
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    {% for bundle in p_product %}
+                                    {% if forloop.counter0 == 0 %}
+                                    <div class="tab-pane fade show active" id="{{ bundle.for_id }}" role="tabpanel" aria-labelledby="{{ bundle.for_id}}-tab">
+                                    {% else %}
+                                    <div class="tab-pane fade" id="{{ bundle.for_id }}" role="tabpanel" aria-labelledby="{{ bundle.for_id}}-tab">
+                                    {% endif %}
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <p>{{ bundle.name_description }} - {{ bundle.description }}</p>
+                                                <div class="row">
+                                                    <div class="col-lg-5">
+                                                        <p><span class="product-page-volume">
+                                                            {{ bundle.volume }} {{ bundle.volume_type }}
+                                                        </span><br>
+                                                            Арт. {{ bundle.ref_number }}
+                                                            <br>
+                                                            {% if bundle.description_4 and bundle.description_5 %}
+                                                                {{ bundle.description_4 }} / {{ bundle.description_5 }}
+                                                            {% elif bundle.description_4 %}
+                                                                {{ bundle.description_5 }}
+                                                            {% elif bundle.description_5%}
+                                                                {{ bundle.description_5 }}
+                                                            {% endif %}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        {% autoescape off %} {{ bundle.description_1 }} {% endautoescape %}
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div>
+                                                            <p><span style="font-weight: bold">{{ bundle.name_description_2 }}:</span>
+                                                                    {{ bundle.description_2 }}</p>
+                                                        </div>
+                                                        <div>
+                                                            <p><span style="font-weight: bold">{{ bundle.name_description_3 }}:</span>
+                                                                    {{ bundle.description_3 }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--     Modal form html-->
+    <div class="col-lg-12">
+        {% include 'cosmetologs/modal_form_send-product-to-basket.html' %}
+    </div>
+
+{% endblock %}

@@ -23,10 +23,10 @@ def getting_basket_info(request):
     username = auth.get_user(request).username
     username_id = auth.get_user(request).id
     try:
-        print('---CONTEXT-------username_id-----', username_id, username)
+        # print('---CONTEXT-------username_id-----', username_id, username)
         cosmetolog = Cosmetolog.objects.get(user=username_id, is_active=True)
     except:
         cosmetolog = None
-    print('--CONTEXT-----HERE HOM and COSMO -----', cosmetolog, type(cosmetolog))
+    # print('--CONTEXT-----HERE HOM and COSMO -----', cosmetolog, type(cosmetolog))
 
     return locals()

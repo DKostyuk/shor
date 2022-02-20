@@ -77,9 +77,12 @@ admin.site.register(LetterTemplate, LetterTemplateAdmin)
 
 
 class PageAdmin (admin.ModelAdmin):
-    list_display = [field.name for field in Page._meta.fields]
+    list_display = ['page_name', 'page_text_1', 'is_active']
     # fields = ['activation_date', 'deactivation_date', 'ad_name',
     #           'ad_customer', 'ad_description', 'is_active', 'is_main']
+
+    def page_text_1(self, obj):
+        return obj.page_text[:20]
 
     class Meta:
         model = Page
