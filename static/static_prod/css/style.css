@@ -239,6 +239,7 @@ html, body{
 .img-product{
     height: 278px;
     width: 100%;
+    position: relative;
 }
 
 .img-product-inside, .img-cosmetolog-inside {
@@ -383,6 +384,17 @@ html, body{
     color: white;
     font-weight: 700;
     padding: 3px;
+}
+
+.volume-container{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #ebe7e1b8;
+    width: 30%;
+    font-weight: 700;
+    padding: 3px;
+    border-radius: 20px;
 }
 
 /*Blog item box*/

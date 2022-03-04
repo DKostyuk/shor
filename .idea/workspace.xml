@@ -1,179 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-02-20 style checcking">
-      <change afterPath="$PROJECT_DIR$/static/media/sales_images/BalanCell_png_ban.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/sales_images/DSC_3310_s_-_Copy-BUNDLE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/sales_images/DSC_3310_s_-_Copy-BUNDLE_3gvAdOD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/sales_images/DSC_3319_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/sales_images/DSC_3382_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/sales_images/DSC_3385_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/sales_images/Logo_Shor_Ukraine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/products/product_line_no_product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/products/product_no.html" afterDir="false" />
+    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-03-04 changes in tables">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/addresses/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/migrations/0002_address.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/migrations/0003_auto_20171008_1303.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/migrations/0004_address_parent_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/migrations/0005_auto_20171008_1823.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/migrations/0006_address_type_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/migrations/0007_cosmetologaddress.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/migrations/0008_auto_20171009_1155.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/migrations/0009_addressaddfile.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/migrations/0010_auto_20171012_1843.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/migrations/0002_auto_20180425_1929.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/migrations/0003_productfilecsv_document.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/migrations/0004_testeditor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/another/migrations/0005_calendartraining.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/migrations/0002_auto_20171101_1303.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0002_serviceproduct_is_visible.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0003_cosmetologaddress.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0004_auto_20171021_1853.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0005_subcategoryforcosmetolog.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0006_auto_20171101_1319.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0007_cosmetologcategory_subcategory.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0008_serviceproduct_subcategory.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0009_auto_20180519_0841.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0010_auto_20180519_0847.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0011_auto_20180529_2047.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0012_auto_20180529_2053.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0013_auto_20180531_1756.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0014_auto_20180621_1008.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0015_subscribercosmetolog.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0016_auto_20181026_0936.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0017_auto_20181026_0946.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0018_auto_20181214_1425.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0019_auto_20181215_2036.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0020_auto_20181221_1216.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0021_auto_20190118_1822.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0022_auto_20190125_2218.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0023_cosmetolog_working_hours.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0024_auto_20190221_1925.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0025_auto_20190302_1352.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0026_auto_20190302_1358.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0027_auto_20190304_1033.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0028_auto_20190304_1253.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0029_cosmetologaddress_address_type_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0030_cosmetologaddfile.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0031_auto_20191031_1130.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0032_auto_20191031_1252.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0033_cosmetolog_type_text.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0034_auto_20191108_1732.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0035_auto_20191112_1155.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0036_auto_20220130_1009.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0037_cosmetolog_user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0038_auto_20220206_1321.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0039_auto_20220206_1328.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0002_auto_20171023_1632.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0003_slidermain_position.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0004_auto_20180303_1709.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0005_auto_20180307_2138.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0006_auto_20180307_2147.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0007_auto_20180311_0013.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0008_auto_20180311_1200.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0009_auto_20180311_1230.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0010_auto_20180311_1359.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0011_auto_20180311_1544.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0012_subscriber_company_confirm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0013_letter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0014_page.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0015_auto_20180419_0705.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0016_training_image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0017_remove_training_image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0018_training_image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0019_traininguser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0020_auto_20180422_2200.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0021_auto_20180422_2232.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0022_letter_phone_sender.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0023_auto_20190221_1925.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0024_auto_20190222_1119.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0025_slidermain_alt.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0026_alter_slidermain_alt.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0027_remove_slidermain_alt.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0028_slidermain_alt.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0029_alter_slidermain_image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0030_lettertype.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0031_letter_type.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0032_alter_letter_type.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0033_delete_lettertype.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0034_auto_20220214_1619.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0035_remove_letter_cosmetolog_email.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0036_letter_user_email.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0002_serviceorder.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0003_auto_20171021_1101.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0004_serviceorder_session_key.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0005_auto_20171021_1853.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0006_remove_serviceorder_customer_address.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0007_auto_20171021_2004.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0008_auto_20171101_1303.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0009_order_user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0010_auto_20190226_0932.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0011_auto_20190226_1256.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0012_alter_productinbasket_product.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0013_auto_20220207_1639.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0014_alter_productinorder_product.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0015_rename_status_statusorder.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0016_order_order_number.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0017_statuspayment.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0018_auto_20220209_1939.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0019_auto_20220211_1219.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0020_auto_20220217_1630.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0002_auto_20171101_1303.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0003_auto_20180206_1831.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0004_auto_20180226_1852.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0005_productcategory_description.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0006_product_name_pl.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0007_auto_20180519_0723.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0008_productaddfile.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0009_auto_20180529_0810.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0010_auto_20190219_1559.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0011_product_price_old.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0012_productcategory_product_category_logo_image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0013_auto_20220123_1141.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0014_productjoin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0015_productitem.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0016_productaddfile_title.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0017_rename_title_productaddfile_what_to_do.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0018_auto_20220126_1107.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0019_remove_product_ref_number.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0020_auto_20220126_1445.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0021_auto_20220126_1500.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0022_auto_20220126_2125.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0023_productitemsales.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0024_auto_20220206_2107.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0025_currencyexchange.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0026_auto_20220206_2147.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0027_productitemsales_exchange_rate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0028_alter_productitemsales_exchange_rate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0029_auto_20220208_1710.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0030_productsalestype.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0031_auto_20220216_1347.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0032_remove_productitemsales_product_item.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0033_productitemsales_product_item.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/product_item_sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/product_item_sales.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/profile_additional.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/profile_additional.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orders/checkout_order_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/checkout_order_table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products/product_cosmetolog_sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_cosmetolog_sales.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/get_product_details.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/get_product_details.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -488,13 +317,6 @@
       <workItem from="1593613541514" duration="4022000" />
       <workItem from="1593937419291" duration="1305000" />
       <workItem from="1594792414288" duration="637000" />
-    </task>
-    <task id="LOCAL-00027" summary="working 2022-01-22 weekend">
-      <created>1643014261048</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1643014261048</updated>
     </task>
     <task id="LOCAL-00028" summary="working 2022-01-24 weekend">
       <created>1643022114179</created>
@@ -832,7 +654,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645348276835</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="2022-03-04 changes in tables">
+      <created>1646404683728</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1646404683729</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -874,6 +703,7 @@
     <MESSAGE value="2022-02-12 gitignor" />
     <MESSAGE value="2022-02-15 order email" />
     <MESSAGE value="2022-02-20 style checcking" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-02-20 style checcking" />
+    <MESSAGE value="2022-03-04 changes in tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022-03-04 changes in tables" />
   </component>
 </project>
