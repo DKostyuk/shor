@@ -1,109 +1,80 @@
                     <div class="row">
                         <div class="col-lg-5">
-                                <div class="btn-group-toggle btn-order-users" data-toggle="buttons">
-                                    {% for p_sale in p_sales %}
-                                        {% if forloop.counter0 == 0 %}
-                                            <label class="btn btn-secondary btn-product-volume active"
-                                                   id='{{ p_sale.volume }}'>
-                                        {% else %}
-                                            <label class="btn btn-secondary btn-product-volume"
-                                                   id='{{ p_sale.volume }}'>
-                                        {% endif %}
-                                                <input type="radio" value="{{ p_sale.volume }}" checked
-                                                   data-product_sales_id = "{{ p_sale.product_sales_id }}"
-                                                   data-name = "{{ p_sale.name }}"
-                                                   data-price = "{{ p_sale.price_current }}"
-                                                   data-case = "11"
-                                                >
-                                                <p class="product-page-volume-ref"><span class="product-page-volume">{{ p_sale.volume }} {{ p_sale.volume_type }}</span><br>
-                                                    Арт. {{ p_sale.ref_number }}
-                                                </p>
-                                            </label>
-                                    {% endfor %}
-                                </div>
+                            <div class="btn-group-toggle btn-order-users" data-toggle="buttons">
+                                {% for p_sale in p_sales %}
+                                    {% if forloop.counter0 == 0 %}
+                                        <label class="btn btn-secondary btn-product-volume active"
+                                               id='{{ p_sale.volume }}'>
+                                    {% else %}
+                                        <label class="btn btn-secondary btn-product-volume"
+                                               id='{{ p_sale.volume }}'>
+                                    {% endif %}
+                                            <input type="radio" value="{{ p_sale.volume }}" checked
+                                               data-product_sales_id = "{{ p_sale.product_sales_id }}"
+                                               data-name = "{{ p_sale.name }}"
+                                               data-price = "{{ p_sale.price_current }}"
+                                               data-case = "11"
+                                            >
+                                            <p class="product-page-volume-ref"><span class="product-page-volume">{{ p_sale.volume }} {{ p_sale.volume_type }}</span><br>
+                                                Арт. {{ p_sale.ref_number }}
+                                            </p>
+                                        </label>
+                                {% endfor %}
+                            </div>
                             <p>{{ product_show.description_4 }} / {{ product_show.description_5 }}</p>
                         </div>
 
                         <div class="col-lg-7">
-                                                <div class="row">
-                        <div class="col-lg-12">
-                            <div>
-                                <form id ="form_buying_product" class="form-inline"
-                                      action="{% url 'basket_adding' %}">{% csrf_token %}
-                                    <div class="form-group service-page-price">
-                                        {% for p_sale in p_sales %}
-                                            {% if p_sale.discount  > 0 %}
-                                                {% if forloop.counter0 == 0 %}
-                                                    <div class="product-page-price-old" id='{{ p_sale.volume }}'>
-                                                        {{ p_sale.price_old }} грн.
-                                                    </div>
-                                                    <div class="product-page-price-discounted" id='{{ p_sale.volume }}'>
-                                                        {{ p_sale.price_current }} грн.
-                                                    </div>
-                                                {% else %}
-                                                    <div class="product-page-price-old hidden" id='{{ p_sale.volume }}'>
-                                                        {{ p_sale.price_old }} грн.
-                                                    </div>
-                                                    <div class="product-page-price-discounted hidden" id='{{ p_sale.volume }}'>
-                                                        {{ p_sale.price_current }} грн.
-                                                    </div>
-                                                {% endif %}
-                                            {% else %}
-                                                {% if forloop.counter0 == 0 %}
-                                                    <div class="product-page-price-standard">
-                                                        {{ p_sale.price_current }} грн.
-                                                    </div>
-                                                {% else %}
-                                                    <div class="product-page-price-standard hidden">
-                                                        {{ p_sale.price_current }} грн.
-                                                    </div>
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div>
+                                        <form id ="form_buying_product" class="form-inline"
+                                              action="{% url 'basket_adding' %}">{% csrf_token %}
+                                            <div class="form-group service-page-price">
+                                                {% for p_sale in p_sales %}
+                                                    {% if p_sale.discount  > 0 %}
+                                                        {% if forloop.counter0 == 0 %}
+                                                            <div class="product-page-price-old" id='{{ p_sale.volume }}'>
+                                                                {{ p_sale.price_old }} грн.
+                                                            </div>
+                                                            <div class="product-page-price-discounted" id='{{ p_sale.volume }}'>
+                                                                {{ p_sale.price_current }} грн.
+                                                            </div>
+                                                        {% else %}
+                                                            <div class="product-page-price-old hidden" id='{{ p_sale.volume }}'>
+                                                                {{ p_sale.price_old }} грн.
+                                                            </div>
+                                                            <div class="product-page-price-discounted hidden" id='{{ p_sale.volume }}'>
+                                                                {{ p_sale.price_current }} грн.
+                                                            </div>
+                                                        {% endif %}
+                                                    {% else %}
+                                                        {% if forloop.counter0 == 0 %}
+                                                            <div class="product-page-price-standard" id='{{ p_sale.volume }}'>
+                                                                {{ p_sale.price_current }} грн.
+                                                            </div>
+                                                        {% else %}
+                                                            <div class="product-page-price-standard hidden" id='{{ p_sale.volume }}'>
+                                                                {{ p_sale.price_current }} грн.
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="hidden" class="form-control" name="number" id="number"
+                                                       value="1" min="0" max="10" step="1" pattern="\d+">
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" id="submit_btn" class="btn btn-success btn-buy btn-buy-page-product" data-backdrop="static" data-keyboard="false"
+                                                        data-toggle="modal" data-target="#SendProductToBasket">
+                                                    Купити
+                                                    <i class="fas fa-shopping-cart buy-cart"></i>
+                                                </button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="hidden" class="form-control" name="number" id="number"
-                                               value="1" min="0" max="10" step="1" pattern="\d+">
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" id="submit_btn" class="btn btn-success btn-buy btn-buy-page-product" data-backdrop="static" data-keyboard="false"
-                                                data-toggle="modal" data-target="#SendProductToBasket">
-                                            Купити
-                                            <i class="fas fa-shopping-cart buy-cart"></i>
-                                        </button>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                        </div>
-                    </div>
-
-
-
-<!--                    <div class="row">-->
-<!--                        <div class="col-lg-12 product-short-description">{{ product.short_description }}</div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-lg-4">-->
-<!--                            &lt;!&ndash; Modal request btn See on Map &ndash;&gt;-->
-<!--                            <button type="submit" id="open_map_btn" class="btn btn-see-info"-->
-<!--                                    data-toggle="modal" data-target="#map_modal"-->
-<!--                                    data-cosmetolog_address = "{{ cosmetolog_address }}">-->
-<!--                                Посмотреть адресс на карте-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                        <div class="col-lg-4">-->
-<!--                            <a class="btn toggle-text btn-see-info" data-toggle="collapse" href="">-->
-<!--                                <span>Посмотреть сайт</span>-->
-<!--                                <span class="hidden hidden-info">{{ cosmetolog.site_url }}</span>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                        <div class="col-lg-4">-->
-<!--                            <a class="btn toggle-text btn-see-info" data-toggle="collapse" href="">-->
-<!--                                <span>Посмотреть телефон</span>-->
-<!--                                <span class="hidden hidden-info">+38 {{ cosmetolog.order_phone }}</span>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-

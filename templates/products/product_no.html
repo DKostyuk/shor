@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row product-line-product-items">
+            {% if cosmetolog %}
+                {% for product_sales in p_sales %}
+                    {% include 'landing/product_item_sales.html' %}
+                {% endfor %}
+            {% else %}
+                {% for product_item in p_items %}
+                    {% include 'landing/product_item.html' %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

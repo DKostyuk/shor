@@ -25,25 +25,15 @@ def basket_adding(request):
     if is_delete == 'true':
         ProductInBasket.objects.filter(id=product_sales_id).update(is_active=False)
     else:
-        if what_case in (11, 21, 31, 41):
-            print('======111111111111111========', product_sales_id, product_price, nmb)
-            new_product, created = ProductInBasket.objects.get_or_create(session_key=session_key,
-                                                                         product_id=product_sales_id,
-                                                                         price_per_item=product_price, is_active=True,
-                                                                         defaults={"nmb": nmb})
-        elif what_case in (12, 22, 32, 42):
-            print('======22222222222222222==========', product_sales_id, product_price, nmb)
-            new_product, created = ProductInBasket.objects.get_or_create(session_key=session_key,
-                                                                         bundle_id=product_sales_id,
-                                                                         price_per_item=product_price, is_active=True,
-                                                                         defaults={"nmb": nmb})
-        else:
-            pass
+        new_product, created = ProductInBasket.objects.get_or_create(session_key=session_key,
+                                                                     pb_sale_id=product_sales_id,
+                                                                     price_per_item=product_price, is_active=True,
+                                                                     defaults={"nmb": nmb})
+        print('created--------', new_product)
 
         if not created and (what_case == 11 or what_case == 12):
             new_product.nmb += int(nmb)
             new_product.save(force_update=True)
-            print('добваили единицу по кейсу 12 -----------------------')
 
         if not created and (what_case == 21 or what_case == 22):
             new_product.nmb -= 1
@@ -70,26 +60,13 @@ def basket_adding(request):
         product_dict["price_per_item"] = item.price_per_item
         product_dict["nmb"] = item.nmb
         product_dict["total_price"] = item.total_price
-        if item.product is not None:
-            print('111111111111111111----------', item.product)
-            print('111111111111111111----------', item.product)
-            product_dict["name"] = item.product.product_item.name
-            product_dict["product_id"] = item.product.id
-            product_dict["sales_type"] = 'item'
-            try:
-                product = Product.objects.get(name=item.product.product_item.name)
-                product_dict["modal_product_image_url"] = ProductImage.objects.get(product=product, is_active=True,
-                                                                                   is_main=True,
-                                                                                   product__is_active=True).image.url
-            except:
-                product_dict["modal_product_image_url"] = None
-            product_dict["product_volume"] = item.product.product_item.volume.name
-        else:
-            product_dict["name"] = item.bundle.name
-            product_dict["product_id"] = item.bundle.id
-            product_dict["sales_type"] = 'bundle'
-            product_dict["modal_product_image_url"] = item.bundle.image.url
-            product_dict["product_volume"] = ""
+
+        product_dict["name"] = item.pb_sale.name_sales
+        product_dict["product_id"] = item.pb_sale.id
+        # product_dict["sales_type"] = 'item' - Посмотреть надо ли эта инфо в таблице
+        product_dict["modal_product_image_url"] = item.pb_sale.image_url
+        # product_dict["product_volume"] = item.pb_sale.volume.name
+
         # product_dict["modal-product_image_url"] = 'somu undefined URL'
         return_dict["products"].append(product_dict)
     # return this data in AJAX
@@ -140,12 +117,8 @@ def checkout(request):
             # создать Продукты в Заказе на основе того, что осталось в корзине -
             # #Проверить после реализации функции удаления
             for p in products_in_basket:
-                if p.product is not None:
-                    ProductInOrder.objects.create(product=p.product, nmb=p.nmb, price_per_item=p.price_per_item,
-                                                  order=new_order)
-                else:
-                    ProductInOrder.objects.create(bundle=p.bundle, nmb=p.nmb, price_per_item=p.price_per_item,
-                                                  order=new_order)
+                ProductInOrder.objects.create(pb_sale=p.pb_sale, nmb=p.nmb, price_per_item=p.price_per_item,
+                                              order=new_order)
                 p.is_active = False
                 p.save(force_update=True)
             try:
@@ -161,13 +134,7 @@ def checkout(request):
             except:
                 pass
 
-
-
             return render(request, 'orders/order_success.html', locals())
-            # return HttpResponseRedirect(reverse(order_history))
-            # return render(request, 'orders/order_history.html', locals())
-
-            # Проверить подумать Куда направлять - типа УСПЕХ страница и с Вами созвоняться по вопросам Оплаты и Доставки
 
         else:
             print('NO valid')

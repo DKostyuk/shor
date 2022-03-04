@@ -3,7 +3,6 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.db.models import Q
 from .forms import *
-from products.views import get_items_product_bundle_home
 from products.models import *
 from landing.models import *
 from blogs.models import *
@@ -23,9 +22,7 @@ from django.http import JsonResponse
 import random
 from orders.models import Order, ProductInOrder
 from utils.emails import SendingEmail
-from utils.get_product_details import get_products_in_sales, get_bundles_in_sales
-
-
+import operator
 # import googlemaps
 
 
@@ -210,6 +207,7 @@ def cabinet(request):
 
 
 def profile(request):
+    print('/////////////////////')
     username_now = auth.get_user(request).username
     user_object = auth.get_user(request)
     print('----Profile---user-object---', user_object, type(user_object))
@@ -219,6 +217,7 @@ def profile(request):
             cosmetolog = Cosmetolog.objects.get(user=user_object)
             form = CosmetologForm(request.POST or None, instance=cosmetolog)
             order_set = Order.objects.filter(cosmetolog=cosmetolog)
+
             order_list = list()
             for order in order_set:
                 products_in_order = ProductInOrder.objects.filter(order=order)
@@ -386,19 +385,37 @@ def home(request):
     # advert_right_down = advert_all.get(position=4)
     blogs_images_all = BlogImage.objects.filter(is_active=True, is_main=True)
     blogs_images = blogs_images_all[:4]
-    p_items_all, b_sales = get_items_product_bundle_home()
-    p_items = p_items_all[:4]
-    for p in p_items:
-        print('=1==============11111111111111=============', p)
+    # Find and range products for visitors
+    pb_home_1 = SalesProduct.objects.filter(is_active=True, duplicate=12, rank__lt=12).order_by('rank')
+    p_items = pb_home_1
+    # Find and range products for cosmetolog
 
-    products_sales = ProductItemSales.objects.filter(is_active=True)
+    pb_home_2 = SalesProduct.objects.filter(is_active=True, rank__lt=12).order_by('rank')
+    # p_sales = pb_home_2
+    p_home_2 = pb_home_2.filter(type=1)
+    b_home_2 = pb_home_2.filter(type=2)
+    products_in_sale = SaleProductItem.objects.filter(is_active=True, sales_product__in=p_home_2)
+    p_sales = list()
+    for p in products_in_sale:
+        try:
+            if p.sales_product.type.id == 1:
+                sales_item = {'name_sales': p.sales_product.name, 'volume': p.product_item.volume,
+                              'volume_type': p.product_item.volume_type, 'slug': p.sales_product.slug,
+                              'price_old': p.sales_product.price_old, 'price_current': p.sales_product.price_current,
+                              'discount': p.sales_product.discount, 'rank': p.sales_product.rank,
+                              'image_url': p.sales_product.image_url}
+                p_sales.append(sales_item)
 
-    p_sales = get_products_in_sales(products_sales)
-
-    bundles_sales = BundleSale.objects.filter(is_active=True)
-    b_sales = get_bundles_in_sales(bundles_sales)
-    p_sales = p_sales + b_sales
-
+        except:
+            pass
+    for b in b_home_2:
+        sales_item = {'name_sales': b.name, 'volume': 'див',
+                      'volume_type': '. ', 'slug': b.slug,
+                      'price_old': b.price_old, 'price_current': b.price_current,
+                      'discount': b.discount, 'rank': b.rank,
+                      'image_url': b.image_url}
+        p_sales.append(sales_item)
+    p_sales.sort(key=operator.itemgetter('rank'))
 
     try:
         home_carousel_text_object = Page.objects.get(is_active=True, page_name="Home_Carousel")

@@ -11,11 +11,7 @@
         {% for product_in_basket in products_in_basket %}
             <tr>
                 <td>
-                    {% if product_in_basket.product %}
-                        <span>{{ product_in_basket.product }}</span>
-                    {% else %}
-                        <span>{{ product_in_basket.bundle }}</span>
-                    {% endif %}
+                    <span>{{ product_in_basket.pb_sale }}</span>
                     <span class="product-basket-name" hidden>{{ product_in_basket.id }}</span>
                 </td>
                 <td>

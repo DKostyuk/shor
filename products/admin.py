@@ -29,16 +29,6 @@ class ProductTypeAdmin (admin.ModelAdmin):
 admin.site.register(ProductType, ProductTypeAdmin)
 
 
-class ProductSalesTypeAdmin (admin.ModelAdmin):
-    list_display = [field.name for field in ProductSalesType._meta.fields]
-
-    class Meta:
-        model = ProductSalesType
-
-
-admin.site.register(ProductSalesType, ProductSalesTypeAdmin)
-
-
 class ProductVolumeAdmin (admin.ModelAdmin):
     list_display = [field.name for field in ProductVolume._meta.fields]
 
@@ -123,47 +113,16 @@ class ProductItemAdmin (admin.ModelAdmin):
 admin.site.register(ProductItem, ProductItemAdmin)
 
 
-class ProductInBundleInline(admin.TabularInline):
-    model = ProductInBundle
-    extra = 0
-
-
-class ProductItemSalesAdmin (admin.ModelAdmin):
-    list_display = [field.name for field in ProductItemSales._meta.fields]
-    readonly_fields = ('price_old', 'price_current', 'price_current_usd', 'exchange_rate', 'created',
-                       'updated', 'modified_by',)
-
-    class Meta:
-        model = ProductItemSales
-
-
-admin.site.register(ProductItemSales, ProductItemSalesAdmin)
-
-
-class BundleSaleAdmin (admin.ModelAdmin):
-    list_display = [field.name for field in BundleSale._meta.fields]
-    readonly_fields = ('price_old', 'price_current', 'price_current_usd', 'exchange_rate', 'created',
-                       'updated', 'modified_by',)
-    inlines = [ProductInBundleInline]
-    prepopulated_fields = {'slug': ('name',)}
-
-    class Meta:
-        model = BundleSale
-
-
-admin.site.register(BundleSale, BundleSaleAdmin)
-
-
-class ProductInBundleAdmin (admin.ModelAdmin):
-    list_display = [field.name for field in ProductInBundle._meta.fields]
-    # readonly_fields = ('price_old', 'price_current', 'price_current_usd', 'exchange_rate', 'created',
-    #                    'updated', 'modified_by',)
-
-    class Meta:
-        model = ProductInBundle
-
-
-admin.site.register(ProductInBundle, ProductInBundleAdmin)
+# class ProductItemSalesAdmin (admin.ModelAdmin):
+#     list_display = [field.name for field in ProductItemSales._meta.fields]
+#     readonly_fields = ('price_old', 'price_current', 'price_current_usd', 'exchange_rate', 'created',
+#                        'updated', 'modified_by',)
+#
+#     class Meta:
+#         model = ProductItemSales
+#
+#
+# admin.site.register(ProductItemSales, ProductItemSalesAdmin)
 
 
 class CurrencyExchangeAdmin (admin.ModelAdmin):
@@ -182,3 +141,43 @@ class CurrencyExchangeAdmin (admin.ModelAdmin):
 
 
 admin.site.register(CurrencyExchange, CurrencyExchangeAdmin)
+
+
+class SalesProductTypeAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in SalesProductType._meta.fields]
+
+    class Meta:
+        model = SalesProductType
+
+
+admin.site.register(SalesProductType, SalesProductTypeAdmin)
+
+
+class SaleProductItemInline(admin.TabularInline):
+    model = SaleProductItem
+    extra = 0
+
+
+class SalesProductAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in SalesProduct._meta.fields]
+    readonly_fields = ('price_old', 'price_current', 'price_current_usd', 'exchange_rate', 'slug', 'created',
+                       'updated', 'modified_by',)
+    inlines = [SaleProductItemInline]
+    list_editable = ['rank']
+
+    class Meta:
+        model = SalesProduct
+
+
+admin.site.register(SalesProduct, SalesProductAdmin)
+
+
+class SaleProductItemAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in SaleProductItem._meta.fields]
+
+    class Meta:
+        model = SaleProductItem
+
+
+admin.site.register(SaleProductItem, SaleProductItemAdmin)
+

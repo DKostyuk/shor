@@ -17,9 +17,11 @@ from django.contrib import admin
 from products import views
 
 urlpatterns = [
+    re_path(r'^product/', views.product_no, name='product_no'),
     re_path(r'^product/(?P<slug>[\w-]+)/$', views.product, name='product'),
     # re_path(r'^product/(?P<slug1>[\w-]+)/(?P<slug>[\w-]+)/$', views.product, name='product'),
     re_path(r'^product_line/(?P<slug>[\w-]+)/$', views.product_line, name='product_line'),
+    re_path(r'^product_line/', views.product_line, name='product_line'),
     # url(r'^product_line/(?P<slug1>[\w-]+)/(?P<slug>[\w-]+)/$', views.product_line, name='product_line'),
 ]
 # url(r'^landing/', views.landing, name='landing'),

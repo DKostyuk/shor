@@ -5,6 +5,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from shor.current_user import get_current_user
 
 
 class Subscriber(models.Model):
@@ -93,6 +94,7 @@ class SliderMain(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
     activation_date = models.DateField(blank=True, default=None)
     deactivation_date = models.DateField(blank=True, default=None)
+    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "%s" % self.id
@@ -100,6 +102,13 @@ class SliderMain(models.Model):
     class Meta:
         verbose_name = 'SliderMain'
         verbose_name_plural = 'SliderMains'
+
+    def save(self, *args, **kwargs):
+        user = get_current_user()
+        if user and user.is_authenticated:
+            self.modified_by = user
+
+        super(SliderMain, self).save(*args, **kwargs)
 
 
 class LetterTemplate(models.Model):
@@ -132,6 +141,7 @@ class Letter(models.Model):
     cosmetolog = models.ForeignKey(Cosmetolog, blank=True, null=True, default=None, on_delete=models.CASCADE)
     user_email = models.EmailField(blank=True, null=True, default=None)
     who_answer = models.CharField(max_length=64)
+    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "%s" % self.id
@@ -140,11 +150,19 @@ class Letter(models.Model):
         verbose_name = 'Letter'
         verbose_name_plural = 'Letters'
 
+    def save(self, *args, **kwargs):
+        user = get_current_user()
+        if user and user.is_authenticated:
+            self.modified_by = user
+
+        super(Letter, self).save(*args, **kwargs)
+
 
 class LetterEmail(models.Model):
     letter_template_name = models.ForeignKey(LetterTemplate, blank=True, null=True, default=None, on_delete=models.CASCADE)
     email_receiver = models.EmailField(blank=True, null=True, default=None)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "%s" % self.id
@@ -153,6 +171,13 @@ class LetterEmail(models.Model):
     class Meta:
         verbose_name = 'LetterEmail'
         verbose_name_plural = 'LetterEmails'
+
+    def save(self, *args, **kwargs):
+        user = get_current_user()
+        if user and user.is_authenticated:
+            self.modified_by = user
+
+        super(LetterEmail, self).save(*args, **kwargs)
 
 
 class Page(models.Model):
@@ -163,6 +188,7 @@ class Page(models.Model):
     is_active = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    modified_by = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "%s" % self.id
@@ -170,6 +196,13 @@ class Page(models.Model):
     class Meta:
         verbose_name = 'Page'
         verbose_name_plural = 'Pages'
+
+    def save(self, *args, **kwargs):
+        user = get_current_user()
+        if user and user.is_authenticated:
+            self.modified_by = user
+
+        super(Page, self).save(*args, **kwargs)
 
 
 class Training(models.Model):
