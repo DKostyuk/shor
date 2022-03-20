@@ -4,6 +4,7 @@ import operator
 
 
 def product(request, slug1=None, slug=None):
+    print('here-----PRODUCT------------------------------')
     session_key = request.session.session_key
     if not session_key:
         request.session.cycle_key()
@@ -29,10 +30,45 @@ def product(request, slug1=None, slug=None):
     except:
         print('НИЧЕГО НЕТ')
         product_show = None
-
+    ingredient_product_set = IngredientProduct.objects.filter(product=product_show)
     if product_show is not None: # показываем страничку Продукта для простого Айтема
         print('HEr-HEr')
-        return render(request, 'products/product.html', locals())
+        if len(ingredient_product_set) > 0:
+            extract = []
+            oxid = []
+            maslo = []
+            oil = []
+            others = []
+            for ip in ingredient_product_set:
+                if ip.ingredient.type.type_ref_number == 1:
+                    aaa = [ip.ingredient.name_pl, ip.ingredient.slug]
+                    extract.append(aaa)
+                    key_extract = ip.ingredient.type.name.capitalize()
+                elif ip.ingredient.type.type_ref_number == 2:
+                    bbb = [ip.ingredient.name_pl, ip.ingredient.slug]
+                    oxid.append(bbb)
+                    key_oxid = ip.ingredient.type.name.capitalize()
+                elif ip.ingredient.type.type_ref_number == 3:
+                    ccc = [ip.ingredient.name_pl, ip.ingredient.slug]
+                    maslo.append(ccc)
+                    key_maslo = ip.ingredient.type.name.capitalize()
+                elif ip.ingredient.type.type_ref_number == 4:
+                    ddd = [ip.ingredient.name_pl, ip.ingredient.slug]
+                    oil.append(ddd)
+                    key_oil = ip.ingredient.type.name.capitalize()
+                elif ip.ingredient.type.type_ref_number == 99:
+                    eee = [ip.ingredient.name_pl, ip.ingredient.slug]
+                    others.append(eee)
+            ingredient_dict = dict()
+            ingredient_dict[key_extract] = extract
+            ingredient_dict[key_oxid] = oxid
+            ingredient_dict[key_maslo] = maslo
+            ingredient_dict[key_oil] = oil
+            ingredient_dict['також'] = others
+            print('99999999999999999----------', ingredient_dict)
+            return render(request, 'products/product_w_ingredients.html', locals())
+        else:
+            return render(request, 'products/product.html', locals())
 
     else:   # BundleProduct --- поиск и отбор продукта - включает данные по продукту
         try:
@@ -112,6 +148,7 @@ def product_line(request, slug=None):
 
 
 def product_no(request):
+    print('here-----NO-NO PRODUCT------------------------------')
     session_key = request.session.session_key
     if not session_key:
         request.session.cycle_key()
@@ -148,3 +185,89 @@ def product_no(request):
     p_sales.sort(key=operator.itemgetter('rank'))
 
     return render(request, 'products/product_no.html', locals())
+
+
+def ingredient(request, slug=None):
+    print('here-----YESSSSSS ingredient------------------------------')
+    session_key = request.session.session_key
+    if not session_key:
+        request.session.cycle_key()
+    if slug:
+        try:
+            ingredient_item = Ingredient.objects.get(slug=slug)
+        except:
+            ingredient_item = None
+
+    # Find and range products for visitors
+    pb_home_1 = SalesProduct.objects.filter(is_active=True, duplicate=12, rank__lt=12).order_by('rank')
+    p_items = pb_home_1
+    print(len(p_items), '--------------')
+    # Find and range products for cosmetolog
+
+    pb_home_2 = SalesProduct.objects.filter(is_active=True, rank__lt=12).order_by('rank')
+    # p_sales = pb_home_2
+    p_home_2 = pb_home_2.filter(type=1)
+    b_home_2 = pb_home_2.filter(type=2)
+    products_in_sale = SaleProductItem.objects.filter(is_active=True, sales_product__in=p_home_2)
+    p_sales = list()
+    for p in products_in_sale:
+        try:
+            if p.sales_product.type.id == 1:
+                sales_item = {'name_sales': p.sales_product.name, 'volume': p.product_item.volume,
+                              'volume_type': p.product_item.volume_type, 'slug': p.sales_product.slug,
+                              'price_old': p.sales_product.price_old, 'price_current': p.sales_product.price_current,
+                              'discount': p.sales_product.discount, 'rank': p.sales_product.rank,
+                              'image_url': p.sales_product.image_url}
+                p_sales.append(sales_item)
+
+        except:
+            pass
+    for b in b_home_2:
+        sales_item = {'name_sales': b.name, 'volume': 'див',
+                      'volume_type': '. ', 'slug': b.slug,
+                      'price_old': b.price_old, 'price_current': b.price_current,
+                      'discount': b.discount, 'rank': b.rank,
+                      'image_url': b.image_url}
+        p_sales.append(sales_item)
+    p_sales.sort(key=operator.itemgetter('rank'))
+
+    return render(request, 'products/ingredient.html', locals())
+
+
+def ingredient_no(request):
+    print('here-----NO-NO ingredient------------------------------')
+    ingredient_all = Ingredient.objects.filter(is_active=True)
+    print('here-----NO-NO ingredient------------------------------', ingredient_all)
+    extract = []
+    oxid = []
+    maslo = []
+    oil = []
+    others = []
+    for ip in ingredient_all:
+        if ip.type.type_ref_number == 1:
+            aaa = [ip.name_pl, ip.slug]
+            extract.append(aaa)
+            key_extract = ip.type.name.capitalize()
+        elif ip.type.type_ref_number == 2:
+            bbb = [ip.name_pl, ip.slug]
+            oxid.append(bbb)
+            key_oxid = ip.type.name.capitalize()
+        elif ip.type.type_ref_number == 3:
+            ccc = [ip.name_pl, ip.slug]
+            maslo.append(ccc)
+            key_maslo = ip.type.name.capitalize()
+        elif ip.type.type_ref_number == 4:
+            ddd = [ip.name_pl, ip.slug]
+            oil.append(ddd)
+            key_oil = ip.type.name.capitalize()
+        elif ip.type.type_ref_number == 99:
+            eee = [ip.name_pl, ip.slug]
+            others.append(eee)
+    ingredient_dict = dict()
+    ingredient_dict[key_extract] = extract
+    ingredient_dict[key_oxid] = oxid
+    ingredient_dict[key_maslo] = maslo
+    ingredient_dict[key_oil] = oil
+    ingredient_dict['Також'] = others
+
+    return render(request, 'products/ingredient_no.html', locals())

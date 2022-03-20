@@ -181,3 +181,38 @@ class SaleProductItemAdmin (admin.ModelAdmin):
 
 admin.site.register(SaleProductItem, SaleProductItemAdmin)
 
+
+class IngredientProductInline(admin.TabularInline):
+    model = IngredientProduct
+    extra = 0
+
+
+class IngredientAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in Ingredient._meta.fields]
+    inlines = [IngredientProductInline]
+
+    class Meta:
+        model = Ingredient
+
+
+admin.site.register(Ingredient, IngredientAdmin)
+
+
+class IngredientTypeAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in IngredientType._meta.fields]
+
+    class Meta:
+        model = IngredientType
+
+
+admin.site.register(IngredientType, IngredientTypeAdmin)
+
+
+class IngredientProductAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in IngredientProduct._meta.fields]
+
+    class Meta:
+        model = IngredientProduct
+
+
+admin.site.register(IngredientProduct, IngredientProductAdmin)

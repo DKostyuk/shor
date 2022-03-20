@@ -75,8 +75,8 @@ class Product(models.Model):
     name = models.CharField(max_length=128, blank=True, null=True, default=None)
     name_pl = models.CharField(max_length=128, blank=True, null=True, default=None)
     slug = models.SlugField(max_length=128, unique=True)
+    product_ref_number = models.CharField(max_length=8, blank=True, null=True, default=None)
     name_description = models.CharField(max_length=64, blank=True, null=True, default=None)
-    # description = RichTextField()
     description = models.TextField(blank=True, null=True, default=None)
     name_description_1 = models.CharField(max_length=64, blank=True, null=True, default=None)
     description_1 = RichTextField(blank=True, null=True, default=None)
@@ -125,14 +125,16 @@ class ProductImage(models.Model):
 
 ProductAddFile_choices = [
     ('Add_Product_Item', 'Add_Product_Item'),
-    ('Add_Product_Join', 'Add_Product_Join'),
+    ('Add_Ingredient_Item', 'Add_Ingredient_Item'),
+    ('Add_IngredientProduct_Join', 'Add_IngredientProduct_Join'),
+    ('Add_Product_Sale', 'Add_Product_Sale'),
     ('Add_Nothing', 'Add_Nothing'),
 ]
 
 
 class ProductAddFile(models.Model):
     comments = models.CharField(max_length=124, blank=True, null=True, default=None)
-    what_to_do = models.CharField(max_length=16, choices=ProductAddFile_choices, default='Add_Nothing')
+    what_to_do = models.CharField(max_length=32, choices=ProductAddFile_choices, default='Add_Nothing')
     product_file = models.FileField(upload_to='product_file_add/')
     is_active = models.BooleanField(default=False)
     start_import = models.BooleanField(default=False)
@@ -160,39 +162,39 @@ class ProductAddFile(models.Model):
         data_file = list(data_file)
         print("---------qqqqqqqqqq------------", data_file)
         choice = self.what_to_do
-        if choice == 'Add_Product_Join':
-            for i in range(0, len(data_file)):
-                print("---------111111111111111------------", data_file[i])
-                product = Product.objects.get(id=data_file[i][0])
-                product.name_description = "Тип шкіри"
-                product.description = data_file[i][1]
-                product.name_pl = data_file[i][2]
-                product.name_description_4 = "Кислотність"
-                product.description_4 = data_file[i][3]
-                product.name_description_5 = "Вміст кислот"
-                product.description_5 = data_file[i][4]
-                product.name_description_1 = "Опис"
-                product.description_1 = data_file[i][5]
-                product.name_description_2 = "Спосіб застосування"
-                product.description_2 = data_file[i][6]
-                product.name_description_3 = "Активні інгридієнти"
-                product.description_3 = data_file[i][7]
-                product.save()
-
-                super(ProductAddFile, self).save(*args, **kwargs)
-
-        elif choice == 'Add_Product_Item':
+        if choice == 'Add_Product_Item':
             for i in range(0, len(data_file)):
                 print("---------Add_Product_Item------------", data_file[i])
-                category = ProductCategory.objects.get(id=data_file[i][0])
-                name = data_file[i][1]
-                ref_number = data_file[i][2]
-                volume = ProductVolume.objects.get(id=data_file[i][3])
-                volume_type = ProductVolumeType.objects.get(id=data_file[i][4])
-                product_type = ProductType.objects.get(id=data_file[i][5])
+                category = ProductCategory.objects.get(id=data_file[i][1])
+                name = data_file[i][3].strip()
+                ref_number = data_file[i][6]
+                volume = ProductVolume.objects.get(id=data_file[i][8])
+                volume_type = ProductVolumeType.objects.get(id=data_file[i][10])
+                product_type = ProductType.objects.get(id=data_file[i][12])
+                product_ref_number = data_file[i][4]
+                new_product, created = Product.objects.get_or_create(
+                    product_ref_number=product_ref_number,
+                    category=category,
+                    name=name,
+                    name_pl=data_file[i][5],
+                    name_description="Тип шкіри",
+                    description=data_file[i][2],
+                    name_description_4="Кислотність",
+                    description_4=data_file[i][13],
+                    name_description_5="Вміст кислот",
+                    description_5=data_file[i][14],
+                    name_description_1="Опис",
+                    description_1=data_file[i][15],
+                    name_description_2="Спосіб застосування",
+                    description_2=data_file[i][16],
+                    name_description_3="Активні інгридієнти",
+                    description_3=data_file[i][17],
+                    is_active=True)
+
                 new_product_item = ProductItem(
                     ref_number=ref_number,
                     name=name,
+                    product=new_product,
                     category=category,
                     type=product_type,
                     volume=volume,
@@ -201,22 +203,61 @@ class ProductAddFile(models.Model):
                 print('New-product--ITEM--------', new_product_item)
                 new_product_item.save()
 
-            products_item_all = ProductItem.objects.all()
-            products_item_all_name = set()
-            for product in products_item_all:
-                products_item_all_name.add(product.name)
-            products_all = Product.objects.all()
-            products_all_name = set()
-            for product in products_all:
-                products_all_name.add(product.name)
-            for p in products_item_all_name:
-                if p not in products_all_name:
-                    new_product = Product(
-                        name=p,
-                        is_active=True)
-                    new_product.save()
+        elif choice == 'Add_Ingredient_Item':
+            for i in range(0, len(data_file)):
+                print("---------Add_Ingredient_Item------------", data_file[i])
+                print('----ref_number type -------', data_file[i][3], type(data_file[i][3]))
+                type_obj = IngredientType.objects.get(type_ref_number=data_file[i][3])
+                name = data_file[i][0]
+                name_pl = data_file[i][1]
+                ref_number = data_file[i][4]
+                name_description = "Опис"
+                description = data_file[i][5]
+                new_ingredient = Ingredient(
+                    type=type_obj,
+                    name=name,
+                    name_pl=name_pl,
+                    ref_number=ref_number,
+                    name_description=name_description,
+                    description=description,
+                    is_active=True)
+                print('New-ingredient--ITEM--------', new_ingredient)
+                new_ingredient.save()
 
-                super(ProductAddFile, self).save(*args, **kwargs)
+        elif choice == 'Add_IngredientProduct_Join':
+            for i in range(0, len(data_file)):
+                print("---------Add_IngredientProduct_Join------------", data_file[i])
+                ingredient_obj = Ingredient.objects.get(ref_number=data_file[i][0])
+                product_obj = Product.objects.get(id=data_file[i][1])
+                new_ingredient_product = IngredientProduct(
+                    ingredient=ingredient_obj,
+                    productl=product_obj,
+                    is_active=True)
+                print('New-ingredient-product-JOIN--------', new_ingredient_product)
+                new_ingredient_product.save()
+
+        elif choice == 'Add_Product_Sale':
+            for i in range(0, len(data_file)):
+                print("---------Add_Product_Sale------------", data_file[i])
+                product_item_ref_number = str(data_file[i][0]).strip()
+                print(product_item_ref_number, type(product_item_ref_number))
+                product_item = ProductItem.objects.get(ref_number=product_item_ref_number)
+
+                new_product_sale = SalesProduct(
+                    price_old_usd=data_file[i][1],
+                    discount=data_file[i][2],
+                    is_active=True)
+                new_product_sale.save()
+                print('Add_Product_Sale--------', new_product_sale)
+
+                new_sale_product_item = SaleProductItem(
+                    sales_product=new_product_sale,
+                    product_item=product_item,
+                    is_active=True)
+                new_sale_product_item.save()
+                print('Add_Sale_Product_Item--------', new_sale_product_item)
+
+        super(ProductAddFile, self).save(*args, **kwargs)
 
 
 def join_products():
@@ -314,7 +355,7 @@ class ProductItem(models.Model):
 
     class Meta:
         verbose_name = 'ProductItem'
-        verbose_name_plural = 'ProductItem'
+        verbose_name_plural = 'ProductItems'
 
 
 # class ProductItemSales(models.Model):
@@ -371,7 +412,7 @@ class SalesProductType(models.Model):
 
 class SalesProduct(models.Model):
     type = models.ForeignKey(SalesProductType, default=1, on_delete=models.DO_NOTHING)
-    rank = models.IntegerField(blank=True, null=True, default=0)
+    rank = models.IntegerField(blank=True, null=True, default=100)
     # category = models.CharField(max_length=16, blank=True, null=True, default=None)
     name_sales = models.CharField(max_length=128, blank=True, null=True, default=None)
     name = models.CharField(max_length=128, blank=True, null=True, default=None)
@@ -455,3 +496,62 @@ def update_product_item_fields(sender, instance, created, *args, **kwargs):
         except:
             pass
         sales_product.save(force_update=True)
+
+
+class IngredientType(models.Model):
+    name = models.CharField(max_length=16, blank=True, null=True, default=None)
+    type_ref_number = models.IntegerField(blank=True, null=True, default=0)
+    description = models.TextField(blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return "%s" % self.name
+
+    class Meta:
+        verbose_name = 'IngredientType'
+        verbose_name_plural = 'IngredientTypes'
+
+
+class Ingredient(models.Model):
+    type = models.ForeignKey(IngredientType, default=1, on_delete=models.DO_NOTHING)
+    name = models.CharField(max_length=128, blank=True, null=True, default=None)
+    name_pl = models.CharField(max_length=128, blank=True, null=True, default=None)
+    ref_number = models.CharField(max_length=10, blank=True, null=True, default=None)
+    slug = models.CharField(max_length=128, blank=True, null=True, default=None)
+    name_description = models.CharField(max_length=64, blank=True, null=True, default=None)
+    description = RichTextField(blank=True, null=True, default=None)
+    image = models.ImageField(upload_to='ingredient_images/', blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __str__(self):
+        return "%s" % self.name_pl
+
+    class Meta:
+        verbose_name = 'Ingredient'
+        verbose_name_plural = 'Ingredients'
+
+    def save(self, *args, **kwargs):
+        if self.type.type_ref_number == 99:
+            self.slug = slugify(unidecode(self.name_pl))
+        else:
+            name_slug = self.type.name + ' ' + self.name_pl
+            self.slug = slugify(unidecode(name_slug))
+
+        super(Ingredient, self).save(*args, **kwargs)
+
+
+class IngredientProduct(models.Model):
+    ingredient = models.ForeignKey(Ingredient, default=1, on_delete=models.DO_NOTHING)
+    product = models.ForeignKey(Product, default=1, on_delete=models.DO_NOTHING)
+    is_active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __str__(self):
+        return "%s" % self.ingredient
+
+    class Meta:
+        verbose_name = 'IngredientProduct'
+        verbose_name_plural = 'IngredientProducts'

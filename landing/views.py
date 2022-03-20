@@ -388,6 +388,7 @@ def home(request):
     # Find and range products for visitors
     pb_home_1 = SalesProduct.objects.filter(is_active=True, duplicate=12, rank__lt=12).order_by('rank')
     p_items = pb_home_1
+    print(len(p_items), '--------------')
     # Find and range products for cosmetolog
 
     pb_home_2 = SalesProduct.objects.filter(is_active=True, rank__lt=12).order_by('rank')

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 ingredient-description">
+                <div class="ingredient-page-title">
+                    <h1>{{ ingredient_item.type.name|title }} {{ ingredient_item.name_pl }}</h1>
+                </div>
+                {% autoescape off %} {{ ingredient_item.description }} {% endautoescape %}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+                {% if cosmetolog %}
+                    {% for product_sales in p_sales %}
+                        {% include 'landing/product_item_sales.html' %}
+                    {% endfor %}
+                {% else %}
+                    {% for product_item in p_items %}
+                        {% include 'landing/product_item.html' %}
+                    {% endfor %}
+                {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

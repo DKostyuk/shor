@@ -34,10 +34,12 @@ class SendingEmail(object):
             print('----после трай-----------11111111111', email_details)
             print('----после трай-----------11111111111', type(email_details))
             print('----после трай-----------11111111111', email_details['user'])
-
-            letter_template = LetterTemplate. objects.get(name=name)
-            print(letter_template)
-            subject = letter_template.subject
+            try:
+                letter_template = LetterTemplate. objects.get(name=name)
+                print(letter_template)
+                subject = letter_template.subject
+            except:
+                subject = 'Активуйте свій профіль на сайті SHOR.COM.UA'
             print(subject)
             message = get_template('landing/acc_confirmation_email.html').render(email_details)
             print(('---------MSG------------', message))
