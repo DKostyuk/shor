@@ -1,103 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-03-04 changes in tables">
-      <change afterPath="$PROJECT_DIR$/landing/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landing/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0002_auto_20220310_1332.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0003_auto_20220310_2045.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0004_product_product_ref_number.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0006_auto_20220316_1342.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0007_ingredienttype_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0008_remove_ingredienttype_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0009_ingredient_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0010_ingredienttype_type_ref_number.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0011_alter_ingredient_slug.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0012_alter_ingredienttype_type_ref_number.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0013_alter_ingredient_slug.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/certificate_images/BalanCell_png_ban.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/certificate_images/DSC_3307_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/BalanCell_DSC_3690_copy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/BalanCell_png_ban_gQBMlwr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/HydroProtect_DSC_3706.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/HydroProtect_png_ban.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/Logo_shor_Ukraine_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/PropioCare_DSC_3699less.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/PropioCare_png_ban.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/ReAL-C_png_ban.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/ReAL_C_DSC_3715.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/SensoCalm_DSC_3727_big_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/logo_images/SensoCalm_png_ban.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/ingredient_item_01.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/ingredient_item_01_KsKgE2j.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/ingredient_item_01_foicEMK.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/ingredient_item_01_rlCi5Ke.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/product_file_add/test_shor_01.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/3A_Renewal_Complex.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Active_Cleanser.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Active_Comedones_Softener.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Active_Moisturizing_BB_cream_SPF-25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Aqua-Phytonic_Eye_Cream.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Astrigent_mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/AzeloTreat_Cream.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Blue_Light_Shield_Cream_SPF-15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Breakout_Active_Gel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Calming_Mask_100250ml.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Cleansing_Gel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/DMAE_Hydroflash_Serum.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Delicate_Face_Milk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Drying_Treatment_Demi_makeup.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Enzymatic_Powder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Enzymatic_activating_solution.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Enzyme_Exfoliator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Extra_C_Lifting_Serum-Vitamin_C_Firming_Serum.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Fresh_Toner_Vitamin_C.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/GLB_Sensapeel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Gentle_Make-Up_Remover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Glycolat_Gel_Peeling.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Golden_Tense_Mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Hyaluronic_Hydro_Booster.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Hydration_Gel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/HydroLactate_Mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/MGS_Peeling_for_Problematic_skin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Moisturising_Cream_Vitamin_C_SPF-25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Moisturizing_Protective_cream_for_Oily_and_Combination_skin_SPF-20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Multiacids_Phytic_Peel_Solution.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Multifruit_Cleansing_Gel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Multifunctional_Balm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/OliVera_Gel_100500ml.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/PTL_Peeling.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Peptide_Serum_30100ml.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Perfect_Skin_Rose_Toner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Purifying_Tonic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Recovering_Cream_50250ml.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Redout_Calming_Balm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Relax_Mask_for_Problematic_skin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Retinol_Yellow_Peeling.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Soft_Cleansing_Foam.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Soothing_Cleansing_Gel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/products_images/Triple_Active_Day_cream_SPF-15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/slider_images/BalanCell_png_ban_7AYhM2R.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/slider_images/PropioCare_png_ban_QMV3iCw.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/products/ingredient.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/products/ingredient_no.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/products/product_w_ingredients.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/add_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/static_dev/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/emails.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/emails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/get_product_details.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/get_product_details.py" afterDir="false" />
-    </list>
+    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-03-20 ingredients" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -411,20 +315,6 @@
       <workItem from="1593613541514" duration="4022000" />
       <workItem from="1593937419291" duration="1305000" />
       <workItem from="1594792414288" duration="637000" />
-    </task>
-    <task id="LOCAL-00029" summary="working 2022-01-24 weekend">
-      <created>1643026865128</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1643026865128</updated>
-    </task>
-    <task id="LOCAL-00030" summary="2022-01-24 new footer">
-      <created>1643028785027</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1643028785027</updated>
     </task>
     <task id="LOCAL-00031" summary="2022-01-24 new footer">
       <created>1643054225974</created>
@@ -755,7 +645,21 @@
       <option name="project" value="LOCAL" />
       <updated>1646405237995</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="2022-03-20 ingredients">
+      <created>1647766418989</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1647766418989</updated>
+    </task>
+    <task id="LOCAL-00079" summary="2022-03-20 ingredients">
+      <created>1647842119195</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1647842119195</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -798,6 +702,7 @@
     <MESSAGE value="2022-02-15 order email" />
     <MESSAGE value="2022-02-20 style checcking" />
     <MESSAGE value="2022-03-04 changes in tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-03-04 changes in tables" />
+    <MESSAGE value="2022-03-20 ingredients" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022-03-20 ingredients" />
   </component>
 </project>
