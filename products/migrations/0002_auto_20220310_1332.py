@@ -2,6 +2,7 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
+import ckeditor.fields
 
 
 class Migration(migrations.Migration):
@@ -14,6 +15,27 @@ class Migration(migrations.Migration):
         migrations.RemoveField(
             model_name='ingredient',
             name='type',
+        ),
+        migrations.CreateModel(
+            name='Ingredient',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('name', models.CharField(blank=True, default=None, max_length=128, null=True)),
+                ('name_pl', models.CharField(blank=True, default=None, max_length=128, null=True)),
+                ('slug', models.SlugField(max_length=16, unique=True)),
+                ('name_description', models.CharField(blank=True, default=None, max_length=64, null=True)),
+                ('description', ckeditor.fields.RichTextField(blank=True, default=None, null=True)),
+                ('image', models.ImageField(blank=True, default=None, null=True, upload_to='ingredient_images/')),
+                ('is_active', models.BooleanField(default=False)),
+                ('created', models.DateTimeField(auto_now_add=True)),
+                ('updated', models.DateTimeField(auto_now=True)),
+                ('type', models.ForeignKey(default=1, on_delete=django.db.models.deletion.DO_NOTHING,
+                                           to='products.salesproducttype')),
+            ],
+            options={
+                'verbose_name': 'Ingredient',
+                'verbose_name_plural': 'Ingredients',
+            },
         ),
         migrations.CreateModel(
             name='IngredientProduct',

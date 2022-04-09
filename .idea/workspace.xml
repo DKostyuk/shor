@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-03-20 ingredients" />
+    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-03-20 ingredients">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0002_auto_20220310_1332.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0002_auto_20220310_1332.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +39,9 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/master" />
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
@@ -73,17 +79,17 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/products" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/products/migrations" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\products\migrations" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\products" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\landing" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\orders" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\blogs" />
-      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\blog" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor" />
@@ -316,13 +322,6 @@
       <workItem from="1593613541514" duration="4022000" />
       <workItem from="1593937419291" duration="1305000" />
       <workItem from="1594792414288" duration="637000" />
-    </task>
-    <task id="LOCAL-00035" summary="2022-01-26 many changes - ready for product">
-      <created>1643206312035</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1643206312035</updated>
     </task>
     <task id="LOCAL-00036" summary="2022-01-26 many changes - ready for product">
       <created>1643207163267</created>
@@ -660,7 +659,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649487847572</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="2022-03-20 ingredients">
+      <created>1649488187493</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1649488187493</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TestHistory">
