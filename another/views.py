@@ -130,7 +130,7 @@ def calendar_date_picker(request, slug=None):
 
 
 def trick_item(request, slug=None):
-    trick = AnotherTrick.objects.get(slug=slug, is_active=True)
+    # trick = AnotherTrick.objects.get(slug=slug, is_active=True)
     url_name = slug.replace('-', '_')
     if slug == "calendar":
         # base_url = reverse('trick_item')
@@ -162,7 +162,11 @@ def trick_item(request, slug=None):
             next_step = 0
             if request.POST.get('start', '') == "start":
             # form = ProductFileCSVForm(request.POST, request.FILES)
+            #     check CARD DECK
+
+                # Card Deck initialization
                 cards_start = card_decks().copy()
+            # First DEAL
                 cards, player_list, dealer_list = first_deal(cards_start)
                 player_totals, dealer_totals = totals(player_list, dealer_list)
                 print(player_list)
