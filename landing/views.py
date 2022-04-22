@@ -58,8 +58,9 @@ def send_user_activation_email_1(request, newuser, email_1):
     return args_1
 
 
-def send_user_activation_email(request, newuser, new_cosmetolog, email_1):
+def send_user_activation_email(request, newuser, new_cosmetolog=None, email_1=None):
     # Email sending code:
+    print('start sending activation link')
     current_site = get_current_site(request)
     email_details = {}
     email_details['user'] = new_cosmetolog
@@ -67,8 +68,9 @@ def send_user_activation_email(request, newuser, new_cosmetolog, email_1):
     email_details['domain'] = current_site.domain
     email_details['uid'] = urlsafe_base64_encode(force_bytes(newuser.pk))
     email_details['token'] = account_activation_token.make_token(newuser)
-
+    print('view - email detals---', email_details)
     email = SendingEmail()
+    print('view - before sending activation link')
     email.sending_email(type_id=1, email_details=email_details)
     result = "SENT"
     print(result)
@@ -105,10 +107,15 @@ def activation_link_request(request):
         username = email_1
     if request.POST:
         email_1 = request.POST.get('email_1', '')
+        print('email for activation link', email_1)
         try:
             newuser = User.objects.get(username=email_1)
-            send_user_activation_email(request, newuser, email_1)
+            print('new user----', newuser)
+            new_cosmetolog = Cosmetolog.objects.get(email=email_1)
+            print('new cosmetolog ----', new_cosmetolog)
+            send_user_activation_email(request, newuser, new_cosmetolog, email_1)
         except:
+            print('Letter with activation link was not be sent')
             pass
         return redirect('registration_profile')
     args = {'registration_error_1': 'Указанный Вами адрес ', 'registration_error_2': ' уже зарегистрирован',
