@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-03-20 ingredients">
+    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-04-22 only initial migration">
       <change afterPath="$PROJECT_DIR$/static/media/certificate_images/BalanCell_png_ban_ZQMULZp.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/static/media/certificate_images/Screenshot_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/certificate_images/image_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/certificate_images/image_1_3eP3nIP.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/acc_contact_form_copy_to_office_email.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cosmetologs/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landing/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0002_auto_20220310_1332.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0003_auto_20220310_2045.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0004_product_product_ref_number.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0005_auto_20220313_1349.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0006_auto_20220316_1342.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0007_ingredienttype_type.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0008_remove_ingredienttype_type.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0009_ingredient_type.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0010_ingredienttype_type_ref_number.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0011_alter_ingredient_slug.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0012_alter_ingredienttype_type_ref_number.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0013_alter_ingredient_slug.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/emails.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/emails.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,15 +87,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/products/migrations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/landing" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\landing" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\products\migrations" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\products" />
-      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\landing" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\orders" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\blogs" />
     </key>
@@ -341,20 +330,6 @@
       <workItem from="1593613541514" duration="4022000" />
       <workItem from="1593937419291" duration="1305000" />
       <workItem from="1594792414288" duration="637000" />
-    </task>
-    <task id="LOCAL-00038" summary="2022-01-26 many changes - ready for product">
-      <created>1643224967771</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1643224967771</updated>
-    </task>
-    <task id="LOCAL-00039" summary="2022-01-26 many changes - ready for product">
-      <created>1643225192039</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1643225192039</updated>
     </task>
     <task id="LOCAL-00040" summary="2022-01-26 many changes - ready for product">
       <created>1643225201377</created>
@@ -685,7 +660,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649493370877</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="2022-04-22 only initial migration">
+      <created>1650611688121</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1650611688121</updated>
+    </task>
+    <task id="LOCAL-00088" summary="2022-04-22 only initial migration">
+      <created>1650611716376</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1650611716376</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -729,6 +718,7 @@
     <MESSAGE value="2022-02-20 style checcking" />
     <MESSAGE value="2022-03-04 changes in tables" />
     <MESSAGE value="2022-03-20 ingredients" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-03-20 ingredients" />
+    <MESSAGE value="2022-04-22 only initial migration" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022-04-22 only initial migration" />
   </component>
 </project>

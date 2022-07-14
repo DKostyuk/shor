@@ -382,6 +382,8 @@ def logout(request):
 
 
 def home(request):
+    # username = auth.get_user(request)
+    # print('username ----', username)
     session_key = request.session.session_key
     slider_mains = SliderMain.objects.filter(is_active=True, is_main=True)
     slider_mains_counts = range(slider_mains.count() - 1)
@@ -788,27 +790,36 @@ def contact(request):
             email_details['message'] = request.POST.get('message', '')
             email_details['requestor_name'] = request.POST.get('from_name', '')
             email_details['to_list'] = request.POST.get('email_sender', '')
-            email_details['message'] = request.POST.get('message', '')
+            email_details['phone_sender'] = request.POST.get('phone_sender', '')
+            email_details['city_sender'] = request.POST.get('city_sender', '')
             try:
                 email = SendingEmail()
                 email.sending_email(type_id=2, email_details=email_details)
-
-                username = auth.get_user(request)
-                new_letter = new_letter_form.save(commit=False)
-                if username:
-                    new_letter.user_email = username.email
-                    try:
-                        cosmetolog = Cosmetolog.objects.get(user=username)
-                    except:
-                        cosmetolog = None
-                    new_letter.cosmetolog = cosmetolog
-                letter_template = LetterTemplate.objects.get(name="Contact_Us_Form")
-                new_letter.type = letter_template
-                data = new_letter_form.cleaned_data
-                new_letter.save()
-                letter_success = "success"
             except:
+                print('Letter was NOT sent')
                 pass
+
+            username = auth.get_user(request)
+            print('username from contact form ----', username, type(username))
+            print('here and there - so far so forth')
+            new_letter = new_letter_form.save(commit=False)
+            if username.id is not None:
+                print('here and there - so far so forth ----22222')
+                new_letter.user_email = username.email
+                print('here and there - so far so forth ----33333')
+                try:
+                    cosmetolog = Cosmetolog.objects.get(user=username)
+                except:
+                    cosmetolog = None
+            else:
+                cosmetolog = None
+                new_letter.user_email = None
+            new_letter.cosmetolog = cosmetolog
+            letter_template = LetterTemplate.objects.get(name="Contact_Us_Form")
+            new_letter.type = letter_template
+            data = new_letter_form.cleaned_data
+            new_letter.save()
+            letter_success = "success"
         else:
             form = new_letter_form
             print(form.error_messages)

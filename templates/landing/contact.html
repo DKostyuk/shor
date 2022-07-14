@@ -16,14 +16,15 @@
                 </h1>
                 <form action="" method="post" class="text-center col-lg-10 col-lg-offset-1">{% csrf_token %}
                     <div class="form-group">
-                        <input name="{{ form.subject.name }}" class="form-control" placeholder="Тема">
+                        <input name="{{ form.subject.name }}" class="form-control" placeholder="Тема" required>
                     </div>
                     <div class="form-group">
                         <textarea name="{{ form.message.name }}" class="text-message form-control"
-                                  placeholder="Ваше повідомлення"></textarea>
+                                  placeholder="Ваше повідомлення" required></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="{{ form.email_sender.name }}" class="form-control" placeholder="Email">
+                        <input type="email" name="{{ form.email_sender.name }}" class="form-control"
+                               placeholder="Email" required>
                     </div>
                     <div class="row">
                                 <div class="form-group tel-index col-lg-3">
@@ -36,10 +37,10 @@
                                 </div>
                             </div>
                     <div class="form-group">
-                        <input name="{{ form.from_name.name }}" class="form-control" placeholder="Ім'я">
+                        <input name="{{ form.from_name.name }}" class="form-control" placeholder="Ім'я" required>
                     </div>
                     <div class="form-group">
-                        <input name="{{ form.city_sender.name }}" class="form-control" placeholder="Місто">
+                        <input name="{{ form.city_sender.name }}" class="form-control" placeholder="Місто" required>
                     </div>
                     <button type="submit" class="btn btn-primary btn-orange">Надіслати </button>
                 </form>

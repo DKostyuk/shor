@@ -5,6 +5,7 @@ from django.forms.models import model_to_dict
 from landing.models import LetterTemplate, LetterEmail, Letter
 import re
 from django.utils.html import strip_tags
+from django import template
 
 
 def textify(message):
@@ -31,7 +32,7 @@ class SendingEmail(object):
         if type_id == 1:
             name = "Activation"
             print('----после трай --------111111111111')
-            print('----после трай-----------11111111111', email_details)
+            print('----после трай-----------11111111111--- email_details', email_details)
             print('----после трай-----------11111111111', type(email_details))
             print('----после трай-----------11111111111', email_details['user'])
             try:
@@ -40,7 +41,7 @@ class SendingEmail(object):
                 subject = letter_template.subject
             except:
                 subject = 'Активуйте свій профіль на сайті SHOR.COM.UA'
-            print(subject)
+            print('----после трай-----------11111111111 --- subject', subject)
             message = get_template('landing/acc_confirmation_email.html').render(email_details)
             print(('---------MSG------------', message))
             target_emails = [email_details['to_list']]
@@ -56,9 +57,30 @@ class SendingEmail(object):
                 letter_template = LetterTemplate. objects.get(name=name)
                 subject = letter_template.subject
                 print(subject)
-                message = letter_template.message
-                print(message)
+                # Convert user_message_str into html
+                # message_from_user = email_details['message']
+                # message_from_user_html = message_from_user.replace('\r\n', '<br>')
+                # email_details['message'] = message_from_user_html
+                # Form a total message
+                message_html_template_str = letter_template.message
+
+                message_html_template = template.Template(message_html_template_str)
+                message_context = template.Context(email_details)
+                # message_context = template.Context({'Name': "Name"})
+                message = message_html_template.render(message_context)
+
+                # message_template_notification = letter_template.message
+                # print(message_template_notification)
                 print('--------------22222222222222222-------------')
+                # message_from_user = email_details['message']
+                # message = message_template_notification + '' \
+                #           + 'Тема: ' + email_details['subject'] + '\n'\
+                #           + 'Имя отправителя:' + email_details['requestor_name'] + '\n'\
+                #           + 'Email отправителя:' + email_details['to_list'] + '\n'\
+                #           + 'Телефон отправителя:' + email_details['phone_sender'] + '\n' \
+                #           + 'Город отправителя:' + email_details['city_sender'] + '\n' \
+                #           + message_from_user
+                print(message)
                 receiver_emails = LetterEmail.objects.filter(letter_template_name=letter_template)
                 print('-----------------------', receiver_emails)
                 target_emails = []
