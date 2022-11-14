@@ -1,3 +1,4 @@
+from django.contrib.auth.password_validation import validate_password, password_validators_help_text_html
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponseRedirect
@@ -138,26 +139,35 @@ def registration(request):
             except:
                 pass
         else:
-            password_11 = request.POST.get('password1', '')
-            request.POST = request.POST.copy()
-            request.POST['username'] = email_1
-            request.POST['password2'] = password_11
             newuser_form = UserRegistrationForm(request.POST)
-            new_form_cosmetolog = CosmetologForm(request.POST, request.FILES)
+            try:
+                password_11 = request.POST.get('password1', '')
+                validate_password(password_11, None, None)
+                request.POST = request.POST.copy()
+                request.POST['username'] = email_1
+                request.POST['password2'] = password_11
+                newuser_form = UserRegistrationForm(request.POST)
+                new_form_cosmetolog = CosmetologForm(request.POST, request.FILES)
 
-            # Check email is in USER table
-            user_old = User.objects.filter(username=email_1).first()
-            if user_old:
-                request.session['email_1'] = email_1
-                return HttpResponseRedirect(reverse(activation_link_request))
-            else:
-                if newuser_form.is_valid():
-                    print('-------starting validation -----------')
-                    validate_save_user(request, newuser_form, email_1, new_form_cosmetolog)
-                    return redirect('registration_profile')
+                # Check email is in USER table
+                user_old = User.objects.filter(username=email_1).first()
+                if user_old:
+                    request.session['email_1'] = email_1
+                    return HttpResponseRedirect(reverse(activation_link_request))
                 else:
-                    form = newuser_form
-                    print('ERROR----', form.error_messages)
+                    if newuser_form.is_valid():
+                        print('-------starting validation -----------')
+                        validate_save_user(request, newuser_form, email_1, new_form_cosmetolog)
+                        return redirect('registration_profile')
+                    else:
+                        form = newuser_form
+                        # error_msg = 11111111
+                        # print('p1--- ', request.POST['password1'], 'p2--- ', request.POST['password2'])
+                        print('ERROR----', form.error_messages)
+            except:
+                error_msg = password_validators_help_text_html()
+                form = UserRegistrationForm(request.POST)
+                form_cosmetolog = CosmetologForm(request.POST, request.FILES)
     return render(request, 'landing/registration.html', locals())
 
 
@@ -412,6 +422,8 @@ def home(request):
                 sales_item = {'name_sales': p.sales_product.name, 'volume': p.product_item.volume,
                               'volume_type': p.product_item.volume_type, 'slug': p.sales_product.slug,
                               'price_old': p.sales_product.price_old, 'price_current': p.sales_product.price_current,
+                              'price_visitor_old': p.sales_product.price_visitor_old,
+                              'price_visitor_current': p.sales_product.price_visitor_current,
                               'discount': p.sales_product.discount, 'rank': p.sales_product.rank,
                               'image_url': p.sales_product.image_url}
                 p_sales.append(sales_item)
@@ -422,6 +434,7 @@ def home(request):
         sales_item = {'name_sales': b.name, 'volume': 'див',
                       'volume_type': '. ', 'slug': b.slug,
                       'price_old': b.price_old, 'price_current': b.price_current,
+                      'price_visitor_old': b.price_visitor_old, 'price_visitor_current': b.price_visitor_current,
                       'discount': b.discount, 'rank': b.rank,
                       'image_url': b.image_url}
         p_sales.append(sales_item)

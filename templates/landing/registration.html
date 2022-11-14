@@ -28,15 +28,27 @@
                             {% csrf_token %}
                             <div class="form-group">
                                 <input type="text" name="{{ form_cosmetolog.cosmetolog_surname.name }}" class="form-control"
-                                       placeholder="Призвище" required>
+                                       placeholder="Призвище"
+                                       oninvalid="this.setCustomValidity('Введить, будь ласка, Ваше Призвище')"
+                                       onchange="try{setCustomValidity('')}catch(e){}"
+                                       oninput="setCustomValidity(' ')"
+                                       required>
                             </div>
                             <div class="form-group">
                                 <input type="text" name="{{ form_cosmetolog.cosmetolog_name.name }}" class="form-control"
-                                       placeholder="Ім'я" required>
+                                       placeholder="Ім'я"
+                                       oninvalid="this.setCustomValidity('Введить, будь ласка, Ваше Ім`я')"
+                                       onchange="try{setCustomValidity('')}catch(e){}"
+                                       oninput="setCustomValidity(' ')"
+                                       required>
                             </div>
                             <div class="form-group">
                                 <input type="text" name="{{ form_cosmetolog.cosmetolog_father_name.name }}" class="form-control"
-                                       placeholder="По батькові" required>
+                                       placeholder="По батькові"
+                                       oninvalid="this.setCustomValidity('Введить, будь ласка, Ваше Ім`я по батькові')"
+                                       onchange="try{setCustomValidity('')}catch(e){}"
+                                       oninput="setCustomValidity(' ')"
+                                       required>
                             </div>
                             <div class="row">
                                 <div class="form-group tel-index col-lg-3">
@@ -44,27 +56,57 @@
                                 </div>
                                 <div class="form-group tel-number col-lg-9">
                                     <input name="{{ form_cosmetolog.tel_number.name }}" class="form-control"
-                                           type="tel" pattern="[0-9]{10}" placeholder="телефон у форматі 0504755151" required>
+                                           type="tel" pattern="[0-9]{10}" placeholder="телефон у форматі 0504755151"
+                                           oninvalid="this.setCustomValidity('Не схожий формат 0504755151')"
+                                           onchange="try{setCustomValidity('')}catch(e){}"
+                                           oninput="setCustomValidity(' ')"
+                                           required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <input type="email" name="{{ form.email.name }}"
-                                       class="form-control" placeholder="Ел. пошта - це буде Ваш логін" required>
+                                       class="form-control" placeholder="Ел. пошта - це буде Ваш логін"
+                                       oninvalid="this.setCustomValidity('Це не схоже на ел. пошту')"
+                                       onchange="try{setCustomValidity('')}catch(e){}"
+                                       oninput="setCustomValidity(' ')"
+                                       required>
                             </div>
                             <div class="form-group">
                                 <input type="text" name="{{ form_cosmetolog.city.name }}"
-                                       class="form-control" placeholder="Місто" required>
+                                       class="form-control" placeholder="Місто"
+                                       oninvalid="this.setCustomValidity('Введить, будь ласка, Ваше Місто')"
+                                       onchange="try{setCustomValidity('')}catch(e){}"
+                                       oninput="setCustomValidity(' ')"
+                                       required>
                             </div>
                             <div class="form-group">
                                 <input name="{{ form.password1.name }}" type="password"
-                                       class="form-control" placeholder="Пароль" required>
+                                       class="form-control" placeholder="Пароль"
+                                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                       oninvalid="this.setCustomValidity('Це слабкий пароль')"
+                                       onchange="try{setCustomValidity('')}catch(e){}"
+                                       oninput="setCustomValidity(' ')"
+                                       required>
+                                {% if error_msg %}
+                                    <div class="alert alert-danger" style="font-size: 8pt;padding: 0;text-align: left;">
+                                        {{ error_msg }}
+                                    </div>
+                                {% else %}
+                                    <div class="alert" style="font-size: 8pt;padding: 0;text-align: left;">
+                                    <ul>
+                                        <li>Пароль не може бути надто схожим на іншу особисту інформацію.</li>
+                                        <li>Ваш пароль повинен містити як мінімум 8 символів. Великі та маленьки букви.</li>
+                                        <li>Пароль не може бути одним із дуже поширених.</li>
+                                        <li>Пароль не може складається лише із цифр.</li></ul>
+                                </div>
+                                {% endif %}
                             </div>
                             <div class="form-group">
                             <input name="{{ form.password2.name }}" type="hidden" class="form-control"
                                    placeholder="Повторить Пароль">
                             </div>
                             <div class="form-group">
-                                <label> Додайте Ваш сертифікат косметолога
+                                <label style="font-style: italic;"> Додайте Ваш сертифікат косметолога
                                     <input type="file" name="{{ form_cosmetolog.certificate_image.name }}" id="getFile">
                                 </label>
                             </div>
