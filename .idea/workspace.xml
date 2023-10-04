@@ -1,17 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-04-22 only initial migration">
+    <list default="true" id="637b66b3-b7e0-4685-a61d-a0e48d04c95e" name="Default" comment="2022-11-14 fix Registration Form">
+      <change afterPath="$PROJECT_DIR$/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/serializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bonuses/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bonuses/migrations/0002_alter_bonuseventtype_name.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bonuses/migrations/0003_auto_20230828_1743.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0002_feature.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/migrations/0003_feature_feature_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0002_productinbasket_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0003_alter_productinbasket_user.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/static/media/certificate_images/BalanCell_png_ban_ZQMULZp.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/static/media/certificate_images/Screenshot_1.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/static/media/certificate_images/image_1.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/static/media/certificate_images/image_1_3eP3nIP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/landing/acc_contact_form_copy_to_office_email.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/certificate_images/image_1_pAA5csJ.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/sales_images/pritsel.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/stock_file_add/stock_file_01.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/stock_file_add/stock_file_01_5G6kgtb.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/stock_file_add/stock_file_01_Do8iazE.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/stock_file_add/stock_file_01_THrHgz0.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/stock_file_add/stock_file_01_Y2mPcwQ.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/stock_file_add/stock_file_01_dVlOkVu.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/stock_file_add/stock_file_01_gOETAN0.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/stock_file_add/stock_file_01_kpvB9tz.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock/signals_models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/another/admin145.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/another/admin50.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/home_visitor_sale.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/product_item_visitor_sales.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/landing/profile_bonus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_bonus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orders/checkout_bonus_promo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/products/product_visitor_bundle_sales.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/products/product_visitor_sales.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/another/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/another/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/another/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cosmetologs/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cosmetologs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cosmetologs/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landing/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shor/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shor/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shor/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/static_dev/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/static_dev/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar_shor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar_shor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orders/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orders/checkout_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/checkout_sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/ingredient.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/ingredient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/product_bundle.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_bundle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/product_line.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_line.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/product_no.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_no.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/product_w_ingredients.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_w_ingredients.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/emails.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/emails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,17 +157,17 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/landing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/orders" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\landing" />
-      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\products\migrations" />
-      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\products" />
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\orders" />
-      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\blogs" />
+      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\another" />
+      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\templates\landing" />
+      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\stock" />
+      <recent name="C:\Users\dmytro.k\PycharmProjects\shor\shor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dmytro.k\PycharmProjects\shor" />
@@ -107,7 +177,7 @@
       <recent name="C:\Users\DK\Documents\01_Django\projects\FirstProjectWrap\shor\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.main">
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -137,7 +207,7 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration name="Test: landing" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="shor" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -145,19 +215,20 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="landing" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="models (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="shor" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -165,12 +236,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/addresses" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bonuses" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/addresses/models.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bonuses/models.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -200,7 +270,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="urls" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="views (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="shor" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -208,12 +278,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/landing" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/landing/urls.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/views.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -268,17 +337,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.models" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.models (1)" />
       <item itemvalue="Python.test" />
-      <item itemvalue="Python.urls" />
+      <item itemvalue="Python.views (1)" />
       <item itemvalue="Python.views" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.models (1)" />
+        <item itemvalue="Python.views (1)" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.views" />
-        <item itemvalue="Python.urls" />
-        <item itemvalue="Python.models" />
       </list>
     </recent_temporary>
   </component>
@@ -330,20 +401,6 @@
       <workItem from="1593613541514" duration="4022000" />
       <workItem from="1593937419291" duration="1305000" />
       <workItem from="1594792414288" duration="637000" />
-    </task>
-    <task id="LOCAL-00040" summary="2022-01-26 many changes - ready for product">
-      <created>1643225201377</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1643225201377</updated>
-    </task>
-    <task id="LOCAL-00041" summary="2022-01-26 many changes - ready for product">
-      <created>1643269198030</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1643269198030</updated>
     </task>
     <task id="LOCAL-00042" summary="2022-01-26 many changes - ready for product">
       <created>1643269254013</created>
@@ -674,7 +731,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650611716376</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="2022-07-14 fix Contact Form">
+      <created>1657786218735</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1657786218735</updated>
+    </task>
+    <task id="LOCAL-00090" summary="2022-11-14 fix Registration Form">
+      <created>1668437373831</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1668437373831</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -719,6 +790,8 @@
     <MESSAGE value="2022-03-04 changes in tables" />
     <MESSAGE value="2022-03-20 ingredients" />
     <MESSAGE value="2022-04-22 only initial migration" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-04-22 only initial migration" />
+    <MESSAGE value="2022-07-14 fix Contact Form" />
+    <MESSAGE value="2022-11-14 fix Registration Form" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022-11-14 fix Registration Form" />
   </component>
 </project>

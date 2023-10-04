@@ -1,0 +1,12 @@
+<div class="checkout-promo">
+    ЗДЕСЬ выбор бонуса
+    <div class="input-group mb-3">
+        <select class="custom-select" id="id_cosmetolog_bonus" name="{{ form.cosmetolog_bonus.name }}">
+            <option selected>Оберить Вашу знижку...</option>
+            {% for key, value in bonus_list %}
+                <option value="{{ key }}" {% if form.cosmetolog_bonus.value == key %}selected{% endif %}>
+                    {{ value }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>

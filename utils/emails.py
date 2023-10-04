@@ -1,6 +1,7 @@
+import requests
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
-from shor.email_info import EMAIL_FROM, EMAIL_ADMIN
+from shor.email_info import EMAIL_FROM, EMAIL_ADMIN, TOKEN_TELEGRAM, CHAT_ID_LIST
 from django.forms.models import model_to_dict
 from landing.models import LetterTemplate, LetterEmail, Letter
 import re
@@ -36,7 +37,7 @@ class SendingEmail(object):
             print('----после трай-----------11111111111', type(email_details))
             print('----после трай-----------11111111111', email_details['user'])
             try:
-                letter_template = LetterTemplate. objects.get(name=name)
+                letter_template = LetterTemplate.objects.get(name=name)
                 print(letter_template)
                 subject = letter_template.subject
             except:
@@ -54,7 +55,7 @@ class SendingEmail(object):
             try:
                 print('----после трай')
                 print('----после трай', email_details)
-                letter_template = LetterTemplate. objects.get(name=name)
+                letter_template = LetterTemplate.objects.get(name=name)
                 subject = letter_template.subject
                 print(subject)
                 # Convert user_message_str into html
@@ -87,7 +88,6 @@ class SendingEmail(object):
                 for r in receiver_emails:
                     target_emails.append(r.email_receiver)
                 print(target_emails)
-
 
                 # try:
                 #     message = get_template('landing/acc_confirmation_email.html').render(vars)
@@ -124,6 +124,31 @@ class SendingEmail(object):
                                   phone_sender=email_details.receiver_phone, message=textify(message),
                                   cosmetolog=email_details.cosmetolog)
 
+        elif type_id == 4:
+            name = "Order"
+            print('----после трай --------4444444')
+            print('----после трай-----------4444444444444', email_details)
+            print('----после трай-----------44444444444', type(email_details))
+            print('----после трай-----------ORDER_KOSMO_ADMIN', email_details.cosmetolog)
+
+            letter_template = LetterTemplate.objects.get(name=name)
+            # print(letter_template)
+            # # subject = letter_template.subject
+            # print(email_details.order_number, type(email_details.order_number))
+            subject = "Ваше замовлення № " + str(email_details.order_number) + " прийняте"
+            # print(subject)
+            vars["order"] = model_to_dict(email_details)
+            vars["order_created"] = email_details.created
+            message = get_template('orders/acc_confirmation_order_email.html').render(vars)
+            # print(('---------MSG------------', message))
+            target_emails = [email_details.receiver_email]
+            # print('---------------отправка----НА--------', target_emails)
+            # # создание записи об отправке письма
+            Letter.objects.create(type=letter_template, subject=subject, email_sender=email_details.receiver_email,
+                                  phone_sender=email_details.receiver_phone, message=textify(message),
+                                  cosmetolog=email_details.cosmetolog)
+
+
         # print('----Это МЕСАГА-----', message)
         print('----Это from-----', self.email_from)
         print('----Это to-----', target_emails, type(target_emails))
@@ -138,3 +163,16 @@ class SendingEmail(object):
         print('ВЫСЛАНО ПИСЬМО УСПЕШНО')
 
 
+class SendingMessage(object):
+    token_telegram = TOKEN_TELEGRAM
+    chat_id_list = CHAT_ID_LIST
+    message = "hello from YOUR 2023 telegram bot"
+
+    def sending_msg(self, token_telegram=None, chat_id_list=None, message=None):
+        token_telegram = self.token_telegram
+        chat_id_list = self.chat_id_list
+        if message is None:
+            message = self.message
+        for chat_id in chat_id_list:
+            url = f"https://api.telegram.org/bot{token_telegram}/sendMessage?chat_id={chat_id}&text={message}"
+            print(requests.get(url).json())  # this sends the message

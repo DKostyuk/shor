@@ -12,26 +12,43 @@ def product(request, slug1=None, slug=None):
         # Product Item --- поиск и отбор продукта - включает данные по продукту
         # for Visitor
         product_show = Product.objects.get(slug=slug)
+        print('product_ID----    ', product_show.id)
         product_item = ProductItem.objects.filter(product=product_show.id)
+        print('product_Item----    ', product_item)
         product_sales = SalesProduct.objects.filter(is_active=True, slug=slug)
         # получаем параметры для айтема продукта - SALES; - Проверить включить проверку косметолога ЗДЕСЬ
-        products_in_sale = SaleProductItem.objects.filter(is_active=True, product_item__in=product_item)
+        products_in_sale = SaleProductItem.objects.filter(is_active=True, product_item__in=product_item).distinct()
+        print('products_in_sale--   ', products_in_sale)
         p_sales = list()
+        p_product_item_id = list()
+        for n in product_sales:
+            print('---------total test')
+            print(n, type(n), '-1----')
         for p in products_in_sale:
-            try:
                 sales_item = {'name': p.sales_product.name, 'volume': p.product_item.volume,
                               'volume_type': p.product_item.volume_type, 'ref_number': p.product_item.ref_number,
                               'price_old': p.sales_product.price_old, 'price_current': p.sales_product.price_current,
+                              'price_visitor_old': p.sales_product.price_visitor_old,
+                              'price_visitor_current': p.sales_product.price_visitor_current,
                               'discount': p.sales_product.discount, 'product_sales_id': p.sales_product.id}
-                p_sales.append(sales_item)
-            except:
-                pass
+                print('---------111----', len(p_product_item_id), p_product_item_id)
+                if len(p_product_item_id) > 0:
+                    print('---------333----')
+                    if p.product_item.id not in p_product_item_id:
+                        print('---------444----')
+                        p_sales.append(sales_item)
+                else:
+                    print('---------222----')
+                    p_sales.append(sales_item)
+                p_product_item_id.append(p.product_item.id)
         p_sales.sort(key=operator.itemgetter('price_current'))
+        print('p_sales--   ', p_sales)
+        print('p_product_item_id--   ', p_product_item_id)
     except:
         print('НИЧЕГО НЕТ')
         product_show = None
     ingredient_product_set = IngredientProduct.objects.filter(product=product_show)
-    if product_show is not None: # показываем страничку Продукта для простого Айтема
+    if product_show is not None:  # показываем страничку Продукта для простого Айтема
         print('HEr-HEr')
         if len(ingredient_product_set) > 0:
             extract = []
@@ -126,6 +143,8 @@ def product_line(request, slug=None):
                     sales_item = {'name_sales': p.sales_product.name, 'volume': p.product_item.volume,
                                   'volume_type': p.product_item.volume_type, 'slug': p.sales_product.slug,
                                   'price_old': p.sales_product.price_old, 'price_current': p.sales_product.price_current,
+                                  'price_visitor_old': p.sales_product.price_visitor_old,
+                                  'price_visitor_current': p.sales_product.price_visitor_current,
                                   'discount': p.sales_product.discount, 'rank': p.sales_product.rank,
                                   'image_url': p.sales_product.image_url}
                     p_sales.append(sales_item)
@@ -136,6 +155,7 @@ def product_line(request, slug=None):
             sales_item = {'name_sales': b.name, 'volume': 'див',
                           'volume_type': '. ', 'slug': b.slug,
                           'price_old': b.price_old, 'price_current': b.price_current,
+                          'price_visitor_old': b.price_visitor_old, 'price_visitor_current': b.price_visitor_current,
                           'discount': b.discount, 'rank': b.rank,
                           'image_url': b.image_url}
             p_sales.append(sales_item)
@@ -169,6 +189,8 @@ def product_no(request):
                               'volume_type': p.product_item.volume_type, 'slug': p.sales_product.slug,
                               'price_old': p.sales_product.price_old,
                               'price_current': p.sales_product.price_current,
+                              'price_visitor_old': p.sales_product.price_visitor_old,
+                              'price_visitor_current': p.sales_product.price_visitor_current,
                               'discount': p.sales_product.discount, 'rank': p.sales_product.rank,
                               'image_url': p.sales_product.image_url}
                 p_sales.append(sales_item)
@@ -179,6 +201,7 @@ def product_no(request):
         sales_item = {'name_sales': b.name, 'volume': 'див',
                       'volume_type': '. ', 'slug': b.slug,
                       'price_old': b.price_old, 'price_current': b.price_current,
+                      'price_visitor_old': b.price_visitor_old, 'price_visitor_current': b.price_visitor_current,
                       'discount': b.discount, 'rank': b.rank,
                       'image_url': b.image_url}
         p_sales.append(sales_item)
@@ -216,6 +239,8 @@ def ingredient(request, slug=None):
                 sales_item = {'name_sales': p.sales_product.name, 'volume': p.product_item.volume,
                               'volume_type': p.product_item.volume_type, 'slug': p.sales_product.slug,
                               'price_old': p.sales_product.price_old, 'price_current': p.sales_product.price_current,
+                              'price_visitor_old': p.sales_product.price_visitor_old,
+                              'price_visitor_current': p.sales_product.price_visitor_current,
                               'discount': p.sales_product.discount, 'rank': p.sales_product.rank,
                               'image_url': p.sales_product.image_url}
                 p_sales.append(sales_item)
@@ -226,6 +251,7 @@ def ingredient(request, slug=None):
         sales_item = {'name_sales': b.name, 'volume': 'див',
                       'volume_type': '. ', 'slug': b.slug,
                       'price_old': b.price_old, 'price_current': b.price_current,
+                      'price_visitor_old': b.price_old, 'price_visitor_current': b.price_current,
                       'discount': b.discount, 'rank': b.rank,
                       'image_url': b.image_url}
         p_sales.append(sales_item)

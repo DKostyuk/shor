@@ -424,6 +424,11 @@ class SalesProduct(models.Model):
     price_current_usd = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     exchange_rate = models.ForeignKey(CurrencyExchange, blank=True, null=True, default=1, on_delete=models.DO_NOTHING)
     discount = models.IntegerField(default=0)
+    auto_calculation_visitor = models.BooleanField(default=False)
+    price_visitor_show = models.BooleanField(default=False)
+    diff_cosmo_visitor = models.IntegerField(default=50)
+    price_visitor_old = models.IntegerField(default=0)
+    price_visitor_current = models.IntegerField(default=0)
     image = models.ImageField(upload_to='sales_images/', blank=True, null=True, default=None)
     image_url = models.CharField(max_length=128, blank=True, null=True, default=None)
     is_active = models.BooleanField(default=False)
@@ -446,10 +451,14 @@ class SalesProduct(models.Model):
         self.price_current_usd = self.price_old_usd * (1 - Decimal(str(self.discount / 100)))
         self.price_current = int(self.price_current_usd * self.exchange_rate.usd_price_uah) + 1
         self.price_old = int(self.price_old_usd * self.exchange_rate.usd_price_uah) + 1
-        self.slug = slugify(self.name)
+        if self.auto_calculation_visitor is True:
+            self.price_visitor_old = int(self.price_old * (1 + Decimal(str(self.diff_cosmo_visitor / 100))) + Decimal(0.5))
+            self.price_visitor_current = int(self.price_visitor_old * (1 - Decimal(str(self.discount / 100))))
         if self.type.name == 'bundle':
             self.image_url = self.image.url
             self.name_sales = self.name
+        self.slug = slugify(self.name)
+        # print('slug---   ', self.slug)
 
         super(SalesProduct, self).save(*args, **kwargs)
 

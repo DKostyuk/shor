@@ -6,7 +6,7 @@
             {% if username %}
             <a href="/profile/"><div class="btn shor-btn shor-color">Профіль</div></a>
             <a href="/logout/"><div class="btn shor-btn shor-color">Вихід ({{ username }})</div></a>
-                {% if cosmetolog %}
+                {% if cosmetolog or sale_feature.behaviour_code == 11 %}
                 <div class="basket-container">
                     <a class="nav-link buy-cart" href="/checkout/">Корзина
                         <i class="fas fa-shopping-cart buy-cart"></i>
@@ -23,6 +23,20 @@
             {% else %}
             <a href="/registration/"><div class="btn shor-btn shor-color">Реєстрація</div></a>
             <a href="/login/"><div class="btn shor-btn shor-color">Вхід</div></a>
+            {% if sale_feature.behaviour_code == 11 %}
+                <div class="basket-container">
+                    <a class="nav-link buy-cart" href="/checkout/">Корзина
+                        <i class="fas fa-shopping-cart buy-cart"></i>
+                        <span id="basket_total_amount"></span><span id="basket_total_nmb">
+                            {% if products_total_nmb %}
+                                ({{ products_total_nmb }})
+                            {% else %}
+                                (0)
+                            {% endif %}
+                        </span>
+                    </a>
+                </div>
+                {% endif %}
             {% endif %}
         </section>
     </div>

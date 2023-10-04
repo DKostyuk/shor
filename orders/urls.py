@@ -22,4 +22,5 @@ urlpatterns = [
    re_path(r'^checkout/', views.checkout, name='checkout'),
    re_path(r'^basket_update/', views.basket_update, name='basket_update'),
    re_path(r'^order_history/', views.order_history, name='order_history'),
+   re_path(r'^order_admin_ajax/', views.order_admin_ajax, name='order_admin_ajax'),
 ]

@@ -28,6 +28,10 @@
                 {% for product_sales in p_sales %}
                     {% include 'landing/product_item_sales.html' %}
                 {% endfor %}
+            {% elif sale_feature.behaviour_code == 11 %}
+                {% for product_sales in p_sales %}
+                    {% include 'landing/product_item_visitor_sales.html' %}
+                {% endfor %}
             {% else %}
                 {% for product_item in p_items %}
                     {% include 'landing/product_item.html' %}

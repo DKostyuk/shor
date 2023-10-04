@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # for gmail or google apps
+
 from .email_info import *
 EMAIL_BACKEND = EMAIL_BACKEND
 EMAIL_USE_TLS = EMAIL_USE_TLS
@@ -21,6 +22,7 @@ EMAIL_HOST_USER = EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
 EMAIL_PORT = EMAIL_PORT
 
+SITE_ID = 1
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,6 +41,9 @@ DEFAULT_CHARSET = 'utf-8'
 
 ALLOWED_HOSTS = []
 
+BOT_TOKEN = '6074504475:AAF3aSo-sxwZl4ACvQcKAbBJV50iHV6OkVA'
+BOT_URL = "https://api.telegram.org/bot%s/"%BOT_TOKEN
+BOT_CHAT_ID = '595065850'
 
 # Application definition
 
@@ -57,6 +62,7 @@ INSTALLED_APPS = [
     'cosmetologs',
     'addresses',
     'another',
+    'stock',
 
     'ckeditor',
     'ckeditor_uploader',
@@ -67,7 +73,18 @@ INSTALLED_APPS = [
     'bootstrap4',
     'bootstrap_datepicker_plus',
 
+    'bonuses',
 
+    'api',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.openid',
+    'rest_auth.registration',
 ]
 
 # ELASTICSEARCH_DSL = {
@@ -75,6 +92,19 @@ INSTALLED_APPS = [
 #         'hosts': 'localhost:9200'
 #     },
 # }
+
+REST_FRAMEWORK = {
+    # Authentication Scheme
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    # Permission Policies
+    'DEFAULT_PERMISSION_CLASSES': [
+        # 'rest_framework.permissions.IsAuthenticated',
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

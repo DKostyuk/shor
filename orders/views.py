@@ -1,11 +1,17 @@
+import datetime
+
 from django.http import JsonResponse
+
+from bonuses.models import BonusAccountCosmetolog
+from stock.models import StockItemReserved, StockItemRest
 from .models import *
-from products.models import ProductImage, Product
+from products.models import ProductImage, Product, SaleProductItem, ProductItem
 from landing.models import Page
 from django.shortcuts import render
 from .forms import OrderForm
 from django.contrib import auth
 from utils.emails import SendingEmail
+import requests
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 
@@ -20,16 +26,22 @@ def basket_adding(request):
     nmb = data.get("nmb")
     is_delete = data.get("is_delete")
     product_price = float(data.get("price").replace(",", "."))
+    print('цена продукта-- пришла', product_price)
     what_case = int(data.get("what_case"))
-
+    username = auth.get_user(request)
+    if username.id is not None:
+        user_buyer = username.username
+    else:
+        user_buyer = "Anonymous"
     if is_delete == 'true':
         ProductInBasket.objects.filter(id=product_sales_id).update(is_active=False)
     else:
+        print('цена продукта-- пришла', product_price)
         new_product, created = ProductInBasket.objects.get_or_create(session_key=session_key,
-                                                                     pb_sale_id=product_sales_id,
+                                                                     pb_sale_id=product_sales_id, user=user_buyer,
                                                                      price_per_item=product_price, is_active=True,
                                                                      defaults={"nmb": nmb})
-        print('created--------', new_product)
+        print('created--------', new_product, new_product.price_per_item, new_product.user)
 
         if not created and (what_case == 11 or what_case == 12):
             new_product.nmb += int(nmb)
@@ -89,11 +101,28 @@ def checkout(request):
     for p in products_in_basket:
         payment_money_sum += p.total_price
         payment_nmb_sum += p.nmb
-
+    username_id = auth.get_user(request).id
+    print('username_id   ', username_id)
+    try:
+        cosmetolog = Cosmetolog.objects.get(user=username_id, is_active=True)
+        print('Cosmo    ', cosmetolog)
+        bonus_set = BonusAccountCosmetolog.objects.filter(cosmetolog=cosmetolog, balance_sum_status__ref_number='11')
+    except:
+        cosmetolog = None
+        bonus_set = None
+    print('bonus_set   ', bonus_set)
     form = OrderForm(request.POST or None)
-
+    bonus_dic = {}
+    for b in bonus_set:
+        bonus_key_value = str(b.bonus_account) + ' ' + str(b.balance_sum)
+        bonus_dic[b.id] = bonus_key_value
+    print('bonus_dic    ', bonus_dic)
+    bonus_list = bonus_dic.items()
+    print('bonus_list   ', bonus_list)
     if request.POST:
         new_order_form = OrderForm(request.POST)
+        print('new_order_form    ', new_order_form)
+        print('request.POST[cosmetolog_bonus', request.POST)
         if new_order_form.is_valid() and products_in_basket:
             print('YEs-TES')
             # products_in_basket_1 = ProductInBasket.objects.filter(session_key=session_key, is_active=True)
@@ -101,25 +130,38 @@ def checkout(request):
 
             # создать Заказ включая инфо по Получателю и статус новый
             new_order = new_order_form.save(commit=False)
+
             try:
                 status = StatusOrder.objects.get(status_number=11)
                 new_order.status_id = status.id
             except:
                 status = None
-            username_id = auth.get_user(request).id
-            try:
-                cosmetolog = Cosmetolog.objects.get(user=username_id, is_active=True)
-                new_order.cosmetolog = cosmetolog
-            except:
-                new_order.cosmetolog = None
+
+            new_order.cosmetolog = cosmetolog
             new_order.save()
 
-            # создать Продукты в Заказе на основе того, что осталось в корзине -
+            # создать Продукты в Заказе, Stock Reserved на основе того, что осталось в коpзине -
             # #Проверить после реализации функции удаления
             for p in products_in_basket:
                 ProductInOrder.objects.create(pb_sale=p.pb_sale, nmb=p.nmb, price_per_item=p.price_per_item,
                                               order=new_order)
+                s = SaleProductItem.objects.get(sales_product=p.pb_sale)
+                product_item = ProductItem.objects.get(id=s.product_item.id)
+                StockItemReserved.objects.create(product_item=product_item, num_reserved=p.nmb, order=new_order)
+                try:
+                    product_rest_set = StockItemRest.objects.filter(product_item=product_item)
+                    print('--set--set--', product_rest_set)
+                    product_due_date = datetime.datetime(9999, 1, 1)
+                    for product_rest_item in product_rest_set:
+                        if product_rest_item.due_date < product_due_date:
+                            product_due_date = product_rest_item.due_date
+                            pr_item = product_rest_item
+                    pr_item.num_rest -= p.nmb
+                    pr_item.save(force_update=True)
+                except:
+                    pass
                 p.is_active = False
+                p.order = new_order
                 p.save(force_update=True)
             try:
                 order_text_object = Page.objects.get(is_active=True, page_name="ORDER_SUCCESS")
@@ -131,6 +173,9 @@ def checkout(request):
             try:
                 email = SendingEmail()
                 email.sending_email(type_id=3, email_details=new_order)
+                message = 'Новий заказ з сайта - ' + str(new_order.order_number)
+                msg = SendingMessage()
+                msg.sending_msg(message=message)
             except:
                 pass
 
@@ -155,5 +200,21 @@ def basket_update(request):
         new_product.save(force_update=True)
     except:
         print('ЧТО-ТО ПОШЛО НЕ ТАК - продукты в корзине не найдены')
+
+    return JsonResponse(return_dict)
+
+
+def order_admin_ajax(request):
+    data = request.POST
+    return_dict = dict()
+    return_dict["check"] = 'check_forever'
+    cosmetolog_details = Cosmetolog.objects.get(id=data['cosmetolog_id'])
+    return_dict = {
+        'receiver_name': cosmetolog_details.cosmetolog_name,
+        'receiver_surname': cosmetolog_details.cosmetolog_surname,
+        'receiver_father_name': cosmetolog_details.cosmetolog_father_name,
+        'receiver_email': cosmetolog_details.email,
+        'receiver_tel_number': cosmetolog_details.tel_number,
+    }
 
     return JsonResponse(return_dict)

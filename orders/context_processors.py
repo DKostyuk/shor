@@ -1,5 +1,5 @@
 from .models import ProductInBasket
-from landing.models import LogoImage, Subscriber
+from landing.models import LogoImage, Feature, Subscriber
 from products.models import ProductCategory
 from django.contrib import auth
 from cosmetologs.models import *
@@ -28,5 +28,11 @@ def getting_basket_info(request):
     except:
         cosmetolog = None
     # print('--CONTEXT-----HERE HOM and COSMO -----', cosmetolog, type(cosmetolog))
+    try:
+        sale_feature = Feature.objects.get(feature_code=101, is_active=True)
+        bonus_feature = Feature.objects.get(feature_code=202, is_active=True)
+    except:
+        sale_feature = None
+        bonus_feature = None
 
     return locals()

@@ -1,8 +1,10 @@
 <div class="checkout-sidebar-focus">
-    тут будет общий счет
-    <div class="checkout-promo">
-        прокомокод
-    </div>
+
+    {% if bonus_feature.behaviour_code == 11 %}
+        {% include 'orders/checkout_bonus.html' %}
+    {% else %}
+        {% include 'orders/checkout_bonus_promo.html' %}
+    {% endif %}
     <div class="checkout-total-order">
         <h4 class="checkout-total-order-title"> Итого </h4>
         <div class="checkout-total-items"><span id="total-payment-nmb-sum">{{ payment_nmb_sum }}</span> одиниць товару </div>
@@ -10,9 +12,14 @@
         <hr>
         <div class="checkout-total-payment"> До сплати <span  id="total_order_amount">{{ payment_money_sum }}</span> грн.</div>
         <hr>
+        <div class="form-group">
+            <button type="submit" id="submit_order_btn" class="hidden"
+                    data-product_in_basket = "{{ products_in_basket }}">Купити</button>
+        </div>
         <div class="text-right">
             <button type="submit" class="btn btn-primary btn-lg"
-                    onclick="document.getElementById('submit_order_btn').click()">Заказ подтверждаю</button>
+                    onclick="document.getElementById('submit_order_btn').click()">
+                Заказ подтверждаю</button>
         </div>
         <div class="checkout-user-agreement"> Підтверджуючи замовлення, я приймаю умови:
             <a href="/dohovir-publichnoi-oferty/"> Договору публичної оферти</a>

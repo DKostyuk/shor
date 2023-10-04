@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.db.models import Q
+
+from bonuses.models import BonusAccountCosmetolog
 from .forms import *
 from products.models import *
 from landing.models import *
@@ -242,6 +244,13 @@ def profile(request):
                                        'total_price': order.total_price, 'order_status': order.status,
                                        'products_in_order': products_in_order}
                 order_list.append(order_with_products)
+
+            bonus_cosmetolog_set = BonusAccountCosmetolog.objects.filter(cosmetolog=cosmetolog)
+            bonus_list = list()
+            for bonus in bonus_cosmetolog_set:
+                bonus_detail = {'balance_sum': bonus.balance_sum}
+                bonus_list.append(bonus_detail)
+
         except:
             pass
         if request.POST:
@@ -351,11 +360,8 @@ def login(request):
     if request.POST:
         # user_email_pure = request.POST.get('username', '')
         user_email = request.POST.get('username', '').lower().replace(' ', '')
-        print('----логин--1--', user_email + '1')
         password = request.POST.get('password', '')
-        print('----логин--2--', password + '1')
         username = auth.authenticate(username=user_email, password=password)
-        print('----логин--23--', username)
         user_old = User.objects.filter(username=user_email).first()
         if user_old and username is None:
             user_old.is_active = True
@@ -369,7 +375,6 @@ def login(request):
             # return render_to_response('login.html', args)
         else:  # only left one condition - that == username is not None
             auth.login(request, username)
-            # print("user_login", user)
             return HttpResponseRedirect(reverse(home))
     else:
         return render(request, 'landing/login.html', locals())
@@ -447,6 +452,7 @@ def home(request):
 
     # products_images_new = products_images_all.filter(product__category__id=1)
     # products_images_popular = products_images_all.filter(product__category__id=2)
+    print(locals())
 
     return render(request, 'landing/home.html', locals())
 

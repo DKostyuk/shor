@@ -1,0 +1,75 @@
+<div class="tab-pane fade" id="bonus" role="tabpanel" aria-labelledby="bonus-tab">
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>Дата BONUS Замовлення</th>
+                <th>Номер BONUS Замовлення</th>
+                <th>Поточний BONUS статус</th>
+                <th>Сумма</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bonus in bonus_list %}
+                <tr>
+                    <td>
+                        <span>{{ bonus.balance_sum }}</span>
+                    </td>
+                    <td>
+                        <span>{{ bonus.balance_sum }}</span>
+                    </td>
+                    <td>
+                         <span >{{ bonus.balance_sum }}</span>
+                    </td>
+                    <td>
+                         <span>{{ bonus.balance_sum }} грн.</span>
+                    </td>
+                    <td>
+                         <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                 data-target="#order_{{ order.order_number }}" aria-expanded="false"
+                                 aria-controls="collapseExample"> Розгорнути</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <table class="table text-center collapse" id="order_{{ order.order_number }}">
+                            <thead>
+                                <tr>
+                                    <th>Товар</th>
+                                    <th>Кількість</th>
+                                    <th>Ціна</th>
+                                    <th>Сума</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for product_in_order in products_in_order %}
+                                    <tr>
+                                        <td>
+                                            <span>{{ product_in_order.pb_sale }}</span>
+                                        </td>
+                                        <td>
+                                            <span>{{ product_in_order.nmb }}</span>
+                                        </td>
+                                        <td>
+                                             <span class="product-price" name="price_per_item">
+                                                {{ product_in_order.price_per_item}} грн.
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="total-product-in-basket-amount">
+                                                {{ product_in_order.total_price }} грн.
+                                            </span>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+<hr>
+
+</div>

@@ -24,12 +24,7 @@
                     <form class="form-horizontal" method="post" id ="form_order_delivery"
                           action="{% url 'checkout' %}">{% csrf_token %}
                         {% include 'orders/checkout_delivery section.html' %}
-                        <div class="form-group">
-                            <button type="submit" id="submit_order_btn" class="hidden"
-                            data-product_in_basket = "{{ products_in_basket }}">Купити</button>
 
-                        </div>
-                    </form>
                     <div class="checkout-page-order-title">
                         <span class="checkout-page-list-number"> 3 </span>
                         Оплата
@@ -40,6 +35,11 @@
             <div class="col-lg-4 checkout-sidebar">
                 {% include 'orders/checkout_sidebar.html' %}
             </div>
+            <div class="form-group">
+                <button type="submit" id="submit_order_btn" class="hidden"
+                        data-product_in_basket = "{{ products_in_basket }}">Купити</button>
+            </div>
+            </form>
         </div>
     </div>
 

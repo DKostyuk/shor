@@ -18,6 +18,8 @@
 
                     {% if cosmetolog %}
                         {% include 'products/product_cosmetolog_sales.html' %}
+                    {% elif sale_feature.behaviour_code == 11 %}
+                        {% include 'products/product_visitor_sales.html' %}
                     {% else %}
                         {% include 'products/product_visitor.html' %}
                     {% endif %}

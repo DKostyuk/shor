@@ -46,6 +46,15 @@ class CosmetologAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Cosmetolog._meta.fields]
     # inlines = [CosmetologCategoryInline]
 
+    def save_model(self, request, obj, form, change):
+        update_fields = None
+        if change:
+            print('Order has been changed by Admin')
+            update_fields = form.changed_data
+        # super().save_model(request, obj, form, change)
+        obj.save(update_fields=update_fields)
+        super().save_model(request, obj, form, change)
+
     class Meta:
         model = Cosmetolog
 

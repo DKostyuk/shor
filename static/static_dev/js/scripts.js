@@ -122,7 +122,8 @@ $(document).ready(function(){
                console.log("OK");
                console.log(url);
                console.log(data);
-               console.log(987);
+               console.log('987');
+               console.log(data.price);
                console.log(data.products_total_nmb);
                console.log(789);
 
@@ -220,6 +221,7 @@ $(document).ready(function(){
        var product_sales_id = product.data("product_sales_id");
        var product_name = product.data("name");
        var product_price = product.data("price");
+       console.log('take price from data attr --- ', product_price)
 //       var qqq = product.data("case");
        var what_case = product.data("case"); //'buy'
        console.log('----после КУПИТИ----', product_volume, product_sales_id, product_name, product_price, what_case);
@@ -361,7 +363,7 @@ $(document).ready(function(){
            data: data,
            cache: true,
            success: function (data) {
-                console.log('SUCCESS');
+                console.log('SUCCESS - !!!!!!!!!!!');
            },
            error: function (error) {
                console.log('ERROR')
@@ -431,6 +433,66 @@ $(document).ready(function(){
 });
 
 
+//django.jQuery(function($) {
+//    $(document).ready(function(){
+//        $(document).on('change','#id_cosmetolog', function () { //отслеживаем изменения на id
+//            var current_nmb = $(this).val(); // считыаем  и получаем значение в переменную
+//            console.log(current_nmb)
+//                var data ={};
+//                data.cosmetolog_id = $(this).val();
+//                data.check_me = 'Что то для проверки'
+//
+//                var csrf_token = $('#order_form [name="csrfmiddlewaretoken"]').val();
+//                data["csrfmiddlewaretoken"] = csrf_token;
+//
+////                console.log('Admin data ----', data)
+//
+//                var url = "/order_admin_ajax/";
+//
+//                $.ajax({
+//                   url: url,
+//                   type: 'POST',
+//                   data: data,
+//                   cache: true,
+//                   success: function (data) {
+////                        console.log('SUCCESS - Admin');
+////                        console.log('Success - Admin ----------', data);
+//                        document.getElementById("id_receiver_name").setAttribute("value", data['receiver_name']);
+//                        document.getElementById("id_receiver_name").setAttribute("readonly", "readonly");
+//                        document.getElementById("id_receiver_surname").setAttribute("value", data['receiver_surname']);
+//                        document.getElementById("id_receiver_surname").setAttribute("readonly", "readonly");
+//                        document.getElementById("id_receiver_father_name").setAttribute("value", data['receiver_father_name']);
+//                        document.getElementById("id_receiver_father_name").setAttribute("readonly", "readonly");
+//                        document.getElementById("id_receiver_email").setAttribute("value", data['receiver_email']);
+//                        document.getElementById("id_receiver_email").setAttribute("readonly", "readonly");
+//                        document.getElementById("id_receiver_phone").setAttribute("value", data['receiver_tel_number']);
+//                        document.getElementById("id_receiver_phone").setAttribute("readonly", "readonly");
+//                   },
+//                   error: function (error) {
+//                       console.log('ERROR')
+//                       console.log(JSON.stringify(error))
+//                   }
+//                });
+//
+//        });
+//        $(document).on('change','#id_productinorder_set-0-price_per_item', function () { //отслеживаем изменения на id
+//            var current_price_per_item = $(this).val(); // считыаем  и получаем значение в переменную
+//            var current_nmb = document.getElementById("id_productinorder_set-0-nmb").value;
+//            var total_price = current_nmb * current_price_per_item
+//            $('.field-total_price p').html("");
+//            $('.field-total_price p').append(total_price);
+//        });
+//        $(document).on('change','#id_productinorder_set-0-nmb', function () { //отслеживаем изменения на id
+//            var current_nmb = $(this).val(); // считыаем  и получаем значение в переменную
+//            var current_price_per_item = document.getElementById("id_productinorder_set-0-price_per_item").value;
+//            var total_price = current_nmb * current_price_per_item
+//            $('.field-total_price p').html("");
+//            $('.field-total_price p').append(total_price);
+//        });
+//    });
+//});
+
+
 //$(document).ready(function(){
 //    // console.log(4055151);
 //    CKEDITOR.replace( 'id_description', {
@@ -443,6 +505,8 @@ $(document).ready(function(){
 //            ]
 //    });
 //});
+
+
 
 
 
@@ -512,3 +576,5 @@ $(document).ready(function(){
 //    });
 //}
 //Search();
+
+

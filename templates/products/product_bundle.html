@@ -23,6 +23,8 @@
 
                     {% if cosmetolog %}
                         {% include 'products/product_cosmetolog_bundle_sales.html' %}
+                    {% elif sale_feature.behaviour_code == 11 %}
+                        {% include 'products/product_visitor_bundle_sales.html' %}
                     {% endif %}
                     <div class="container">
                         <div class="row">

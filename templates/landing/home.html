@@ -5,6 +5,8 @@
 {% block content %}
             {% if cosmetolog %}
                 {% include 'landing/home_cosmetolog.html' %}
+            {% elif sale_feature.behaviour_code == 11 %}
+                {% include 'landing/home_visitor_sale.html' %}
             {% else %}
                 {% include 'landing/home_visitor.html' %}
             {% endif %}

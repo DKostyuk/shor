@@ -90,8 +90,8 @@ class Cosmetolog(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        # return "%s" % self.name
-        return "%s, %s" % (self.id, self.cosmetolog_name)
+        return "%s" % self.cosmetolog_name
+        # return "%s, %s" % (self.id, self.cosmetolog_name)
 
     class Meta:
         verbose_name = 'Cosmetolog'
@@ -394,3 +394,5 @@ class ServiceAddFile(models.Model):
             new_service_image.save()
 
             super(ServiceAddFile, self).save(*args, **kwargs)
+
+

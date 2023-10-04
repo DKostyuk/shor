@@ -1,4 +1,8 @@
 from django.shortcuts import render, redirect
+from rest_framework.renderers import JSONRenderer
+from django.contrib import auth
+from bonuses.models import calculate_monthly_discount_awards
+from utils.main import only_dkostiuk
 from .forms import *
 from products.models import *
 from django.urls import reverse
@@ -186,7 +190,7 @@ def trick_item(request, slug=None):
             while next_step != 999:
                 if request.POST.get('hit', '') == "hit":
                     cards, player_list = deal(cards, player_list)
-                    player_totals, dealer_totals = totals(player_list, dealer_list)
+                    player_totals, dealer_totals = totals(player_list)
                     next_step = check_player_totals(player_totals)
                     print(player_totals)
                 elif request.POST.get('stop', '') == "stop":
@@ -219,3 +223,33 @@ def crm_product_item(request, slug=None):
     #         form = ProductFileCSVForm()
         return render(request, 'another/crm_product_item.html', locals())
     return render(request, 'another/crm_product.html', locals())
+
+
+def admin(request):
+    who_is_user = only_dkostiuk(request)
+    if who_is_user:
+        if request.POST:
+            print('Admin 145 Submit')
+            user_email = request.POST.get('username', '').lower().replace(' ', '')
+            password = request.POST.get('password', '')
+            print('Admin 145 Submit', user_email)
+            if user_email == "dmyto.kostyuk@gmail.com":
+                return render(request, 'another/admin50.html', locals())
+
+        else:
+            return render(request, 'another/admin145.html', locals())
+            # return render_to_response('login.html', args)
+
+
+def admin50(request):
+    who_is_user = only_dkostiuk(request)
+    if who_is_user:
+        if request.POST:
+            print('Admin 50 Submit')
+            calculate_monthly_discount_awards()
+            print('Admin 50 AFTER Submit')
+        else:
+            return render(request, 'another/admin50.html', locals())
+
+    else:
+        return render(request, 'landing/home.html', locals())

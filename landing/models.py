@@ -259,3 +259,20 @@ class TrainingUser(models.Model):
     class Meta:
         verbose_name = 'TrainingUser'
         verbose_name_plural = 'TrainingUsers'
+
+
+class Feature(models.Model):
+    feature_name = models.CharField(max_length=64)
+    feature_code = models.IntegerField(blank=True, null=True, default=101)
+    behaviour_code = models.IntegerField(blank=True, null=True, default=99)
+    feature_description = models.TextField(blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __str__(self):
+        return "%s" % self.id
+
+    class Meta:
+        verbose_name = 'Feature'
+        verbose_name_plural = 'Features'

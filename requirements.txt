@@ -8,3 +8,5 @@ django-bootstrap4==21.1
 django-bootstrap-datepicker-plus==4.0.0
 django-dbshell-plus==1.0.1
 django-uuslug==1.2.0
+requests==2.28.1
+djangorestframework==3.14.0

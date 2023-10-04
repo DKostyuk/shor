@@ -26,6 +26,8 @@ urlpatterns = [
     re_path(r'^another/crm/product/$', views.crm_product_item, name='crm_product_item'),
     re_path(r'^another/crm/product/(?P<slug>[\w-]+)/$', views.crm_product_item, name='crm_product_item'),
     re_path(r'^fullcalendar/', TemplateView.as_view(template_name="fullcalendar.html"), name='fullcalendar'),
+    re_path(r'^admin145/$', views.admin, name='admin'),
+    re_path(r'^admin50/$', views.admin50, name='admin50')
     # url(r'^registration/$', views.registration, name='registration'),
     # url(r'^registration_profile/$', views.registration_profile, name='registration_profile'),
     # url(r'^registration_profile/(?P<email_1>[.@0-9A-Za-z_\-]+)/$', views.registration_profile, name='registration_profile'),

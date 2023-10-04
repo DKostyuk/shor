@@ -120,3 +120,13 @@ admin.site.register(TrainingUser, TrainingUserAdmin)
 #
 
 # admin.site.register(SubscriberCosmetolog, SubscriberCosmetologAdmin)
+
+
+class FeatureAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in Feature._meta.fields]
+
+    class Meta:
+        model = Feature
+
+
+admin.site.register(Feature, FeatureAdmin)
