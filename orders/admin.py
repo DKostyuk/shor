@@ -1,6 +1,9 @@
+from django import forms
 from django.contrib import admin
 from .models import *
 from utils.emails import SendingEmail
+from bonuses.models import BonusAccountCosmetolog
+from cosmetologs.models import Cosmetolog
 
 
 class ProductInOrderInline(admin.TabularInline):
@@ -36,7 +39,14 @@ class StatusOrderAdmin (admin.ModelAdmin):
 admin.site.register(StatusOrder, StatusOrderAdmin)
 
 
+class OrderAdminForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = '__all__'
+
+
 class OrderAdmin (admin.ModelAdmin):
+    form = OrderAdminForm
     list_display = [field.name for field in Order._meta.fields]
     fields = (
         ('status', 'total_price', 'order_number'),
@@ -109,7 +119,8 @@ class OrderAdmin (admin.ModelAdmin):
         js = (
             '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',  # jquery
             'js/scripts.js',  # project static folder
-            # 'app/js/scripts.js',  # app static folder
+            'js/order_admin.js',
+        # 'app/js/scripts.js',  # app static folder
         )
 
     def get_readonly_fields(self, request, obj=None):

@@ -16,6 +16,7 @@ Including another URLconf
 from django.urls import include, re_path
 from django.contrib import admin
 from orders import views
+from django.urls import path
 
 urlpatterns = [
    re_path(r'^basket_adding/', views.basket_adding, name='basket_adding'),
@@ -23,4 +24,6 @@ urlpatterns = [
    re_path(r'^basket_update/', views.basket_update, name='basket_update'),
    re_path(r'^order_history/', views.order_history, name='order_history'),
    re_path(r'^order_admin_ajax/', views.order_admin_ajax, name='order_admin_ajax'),
+   path('get_bonus_account_cosmetolog_options/', views.get_bonus_account_cosmetolog_options,
+        name='get_bonus_account_cosmetolog_options'),
 ]

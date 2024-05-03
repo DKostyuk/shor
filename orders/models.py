@@ -219,11 +219,11 @@ def product_in_order_post_save(sender, instance, created, **kwargs):
     print('SAVE ORDER in admin yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy')
     order = instance.order
     all_products_in_order = ProductInOrder.objects.filter(order=order, is_active=True)
-    print('cosmetolog_bonus    ', instance.order.cosmetolog_bonus.bonus_account.ref_number)
+    # print('cosmetolog_bonus    ', instance.order.cosmetolog_bonus.bonus_account.ref_number)
     order_total_price = 0
     for item in all_products_in_order:
         order_total_price += item.total_price
-    if instance.order.cosmetolog_bonus.bonus_account.ref_number == '22':
+    if instance.order.cosmetolog_bonus is not None and instance.order.cosmetolog_bonus.bonus_account.ref_number == '22':
         print('11111111111111111111111111 MONTHLY     ----------------', order_total_price)
         order_total_price = order_total_price * (100-instance.order.cosmetolog_bonus.bonus_account.uah_rate)/100
         print('22222222222222222222222222222222222 MONTHLY     ----------------', order_total_price)

@@ -218,3 +218,35 @@ def order_admin_ajax(request):
     }
 
     return JsonResponse(return_dict)
+
+
+def get_bonus_account_cosmetolog_options(request):
+    cosmetolog_id = request.GET.get('cosmetolog_id')
+    order_id = request.GET.get('order_id')  # Get the order ID from the request if available
+    print('orderNumber   ', order_id)
+    options = BonusAccountCosmetolog.objects.filter(cosmetolog_id=cosmetolog_id)
+
+    formatted_options = {}
+
+    for item in options:
+        option_text = f"{item.cosmetolog}, {item.bonus_account}, {item.balance_sum}"
+        is_selected = False  # Initialize as not selected
+
+        # Check if this option is selected in the order
+        if order_id:
+            print("checking order")
+            order = Order.objects.get(order_number=order_id)
+            print('order------------   ', order)
+            print("order.cosmetolog_bonus", order.cosmetolog_bonus.id, '----', item.id)
+            if order.cosmetolog_bonus.id == item.id:
+                is_selected = True
+
+        # Include the option with a 'selected' flag
+        formatted_options[item.id] = {
+            'text': option_text,
+            'selected': is_selected
+        }
+        print(formatted_options)
+
+    return JsonResponse({'options': formatted_options})
+

@@ -435,6 +435,7 @@ $(document).ready(function(){
 
 //django.jQuery(function($) {
 //    $(document).ready(function(){
+//        console.log('order admin started - script.js')
 //        $(document).on('change','#id_cosmetolog', function () { //отслеживаем изменения на id
 //            var current_nmb = $(this).val(); // считыаем  и получаем значение в переменную
 //            console.log(current_nmb)
