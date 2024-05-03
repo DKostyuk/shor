@@ -1,0 +1,88 @@
+Index: .idea/shor.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"FacetManager\">\r\n    <facet type=\"django\" name=\"Django\">\r\n      <configuration>\r\n        <option name=\"rootFolder\" value=\"$MODULE_DIR$\" />\r\n        <option name=\"settingsModule\" value=\"shor/settings.py\" />\r\n        <option name=\"manageScript\" value=\"manage.py\" />\r\n        <option name=\"environment\" value=\"&lt;map/&gt;\" />\r\n        <option name=\"doNotUseTestRunner\" value=\"false\" />\r\n        <option name=\"trackFilePattern\" value=\"migrations\" />\r\n      </configuration>\r\n    </facet>\r\n  </component>\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <excludeFolder url=\"file://$MODULE_DIR$/venv\" />\r\n    </content>\r\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.9 (venv)\" jdkType=\"Python SDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n  <component name=\"PackageRequirementsSettings\">\r\n    <option name=\"versionSpecifier\" value=\"Strong equality (==x.y.z)\" />\r\n  </component>\r\n  <component name=\"TemplatesService\">\r\n    <option name=\"TEMPLATE_CONFIGURATION\" value=\"Django\" />\r\n    <option name=\"TEMPLATE_FOLDERS\">\r\n      <list>\r\n        <option value=\"$MODULE_DIR$/../shor\\templates\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"TestRunnerService\">\r\n    <option name=\"PROJECT_TEST_RUNNER\" value=\"Unittests\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shor.iml b/.idea/shor.iml
+--- a/.idea/shor.iml	(revision db56cf8ff4dd6be748aee5ad5533a17d1270168f)
++++ b/.idea/shor.iml	(date 1714736046265)
+@@ -16,7 +16,7 @@
+     <content url="file://$MODULE_DIR$">
+       <excludeFolder url="file://$MODULE_DIR$/venv" />
+     </content>
+-    <orderEntry type="jdk" jdkName="Python 3.9 (venv)" jdkType="Python SDK" />
++    <orderEntry type="jdk" jdkName="Python 3.9 (shor)" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+   <component name="PackageRequirementsSettings">
+Index: requirements.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Django==3.2.11\r\ndjango-ckeditor==6.2.0\r\nsix==1.16.0\r\nopenpyxl==3.0.9\r\nUnidecode==1.3.2\r\nPillow==8.4.0\r\ndjango-bootstrap4==21.1\r\ndjango-bootstrap-datepicker-plus==4.0.0\r\ndjango-dbshell-plus==1.0.1\r\ndjango-uuslug==1.2.0\r\nrequests==2.28.1\r\ndjangorestframework==3.14.0
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/requirements.txt b/requirements.txt
+--- a/requirements.txt	(revision db56cf8ff4dd6be748aee5ad5533a17d1270168f)
++++ b/requirements.txt	(date 1714736046296)
+@@ -9,4 +9,7 @@
+ django-dbshell-plus==1.0.1
+ django-uuslug==1.2.0
+ requests==2.28.1
+-djangorestframework==3.14.0
+\ No newline at end of file
++djangorestframework==3.14.0
++pip
++django-rest-auth==0.9.5
++django-allauth==0.54.0
+\ No newline at end of file
+Index: shor/settings_prod1.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shor/settings_prod1.py b/shor/settings_prod1.py
+new file mode 100644
+--- /dev/null	(date 1714736046280)
++++ b/shor/settings_prod1.py	(date 1714736046280)
+@@ -0,0 +1,14 @@
++DEBUG = False			# there will no message for ERRORS
++ALLOWED_HOSTS = ['*']	# we can input IP address of the server where we can run our project
++
++#settings for db on server - standard construction
++DATABASES = {
++    'default': {
++        'ENGINE': 'django.db.backends.postgresql_psycopg2',	#psycopg2 - connector Django & Postgres, have to be installed on the server
++        'NAME': 'db1',
++        'USER': 'django_shop',
++        'PASSWORD': 'Tropinka123!',
++        'HOST': 'localhost',
++        'PORT': '',                      # Set to empty string for default.
++    }
++}
+Index: shor/email_info.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shor/email_info.py b/shor/email_info.py
+new file mode 100644
+--- /dev/null	(date 1714736046296)
++++ b/shor/email_info.py	(date 1714736046296)
+@@ -0,0 +1,14 @@
++# for shor.com.ua
++EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
++EMAIL_USE_TLS = True
++EMAIL_HOST = 'shor.com.ua'
++EMAIL_HOST_USER = 'office@shor.com.ua'
++EMAIL_HOST_PASSWORD = 'SMTatkos14550!'
++EMAIL_PORT = 587
++
++EMAIL_FROM = 'noreply@shor.com.ua'
++EMAIL_ADMIN = 'dkostyuk@ukr.net'
++
++TOKEN_TELEGRAM = '6074504475:AAF3aSo-sxwZl4ACvQcKAbBJV50iHV6OkVA'
++# Chat ID list of Receivers [DK]
++CHAT_ID_LIST = ['595065850']

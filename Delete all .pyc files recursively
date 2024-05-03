@@ -1,2 +1,3 @@
 # Delete all .pyc files recursively 
 find . -name "*.pyc" -type f -delete
+# check update dev git from dev local
