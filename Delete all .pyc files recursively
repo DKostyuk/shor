@@ -1,2 +1,2 @@
-# Delete all .pyc files recursively
+# Delete all .pyc files recursively 
 find . -name "*.pyc" -type f -delete
